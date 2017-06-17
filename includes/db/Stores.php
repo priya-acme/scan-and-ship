@@ -9,7 +9,7 @@ public function __construct() {
     parent :: __construct();
 }  
 function addData($data){
-    //print_r($data);
+    print_r($data);
     return $this->add($this->table_name , $data);
 }
 function is_shop_exists($shop){
