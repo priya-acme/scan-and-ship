@@ -1,0 +1,12 @@
+- app                 (folder)
+- includes            (folder)
+  - config            (folder)
+    - conf.inc
+  - db                (folder)
+    - db_connection.php
+    - Stores.php
+  - utils
+    - Shopify.php
+- install 
+    - index.php
+- composer.json         (file)
