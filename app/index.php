@@ -1,4 +1,6 @@
 <?php
+
+echo "PHP";
 /*include 'includes/config/conf.inc';
 include 'includes/db/Stores.php';
 $db_connect = new db_connection;
