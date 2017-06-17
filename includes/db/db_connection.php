@@ -2,7 +2,7 @@
 echo 'in DBC';
 // require __DIR__ . '../../config/conf.inc.php';
 
-require '/var/www/html/shopifyDemoLamp/includes/config/conf.inc.php';
+require '/var/www/html/scan-and-ship/includes/config/conf.inc.php';
 class DB_Connection{
 	
 	protected $connection;
