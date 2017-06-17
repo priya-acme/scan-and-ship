@@ -1,20 +1,14 @@
-<?php 
-define('APP_ENV','heroku');
-if(APP_ENV == 'heroku'){
- define('DB_HOST','ec2-54-243-185-123.compute-1.amazonaws.com');
-define('DB_NAME','dftadju73ao8b');
-define('DB_USER','wavptfphsawxvl');
-define('DB_PASS','f197258ef0d018d06137e62f49428d88807a2a3b1aca06ec0419276f40eb51bf');
-define('SHOPIFY_API','');   
-} else if(APP_ENV == 'local'){
-define('DB_HOST','localhost');
-define('DB_NAME','my_first_app');
-define('DB_USER','root');
-define('DB_PASS','');
-}
-define('SHOPIFY_API_KEY','c1724b2cc0298491681659e56dd89cff');
-define('SHOPIFY_API_SECRET','a548c92cefb9c742aac11b86f226b322');
-define('CALLBACK_URL','https://my-first-demo-app.herokuapp.com/install');
-define("APP_URL", "https://my-first-demo-app.herokuapp.com/app");
+<?php
+echo "in confffffffff";
 
-?>
+define("DB_HOST", "localhost");
+define("DB_PORT", "3306");
+define("DB_NAME", "scan_and_ship");
+define("DB_USER", "root");
+define("DB_PASS", "2f0136ae1e39f0825bec0e3f111002ff316122aca88c292a");
+
+
+define("SHOPIFY_API_KEY", "ed1b619b0d4433048a3fd866d1ae5f7f");
+define("SHOPIFY_API_SECRET", "6257046e1cb451d88a008cf5a6b56fb3");
+define("CALLBACK_URL", "http://67.207.82.1/scan-and-ship/install/");
+define("APP_URL", "http://67.207.82.1/scan-and-ship/app");
