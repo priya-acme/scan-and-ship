@@ -1,5 +1,5 @@
 <?php
-//echo "stores";
+echo "stores";
 include 'db_connection.php';
 class Stores extends db_connection {
     
