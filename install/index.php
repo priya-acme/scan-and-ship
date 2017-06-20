@@ -14,7 +14,7 @@ if ($shop && !$code) {
 	}
 	
 	$redirect_url = $Shopify->getAuthUrl($shop);
-	//header("Location: $redirect_url");
+	header("Location: $redirect_url");
 	
 }
 
