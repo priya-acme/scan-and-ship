@@ -3,12 +3,12 @@
  include __DIR__ .'../../includes/db/Stores.php';
  $Shopify = new Shopify();
  $Stores = new Stores();
-//  $shop = $_GET['shop'];
+ $shop = $_GET['shop'];
  
-//  $shop_info = $Stores->is_shop_exists($shop);
-//  $products = $Shopify->get_products($shop, $shop_info[0]['token']);
-//  //echo $shop_info[0]['token'];
-// print_r($products);
+ $shop_info = $Stores->is_shop_exists($shop);
+ $products = $Shopify->get_products($shop, $shop_info[0]['token']);
+ //echo $shop_info[0]['token'];
+print_r($products);
 
 ?>
 <table border="1" width="100%">
