@@ -6,7 +6,7 @@
  $shop = $_GET['shop'];
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
- print_r($orders);
+ //print_r($orders);
  ?>
 <?php include 'header.php' ?>
 <div id="content">
