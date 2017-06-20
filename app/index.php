@@ -7,15 +7,6 @@
  ?>
 <?php include 'header.php' ?>
 <div id="content">
-<table border="1">
-        <tr>
-            <th>
-              Shop 
-            </th>
-            <th>
-              Shop Preference
-            </th>
-        </tr>
-       </table>
+<?php include 'order-search.php';  ?>
 
 <?php include 'footer.php' ?>

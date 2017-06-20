@@ -14,7 +14,7 @@
 <div id="menu" class="menu-v">
   <ul>
     <li><a href="/?shop=<?php echo $shop; ?>" class="active">Home</a></li>
-	<li><a href="/summary.php/?shop=<?php echo $shop ?>">Summary Details</a>
+	<li><a href="#">Summary Details</a>
 	</li>
 	<li><a href="#">Settings</a>
   </ul>
