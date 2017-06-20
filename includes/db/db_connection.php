@@ -1,11 +1,11 @@
-<?php
+<?php echo "in db";
 require '/var/www/html/scan-and-ship/includes/config/conf.inc.php';
 class DB_Connection{
     protected $connection;
     
     // connection string 
     
-    public function connect()
+    function __construct()
 	{
 		$this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 		if($this->connection)
@@ -15,18 +15,8 @@ class DB_Connection{
 		else {
 			echo 'Not Connected'. mysqli_connect_error();
 		}
-		
-		return $this->connection;
 	}
 	
-	// validate shop url 
-	
-	function validate_shop_url($shop){
-		$subject = $shop;
-		$pattern = '/^(.*)?(\.myshopify\.com)$/';
-		preg_match($pattern, $subject, $matches);
-		return $matches[2] == '.myshopify.com';
-	}
 	
 	// insert data into database
 	
