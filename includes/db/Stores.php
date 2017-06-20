@@ -1,6 +1,4 @@
 <?php
-
-echo 'in stores';
 require 'db_connection.php';
 
 class Stores extends DB_Connection{
