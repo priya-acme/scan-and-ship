@@ -5,9 +5,7 @@
  $Stores = new Stores();
  $shop = $_GET['shop'];
  $shop_info = $Stores->is_shop_exists($shop);
- print_r($shop_info);
- echo $shop_info['access_token'];
- $orders = $Shopify->get_orders($shop, $shop_info[0]['access_token']);
+ $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
  print_r($orders);
  ?>
 <?php include 'header.php' ?>
