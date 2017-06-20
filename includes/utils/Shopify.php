@@ -96,5 +96,13 @@ class Shopify {
 		return json_decode($output);
 		
 	}
+	
+	// get orders 
+	
+	public function get_orders($shop, $access_token)
+	{
+	    $curl_url = "https://$shop/admin/orders.json";
+		return $this->curlRequest($curl_url, $access_token);
+	}
 }
 ?>
