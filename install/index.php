@@ -51,7 +51,7 @@ if ($code) {
 		), "store_url = '$shop'");
 	}
 	
-	//header("Location: " . APP_URL);
+	header("Location: " . APP_URL);
 }
 ?>
 
