@@ -38,7 +38,7 @@ class DB_Connection{
 		$query = "SELECT $columns from $table ";
 		if(!empty($criteria)){
 			$query .= "WHERE $criteria";
-			echo $query;
+			//echo $query;
 			$result = mysqli_query($this->connection, $query);
 		    return mysqli_fetch_assoc($result);
 		}
