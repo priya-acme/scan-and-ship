@@ -5,4 +5,17 @@
  $Stores = new Stores();
  $shop = $_GET['shop'];
  ?>
- hiiii
+<?php include 'header.php' ?>
+<div id="content">
+<table border="1">
+        <tr>
+            <th>
+              Shop 
+            </th>
+            <th>
+              Shop Preference
+            </th>
+        </tr>
+       </table>
+
+<?php include 'footer.php' ?>

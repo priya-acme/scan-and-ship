@@ -1,4 +1,4 @@
-<?php echo "in db";
+<?php //echo "in db";
 require '/var/www/html/scan-and-ship/includes/config/conf.inc.php';
 class DB_Connection{
     protected $connection;
@@ -8,13 +8,13 @@ class DB_Connection{
     function __construct()
 	{
 		$this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-		if($this->connection)
-		{
-			echo 'Connected';
-		}
-		else {
-			echo 'Not Connected'. mysqli_connect_error();
-		}
+// 		if($this->connection)
+// 		{
+// 			echo 'Connected';
+// 		}
+// 		else {
+// 			echo 'Not Connected'. mysqli_connect_error();
+// 		}
 	}
 	
 	
