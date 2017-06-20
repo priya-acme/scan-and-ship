@@ -27,7 +27,7 @@ class DB_Connection{
 			$columns[] = "'$value'";
 		}
 		$query .= implode(",",$columns).")";
-		echo $query;
+		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_insert_id($result);
 	}
