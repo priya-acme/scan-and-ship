@@ -1,5 +1,5 @@
 <?php
-echo "shopify";
+//echo "shopify";
 class Shopify {
 	
 	protected $_APP_KEY;
@@ -12,15 +12,6 @@ class Shopify {
 		$this->_APP_SECRET = SHOPIFY_API_SECRET;
 		
 	}
-	// validate shopify url
-	
-	public function validateMyShopifyName($shop) {
-		$subject = $shop;
-		$pattern = '/^(.*)?(\.myshopify\.com)$/';
-		preg_match($pattern, $subject, $matches);
-		return $matches[2] == '.myshopify.com';
-	}
-	
 	function exchangeTempTokenForPermanentToken($shopifyUrl , $TempCode){
 		
 		// encode the data
@@ -47,7 +38,12 @@ class Shopify {
 		
 		return $response;
 	}
-	
+	public function validateMyShopifyName($shop) {
+		$subject = $shop;
+		$pattern = '/^(.*)?(\.myshopify\.com)$/';
+		preg_match($pattern, $subject, $matches);
+		return $matches[2] == '.myshopify.com';
+	}
 	function validateRequestOriginIsShopify($code,$shop,$timestamp,$signature) {
 		$get_params_string = 'code='.$code.'shop='.$shop.'timestamp='.$timestamp.'';
 		$calculated_signature = md5(SHOPIFY_APP_PASSWORD . $calculated_signature);
@@ -67,6 +63,38 @@ class Shopify {
 				. 'scope=' . implode("%2C", $scopes)
 				. '&client_id=' . SHOPIFY_API_KEY
 				. '&redirect_uri=' . CALLBACK_URL;
+	}
+
+	private function curlRequest($url, $access_token = NULL, $data = NULL)
+	{
+		// set curl options
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		
+		$http_headers = array("Content-Type:application/json");
+		if ($access_token) {
+			$http_headers = array("Content-Type:application/json", "X-Shopify-Access-Token: $access_token");
+		}
+		
+		curl_setopt($ch, CURLOPT_HEADER, false); // Include header in result? (0 = yes, 1 = no)
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		
+		if ($data) {
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		}
+		
+		$output = curl_exec($ch); // Download the given URL, and return output
+		
+		if ($output === false) {
+			return 'Curl error: ' . curl_error($ch);
+		}
+		
+		curl_close($ch); // Close the cURL resource, and free system resources
+		
+		return json_decode($output);
+		
 	}
 }
 ?>
