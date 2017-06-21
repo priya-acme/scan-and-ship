@@ -12,6 +12,7 @@ if(isset($_POST['search_order'])){
 	$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
 	echo $order_id;
 	echo $orders->id;
+	print_r($orders);
 	if($order_id == $orders['id']){
 ?>
 <table>
