@@ -24,6 +24,9 @@ if(isset($_POST['search_order'])){
           <th><b>Order Id</b></th>
           <th><?php echo $orders->order->id; ?></th>
         </tr>
+        </table>
+        <h2>Product Details</h2>
+        <table>
         <tr>
 	       <th><b>Product Title</b></th>
         <?php  $arrayobj = new ArrayObject($orders->order->line_items);
@@ -31,8 +34,9 @@ if(isset($_POST['search_order'])){
 	       for($i=0;$i<$line_item_count;$i++)
 	       {
 	       	?>
+	       	<tr>
 	       	<th><?php echo $orders->order->line_items[$i]->title ?></th>
-	       	
+	       	</tr>
 	     <?php 
 	       }
 	     ?>
