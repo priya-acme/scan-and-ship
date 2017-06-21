@@ -25,8 +25,6 @@
         </td>
     <?php } ?>
   
- <?php $arrayobj = new ArrayObject($orders->orders->line_items);
- print_r($arrayobj);
-	       $line_item_count = $arrayobj->count();
+ <?php  print_r($orders->orders->line_items);
 ?>
 <?php include 'footer.php' ?>
