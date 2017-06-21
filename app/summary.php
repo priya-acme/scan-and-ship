@@ -6,8 +6,8 @@
  $shop = $_GET['shop'];
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
-echo "<pre>";
-print_r($orders);
+// echo "<pre>";
+// print_r($orders);
  ?>
 <?php include 'header.php' ?>
 <div id="content">
@@ -32,3 +32,4 @@ print_r($orders);
   
  
 <?php include 'footer.php' ?>
+<?php //echo $order->line_items[0]->title; ?>
