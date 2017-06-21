@@ -12,10 +12,14 @@
 <div id="content">
 <table border="1" width="100%">
     <tr>
+        <th>Order No</th>
         <th>Order Id</th>
     </tr>
    <?php foreach($orders->orders as $order) { ?>
     <tr>
+        <td>
+            <?php echo $order->name; ?>
+        </td>
         <td>
             <?php echo $order->id; ?>
         </td>
