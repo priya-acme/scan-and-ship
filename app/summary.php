@@ -25,9 +25,15 @@
         <td>
             <?php echo $order->id; ?>
         </td>
+        <?php if($order->fulfillment_status == '' or $order->fulfillment_status == null ) { ?>
         <td>
-        <?php  echo $order->fulfillment_status; ?>
+        <?php  echo "Unfulfilled"; ?>
         </td>
+        <?php } else { ?>
+        <td>
+        <?php echo $order->fulfillment_status; ?>
+        </td>
+        <?php } ?>
     <?php } ?>
   
  
