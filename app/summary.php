@@ -10,6 +10,17 @@
  ?>
 <?php include 'header.php' ?>
 <div id="content">
-<?php  print_r($orders); ?>
+<table border="1" width="100%">
+    <tr>
+        <th>Order Id</th>
+    </tr>
+   <?php foreach($orders->orders as $order) { ?>
+    <tr>
+        <td>
+            <?php echo $order->id; ?>
+        </td>
+    </tr>
+   <?php } ?>
+ 
 
 <?php include 'footer.php' ?>
