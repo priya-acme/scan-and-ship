@@ -16,7 +16,7 @@
         <th><b>Order Id</b></th>
         <th><b>Title</b></th>
     </tr>
-   <?php foreach($orders->orders as $order) { ?>
+   <?php foreach($orders->orders->line_items as $order) { ?>
     <tr>
         <td>
             <?php echo $order->name; ?>
@@ -25,17 +25,7 @@
             <?php echo $order->id; ?>
         </td>
     
-   <?php }
-   $arrayobj = new ArrayObject($orders->orders->line_items);
-   $line_item_count = $arrayobj->count();
-   for($i=0;$i<$line_item_count;$i++)
-   {
-   	?>
-   	<td><?php echo $orders->orders->line_items[$i]->title; ?></td>
-   	</tr>
-   	<?php 
-   }
-   ?>
+   <?php } ?>
   
 
 
