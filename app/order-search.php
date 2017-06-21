@@ -11,7 +11,7 @@ if(isset($_POST['search_order'])){
 	$shop_info = $Stores->is_shop_exists($shop);
 	$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
 	echo $order_id;
-	echo $orders->id;
+	echo $orders->order->id;
 	print_r($orders);
 	if($order_id == $orders['id']){
 ?>
