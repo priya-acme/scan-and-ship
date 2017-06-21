@@ -19,18 +19,18 @@
     </tr>
    <?php foreach($orders->orders as $order) { ?>
     <tr>
-        <td class="center">
+        <td>
             <?php echo $order->name; ?>
         </td>
-        <td class="center">
+        <td>
             <?php echo $order->id; ?>
         </td>
         <?php if($order->fulfillment_status == '' or $order->fulfillment_status == null ) { ?>
-        <td class="center">
+        <td>
         <?php  echo "Unfulfilled"; ?>
         </td>
         <?php } else { ?>
-        <td class="center">
+        <td>
         <?php echo $order->fulfillment_status; ?>
         </td>
         <?php } ?>
