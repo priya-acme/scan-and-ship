@@ -25,6 +25,6 @@
         </td>
     <?php } ?>
   
- <?php  print_r($orders->orders['line_items']);
+ <?php  echo $orders->orders->line_items->title;
 ?>
 <?php include 'footer.php' ?>
