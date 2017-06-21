@@ -104,5 +104,11 @@ class Shopify {
 	    $curl_url = "https://$shop/admin/orders.json";
 		return $this->curlRequest($curl_url, $access_token);
 	}
+	
+	public function get_single_order($shop, $access_token,$order_id)
+	{
+		$curl_url = "https://$shop/admin/orders.json/$order_id.json";
+		return $this->curlRequest($curl_url, $access_token);
+	}
 }
 ?>
