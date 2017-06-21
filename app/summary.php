@@ -31,7 +31,7 @@
         </td>
         <?php } else { ?>
         <td>
-        <?php echo $order->fulfillment_status; ?>
+        <?php echo ucfirst($order->fulfillment_status); ?>
         </td>
         <?php } ?>
     <?php } ?>
