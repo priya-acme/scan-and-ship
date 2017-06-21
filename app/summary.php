@@ -15,8 +15,9 @@ print_r($orders);
     <tr>
         <th><b>Order No</b></th>
         <th><b>Order Id</b></th>
+        <th><b>Fulfillment Status</b></th>
     </tr>
-   <?php foreach($orders->orders[0]['line_items'] as $order) { ?>
+   <?php foreach($orders->orders as $order) { ?>
     <tr>
         <td>
             <?php echo $order->name; ?>
@@ -25,7 +26,7 @@ print_r($orders);
             <?php echo $order->id; ?>
         </td>
         <td>
-        <?php  echo $order->title; ?>
+        <?php  echo $order[0]['line_items']['title']; ?>
         </td>
     <?php } ?>
   
