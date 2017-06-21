@@ -32,7 +32,7 @@ if ($code) {
 	}
 	
 	$access_token = $exchange_token_response->access_token;
-	echo $access_token;
+	//echo $access_token;
 	// we check if it's a fresh installation
 	$shop_info = $Stores->is_shop_exists($shop);
 	
