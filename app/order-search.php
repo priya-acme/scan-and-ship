@@ -17,13 +17,26 @@ if(isset($_POST['search_order'])){
      <h2>Order Details</h2>
      <table>
         <tr>
-          <th><b>Order No</b></th>
+          <th><b>Order No.</b></th>
           <th><?php echo $orders->order->name; ?></th>
         </tr>
          <tr>
           <th><b>Order Id</b></th>
           <th><?php echo $orders->order->id; ?></th>
         </tr>
+        <?php  $arrayobj = new ArrayObject($orders->order->line_items);
+	       $line_item_count = $arrayobj->count();
+	       for($i=0;$i<$line_item_count;$i++)
+	       {
+	       	?>
+	       	<tr>
+	       	<th><b>Product Title</b></th>
+	       	<th><?php echo $orders->order->line_items[$i]->title ?></th>
+	       	</tr>
+	     <?php 
+	       }
+	     ?>
+	       
      </table>
 <?php 
 	}
