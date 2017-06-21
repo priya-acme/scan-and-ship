@@ -12,8 +12,9 @@
 <div id="content">
 <table border="1" width="100%">
     <tr>
-        <th>Order No</th>
-        <th>Order Id</th>
+        <th><b>Order No</b></th>
+        <th><b>Order Id</b></th>
+        <th><b>Title</b></th>
     </tr>
    <?php foreach($orders->orders as $order) { ?>
     <tr>
@@ -23,8 +24,19 @@
         <td>
             <?php echo $order->id; ?>
         </td>
-    </tr>
-   <?php } ?>
- 
+    
+   <?php }
+   $arrayobj = new ArrayObject($orders->orders->line_items);
+   $line_item_count = $arrayobj->count();
+   for($i=0;$i<$line_item_count;$i++)
+   {
+   	?>
+   	<td><?php echo $order->order->line_items[$i]->title; ?></td>
+   	</tr>
+   	<?php 
+   }
+   ?>
+  
+
 
 <?php include 'footer.php' ?>
