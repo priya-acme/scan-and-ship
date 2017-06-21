@@ -1445,6 +1445,7 @@ table {
 table td {
 	padding: 8px 10px;
 	border-right:1px solid #dedede;
+	text-align:center;
 }
 table td:hover {
 	background-color: #f2f2f2;
