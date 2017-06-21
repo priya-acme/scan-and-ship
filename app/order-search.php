@@ -29,18 +29,24 @@ if(isset($_POST['search_order'])){
         <table>
         <tr>
 	       <th><b>Product Title</b></th>
+	       <th><b>Quantity</b></th>
+	       <th><b>Price</b></th>
+	    </tr>
         <?php  $arrayobj = new ArrayObject($orders->order->line_items);
 	       $line_item_count = $arrayobj->count();
 	       for($i=0;$i<$line_item_count;$i++)
 	       {
 	       	?>
 	       	<tr>
-	       	<th><?php echo $orders->order->line_items[$i]->title ?></th>
+	       	<th><?php echo $orders->order->line_items[$i]->title; ?></th>
+	       	<th><?php echo $orders->order->line_items[$i]->quantity; ?></th>
+	       	<th><?php echo $orders->order->line_items[$i]->price; ?></th>
 	       	</tr>
+	       	
 	     <?php 
 	       }
 	     ?>
-	     </tr>
+	    
 	       
      </table>
 <?php 
