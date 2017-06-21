@@ -11,7 +11,14 @@ if(isset($_POST['search_order'])){
 	$shop_info = $Stores->is_shop_exists($shop);
 	$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
 	if($order_id == $orders->id){
-		echo "Valid Id";
+?>
+<table>
+<tr>
+<th><b>Order Id</b></th>
+<th><?php echo $orders->id; ?></th>
+</tr>
+</table>
+<?php 
 	}
 	else{
 		echo "Invalid Id";
