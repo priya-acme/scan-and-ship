@@ -14,7 +14,6 @@
     <tr>
         <th><b>Order No</b></th>
         <th><b>Order Id</b></th>
-        <th><b>Title</b></th>
     </tr>
    <?php foreach($orders->orders as $order) { ?>
     <tr>
@@ -24,11 +23,10 @@
         <td>
             <?php echo $order->id; ?>
         </td>
-        <td>
-            <?php echo $order->line_items->title; ?>
-        </td>
-   <?php } ?>
+    <?php } ?>
   
-
-
+ <?php $arrayobj = new ArrayObject($orders->orders->line_items);
+ print_r($arrayobj);
+	       $line_item_count = $arrayobj->count();
+?>
 <?php include 'footer.php' ?>
