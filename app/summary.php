@@ -26,7 +26,7 @@ print_r($orders);
             <?php echo $order->id; ?>
         </td>
         <td>
-        <?php  echo $order[0]->line_items->title; ?>
+        <?php  echo $order[0]->line_items[0]->title; ?>
         </td>
     <?php } ?>
   
