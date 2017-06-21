@@ -16,7 +16,7 @@
         <th><b>Order Id</b></th>
         <th><b>Title</b></th>
     </tr>
-   <?php foreach($orders->orders->line_items as $order) { ?>
+   <?php foreach($orders->orders as $order) { ?>
     <tr>
         <td>
             <?php echo $order->name; ?>
@@ -24,7 +24,9 @@
         <td>
             <?php echo $order->id; ?>
         </td>
-    
+        <td>
+            <?php echo $order->line_items->title; ?>
+        </td>
    <?php } ?>
   
 
