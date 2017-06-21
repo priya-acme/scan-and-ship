@@ -31,7 +31,7 @@
    for($i=0;$i<$line_item_count;$i++)
    {
    	?>
-   	<td><?php echo $order->order->line_items[$i]->title; ?></td>
+   	<td><?php echo $orders->orders->line_items[$i]->title; ?></td>
    	</tr>
    	<?php 
    }
