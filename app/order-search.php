@@ -26,7 +26,7 @@ if(isset($_POST['search_order'])){
         </tr>
         <?php if($orders->order->note != '' ){ ?>
         <tr>
-          <th><b>Order Id</b></th>
+          <th><b>Order Notes</b></th>
           <th><?php echo $orders->order->note; ?></th>
         </tr>
         <?php } ?>
