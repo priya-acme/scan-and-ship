@@ -24,6 +24,12 @@ if(isset($_POST['search_order'])){
           <th><b>Order Id</b></th>
           <th><?php echo $orders->order->id; ?></th>
         </tr>
+        <?php if($orders->order->note != '' ){ ?>
+        <tr>
+          <th><b>Order Id</b></th>
+          <th><?php echo $orders->order->note; ?></th>
+        </tr>
+        <?php } ?>
         </table>
         <h2>Shipping Details</h2>
         <table>
@@ -49,6 +55,7 @@ if(isset($_POST['search_order'])){
 	       <th><b>Product Title</b></th>
 	       <th><b>Quantity</b></th>
 	       <th><b>Price</b></th>
+	       <th><b>SKU</b></th>
 	    </tr>
         <?php  $arrayobj = new ArrayObject($orders->order->line_items);
 	       $line_item_count = $arrayobj->count();
@@ -59,6 +66,7 @@ if(isset($_POST['search_order'])){
 	       	<th><?php echo $orders->order->line_items[$i]->title; ?></th>
 	       	<th><?php echo $orders->order->line_items[$i]->quantity; ?></th>
 	       	<th><?php echo $orders->order->line_items[$i]->price; ?></th>
+	        <th><?php echo $orders->order->line_items[$i]->sku; ?></th>
 	       	</tr>
 	       	
 	     <?php 
