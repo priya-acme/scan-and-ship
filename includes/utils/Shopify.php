@@ -64,7 +64,15 @@ class Shopify {
 				. '&client_id=' . SHOPIFY_API_KEY
 				. '&redirect_uri=' . CALLBACK_URL;
 	}
-
+	function getAuthUrl1($shop){
+		$scopes = ["read_products", "read_orders"];
+		//print_r($scopes);
+		//echo SHOPIFY_API_KEY;
+		return 'https://' . $shop . '/admin/oauth/authorize?'
+				. 'scope=' . implode("%2C", $scopes)
+				. '&client_id=' . SHOPIFY_API_KEY
+				. '&redirect_uri=' . APP_URL;
+	}
 	private function curlRequest($url, $access_token = NULL, $data = NULL)
 	{
 		// set curl options
