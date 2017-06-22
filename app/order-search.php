@@ -25,6 +25,17 @@ if(isset($_POST['search_order'])){
           <th><?php echo $orders->order->id; ?></th>
         </tr>
         </table>
+        <h2>Shipping Details</h2>
+        <table>
+        <tr>
+	       <th><b>Name</b></th>
+	       <th><?php echo $orders->order->shipping_address->first_name." ".$orders->order->shipping_address->last_name; ?></th>
+	    </tr>
+	    <tr>
+	       <th><b>Address</b></th>
+	       <th><?php echo $orders->order->shipping_address->address1." ".$orders->order->shipping_address->address2; ?></th>
+	    </tr>
+        </table>
         <h2>Product Details</h2>
         <table>
         <tr>
@@ -46,9 +57,7 @@ if(isset($_POST['search_order'])){
 	     <?php 
 	       }
 	     ?>
-	    
-	       
-     </table>
+	  </table>
 <?php 
 	}
 	else{
