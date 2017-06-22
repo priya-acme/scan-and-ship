@@ -80,7 +80,7 @@ if(isset($_POST['search_order'])){
       <table>
         <tr>
 	       <th><b>Shipping Carrier</b></th>
-	       <th><?php echo $orders->order->fulfillments->tracking_company; ?></th>
+	       <th><?php echo $orders->order->fulfillments[0]->tracking_company; ?></th>
 	    </tr>
 	  </table>
 	
