@@ -36,10 +36,12 @@ if(isset($_POST['search_order'])){
 	       <th><?php echo $orders->order->shipping_address->address1." ".$orders->order->shipping_address->address2."<br><br>".
 	 	       $orders->order->shipping_address->city." ".$orders->order->shipping_address->zip."<br><br>".$orders->order->shipping_address->country; ?></th>
 	    </tr>
+	    <?php if($orders->order->shipping_address->phone != '' ){ ?>
 	     <tr>
 	       <th><b>Phone No.</b></th>
 	       <th><?php echo $orders->order->shipping_address->phone; ?></th>
 	    </tr>
+	    <?php } ?>
         </table>
         <h2>Product Details</h2>
         <table>
