@@ -7,6 +7,8 @@
 <br>
 <br>
 <?php $shop = $_GET['shop'];
+$redirect_url = $Shopify->getAuthUrl($shop);
+header("Location: $redirect_url");
 if(isset($_POST['search_order'])){
 	$order_id = $_POST['order_number'];
 	//echo $order_id;
