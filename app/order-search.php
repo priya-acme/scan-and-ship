@@ -73,7 +73,7 @@ if(isset($_POST['search_order'])){
 	       }
 	     ?>
 	  </table>
-	  <?php if($orders->order->fulfillments->tracking_company != null or $orders->order->fulfillments->tracking_company != '' ){ ?>
+	  
 	  <h2>Shipping Method</h2>
       <table>
         <tr>
@@ -81,7 +81,7 @@ if(isset($_POST['search_order'])){
 	       <th><?php echo $orders->order->fulfillments->tracking_company; ?></th>
 	    </tr>
 	  </table>
-	  <?php } ?>
+	
 <?php 
 	}
 	else{
