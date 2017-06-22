@@ -63,7 +63,7 @@ if(isset($_POST['search_order'])){
 	       {
 	       	?>
 	       	<tr>
-	       	<th><?php echo $orders->order->line_items[$i]->title; ?></th>
+	       	<th><?php echo $orders->order->line_items[$i]->name; ?></th>
 	       	<th><?php echo $orders->order->line_items[$i]->quantity; ?></th>
 	       	<th><?php echo $orders->order->line_items[$i]->price; ?></th>
 	        <th><?php echo $orders->order->line_items[$i]->sku; ?></th>
@@ -73,6 +73,15 @@ if(isset($_POST['search_order'])){
 	       }
 	     ?>
 	  </table>
+	  <?php if($orders->order->fulfillments->tracking_company != null or $orders->order->fulfillments->tracking_company != '' ){ ?>
+	  <h2>Shipping Method</h2>
+      <table>
+        <tr>
+	       <th><b>Shipping Carrier</b></th>
+	       <th><?php echo $orders->order->fulfillments->tracking_company; ?></th>
+	    </tr>
+	  </table>
+	  <?php } ?>
 <?php 
 	}
 	else{
