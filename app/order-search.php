@@ -33,7 +33,8 @@ if(isset($_POST['search_order'])){
 	    </tr>
 	    <tr>
 	       <th><b>Address</b></th>
-	       <th><?php echo $orders->order->shipping_address->address1." ".$orders->order->shipping_address->address2."<br>".$orders->order->shipping_address->city; ?></th>
+	       <th><?php echo $orders->order->shipping_address->address1." ".$orders->order->shipping_address->address2."<br><br>".
+	 	       $orders->order->shipping_address->city." ".$orders->order->shipping_address->zip ; ?></th>
 	    </tr>
         </table>
         <h2>Product Details</h2>
