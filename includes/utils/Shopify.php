@@ -68,10 +68,13 @@ class Shopify {
 		$scopes = ["read_products", "read_orders"];
 		//print_r($scopes);
 		//echo SHOPIFY_API_KEY;
-		return 'https://' . $shop . '/admin/oauth/authorize?'
+		$authenticate_url = 'https://' . $shop . '/admin/oauth/authorize?'
 				. 'scope=' . implode("%2C", $scopes)
 				. '&client_id=' . SHOPIFY_API_KEY
-				. '&redirect_uri=' . APP_URL;
+				. '&redirect_uri=' . CALLBACK_URL;
+		if($authenticate_url){
+			header('location:'.APP_URL.'/?shop='.$shop);
+		}
 	}
 	private function curlRequest($url, $access_token = NULL, $data = NULL)
 	{
