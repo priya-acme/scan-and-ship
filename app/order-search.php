@@ -12,8 +12,8 @@ if(isset($_POST['search_order'])){
 	//echo $order_id;
 	$shop_info = $Stores->is_shop_exists($shop);
 	$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
-	echo "<pre>";
-	print_r($orders);
+	//echo "<pre>";
+	//print_r($orders);
 	if($order_id == $orders->order->id){
 ?>
      <h2>Order Details</h2>
@@ -75,7 +75,7 @@ if(isset($_POST['search_order'])){
 	       }
 	     ?>
 	  </table>
-	  
+	  <?php if($orders->order->fulfillments[0]->tracking_company != null or $orders->order->fulfillments[0]->tracking_company != '' ) { ?>
 	  <h2>Shipping Method</h2>
       <table>
         <tr>
@@ -83,7 +83,7 @@ if(isset($_POST['search_order'])){
 	       <th><?php echo $orders->order->fulfillments[0]->tracking_company; ?></th>
 	    </tr>
 	  </table>
-	
+	<?php } ?>
 <?php 
 	}
 	else{
