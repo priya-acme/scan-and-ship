@@ -13,11 +13,11 @@ if(isset($_POST['search_order'])){
 	//echo $order_id;
 	$shop_info = $Stores->is_shop_exists($shop);
 	$get_order = $Shopify->get_orders($shop,$shop_info['access_token']);
-	$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
+	//$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
 	echo "<pre>";
 	print_r($get_order);
 	foreach($get_order->orders as $order) { 
-		if($order_id == $order->name or $order_id == $order->id){
+		if($order_id == $order->name || $order_id == $order->id){
      ?>
       <h2>Order Details</h2>
      <table>
