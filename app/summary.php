@@ -20,7 +20,7 @@
    <?php foreach($orders->orders as $order) { ?>
     <tr>
         <td style="text-align: center">
-            <?php echo $order->name; ?>
+            <a href="/scan-and-ship/app/order_detail.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a>
         </td>
         <td style="text-align: center">
             <?php echo $order->id; ?>
