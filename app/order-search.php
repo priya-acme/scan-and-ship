@@ -59,10 +59,6 @@ if(isset($_POST['search_order'])){
      <?php 
     	}
     	
-    	else {
-    		echo "<h2>".$i."Invalid Id</h2>";
-    		
-    	}
     	}
    }
 ?>
