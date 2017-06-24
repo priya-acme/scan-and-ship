@@ -17,11 +17,34 @@ if(isset($_POST['search_order'])){
 	//echo "<pre>";
 	//print_r($get_order);
 	foreach($get_order->orders as $order) { 
-    	echo $order->name;
-    }
-    echo $get_order->orders[0]->name;
-	if($order_id == $orders->order->id ){
-?>
+    	if($order_id == $order->name){
+     ?>
+      <h2>Order Details</h2>
+     <table>
+        <tr>
+          <th><b>Order No.</b></th>
+          <th><?php echo $order->name; ?></th>
+        </tr>
+         <tr>
+          <th><b>Order Id</b></th>
+          <th><?php echo $order->id; ?></th>
+        </tr>
+        <?php if($order->note != '' ){ ?>
+        <tr>
+          <th><b>Order Notes</b></th>
+          <th><?php echo $order->note; ?></th>
+        </tr>
+        <?php } ?>
+        </table>
+   
+     <?php 
+    	}
+    	else {
+    		echo "<h2>Invalid Order Id</h2>";
+    	}
+    	}
+       if($order_id == $orders->order->id ){
+     ?>
      <h2>Order Details</h2>
      <table>
         <tr>
