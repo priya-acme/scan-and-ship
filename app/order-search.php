@@ -93,6 +93,7 @@ if(isset($_POST['search_order'])){
     	}
     	else {
     		echo "<h2>Invalid order id or number</h2>";
+    		break;
     		
     	}
     	}
