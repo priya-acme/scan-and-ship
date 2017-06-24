@@ -17,7 +17,7 @@ if(isset($_POST['search_order'])){
 	//echo "<pre>";
 	//print_r($get_order);
 	foreach($get_order->orders as $order) { 
-    	if($order_id == $order->name){
+		if($order_id == $order->name or $order_id == $order->id){
      ?>
       <h2>Order Details</h2>
      <table>
@@ -41,9 +41,10 @@ if(isset($_POST['search_order'])){
     	}
     	else {
     		echo "invalid id";
+    		break;
     	}
     	}
-       if($order_id == $orders->order->id ){
+       /* if($order_id == $orders->order->id ){
      ?>
      <h2>Order Details</h2>
      <table>
@@ -117,6 +118,6 @@ if(isset($_POST['search_order'])){
 	}
 	else{
 		echo "<h2>Invalid Order Id</h2>";
-	}
+	}*/
 }
 ?>
