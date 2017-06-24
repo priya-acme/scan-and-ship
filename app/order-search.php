@@ -16,6 +16,9 @@ if(isset($_POST['search_order'])){
 	$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
 	//echo "<pre>";
 	//print_r($get_order);
+	foreach($get_order->orders as $order) { 
+    	echo $order->name;
+    }
     echo $get_order->orders[0]->name;
 	if($order_id == $orders->order->id ){
 ?>
