@@ -16,9 +16,9 @@ if(isset($_POST['search_order'])){
 	//$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
 	//echo "<pre>";
 	//print_r($get_order);
-	$i = 0 ;
+	//$i = 0 ;
 	foreach($get_order->orders as $order) { 
-		$i++;
+		//$i++;
 		if($order_id == $order->name || $order_id == $order->id){
      ?>
       <h2>Order Details</h2>
@@ -56,6 +56,30 @@ if(isset($_POST['search_order'])){
        </tr>
        <?php } ?>
         </table>
+         <h2>Product Details</h2>
+        <table>
+        <tr>
+	       <th><b>Product Title</b></th>
+	       <th><b>Quantity</b></th>
+	       <th><b>Price</b></th>
+	       <th><b>SKU</b></th>
+	    </tr>
+        <?php  $arrayobj = new ArrayObject($order->line_items);
+       $line_item_count = $arrayobj->count();
+       for($i=0;$i<$line_item_count;$i++)
+       {
+       	?>
+       	<tr>
+       	<th><?php echo $order->line_items[$i]->name; ?></th>
+       	<th><?php echo $order->line_items[$i]->quantity; ?></th>
+       	<th><?php echo $order->line_items[$i]->price; ?></th>
+        <th><?php echo $order->line_items[$i]->sku; ?></th>
+       	</tr>
+       	
+     <?php 
+       }
+     ?>
+  </table>
      <?php 
     	}
     	
