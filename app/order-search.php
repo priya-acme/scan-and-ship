@@ -89,11 +89,11 @@ if(isset($_POST['search_order'])){
     </tr>
   </table>
 <?php } ?>
-     <?php 
+     <?php break;
     	}
     	else {
     		echo "<h2>Invalid order id or number</h2>";
-    		break;
+    		
     		
     	}
     	}
