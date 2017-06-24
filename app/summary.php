@@ -5,7 +5,7 @@
  $Stores = new Stores();
  $shop = $_GET['shop'];
  $shop_info = $Stores->is_shop_exists($shop);
- $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
+ //$orders = $Shopify->get_orders($shop, $shop_info['access_token']);
 // echo "<pre>";
 // print_r($orders);
  ?>
