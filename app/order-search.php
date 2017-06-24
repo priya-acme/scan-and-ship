@@ -40,17 +40,17 @@ if(isset($_POST['search_order'])){
         <table>
         <tr>
 	       <th><b>Name</b></th>
-	       <th><?php echo $order->order->shipping_address->first_name." ".$order->order->shipping_address->last_name; ?></th>
+	       <th><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></th>
         </tr>
          <tr>
        <th><b>Address</b></th>
-       <th><?php echo $order->order->shipping_address->address1." ".$order->order->shipping_address->address2."<br><br>".
-         $order->order->shipping_address->city." ".$order->order->shipping_address->zip."<br><br>".$order->order->shipping_address->country; ?></th>
+       <th><?php echo $order->shipping_address->address1." ".$order->shipping_address->address2."<br><br>".
+         $order->shipping_address->city." ".$order->shipping_address->zip."<br><br>".$order->shipping_address->country; ?></th>
        </tr>
-       <?php if($order->order->shipping_address->phone != '' ){ ?>
+       <?php if($order->shipping_address->phone != '' ){ ?>
        <tr>
        <th><b>Phone No.</b></th>
-       <th><?php echo $order->order->shipping_address->phone; ?></th>
+       <th><?php echo $order->shipping_address->phone; ?></th>
        </tr>
        <?php } ?>
         </table>
