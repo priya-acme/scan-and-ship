@@ -16,7 +16,9 @@ if(isset($_POST['search_order'])){
 	//$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
 	echo "<pre>";
 	print_r($get_order);
+	$i = 0 ;
 	foreach($get_order->orders as $order) { 
+		$i++;
 		if($order_id == $order->name || $order_id == $order->id){
      ?>
       <h2>Order Details</h2>
@@ -54,11 +56,12 @@ if(isset($_POST['search_order'])){
        </tr>
        <?php } ?>
         </table>
-     <?php continue;
+     <?php 
     	}
+    	
     	else {
-    		echo "<h2>Invalid Id</h2>";
-    		break;
+    		echo "<h2>".$i."Invalid Id</h2>";
+    		
     	}
     	}
    }
