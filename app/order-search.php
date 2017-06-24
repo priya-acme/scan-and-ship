@@ -36,7 +36,24 @@ if(isset($_POST['search_order'])){
         </tr>
         <?php } ?>
         </table>
-   
+        <h2>Shipping Details</h2>
+        <table>
+        <tr>
+	       <th><b>Name</b></th>
+	       <th><?php echo $order->order->shipping_address->first_name." ".$order->order->shipping_address->last_name; ?></th>
+        </tr>
+         <tr>
+       <th><b>Address</b></th>
+       <th><?php echo $order->order->shipping_address->address1." ".$order->order->shipping_address->address2."<br><br>".
+         $order->order->shipping_address->city." ".$order->order->shipping_address->zip."<br><br>".$order->order->shipping_address->country; ?></th>
+       </tr>
+       <?php if($order->order->shipping_address->phone != '' ){ ?>
+       <tr>
+       <th><b>Phone No.</b></th>
+       <th><?php echo $order->order->shipping_address->phone; ?></th>
+       </tr>
+       <?php } ?>
+        </table>
      <?php break;
     	}
     	else {
