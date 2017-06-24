@@ -14,8 +14,8 @@ if(isset($_POST['search_order'])){
 	$shop_info = $Stores->is_shop_exists($shop);
 	$get_order = $Shopify->get_orders($shop,$shop_info['access_token']);
 	//$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
-	echo "<pre>";
-	print_r($get_order);
+	//echo "<pre>";
+	//print_r($get_order);
 	$i = 0 ;
 	foreach($get_order->orders as $order) { 
 		$i++;
