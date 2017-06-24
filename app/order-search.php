@@ -54,7 +54,7 @@ if(isset($_POST['search_order'])){
        </tr>
        <?php } ?>
         </table>
-     <?php //break;
+     <?php continue;
     	}
     	else {
     		echo "<h2>Invalid Id</h2>";
