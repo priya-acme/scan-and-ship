@@ -12,7 +12,7 @@ if(isset($_POST['search_order'])){
 	$order_id = $_POST['order_number'];
 	//echo $order_id;
 	$shop_info = $Stores->is_shop_exists($shop);
-	$get_order = $Shopify->get_orders($shop);
+	$get_order = $Shopify->get_orders($shop,$shop_info['access_token']);
 	$orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$order_id);
 	echo "<pre>";
 	print_r($get_order);
