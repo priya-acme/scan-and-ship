@@ -37,10 +37,10 @@ if(isset($_POST['search_order'])){
         <?php } ?>
         </table>
    
-     <?php 
+     <?php break;
     	}
     	else {
-    		echo "<h2>Invalid Order Id</h2>";
+    		echo "invalid id";
     	}
     	}
        if($order_id == $orders->order->id ){
