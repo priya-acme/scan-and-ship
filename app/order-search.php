@@ -80,6 +80,15 @@ if(isset($_POST['search_order'])){
        }
      ?>
   </table>
+  <?php if($order->fulfillments[0]->tracking_company != null or $order->fulfillments[0]->tracking_company != '' ) { ?>
+	  <h2>Shipping Method</h2>
+      <table>
+        <tr>
+	       <th><b>Shipping Carrier</b></th>
+	       <th><?php echo $order->fulfillments[0]->tracking_company; ?></th>
+    </tr>
+  </table>
+<?php } ?>
      <?php 
     	}
     	
