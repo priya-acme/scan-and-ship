@@ -1,3 +1,10 @@
+<?php 
+include __DIR__ .'../../includes/utils/Shopify.php';
+ include __DIR__ .'../../includes/db/Stores.php';
+ $Shopify = new Shopify();
+ $Stores = new Stores();
+ $shop = $_SESSION['shop_name'];
+ ?>
 <?php include 'header.php' ?>
 <div id="content">
 <h1>Order Lookup page</h1>
