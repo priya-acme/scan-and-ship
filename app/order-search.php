@@ -44,6 +44,10 @@ if(isset($_POST['search_order'])){
 	       <th><b>Name</b></th>
 	       <th><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></th>
         </tr>
+        <tr>
+          <th><b>Email Id</b></th>
+          <th><?php echo $order->email; ?></th>
+        </tr>
          <tr>
        <th><b>Address</b></th>
        <th><?php echo $order->shipping_address->address1." ".$order->shipping_address->address2."<br><br>".
