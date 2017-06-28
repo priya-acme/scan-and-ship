@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <?php $shop = $_REQUEST['shop'];?>
+    <?php $shop =  $_SESSION['shop_name'];?>
 <div id="wrapper">
 <div id="sidebar">
 <div id="menu" class="menu-v">

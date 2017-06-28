@@ -1,4 +1,4 @@
-<?php //echo "in db";
+<?php session_start();
 require '/var/www/html/scan-and-ship/includes/config/conf.inc.php';
 class DB_Connection{
     protected $connection;

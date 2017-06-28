@@ -4,7 +4,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
 include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
-$shop = $_GET['shop'];
+$shop =  $_SESSION['shop_name'];
 $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
 ?>
@@ -35,7 +35,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
     <tr>
           <th><b>Email Id</b></th>
           <th><?php echo $orders->order->email; ?></th>
-        </tr>
+    </tr>
     <tr>
        <th><b>Address</b></th>
        <th><?php echo $orders->order->shipping_address->address1." ".$orders->order->shipping_address->address2."<br><br>".

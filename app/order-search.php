@@ -6,7 +6,7 @@
 </form>
 <br>
 <br>
-<?php $shop = $_GET['shop'];
+<?php $shop =  $_SESSION['shop_name'];
 
 if(isset($_POST['search_order'])){
 	$order_id = $_POST['order_number'];
