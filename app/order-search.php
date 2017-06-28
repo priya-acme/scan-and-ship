@@ -1,3 +1,5 @@
+<?php include 'header.php' ?>
+<div id="content">
 <h1>Order Lookup page</h1>
 <form method="post">
 <label for="order_number"></label>
@@ -103,3 +105,4 @@ if(isset($_POST['search_order'])){
     	}
    }
 ?>
+<?php include 'footer.php'; ?>

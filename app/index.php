@@ -8,6 +8,6 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  ?>
 <?php include 'header.php' ?>
 <div id="content">
-<?php include 'order-search.php';  ?>
+<?php header('location:order-search.php'); ?>
 
 <?php include 'footer.php' ?>
