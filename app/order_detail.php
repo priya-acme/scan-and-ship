@@ -9,17 +9,17 @@ $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
 ?>
 <div id="content">
-     <h2 style="float:right">Barcode / SKU</h2>
+     <h2>Barcode / SKU</h2>
      <form method="">
-     <table style="float:right">
+     <table>
      <tr>
      <td><input type="text" name="barcode_sku" placehoder="Enter Barcode or Sku"/></td>
      <td><input type="submit" name="submit" value="Submit" /></td>
      </tr>
      </table>
      </form>
-     <h2 style="float:left">Order Details</h2>
-     <table style="float:left">
+     <h2>Order Details</h2>
+     <table>
         <tr>
           <th><b>Order No.</b></th>
           <th><?php echo $orders->order->name; ?></th>
@@ -36,7 +36,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
         <?php } ?>
         </table>
         <h2>Shipping Details</h2>
-        <table style="float:left">
+        <table>
         <tr>
 	       <th><b>Name</b></th>
 	       <th><?php echo $orders->order->shipping_address->first_name." ".$orders->order->shipping_address->last_name; ?></th>
@@ -83,7 +83,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
   </table>
   <?php if($orders->order->fulfillments[0]->tracking_company != null or $orders->order->fulfillments[0]->tracking_company != '' ) { ?>
 	  <h2>Shipping Method</h2>
-      <table style="float:left">
+      <table>
         <tr>
 	       <th><b>Shipping Carrier</b></th>
 	       <th><?php echo $orders->order->fulfillments[0]->tracking_company; ?></th>
