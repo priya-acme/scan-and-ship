@@ -76,6 +76,8 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
        	<th><?php echo $orders->order->line_items[$i]->name; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->quantity; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->price; ?></th>
+       	<?php $products = $Shopify->get_products($shop, $shop_info['access_token'],$orders->order->line_items[$i]->id); 
+       	print_r($products);  ?>
         <th><?php echo $orders->order->line_items[$i]->sku; ?></th>
        	</tr>
        	

@@ -113,7 +113,7 @@ class Shopify {
 	
 	public function get_products($shop, $access_token,$product_id)
 	{
-		$curl_url = "https://$shop/admin/products.json";
+		$curl_url = "https://$shop/admin/products/$product_id.json";
 		return $this->curlRequest($curl_url, $access_token);
 	}
 }
