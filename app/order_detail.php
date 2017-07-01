@@ -60,6 +60,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
         <h2>Product Details</h2>
         <table style="float:left">
         <tr>
+           <th><b>Product Id</b></th>
 	       <th><b>Product Title</b></th>
 	       <th><b>Quantity</b></th>
 	       <th><b>Price</b></th>
@@ -71,6 +72,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
        {
        	?>
        	<tr>
+       	<th><?php echo $orders->order->line_items[$i]->id; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->name; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->quantity; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->price; ?></th>
