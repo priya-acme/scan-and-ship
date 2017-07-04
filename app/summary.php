@@ -8,7 +8,19 @@
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
 // echo "<pre>";
 // print_r($orders);
- ?>
+if(isset($_POST['submit_id'])){
+	$order_id = $_POST['order_id'];
+	$_SESSION['select_role'] = $_POST['select_role'];
+	$shop_info = $Stores->is_shop_exists($shop);
+	$get_order = $Shopify->get_orders($shop,$shop_info['access_token']);
+	foreach($get_order->orders as $order) {
+		if($order_id == $order->name || $order_id == $order->id){
+			header("location:order_detail.php/?id=$order->id");
+		}
+	}
+}
+?>
+
 <?php include 'header.php' ?>
 <div id="content">
 <form method="post">
@@ -64,7 +76,6 @@
        <?php echo $order->note; ?>
        </td>
     <?php } ?>
-  
- 
-<?php include 'footer.php' ?>
-<?php //echo $order->line_items[0]->title; ?>
+ </tr>
+ </table> 
+ <?php include 'footer.php' ?>
