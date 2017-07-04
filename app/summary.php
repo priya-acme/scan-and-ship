@@ -16,7 +16,7 @@
 <tr>
 <th><b>Select Role</b></th>
 <td>
-<input type = "radio" value="Picker" name="select_role">Picker
+<input type = "radio" value="Picker" name="select_role" checked>Picker
 <input type = "radio" value="Shipper" name="select_role">Shipper
 <input type = "radio" value="Receiver" name="select_role">Receiver
 </td>
