@@ -67,19 +67,19 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
 	       <th><b>SKU</b></th>
 	       <th><b>Barcode</b></th>
 	    </tr>
-        <?php  $arrayobj = new ArrayObject($orders->order->line_items);
+     <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
        for($i=0;$i<$line_item_count;$i++)
        {
-       	?>
+     ?>
        	<tr>
        	<th><?php echo $orders->order->line_items[$i]->variant_id; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->name; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->quantity; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->price; ?></th>
        	<?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
-       	echo "<pre>";
-       	print_r($variants); 
+       	//echo "<pre>";
+       	//print_r($variants); 
        	if($variants->variant->sku != '' ){ 
        	?>
        	<th><?php echo $variants->variant->sku; ?></th>
@@ -89,10 +89,9 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
        	<th><?php echo $variants->variant->barcode; ?></th>
         <?php } ?>
        	</tr>
-       	
-     <?php 
+    <?php 
        }
-     ?>
+    ?>
   </table>
   <?php if($orders->order->fulfillments[0]->tracking_company != null or $orders->order->fulfillments[0]->tracking_company != '' ) { ?>
 	  <h2>Shipping Method</h2>
