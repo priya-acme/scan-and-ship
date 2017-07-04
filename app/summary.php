@@ -35,8 +35,10 @@
         <th><b>Order No</b></th>
         <th><b>Date</b></th>
         <th><b>Name</b></th>
-        <th><b>Order Id</b></th>
-        <th><b>Fulfillment Status</b></th>
+        <th><b>Picked</b></th>
+        <th><b>Shipped</b></th>
+        <th><b>Receiver</b></th>
+        <th><b>Notes</b></th>
     </tr>
    <?php foreach($orders->orders as $order) { ?>
     <tr>
@@ -44,23 +46,23 @@
             <a href="/scan-and-ship/app/order_detail.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a>
         </td>
         <td style="text-align: center">
-            <?php echo $order->id; ?>
-        </td>
-        <td style="text-align: center">
             <?php echo $order->updated_at; ?>
         </td>
         <td>
         <?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?>
         </td>
-        <?php if($order->fulfillment_status == '' or $order->fulfillment_status == null ) { ?>
-        <td style="text-align: center">
-        <?php  echo "Unfulfilled"; ?>
-        </td>
-        <?php } else { ?>
-        <td style="text-align: center">
-        <?php echo ucfirst($order->fulfillment_status); ?>
-        </td>
-        <?php } ?>
+       <td>
+       Yes
+       </td>
+       <td>
+       Yes
+       </td>
+       <td>
+       <input type="checkbox" name="Receiver" value="Receiver"> 
+       </td>
+       <td>
+       <?php echo $order->note; ?>
+       </td>
     <?php } ?>
   
  
