@@ -56,7 +56,7 @@ if(isset($_POST['submit_id'])){
    <?php foreach($orders->orders as $order) { ?>
     <tr>
         <td style="text-align: center">
-            <a href="/scan-and-ship/app/order_detail.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a>
+            <a href="/scan-and-ship/app/order_detail.php/?id=<?php echo $order->id; ?>&&<?php echo $_POST['select_role']?>"><?php echo $order->name; ?></a>
         </td>
         <td style="text-align: center">
             <?php echo $order->updated_at; ?>
