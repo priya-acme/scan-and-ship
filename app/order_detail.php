@@ -77,6 +77,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
        	<th><?php echo $orders->order->line_items[$i]->quantity; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->price; ?></th>
        	<?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+       	echo "<pre>";
        	print_r($variants);  ?>
         <th><?php echo $orders->order->line_items[$i]->sku; ?></th>
        	</tr>
