@@ -111,9 +111,9 @@ class Shopify {
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	
-	public function get_products($shop, $access_token,$product_id)
+	public function get_variants($shop, $access_token,$variant_id)
 	{
-		$curl_url = "https://$shop/admin/products/$product_id.json";
+		$curl_url = "https://$shop/admin/variants/$variant_id.json";
 		return $this->curlRequest($curl_url, $access_token);
 	}
 }

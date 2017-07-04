@@ -72,12 +72,12 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
        {
        	?>
        	<tr>
-       	<th><?php echo $orders->order->line_items[$i]->id; ?></th>
+       	<th><?php echo $orders->order->line_items[$i]->variant_id; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->name; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->quantity; ?></th>
        	<th><?php echo $orders->order->line_items[$i]->price; ?></th>
-       	<?php $products = $Shopify->get_products($shop, $shop_info['access_token'],$orders->order->line_items[$i]->id); 
-       	print_r($products);  ?>
+       	<?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+       	print_r($variants);  ?>
         <th><?php echo $orders->order->line_items[$i]->sku; ?></th>
        	</tr>
        	
