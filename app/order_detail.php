@@ -65,6 +65,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
 	       <th><b>Quantity</b></th>
 	       <th><b>Price</b></th>
 	       <th><b>SKU</b></th>
+	       <th><b>Barcode</b></th>
 	    </tr>
         <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
@@ -78,8 +79,15 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
        	<th><?php echo $orders->order->line_items[$i]->price; ?></th>
        	<?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
        	echo "<pre>";
-       	print_r($variants);  ?>
-        <th><?php echo $orders->order->line_items[$i]->sku; ?></th>
+       	print_r($variants); 
+       	if($variants->variant->sku != '' ){ 
+       	?>
+       	<th><?php echo $variants->variant->sku; ?></th>
+        <?php } 
+        if($variants->variant->barcode != '' ){ 
+       	?>
+       	<th><?php echo $variants->variant->barcode; ?></th>
+        <?php } ?>
        	</tr>
        	
      <?php 
