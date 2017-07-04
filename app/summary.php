@@ -15,7 +15,7 @@ if(isset($_POST['submit_id'])){
 	$get_order = $Shopify->get_orders($shop,$shop_info['access_token']);
 	foreach($get_order->orders as $order) {
 		if($order_id == $order->name || $order_id == $order->id){
-			header("location:order_detail.php/?id=$order->id");
+			header("location:/scan-and-ship/app/order_detail.php/?id=$order->id");
 		}
 	}
 }
