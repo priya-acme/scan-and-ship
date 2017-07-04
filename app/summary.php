@@ -50,7 +50,7 @@
             <?php echo $order->updated_at; ?>
         </td>
         <td>
-        <?php echo $order->order->shipping_address->first_name." ".$order->order->shipping_address->last_name; ?>
+        <?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?>
         </td>
         <?php if($order->fulfillment_status == '' or $order->fulfillment_status == null ) { ?>
         <td style="text-align: center">
