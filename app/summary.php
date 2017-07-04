@@ -8,6 +8,7 @@
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
 // echo "<pre>";
 // print_r($orders);
+$_SESSION['select_role'] = $_POST['select_role'];
 if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];

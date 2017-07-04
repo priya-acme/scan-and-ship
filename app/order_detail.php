@@ -13,6 +13,16 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
      <form method="">
      <table>
      <tr>
+     <th><b>Select Role</b></th>
+     <td>
+     <input type = "radio" value="Picker" name="select_role" <?php if($_SESSION['select_role'] == 'Picker' ){ echo "checked"; }?>>Picker
+     <input type = "radio" value="Shipper" name="select_role" <?php if($_SESSION['select_role'] == 'Shipper' ){ echo "checked"; }?>>Shipper
+     <input type = "radio" value="Receiver" name="select_role" <?php if($_SESSION['select_role'] == 'Receiver' ){ echo "checked"; }?>>Receiver
+     </td>
+     </tr>
+     </table>
+     <table>
+     <tr>
      <td><input type="text" name="barcode_sku" placehoder="Enter Barcode or Sku"/></td>
      <td><input type="submit" name="submit" value="Submit" /></td>
      </tr>
