@@ -6,9 +6,7 @@
  $shop =  $_SESSION['shop_name'];
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
-// echo "<pre>";
-// print_r($orders);
-$_SESSION['select_role'] = $_POST['select_role'];
+
 if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
@@ -39,7 +37,7 @@ if(isset($_POST['submit_id'])){
 <tr>
 <th><b>Order Lookup</b></th>
 <td><input type="text" placeholder = "Enter order number or id" name="order_id" /></td>
-<td><input type="submit" name="submit_id" value="Search" /></td>
+<td><input type="submit" class="submit_class" name="submit_id" value="Search" /></td>
 </tr>
 </table>
 </form>
@@ -56,7 +54,7 @@ if(isset($_POST['submit_id'])){
    <?php foreach($orders->orders as $order) { ?>
     <tr>
         <td style="text-align: center">
-            <a href="/scan-and-ship/app/order_detail.php/?id=<?php echo $order->id; ?>&&<?php echo $_POST['select_role']?>"><?php echo $order->name; ?></a>
+            <a class="order_detail" href="/scan-and-ship/app/order_detail.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a>
         </td>
         <td style="text-align: center">
             <?php echo $order->updated_at; ?>
@@ -79,4 +77,9 @@ if(isset($_POST['submit_id'])){
     <?php } ?>
  </tr>
  </table> 
+ <script>
+$('.order_detail').click(function(){
+	$('.submit_class').click();
+})
+ </script>
  <?php include 'footer.php' ?>
