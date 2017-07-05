@@ -66,7 +66,7 @@ if(isset($_POST['submit_barcode'])){
     <td><strong>Dates</strong></td>
     <td><?php echo $orders->order->updated_at; ?></td>
   </tr>
-  <?php if($orders->note != '' ){ ?>
+  <?php if($orders->order->note != '' ){ ?>
   <tr>
     <td><strong>Internal Notes</strong></td>
    <td><?php echo $orders->order->note;  ?></td>
