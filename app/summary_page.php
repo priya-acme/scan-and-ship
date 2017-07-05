@@ -25,9 +25,9 @@ if(isset($_POST['submit_id'])){
 <div class="row">
 <div class="col-sm-12 col-md-6">
  <div class="role2">SELECT ROLE</div>
-  <div class="role"><a href="">Picker</a></div>
-   <div class="role"><a href="">Shipper</a></div>
-    <div class="role"><a href="">Receiver</a></div>
+ <div class="role"><input type = "radio" value="Picker" name="select_role" class="select_role" checked>Picker</div>
+ <div class="role"><input type = "radio" value="Shipper" name="select_role" class="select_role">Shipper</div>
+ <div class="role"><input type = "radio" value="Receiver" name="select_role" class="select_role">Receiver</div>
 </div>
 <div class="col-sm-12 col-md-6">
 <div class="right-icon">
