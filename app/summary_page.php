@@ -19,6 +19,7 @@ if(isset($_POST['submit_id'])){
 	}
 }
 ?>
+<?php include 'header.php' ?>
 <div class="margtop30">
 <div class="container">
 <div class="row">
@@ -53,3 +54,4 @@ if(isset($_POST['submit_id'])){
 </div>
 </div>
 </div>
+<?php include 'footer.php' ?>
