@@ -20,16 +20,15 @@ if(isset($_POST['submit_id'])){
 }
 ?>
 <?php include 'header.php' ?>
+ <form method="post">
 <div class="margtop30">
 <div class="container">
 <div class="row">
 <div class="col-sm-12 col-md-6">
  <div class="role2">SELECT ROLE</div>
- <form method="post">
  <div class="role"><input type = "radio" value="Receiver" name="select_role" class="select_role">Receiver</div>
  <div class="role"><input type = "radio" value="Shipper" name="select_role" class="select_role">Shipper</div>
  <div class="role"><input type = "radio" value="Picker" name="select_role" class="select_role" checked>Picker</div>
- </form>
 </div>
 <div class="col-sm-12 col-md-6">
 <div class="right-icon">
@@ -46,7 +45,6 @@ if(isset($_POST['submit_id'])){
 <div class="row">
 <div class="col-md-12">
 <div class="tbl">
-<form method="post">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
   <tr>
     <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
@@ -71,10 +69,10 @@ if(isset($_POST['submit_id'])){
   </tr>
   <?php } ?>
  </table>
- </form>
 </div>
 </div>
 </div>
 </div>
 </div>
+</form>
 <?php include 'footer.php' ?>
