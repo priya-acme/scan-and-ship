@@ -52,8 +52,7 @@ if(isset($_POST['submit_id'])){
     </button></td>
     <td width="6%" class="hed">PICKED</td>
     <td width="7%" class="hed">SHIPPED</td>
-    <td width="11%" class="hed">INSTORE PICKUP</td>
-    <td width="14%" class="hed">READY FOR PICKUP</td>
+    <td width="11%" class="hed">RECEIVER</td>
     <td width="31%" class="hed">NOTES</td>
   </tr>
   <?php foreach($orders->orders as $order) { ?>
@@ -62,7 +61,6 @@ if(isset($_POST['submit_id'])){
     <td width="12%"><strong><?php echo $order->updated_at; ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-    <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="last-text"><?php if($order->note != '' ){ echo $order->note; } else { ?> Here is some text about this mobile app. Here is some text about this mobile app.<?php } ?></div></td>
