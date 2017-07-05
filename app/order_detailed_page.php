@@ -162,7 +162,7 @@ if(isset($_POST['submit_barcode'])){
 
 </div>
 <div class="col-md-12 col-sm-12 marbot30">
-<a class="order" href="/scan-and-ship/app/summary_page.php/">BACK TO ORDER LOOKUP</a>
+<a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO ORDER LOOKUP</a>
 </div>
 </div>
 </div>
