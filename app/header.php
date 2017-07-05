@@ -12,22 +12,3 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 </head>
 <body>
-<div class="margtop30">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-6">
- <div class="role2">SELECT ROLE</div>
-  <div class="role"><a href="">Picker</a></div>
-   <div class="role"><a href="">Shipper</a></div>
-    <div class="role"><a href="">Receiver</a></div>
-</div>
-<div class="col-sm-12 col-md-6">
-<div class="right-icon">
-<a href="" class="seting-icon">
-<i class="fa fa-cog" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>

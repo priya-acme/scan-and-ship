@@ -14,7 +14,7 @@ if(isset($_POST['submit_id'])){
 	$get_order = $Shopify->get_orders($shop,$shop_info['access_token']);
 	foreach($get_order->orders as $order) {
 		if($order_id == $order->name || $order_id == $order->id){
-			header("location:/scan-and-ship/app/order_detail.php/?id=$order->id");
+			header("location:/scan-and-ship/app/order_detailed_page.php/?id=$order->id");
 		}
 	}
 }
@@ -23,11 +23,30 @@ if(isset($_POST['submit_id'])){
 <div class="margtop30">
 <div class="container">
 <div class="row">
+<div class="col-sm-12 col-md-6">
+ <div class="role2">SELECT ROLE</div>
+  <div class="role"><a href="">Picker</a></div>
+   <div class="role"><a href="">Shipper</a></div>
+    <div class="role"><a href="">Receiver</a></div>
+</div>
+<div class="col-sm-12 col-md-6">
+<div class="right-icon">
+<a href="" class="seting-icon">
+<i class="fa fa-cog" aria-hidden="true"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="margtop30">
+<div class="container">
+<div class="row">
 <div class="col-md-12">
 <div class="tbl">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
   <tr>
-    <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt"> <button type="button" class="serch">
+    <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
     </button></td>
     <td width="6%" class="hed">PICKED</td>
@@ -38,7 +57,7 @@ if(isset($_POST['submit_id'])){
   </tr>
   <?php foreach($orders->orders as $order) { ?>
   <tr>
-    <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detail.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
+    <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
     <td width="12%"><strong><?php echo $order->updated_at; ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
