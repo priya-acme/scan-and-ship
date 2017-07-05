@@ -7,10 +7,13 @@ $Stores = new Stores();
 $shop =  $_SESSION['shop_name'];
 $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
+if(isset($_POST['submit_barcode'])){
+	
+}
 ?>
 <div id="content">
      <h2>Barcode / SKU</h2>
-     <form method="">
+     <form method="post">
      <table>
      <tr>
      <th><b>Select Role</b></th>
@@ -24,7 +27,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
      <table>
      <tr>
      <td><input type="text" name="barcode_sku" placehoder="Enter Barcode or Sku"/></td>
-     <td><input type="submit" name="submit" value="Submit" /></td>
+     <td><input type="submit" name="submit_barcode" value="Submit" /></td>
      </tr>
      </table>
      </form>

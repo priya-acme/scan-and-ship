@@ -27,9 +27,9 @@ if(isset($_POST['submit_id'])){
 <tr>
 <th><b>Select Role</b></th>
 <td>
-<input type = "radio" value="Picker" name="select_role" checked>Picker
-<input type = "radio" value="Shipper" name="select_role">Shipper
-<input type = "radio" value="Receiver" name="select_role">Receiver
+<input type = "radio" value="Picker" name="select_role" class="select_role" checked>Picker
+<input type = "radio" value="Shipper" name="select_role" class="select_role">Shipper
+<input type = "radio" value="Receiver" name="select_role" class="select_role">Receiver
 </td>
 </tr>
 </table>
@@ -77,9 +77,4 @@ if(isset($_POST['submit_id'])){
     <?php } ?>
  </tr>
  </table> 
- <script>
-$('.order_detail').click(function(){
-	$('.submit_class').click();
-})
- </script>
- <?php include 'footer.php' ?>
+  <?php include 'footer.php' ?>
