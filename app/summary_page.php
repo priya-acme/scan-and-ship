@@ -44,6 +44,7 @@ if(isset($_POST['submit_id'])){
 <div class="row">
 <div class="col-md-12">
 <div class="tbl">
+<form method="post">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
   <tr>
     <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
@@ -68,6 +69,7 @@ if(isset($_POST['submit_id'])){
   </tr>
   <?php } ?>
  </table>
+ </form>
 </div>
 </div>
 </div>
