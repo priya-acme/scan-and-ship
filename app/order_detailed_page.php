@@ -11,7 +11,7 @@ if(isset($_POST['submit_barcode'])){
 	
 }
 ?>
-<?php include 'header.php'; ?>
+<?php include 'header.php' ?>
 <div class="margtop30">
 <div class="container">
 <div class="row">
