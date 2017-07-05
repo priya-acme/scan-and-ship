@@ -64,14 +64,21 @@ if(isset($_POST['submit_barcode'])){
   </tr>
   <tr>
     <td><strong>Dates</strong></td>
-    <td><?php echo $orders->updated_at; ?></td>
+    <td><?php echo $orders->order->updated_at; ?></td>
   </tr>
   <?php if($orders->note != '' ){ ?>
   <tr>
     <td><strong>Internal Notes</strong></td>
-   <td><?php echo $orders->note; ?></td>
+   <td><?php echo $orders->order->note;  ?></td>
   </tr>
-  <?php } ?>
+  <?php }  else {
+  	?>
+  <tr>
+    <td><strong>Internal Notes</strong></td>
+   <td>Order notes will be here! if notes go longer than specific amount they will be hidden until clicked to go into order page.</td>
+  </tr>
+  <?php 
+  }?>
 </table>
 
 </div>
