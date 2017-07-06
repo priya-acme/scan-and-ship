@@ -12,6 +12,7 @@ if(isset($_POST['submit_barcode'])){
 	$barcode_sku = $_POST['barcode_sku'];
 	//echo $barcode_sku;
 	$select_role = $_SESSION['select_role'];
+	$select_role = $_POST['select_role'];
 	if($select_role == 'Picker' || $select_role == 'Shipper' || $select_role == 'Receiver' ){
 		$selected_role = $select_role." "."ok";
 	}
@@ -22,7 +23,7 @@ if(isset($_POST['submit_barcode'])){
 		$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id);
 		if($variants->variant->sku == $barcode_sku || $variants->variant->barcode == $barcode_sku)
 		{
-			$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id']);
+			$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 			if(empty($check_order_veri)){
 			$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
 	     }
