@@ -19,7 +19,7 @@ if(isset($_POST['submit_barcode'])){
 	for($i=0;$i<$line_item_count;$i++)
 	{
 		$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id);
-		if($variants->variant->sku == $barcode_sku){
+		if($variants->variant->sku == $barcode_sku || $variants->variant->barcode == $barcode_sku){
 			$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
 		    
 		}
@@ -164,15 +164,17 @@ if(isset($_POST['submit_barcode'])){
     <?php } 
     if(isset($_POST['submit_barcode'])){ 
     	$barcode_sku = $_POST['barcode_sku'];
-    	$get_order_veri = $Stores->get_order_veri($variants->variant->sku, $_REQUEST['id']);
-    	if($get_order_veri['verification']== 'Picker ok') { ?>
+    	$get_order_veri_sku = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+    	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+    	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
         <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } ?>
         <?php } else { 
-        	$get_order_veri = $Stores->get_order_veri($variants->variant->sku, $_REQUEST['id']);
-            if($get_order_veri['verification']== 'Picker ok') { ?>
+        	$get_order_veri_sku = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+        	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         	<?php } else { ?>
                <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>

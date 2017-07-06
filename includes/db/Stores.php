@@ -24,8 +24,11 @@ class Stores extends DB_Connection{
 	function order_veri($sku, $barcode, $order_id, $verification){
 		return $this->order_verification($sku, $barcode, $order_id, $verification);
 	}
-	function get_order_veri($sku,$order_id){
-		return $this->get_order_verification($sku,$order_id);
+	function get_order_veri_sku($sku,$order_id){
+		return $this->get_order_verification_sku($sku,$order_id);
+	}
+	function get_order_veri_barcode($barcode,$order_id){
+		return $this->get_order_verification_barcode($barcode,$order_id);
 	}
 	/*public function updateData($data, $criteria)
 	 {
