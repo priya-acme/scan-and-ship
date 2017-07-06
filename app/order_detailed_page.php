@@ -36,9 +36,9 @@ if(isset($_POST['submit_barcode'])){
 </div>
 <div class="col-sm-12 col-md-7">
 <div class="role4">SELECT ROLE</div>
- <div class="role3"><input type = "radio" value="Receiver" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Receiver' ){ echo "checked"; }?>>Receiver</div>
+<div class="role3"><input type = "radio" value="Picker" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Picker' ){ echo "checked"; }?>>Picker</div>
  <div class="role3"><input type = "radio" value="Shipper" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Shipper' ){ echo "checked"; }?>>Shipper</div>
- <div class="role3"><input type = "radio" value="Picker" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Picker' ){ echo "checked"; }?>>Picker</div>
+<div class="role3"><input type = "radio" value="Receiver" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Receiver' ){ echo "checked"; }?>>Receiver</div> 
 <div class="right-icon">
 <a href="" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
