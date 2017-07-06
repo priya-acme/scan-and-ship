@@ -160,7 +160,7 @@ if(isset($_POST['submit_barcode'])){
     <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
     	if($variants->variant->sku != '' ){ 
     ?>
-    <td><?php echo $variants->variant->sku; ?></td>
+    <td><?php echo $orders->order->line_items[$i]->variant_id; echo $variants->variant->sku; ?></td>
     <?php } 
     if(isset($_POST['submit_barcode'])){ 
     	$barcode_sku = $_POST['barcode_sku'];
