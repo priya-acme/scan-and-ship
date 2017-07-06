@@ -21,7 +21,7 @@ class Stores extends DB_Connection{
 		$result = pg_query($this->connection , $query);
 		return pg_fetch_all($result);
 	}
-	function order_veri(){
+	function order_veri($sku, $barcode, $order_id, $verification){
 		return $this->order_verification($sku, $barcode, $order_id, $verification);
 	}
 	/*public function updateData($data, $criteria)
