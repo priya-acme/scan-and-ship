@@ -171,10 +171,7 @@ if(isset($_POST['submit_barcode'])){
         <?php } ?>
         <?php } else { 
         	$get_order_veri = $Stores->get_order_veri($variants->variant->sku, $_REQUEST['id']);
-        	print_r($get_order_veri);
-        	echo $get_order_veri['verification'];
-        	echo $get_order_veri->verification;
-        	if($get_order_veri->verification == 'Picker ok') { ?>
+            if($get_order_veri['verification']== 'Picker ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         	<?php } else { ?>
                <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
