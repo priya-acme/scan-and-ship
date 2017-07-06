@@ -17,9 +17,6 @@ if(isset($_POST['submit_barcode'])){
 		if($variants->variant->sku == $barcode_sku){
 			echo "ok";
 		}
-		else{
-			echo "not matched";
-		}
 		
 	}
 }
