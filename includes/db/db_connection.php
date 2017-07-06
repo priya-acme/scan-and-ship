@@ -66,5 +66,6 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
+	
 }
 
