@@ -214,6 +214,28 @@ if(isset($_POST['submit_barcode'])){
                <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } } ?>
     
+    <?php 
+    
+    // Receiver verification
+    
+        if(isset($_POST['submit_barcode'])){ 
+    	$barcode_sku = $_POST['barcode_sku'];
+    	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+    	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+    	if($get_order_veri_sku['verification']== 'Receiver ok' || $get_order_veri_barcode['verification']== 'Receiver ok') { ?>
+    	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<?php } else { ?>
+        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <?php } ?>
+        <?php } else { 
+        	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+        	if($get_order_veri_sku['verification']== 'Receiver ok' || $get_order_veri_barcode['verification']== 'Receiver ok') { ?>
+               <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+        	<?php } else { ?>
+               <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <?php } } ?>
+ 
 
   </tr>
   <?php } ?>
