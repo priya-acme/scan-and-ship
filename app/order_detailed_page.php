@@ -173,7 +173,7 @@ if(isset($_POST['submit_barcode'])){
     
     if(isset($_POST['submit_barcode'])){ 
     	$barcode_sku = $_POST['barcode_sku'];
-    	$get_order_veri_sku = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+    	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
     	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
     	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -181,7 +181,7 @@ if(isset($_POST['submit_barcode'])){
         <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } ?>
         <?php } else { 
-        	$get_order_veri_sku = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
         	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
         	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -195,7 +195,7 @@ if(isset($_POST['submit_barcode'])){
       
         if(isset($_POST['submit_barcode'])){ 
     	$barcode_sku = $_POST['barcode_sku'];
-    	$get_order_veri_sku = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+    	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
     	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
     	if($get_order_veri_sku['verification']== 'Shipper ok' || $get_order_veri_barcode['verification']== 'Shipper ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -203,9 +203,10 @@ if(isset($_POST['submit_barcode'])){
         <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } ?>
         <?php } else { 
-        	$get_order_veri_sku = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
         	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
         	print_r($get_order_veri_sku);
+        	print_r($get_order_veri_barcode);
         	if($get_order_veri_sku['verification']== 'Shipper ok' || $get_order_veri_barcode['verification']== 'Shipper ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         	<?php } else { ?>
@@ -218,7 +219,7 @@ if(isset($_POST['submit_barcode'])){
     
         if(isset($_POST['submit_barcode'])){ 
     	$barcode_sku = $_POST['barcode_sku'];
-    	$get_order_veri_sku = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+    	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
     	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
     	if($get_order_veri_sku['verification']== 'Receiver ok' || $get_order_veri_barcode['verification']== 'Receiver ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -226,7 +227,7 @@ if(isset($_POST['submit_barcode'])){
         <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } ?>
         <?php } else { 
-        	$get_order_veri_sku = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
         	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
         	if($get_order_veri_sku['verification']== 'Receiver ok' || $get_order_veri_barcode['verification']== 'Receiver ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
