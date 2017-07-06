@@ -190,12 +190,11 @@ if(isset($_POST['submit_barcode'])){
         	<?php } else { ?>
                <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } } ?>
-      
-      
-     
+ 
     
-    
-    
+
+  </tr>
+  <?php } ?>
 
   
 </table>
