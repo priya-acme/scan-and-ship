@@ -55,7 +55,7 @@ class DB_Connection{
 		return mysqli_fetch_assoc($result);
 	}
 	function get_order_verification_barcode($barcode,$order_id){
-		$query = "select * from order_verification where order_id='$order_id' and sku='$barcode'";
+		$query = "select * from order_verification where order_id='$order_id' and barcode='$barcode'";
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
