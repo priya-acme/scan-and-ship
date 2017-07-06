@@ -27,12 +27,11 @@ if(isset($_POST['submit_barcode'])){
 		{
 			$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 			if(empty($check_order_veri)){
-				if(empty($p_selected_role)){
-			       $Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$p_selected_role);
-				}else {
-					$Stores->update_verification($variants->variant->sku,$get_order_id,$s_selected_role);
-				}
-	     }
+				$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$p_selected_role);
+		    }
+		    else {
+		    	$Stores->update_verification($variants->variant->sku,$get_order_id,$s_selected_role);
+		    }
 		}
 		
 	}
