@@ -30,6 +30,9 @@ class Stores extends DB_Connection{
 	function get_order_veri_barcode($barcode,$order_id){
 		return $this->get_order_verification_barcode($barcode,$order_id);
 	}
+	function check_order_veri($sku,$order_id,$verification){
+		return $this->check_order_verification($sku,$order_id,$verification);
+	}
 	/*public function updateData($data, $criteria)
 	 {
 	 return $this->update($this->table_name, $data, $criteria);

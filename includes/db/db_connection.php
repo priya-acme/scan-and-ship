@@ -60,5 +60,11 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
+	function check_order_verification($sku,$order_id,$verification){
+		$query = "select * from order_verification where order_id='$order_id' and barcode='$sku' and verification='$verification'";
+		//echo $query;
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
 }
 
