@@ -8,14 +8,20 @@ $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
 //echo $_SESSION['select_role'];
 if(isset($_POST['submit_barcode'])){
+	$get_order_id = $_REQUEST['id'];
 	$barcode_sku = $_POST['barcode_sku'];
+	$select_role = $_SESSION['select_role'];
+	if($select_role == 'Picker' || $select_role == 'Shipper' || $select_role == 'Receiver' ){
+		$selected_role = $select_role." "."ok";
+	}
 	$arrayobj = new ArrayObject($orders->order->line_items);
 	$line_item_count = $arrayobj->count();
 	for($i=0;$i<$line_item_count;$i++)
 	{
 		$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id);
 		if($variants->variant->sku == $barcode_sku){
-			echo "ok";
+			$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
+		    
 		}
 		
 	}
