@@ -161,8 +161,19 @@ if(isset($_POST['submit_barcode'])){
     	if($variants->variant->sku != '' ){ 
     ?>
     <td><?php echo $variants->variant->sku; ?></td>
-    <?php } ?>
-    <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+    <?php } 
+    if(isset($_POST['submit_barcode'])){ 
+    	$barcode_sku = $_POST['barcode_sku'];
+    	if($variants->variant->sku == $barcode_sku){ ?>
+    	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<?php } else { ?>
+        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <?php } ?>
+        <?php } else { 
+        	$get_order_veri = $Stores->get_order_veri($variants->variant->sku, $_REQUEST['id']);
+        	print_r($get_order_veri);?>
+        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <?php } ?>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
   </tr>
