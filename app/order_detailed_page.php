@@ -43,7 +43,7 @@ if(isset($_POST['submit_barcode'])){
 <div class="container">
 <div class="row">
 <div class="col-sm-12 col-md-5">
- <div class="role2">BARCODE / PRODUCT CODE  <input type="text" name="barcode_sku" class="txt"> <button type="button" class="serch">
+ <div class="role2">BARCODE / PRODUCT CODE  <input type="text" name="barcode_sku" class="txt"> <button type="submit" class="serch" name="submit_barcode">
       <span class="glyphicon glyphicon-search"></span>
     </button></div>
  
