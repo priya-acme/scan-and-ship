@@ -14,7 +14,7 @@ if(isset($_POST['submit_barcode'])){
 	$select_role = $_SESSION['select_role'];
 	echo $select_role;
 	if($select_role == 'Picker' || $select_role == 'Shipper'){
-		$selected_role = $select_role." "."ok";
+		echo $selected_role = $select_role." "."ok";
 	}
 	if($select_role == 'Picker'){
 		$p_selected_role = $select_role." "."ok";
