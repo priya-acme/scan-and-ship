@@ -8,7 +8,20 @@ $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
 //echo $_SESSION['select_role'];
 if(isset($_POST['submit_barcode'])){
-	
+	$barcode_sku = $_POST['barcode_sku'];
+	$arrayobj = new ArrayObject($orders->order->line_items);
+	$line_item_count = $arrayobj->count();
+	for($i=0;$i<$line_item_count;$i++)
+	{
+		$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id);
+		if($variants->variant->sku == $barcode_sku){
+			echo "ok";
+		}
+		else{
+			echo "not matched";
+		}
+		
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -25,11 +38,12 @@ if(isset($_POST['submit_barcode'])){
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 </head>
 <body>
+<form method="post">
 <div class="margtop30">
 <div class="container">
 <div class="row">
 <div class="col-sm-12 col-md-5">
- <div class="role2">BARCODE / PRODUCT CODE  <input type="text" class="txt"> <button type="button" class="serch">
+ <div class="role2">BARCODE / PRODUCT CODE  <input type="text" name="barcode_sku" class="txt"> <button type="button" class="serch">
       <span class="glyphicon glyphicon-search"></span>
     </button></div>
  
@@ -168,4 +182,5 @@ if(isset($_POST['submit_barcode'])){
 </div>
 </div>
 </div>
+</form>
 <?php include 'footer.php'; ?>
