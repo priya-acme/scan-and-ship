@@ -33,6 +33,9 @@ class Stores extends DB_Connection{
 	function check_order_veri($sku,$order_id,$verification){
 		return $this->check_order_verification($sku,$order_id,$verification);
 	}
+	function update_verification($sku,$order_id,$verification){
+		return $this->update_order_verification($sku,$order_id,$verification);
+	}
 	/*public function updateData($data, $criteria)
 	 {
 	 return $this->update($this->table_name, $data, $criteria);
