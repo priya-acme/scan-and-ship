@@ -60,7 +60,7 @@ if(isset($_POST['submit_id'])){
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
     <td width="12%"><strong><?php echo $order->updated_at; ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
-    <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="last-text"><?php if($order->note != '' ){ echo $order->note; } else { ?> Here is some text about this mobile app. Here is some text about this mobile app.<?php } ?></div></td>
