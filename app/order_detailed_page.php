@@ -7,6 +7,7 @@ $shop =  $_SESSION['shop_name'];
 $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
 //echo $_SESSION['select_role'];
+$get_verification = $Stores->get_step_verification();
 if(isset($_POST['submit_barcode'])){
 	$get_order_id = $_REQUEST['id'];
 	$barcode_sku = $_POST['barcode_sku'];
