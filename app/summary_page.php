@@ -56,8 +56,8 @@ if(isset($_POST['submit_id'])){
     <td width="31%" class="hed">NOTES</td>
   </tr>
   <?php foreach($orders->orders as $order) { ?>
-  <?php echo "<pre>";
-  print_r($order);
+  <?php //echo "<pre>";
+  //print_r($order);
   ?>
   <tr>
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
