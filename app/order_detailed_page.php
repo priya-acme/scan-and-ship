@@ -50,7 +50,7 @@ if(isset($_POST['submit_barcode'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Mobile App</title>
+  <title>Scan and Ship</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
@@ -217,7 +217,7 @@ if(isset($_POST['submit_barcode'])){
     	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
-        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <td><div class="red"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         <?php } ?>
         <?php } else { 
         	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
@@ -241,7 +241,7 @@ if(isset($_POST['submit_barcode'])){
     	if($s_get_order_veri_sku['verification']== 'Shipper ok' || $s_get_order_veri_barcode['verification']== 'Shipper ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
-        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <td><div class="red"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         <?php } ?>
         <?php } else { 
         	$s_get_order_veri_barcode = $Stores->s_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
@@ -264,7 +264,7 @@ if(isset($_POST['submit_barcode'])){
     	if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
-        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <td><div class="red"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         <?php } ?>
         <?php } else { 
         	$r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);

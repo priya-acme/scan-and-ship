@@ -217,3 +217,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edda1d', end
 }	
 .checkbox, .radio{ display:block; text-align:center;}
 }
+.red{background: #ff0000;
+background: -moz-linear-gradient(top, #ff0000 0%, #ff8e8e 76%);
+background: -webkit-linear-gradient(top, #ff0000 0%,#ff8e8e 76%);
+background: linear-gradient(to bottom, #ff0000 0%,#ff8e8e 76%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff8e8e',GradientType=0 );
+    margin: 0 auto;
+border-radius: 20px;
+    height: 22px;
+    width: 22px;
+    line-height: 22px;
+}
+.red i{ color:#FFF;}
