@@ -74,7 +74,7 @@ if(isset($_POST['submit_barcode'])){
 <div class="col-sm-12 col-md-7">
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
- <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker' ){ echo "checked"; } else { echo "checked"; } ?>>
+ <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker' ){ ?> checked <?php  } else { ?> checked <?php  } ?>>
             <label for="radio1">
                 PICKER
             </label>
@@ -96,7 +96,7 @@ if(isset($_POST['submit_barcode'])){
 </div>
 <!-- <div class="col-sm-12 col-md-7"> -->
 <!-- <div class="role4">SELECT ROLE</div> -->
-<div class="role3"><input type = "radio" value="Picker" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Picker' ){ echo "checked"; } else { echo "checked"; } ?>>Picker</div>
+<!-- <div class="role3"><input type = "radio" value="Picker" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Picker' ){ echo "checked"; } else { echo "checked"; } ?>>Picker</div>
  <div class="role3"><input type = "radio" value="Shipper" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Shipper' ){ echo "checked"; }?>>Shipper</div>
 <div class="role3"><input type = "radio" value="Receiver" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Receiver' ){ echo "checked"; }?>>Receiver</div> 
 <!-- <div class="right-icon"> -->
