@@ -40,9 +40,9 @@
  <input type="radio" name="select_veri" id="radio1" value="One">
 <label for="radio1">One step verification</label>
 <input type="radio" name="select_veri" id="radio2" value="Two">
-<label for="radio1">Two steps verification</label>
-<input type="radio" name="select_veri" id="radio2" value="Three" checked>
-<label for="radio1">Three steps verification</label>
+<label for="radio2">Two steps verification</label>
+<input type="radio" name="select_veri" id="radio3" value="Three" checked>
+<label for="radio3">Three steps verification</label>
 </span>
 </div>
 </div>
