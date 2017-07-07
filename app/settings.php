@@ -6,6 +6,7 @@
  $shop =  $_SESSION['shop_name'];
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
+ $get_verification = $Stores->get_step_verification();
  if(isset($_POST['save_changes'])){
  	$get_verification = $Stores->get_step_verification();
  	if(empty($get_verification)){
@@ -37,11 +38,11 @@
 <div class="col-sm-12 col-md-6">
 <span class="role2">SELECT</span>
 <span class="radio radio-primary">
- <input type="radio" name="select_veri" id="radio1" value="One">
+ <input type="radio" name="select_veri" id="radio1" value="One" <?php if($get_verification['verification_step'] == 'One') { echo "checked"; }?>>
 <label for="radio1">One step verification</label>
-<input type="radio" name="select_veri" id="radio2" value="Two">
+<input type="radio" name="select_veri" id="radio2" value="Two" <?php if($get_verification['verification_step'] == 'Two') { echo "checked"; }?>>
 <label for="radio2">Two steps verification</label>
-<input type="radio" name="select_veri" id="radio3" value="Three" checked>
+<input type="radio" name="select_veri" id="radio3" value="Three" <?php if($get_verification['verification_step'] == 'Three') { echo "checked"; }?>>
 <label for="radio3">Three steps verification</label>
 </span>
 </div>
