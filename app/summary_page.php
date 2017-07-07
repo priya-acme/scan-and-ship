@@ -27,7 +27,7 @@ if(isset($_POST['submit_id'])){
 <div class="col-sm-12 col-md-6">
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
- <input type="radio" name="select_role" id="radio1" value="Picker">
+ <input type="radio" name="select_role" id="radio1" value="Picker" checked>
             <label for="radio1">
                 PICKER
             </label>
