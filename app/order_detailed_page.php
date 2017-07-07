@@ -74,18 +74,36 @@ if(isset($_POST['submit_barcode'])){
 <div class="col-sm-12 col-md-7">
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
- <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker' ){ ?> checked <?php  } else { ?> checked <?php  } ?>>
+<?php if($get_verification['verification_step'] == 'One') {  
+	?>
+<input type="radio" name="select_role" id="radio1" value="Picker" checked>
+<label for="radio1">
+ PICKER
+</label>
+<?php 
+} if($get_verification['verification_step'] == 'Two') { ?>
+            <input type="radio" name="select_role" id="radio1" value="Picker" checked>
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper" <?php if($_SESSION['select_role'] == 'Shipper' ){ echo "checked"; }?>>
+            <input type="radio" name="select_role" id="radio2" value="Shipper">
             <label for="radio2">
                 SHIPPER
             </label>
-            <input type="radio" name="select_role" id="radio3" value="Receiver" <?php if($_SESSION['select_role'] == 'Receiver' ){ echo "checked"; }?>>
+<?php } if($get_verification['verification_step'] == 'Three') {?>
+            <input type="radio" name="select_role" id="radio1" value="Picker" checked>
+            <label for="radio1">
+                PICKER
+            </label>
+            <input type="radio" name="select_role" id="radio2" value="Shipper">
+            <label for="radio2">
+                SHIPPER
+            </label>
+            <input type="radio" name="select_role" id="radio3" value="Receiver">
             <label for="radio3">
                 RECEIVER
             </label>
+<?php } ?>
  
 </span>
 <div class="right-icon">

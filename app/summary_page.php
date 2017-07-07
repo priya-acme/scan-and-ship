@@ -6,7 +6,7 @@
  $shop =  $_SESSION['shop_name'];
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
-
+ $get_verification = $Stores->get_step_verification();
 if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
@@ -27,7 +27,24 @@ if(isset($_POST['submit_id'])){
 <div class="col-sm-12 col-md-6">
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
- <input type="radio" name="select_role" id="radio1" value="Picker" checked>
+<?php if($get_verification['verification_step'] == 'One') {  
+	?>
+<input type="radio" name="select_role" id="radio1" value="Picker" checked>
+<label for="radio1">
+ PICKER
+</label>
+<?php 
+} if($get_verification['verification_step'] == 'Two') { ?>
+            <input type="radio" name="select_role" id="radio1" value="Picker" checked>
+            <label for="radio1">
+                PICKER
+            </label>
+            <input type="radio" name="select_role" id="radio2" value="Shipper">
+            <label for="radio2">
+                SHIPPER
+            </label>
+<?php } if($get_verification['verification_step'] == 'Three') {?>
+            <input type="radio" name="select_role" id="radio1" value="Picker" checked>
             <label for="radio1">
                 PICKER
             </label>
@@ -39,6 +56,7 @@ if(isset($_POST['submit_id'])){
             <label for="radio3">
                 RECEIVER
             </label>
+<?php } ?>
  
 </span>
 </div>
