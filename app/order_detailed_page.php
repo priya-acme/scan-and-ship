@@ -72,16 +72,39 @@ if(isset($_POST['submit_barcode'])){
  
 </div>
 <div class="col-sm-12 col-md-7">
-<div class="role4">SELECT ROLE</div>
-<div class="role3"><input type = "radio" value="Picker" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Picker' ){ echo "checked"; } else { echo "checked"; } ?>>Picker</div>
- <div class="role3"><input type = "radio" value="Shipper" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Shipper' ){ echo "checked"; }?>>Shipper</div>
-<div class="role3"><input type = "radio" value="Receiver" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Receiver' ){ echo "checked"; }?>>Receiver</div> 
+<span class="role2">SELECT ROLE : </span>
+<span class="radio radio-primary">
+ <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker' ){ echo "checked"; } else { echo "checked"; } ?>>
+            <label for="radio1">
+                PICKER
+            </label>
+            <input type="radio" name="select_role" id="radio2" value="Shipper" <?php if($_SESSION['select_role'] == 'Shipper' ){ echo "checked"; }?>>
+            <label for="radio2">
+                SHIPPER
+            </label>
+            <input type="radio" name="select_role" id="radio3" value="Receiver" <?php if($_SESSION['select_role'] == 'Receiver' ){ echo "checked"; }?>>
+            <label for="radio3">
+                RECEIVER
+            </label>
+ 
+</span>
 <div class="right-icon">
 <a href="" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
 </div>
 </div>
+<!-- <div class="col-sm-12 col-md-7"> -->
+<!-- <div class="role4">SELECT ROLE</div> -->
+<div class="role3"><input type = "radio" value="Picker" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Picker' ){ echo "checked"; } else { echo "checked"; } ?>>Picker</div>
+ <div class="role3"><input type = "radio" value="Shipper" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Shipper' ){ echo "checked"; }?>>Shipper</div>
+<div class="role3"><input type = "radio" value="Receiver" name="select_role" class="select_role" <?php if($_SESSION['select_role'] == 'Receiver' ){ echo "checked"; }?>>Receiver</div> 
+<!-- <div class="right-icon"> -->
+<!-- <a href="" class="seting-icon"> -->
+<!-- <i class="fa fa-cog" aria-hidden="true"></i> -->
+<!-- </a> -->
+<!-- </div> -->
+<!-- </div> -->
 </div>
 </div>
 </div>

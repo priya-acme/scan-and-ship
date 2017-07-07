@@ -25,11 +25,29 @@ if(isset($_POST['submit_id'])){
 <div class="container">
 <div class="row">
 <div class="col-sm-12 col-md-6">
- <div class="role2">SELECT ROLE</div>
- <div class="role"><input type = "radio" value="Receiver" name="select_role" class="select_role">Receiver</div>
- <div class="role"><input type = "radio" value="Shipper" name="select_role" class="select_role">Shipper</div>
- <div class="role"><input type = "radio" value="Picker" name="select_role" class="select_role" checked>Picker</div>
+<span class="role2">SELECT ROLE : </span>
+<span class="radio radio-primary">
+ <input type="radio" name="select_role" id="radio1" value="Picker">
+            <label for="radio1">
+                PICKER
+            </label>
+            <input type="radio" name="select_role" id="radio2" value="Shipper">
+            <label for="radio2">
+                SHIPPER
+            </label>
+            <input type="radio" name="select_role" id="radio3" value="Receiver">
+            <label for="radio3">
+                RECEIVER
+            </label>
+ 
+</span>
 </div>
+<!-- <div class="col-sm-12 col-md-6"> -->
+<!--  <div class="role2">SELECT ROLE</div> -->
+<!--  <div class="role"><input type = "radio" value="Receiver" name="select_role" class="select_role">Receiver</div> -->
+<!--  <div class="role"><input type = "radio" value="Shipper" name="select_role" class="select_role">Shipper</div> -->
+<!--  <div class="role"><input type = "radio" value="Picker" name="select_role" class="select_role" checked>Picker</div> -->
+<!-- </div> -->
 <div class="col-sm-12 col-md-6">
 <div class="right-icon">
 <a href="" class="seting-icon">
