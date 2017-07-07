@@ -30,7 +30,9 @@ class Stores extends DB_Connection{
 	function check_order_veri($sku,$order_id,$verification){
 		return $this->check_order_verification($sku,$order_id,$verification);
 	}
-	
+	function p_count_order($order_id){
+		return $this->count_picker_order($order_id);
+	}
 	
 	// shipper
 	
@@ -46,6 +48,8 @@ class Stores extends DB_Connection{
 	function s_check_order_veri($sku,$order_id,$verification){
 		return $this->s_check_order_verification($sku,$order_id,$verification);
 	}
-	
+	function s_count_order($order_id){
+		return $this->count_shipper_order($order_id);
+	}
 }
 ?>

@@ -54,6 +54,9 @@ if(isset($_POST['submit_id'])){
     <td width="7%" class="hed">SHIPPED</td>
     <td width="11%" class="hed">RECEIVER</td>
     <td width="31%" class="hed">NOTES</td>
+    <td>Line items</td>
+    <td>Picker Count</td>
+    <td>Shipper Count</td>
   </tr>
   <?php foreach($orders->orders as $order) { ?>
   <?php //echo "<pre>";
@@ -71,6 +74,8 @@ if(isset($_POST['submit_id'])){
        $line_item_count = $arrayobj->count();
       echo "<td>".$line_item_count."</td>";
      ?>
+     <td><?php echo $Stores->p_count_order($order->id); ?></td>
+     <td><?php echo $Stores->s_count_order($order->id); ?></td>
   </tr>
   <?php } ?>
  </table>

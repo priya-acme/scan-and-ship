@@ -48,24 +48,25 @@ class DB_Connection{
 	
 	function order_verification($sku,$barcode,$order_id,$verification){
 		$query = "insert into order_verification(sku,barcode,order_id,verification) values('$sku','$barcode','$order_id','$verification')";
-		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
 	function get_order_verification_sku($sku,$order_id){
 		$query = "select * from order_verification where order_id='$order_id' and sku='$sku'";
-		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
 	function get_order_verification_barcode($barcode,$order_id){
 		$query = "select * from order_verification where order_id='$order_id' and barcode='$barcode'";
-		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
 	function check_order_verification($sku,$order_id,$verification){
 		$query = "select * from order_verification where order_id='$order_id' and sku='$sku' and verification='$verification'";
-		//echo $query;
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
+	function count_picker_order($order_id){
+		$query = "select count(*) from order_verification where order_id='$order_id'";
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
@@ -74,27 +75,29 @@ class DB_Connection{
 	
 	function s_order_verification($sku,$barcode,$order_id,$verification){
 		$query = "insert into shipper_order_verification(sku,barcode,order_id,verification) values('$sku','$barcode','$order_id','$verification')";
-		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
 	function s_get_order_verification_sku($sku,$order_id){
 		$query = "select * from shipper_order_verification where order_id='$order_id' and sku='$sku'";
-		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
 	function s_get_order_verification_barcode($barcode,$order_id){
 		$query = "select * from shipper_order_verification where order_id='$order_id' and barcode='$barcode'";
-		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
 	function s_check_order_verification($sku,$order_id,$verification){
 		$query = "select * from shipper_order_verification where order_id='$order_id' and sku='$sku' and verification='$verification'";
-		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
+	function count_shipper_order($order_id){
+		$query = "select count(*) from shipper_order_verification where order_id='$order_id'";
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
+
 	
 }
 
