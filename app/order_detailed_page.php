@@ -263,9 +263,9 @@ if(isset($_POST['submit_barcode'])){
     	$r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
     	if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-    	<?php } else { ?>
+    	<?php } else { if($select_role == 'Receiver' || $selected_role == 'Receiver ok' ) { ?>
         <td><div class="red"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-        <?php } ?>
+        <?php } } ?>
         <?php } else { 
         	$r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
         	$r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
