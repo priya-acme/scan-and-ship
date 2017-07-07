@@ -81,7 +81,7 @@ if(isset($_POST['submit_id'])){
        if($line_item_count == $scount['count(*)']){
        	?>
        <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-     <?php } else if($line_item_count > $scount['count(*)'] && $line_item_count != 0 ) {
+     <?php } else if($line_item_count > $scount['count(*)'] && $scount['count(*)'] == 0 ) {
      	?>
      	<td>Partially Fulfilled</td>
      <?php 
