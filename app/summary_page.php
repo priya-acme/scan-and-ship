@@ -50,7 +50,7 @@ if(isset($_POST['submit_id'])){
 <!-- </div> -->
 <div class="col-sm-12 col-md-6">
 <div class="right-icon">
-<a href="" class="seting-icon">
+<a href="/scan-and-ship/app/settings.php" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
 </div>
