@@ -71,7 +71,7 @@ if(isset($_POST['submit_id'])){
        <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else if($line_item_count > $pcount['count(*)'] && $pcount['count(*)'] != 0 ) { 
      	?>
-     	<td>Partially Fulfilled</td>
+     	<td><div class="yellow"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php
      } else { ?>
        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
@@ -85,7 +85,7 @@ if(isset($_POST['submit_id'])){
        <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else if($line_item_count > $scount['count(*)'] && $scount['count(*)'] != 0 ) {
      	?>
-     	<td>Partially Fulfilled</td>
+     	<td><div class="yellow"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php 
      } else { ?>
        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
