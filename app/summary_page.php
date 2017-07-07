@@ -52,7 +52,6 @@ if(isset($_POST['submit_id'])){
     </button></td>
     <td width="6%" class="hed">PICKED</td>
     <td width="7%" class="hed">SHIPPED</td>
-    <td width="11%" class="hed">RECEIVER</td>
     <td width="31%" class="hed">NOTES</td>
     <td>Line items</td>
     <td>Picker Count</td>
@@ -66,9 +65,26 @@ if(isset($_POST['submit_id'])){
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
     <td width="12%"><strong><?php echo $order->updated_at; ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
-    <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
-    <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
-    <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+    <?php $arrayobj = new ArrayObject($order->line_items);
+       $line_item_count = $arrayobj->count();
+       $pcount = $Stores->p_count_order($order->id);
+       if($line_item_count == $pcount){
+       	?>
+       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else { ?>
+       <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+    
+     <?php $arrayobj = new ArrayObject($order->line_items);
+       $line_item_count = $arrayobj->count();
+       $scount = $Stores->s_count_order($order->id);
+       if($line_item_count == $scount){
+       	?>
+       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else { ?>
+       <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+  
     <td><div class="last-text"><?php if($order->note != '' ){ echo $order->note; } else { ?> Here is some text about this mobile app. Here is some text about this mobile app.<?php } ?></div></td>
     <?php  $arrayobj = new ArrayObject($order->line_items);
        $line_item_count = $arrayobj->count();
