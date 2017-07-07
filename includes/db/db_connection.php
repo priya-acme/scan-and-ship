@@ -125,6 +125,22 @@ class DB_Connection{
 		return mysqli_fetch_assoc($result);
 	}
 
+	// step verification
 	
+	function steps_verification($step){
+		$query = "insert into `settings_table` (verifictaion_step) values('$step')";
+		$result = mysqli_query($this->connection, $query);
+	}
+	
+	function update_steps_verification($step){
+		$query = "update `settings_table` set verifictaion_step='$step' WHERE 1";
+		$result = mysqli_query($this->connection, $query);
+	}
+	
+	function get_steps_verification(){
+		$query = "select * from `settings_table` where id='1'";
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
 }
 

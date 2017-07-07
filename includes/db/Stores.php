@@ -69,5 +69,18 @@ class Stores extends DB_Connection{
 	function r_count_order($order_id){
 		return $this->count_receiver_order($order_id);
 	}
+	
+	// step verification
+	
+	function step_verification($step){
+		return $this->steps_verification($step);
+	}
+	function update_step_verification($step){
+		return $this->update_steps_verification($step);
+	}
+	function get_step_verification(){
+		return $this->get_steps_verification();
+	}
+	
 }
 ?>

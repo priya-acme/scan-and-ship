@@ -6,6 +6,15 @@
  $shop =  $_SESSION['shop_name'];
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
+ if(isset($_POST['save_changes'])){
+ 	$get_verification = $Stores->get_step_verification();
+ 	if(empty($get_verification)){
+ 		$Stores->step_verification($_POST['select_veri']);
+ 	}
+ 	else {
+ 		$Stores->update_step_verification($_POST['select_veri']);
+ 	}
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,11 +37,11 @@
 <div class="col-sm-12 col-md-6">
 <span class="role2">SELECT</span>
 <span class="radio radio-primary">
- <input type="radio" name="select_role" id="radio1" value="One">
+ <input type="radio" name="select_veri" id="radio1" value="One">
 <label for="radio1">One step verification</label>
-<input type="radio" name="select_role" id="radio2" value="Two">
+<input type="radio" name="select_veri" id="radio2" value="Two">
 <label for="radio1">Two steps verification</label>
-<input type="radio" name="select_role" id="radio2" value="Three">
+<input type="radio" name="select_veri" id="radio2" value="Three" checked>
 <label for="radio1">Three steps verification</label>
 </span>
 </div>
