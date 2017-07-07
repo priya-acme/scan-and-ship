@@ -36,7 +36,9 @@
 <label for="radio1">Three steps verification</label>
 </span>
 </div>
-<div class="col-sm-12 col-md-6">
+</div>
+<div class="row">
+<div class="col-sm-12 col-sm-12 marbot30">
 <input type="submit" name="save_changes" value="Save Changes">
 </div>
 </div>
