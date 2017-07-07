@@ -52,6 +52,7 @@ if(isset($_POST['submit_id'])){
     </button></td>
     <td width="6%" class="hed">PICKED</td>
     <td width="7%" class="hed">SHIPPED</td>
+    <td width="7%" class="hed">RECEIVER</td>
     <td width="31%" class="hed">NOTES</td>
   </tr>
   <?php foreach($orders->orders as $order) { ?>
@@ -83,6 +84,20 @@ if(isset($_POST['submit_id'])){
        	?>
        <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else if($line_item_count > $scount['count(*)'] && $scount['count(*)'] != 0 ) {
+     	?>
+     	<td>Partially Fulfilled</td>
+     <?php 
+     } else { ?>
+       <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+     
+     <?php $arrayobj = new ArrayObject($order->line_items);
+       $line_item_count = $arrayobj->count();
+       $rcount = $Stores->r_count_order($order->id);
+       if($line_item_count == $rcount['count(*)']){
+       	?>
+       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else if($line_item_count > $rcount['count(*)'] && $rcount['count(*)'] != 0 ) {
      	?>
      	<td>Partially Fulfilled</td>
      <?php 

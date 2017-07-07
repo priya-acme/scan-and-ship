@@ -36,6 +36,12 @@ if(isset($_POST['submit_barcode'])){
 	        		$Stores->s_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
 	        	}
 	        }
+	        if($selected_role == 'Receiver ok' || $select_role1 == 'Receiver' ){
+	        	$r_check_order_veri = $Stores->r_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
+	        	if(empty($r_check_order_veri)){
+	        		$Stores->r_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
+	        	}
+	        }
 		}
 		
 	}
@@ -160,6 +166,7 @@ if(isset($_POST['submit_barcode'])){
     <td width="17%" class="hed">SKU</td>
     <td width="8%" class="hed">PICKED</td>
     <td width="9%" class="hed">SHIPPED</td>
+    <td width="9%" class="hed">Receiver</td>
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
@@ -223,7 +230,27 @@ if(isset($_POST['submit_barcode'])){
         <?php } } ?>
     
     
- 
+     <?php
+      
+      // Receiver verification  
+      
+        if(isset($_POST['submit_barcode'])){ 
+    	$barcode_sku = $_POST['barcode_sku'];
+    	$r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+    	$r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+    	if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok') { ?>
+    	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<?php } else { ?>
+        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <?php } ?>
+        <?php } else { 
+        	$r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        	$r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+        if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok') { ?>
+               <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+        	<?php } else { ?>
+               <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <?php } } ?>
 
   </tr>
   <?php } ?>
