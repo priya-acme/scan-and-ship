@@ -56,6 +56,9 @@ if(isset($_POST['submit_id'])){
     <td width="31%" class="hed">NOTES</td>
   </tr>
   <?php foreach($orders->orders as $order) { ?>
+  <?php echo "<pre>";
+  print_r($order);
+  ?>
   <tr>
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
     <td width="12%"><strong><?php echo $order->updated_at; ?></strong></td>
@@ -64,10 +67,7 @@ if(isset($_POST['submit_id'])){
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="last-text"><?php if($order->note != '' ){ echo $order->note; } else { ?> Here is some text about this mobile app. Here is some text about this mobile app.<?php } ?></div></td>
-    <?php  $arrayobj = new ArrayObject($order->order->line_items);
-       $line_item_count = $arrayobj->count();
-      echo "<td>".$line_item_count."</td>";
-     ?>
+    
   </tr>
   <?php } ?>
  </table>
