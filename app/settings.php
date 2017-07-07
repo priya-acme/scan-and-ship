@@ -35,6 +35,7 @@
 <div class="margtop30">
 <div class="container">
 <div class="row">
+<?php if(isset($_POST['save_changes'])){ ?>
 <div class="col-sm-12 col-md-6">
 <span class="role2">SELECT</span>
 <span class="radio radio-primary">
@@ -46,6 +47,19 @@
 <label for="radio3">Three steps verification</label>
 </span>
 </div>
+<?php } else { ?>
+<div class="col-sm-12 col-md-6">
+<span class="role2">SELECT</span>
+<span class="radio radio-primary">
+ <input type="radio" name="select_veri" id="radio1" value="One" <?php if($get_verification['verification_step'] == 'One') { echo "checked"; }?>>
+<label for="radio1">One step verification</label>
+<input type="radio" name="select_veri" id="radio2" value="Two" <?php if($get_verification['verification_step'] == 'Two') { echo "checked"; }?>>
+<label for="radio2">Two steps verification</label>
+<input type="radio" name="select_veri" id="radio3" value="Three" <?php if($get_verification['verification_step'] == 'Three') { echo "checked"; }?>>
+<label for="radio3">Three steps verification</label>
+</span>
+</div>
+<?php } ?>
 </div>
 <div class="row">
 <div class="col-sm-12 col-sm-12 marbot30">
