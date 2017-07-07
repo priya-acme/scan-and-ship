@@ -12,7 +12,8 @@ if(isset($_POST['submit_barcode'])){
 	$barcode_sku = $_POST['barcode_sku'];
 	//echo $barcode_sku;
 	$select_role = $_SESSION['select_role'];
-	$select_role = $_POST['select_role'];
+	$select_role1 = $_POST['select_role'];
+	echo $select_role1;
 	if($select_role == 'Picker' || $select_role == 'Shipper' || $select_role == 'Receiver' ){
 		$selected_role = $select_role." "."ok";
 	}
@@ -151,7 +152,6 @@ if(isset($_POST['submit_barcode'])){
     <td width="17%" class="hed">SKU</td>
     <td width="8%" class="hed">PICKED</td>
     <td width="9%" class="hed">SHIPPED</td>
-    <td width="21%" class="hed">READY FOR PICKUP</td>
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
@@ -214,27 +214,7 @@ if(isset($_POST['submit_barcode'])){
                <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } } ?>
     
-    <?php 
     
-    // Receiver verification
-    
-        if(isset($_POST['submit_barcode'])){ 
-    	$barcode_sku = $_POST['barcode_sku'];
-    	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
-    	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
-    	if($get_order_veri_sku['verification']== 'Receiver ok' || $get_order_veri_barcode['verification']== 'Receiver ok') { ?>
-    	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-    	<?php } else { ?>
-        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
-        <?php } ?>
-        <?php } else { 
-        	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
-        	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
-        	if($get_order_veri_sku['verification']== 'Receiver ok' || $get_order_veri_barcode['verification']== 'Receiver ok') { ?>
-               <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-        	<?php } else { ?>
-               <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
-        <?php } } ?>
  
 
   </tr>
