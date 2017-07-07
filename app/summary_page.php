@@ -60,6 +60,14 @@ if(isset($_POST['submit_id'])){
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
     <td width="12%"><strong><?php echo $order->updated_at; ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
+    <?php  $arrayobj = new ArrayObject($order->order->line_items);
+       $line_item_count = $arrayobj->count();
+       for($i=0;$i<$line_item_count;$i++)
+       {
+       	echo $i;
+       }
+     ?>
+     
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
