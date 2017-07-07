@@ -74,8 +74,8 @@ if(isset($_POST['submit_id'])){
        $line_item_count = $arrayobj->count();
       echo "<td>".$line_item_count."</td>";
      ?>
-     <td><?php echo $Stores->p_count_order($order->id); ?></td>
-     <td><?php echo $Stores->s_count_order($order->id); ?></td>
+     <td><?php print_r($Stores->p_count_order($order->id)); ?></td>
+     <td><?php print_r($Stores->s_count_order($order->id)); ?></td>
   </tr>
   <?php } ?>
  </table>
