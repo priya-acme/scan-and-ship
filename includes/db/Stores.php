@@ -15,12 +15,9 @@ class Stores extends DB_Connection{
 		//print_r($data);
 		return $this->add($this->table_name , $data);
 	}
-	function check_preference($shop){
-		$query  = "select * from preference where related_url='$shop'";
-		echo $query;
-		$result = pg_query($this->connection , $query);
-		return pg_fetch_all($result);
-	}
+	
+	// picker
+	
 	function order_veri($sku, $barcode, $order_id, $verification){
 		return $this->order_verification($sku, $barcode, $order_id, $verification);
 	}
@@ -33,12 +30,22 @@ class Stores extends DB_Connection{
 	function check_order_veri($sku,$order_id,$verification){
 		return $this->check_order_verification($sku,$order_id,$verification);
 	}
-	function update_verification($sku,$order_id,$verification){
-		return $this->update_order_verification($sku,$order_id,$verification);
+	
+	
+	// shipper
+	
+	function s_order_veri($sku, $barcode, $order_id, $verification){
+		return $this->s_order_verification($sku, $barcode, $order_id, $verification);
 	}
-	/*public function updateData($data, $criteria)
-	 {
-	 return $this->update($this->table_name, $data, $criteria);
-	 }*/
+	function s_get_order_veri_sku($sku,$order_id){
+		return $this->s_get_order_verification_sku($sku,$order_id);
+	}
+	function s_get_order_veri_barcode($barcode,$order_id){
+		return $this->s_get_order_verification_barcode($barcode,$order_id);
+	}
+	function s_check_order_veri($sku,$order_id,$verification){
+		return $this->s_check_order_verification($sku,$order_id,$verification);
+	}
+	
 }
 ?>

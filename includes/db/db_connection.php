@@ -43,6 +43,9 @@ class DB_Connection{
 		    return mysqli_fetch_assoc($result);
 		}
 	}
+	
+	// picker
+	
 	function order_verification($sku,$barcode,$order_id,$verification){
 		$query = "insert into order_verification(sku,barcode,order_id,verification) values('$sku','$barcode','$order_id','$verification')";
 		//echo $query;
@@ -62,6 +65,32 @@ class DB_Connection{
 	}
 	function check_order_verification($sku,$order_id,$verification){
 		$query = "select * from order_verification where order_id='$order_id' and sku='$sku' and verification='$verification'";
+		//echo $query;
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
+	
+	// shipper
+	
+	function s_order_verification($sku,$barcode,$order_id,$verification){
+		$query = "insert into shipper_order_verification(sku,barcode,order_id,verification) values('$sku','$barcode','$order_id','$verification')";
+		//echo $query;
+		$result = mysqli_query($this->connection, $query);
+	}
+	function s_get_order_verification_sku($sku,$order_id){
+		$query = "select * from shipper_order_verification where order_id='$order_id' and sku='$sku'";
+		//echo $query;
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
+	function s_get_order_verification_barcode($barcode,$order_id){
+		$query = "select * from shipper_order_verification where order_id='$order_id' and barcode='$barcode'";
+		//echo $query;
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
+	function s_check_order_verification($sku,$order_id,$verification){
+		$query = "select * from shipper_order_verification where order_id='$order_id' and sku='$sku' and verification='$verification'";
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);

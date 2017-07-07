@@ -13,7 +13,7 @@ if(isset($_POST['submit_barcode'])){
 	//echo $barcode_sku;
 	$select_role = $_SESSION['select_role'];
 	$select_role1 = $_POST['select_role'];
-	echo $select_role1;
+	//echo $select_role1;
 	if($select_role == 'Picker' || $select_role == 'Shipper' || $select_role == 'Receiver' ){
 		$selected_role = $select_role." "."ok";
 	}
@@ -24,10 +24,18 @@ if(isset($_POST['submit_barcode'])){
 		$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id);
 		if($variants->variant->sku == $barcode_sku || $variants->variant->barcode == $barcode_sku)
 		{
+		   if($selected_role == 'Picker ok' || $select_role1 == 'Picker' ){
 			$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 			if(empty($check_order_veri)){
 			$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
-	     }
+	         }
+	        }
+	        if($selected_role == 'Shipper ok' || $select_role1 == 'Shipper' ){
+	        	$s_check_order_veri = $Stores->s_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
+	        	if(empty($s_check_order_veri)){
+	        		$Stores->s_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
+	        	}
+	        }
 		}
 		
 	}
@@ -198,17 +206,17 @@ if(isset($_POST['submit_barcode'])){
       
         if(isset($_POST['submit_barcode'])){ 
     	$barcode_sku = $_POST['barcode_sku'];
-    	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
-    	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
-    	if($get_order_veri_sku['verification']== 'Shipper ok' || $get_order_veri_barcode['verification']== 'Shipper ok') { ?>
+    	$s_get_order_veri_barcode = $Stores->s_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+    	$s_get_order_veri_sku = $Stores->s_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+    	if($s_get_order_veri_sku['verification']== 'Shipper ok' || $s_get_order_veri_barcode['verification']== 'Shipper ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
         <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } ?>
         <?php } else { 
-        	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
-        	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
-        if($get_order_veri_sku['verification']== 'Shipper ok' || $get_order_veri_barcode['verification']== 'Shipper ok') { ?>
+        	$s_get_order_veri_barcode = $Stores->s_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        	$s_get_order_veri_sku = $Stores->s_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+        if($s_get_order_veri_sku['verification']== 'Shipper ok' || $s_get_order_veri_barcode['verification']== 'Shipper ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         	<?php } else { ?>
                <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
