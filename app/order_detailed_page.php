@@ -217,7 +217,7 @@ if(isset($_POST['submit_barcode'])){
     	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
-        <td><div class="red"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } ?>
         <?php } else { 
         	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
@@ -241,7 +241,7 @@ if(isset($_POST['submit_barcode'])){
     	if($s_get_order_veri_sku['verification']== 'Shipper ok' || $s_get_order_veri_barcode['verification']== 'Shipper ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
-        <td><div class="red"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
         <?php } ?>
         <?php } else { 
         	$s_get_order_veri_barcode = $Stores->s_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
@@ -263,9 +263,9 @@ if(isset($_POST['submit_barcode'])){
     	$r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
     	if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-    	<?php } else { if($select_role == 'Receiver' || $selected_role == 'Receiver ok' ) { ?>
-        <td><div class="red"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-        <?php } } ?>
+    	<?php } else { ?>
+        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <?php } ?>
         <?php } else { 
         	$r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
         	$r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
