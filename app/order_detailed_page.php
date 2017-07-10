@@ -170,7 +170,7 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
   	?>
   <tr>
    <td><strong>Internal Notes</strong></td>
-   <td><textarea name="order_note" class="txtarea" placeholder="Order notes will be here! if notes go longer than specific amount they will be hidden until clicked to go into order page."></textarea>
+   <td><textarea name="order_note" class="text-area" placeholder="Order notes will be here! if notes go longer than specific amount they will be hidden until clicked to go into order page."></textarea>
    
    </td>
   </tr>
