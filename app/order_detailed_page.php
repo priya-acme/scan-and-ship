@@ -44,9 +44,10 @@ if(isset($_POST['submit_barcode'])){
 	        		$Stores->r_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
 	        	}
 	        }
+	        break;
 		}
 		else {
-			//echo "Not Matched";
+			echo "Not Matched";
 			//break;
 		}
 		
