@@ -46,7 +46,7 @@ if(isset($_POST['submit_barcode'])){
 		}
 		else {
 			echo "Not Matched";
-			break;
+			//break;
 		}
 		
 	}
