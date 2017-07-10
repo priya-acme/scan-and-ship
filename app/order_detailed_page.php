@@ -309,7 +309,7 @@ if(isset($_POST['submit_barcode'])){
 </div>
 <div class="row">
 <div class="col-md-12 col-sm-12">
-<textarea  class="txtarea" placeholder="Customer Notes"><?php if($orders->order->note != '' ){ echo $order->order->note; } ?></textarea>
+<textarea  class="txtarea"><?php if($orders->order->note != '' ){ echo $order->order->note; } ?></textarea>
 
 </div>
 <div class="col-md-12 col-sm-12 marbot30">
