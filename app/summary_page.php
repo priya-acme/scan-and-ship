@@ -141,7 +141,7 @@ if(isset($_POST['submit_id'])){
        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
      <?php } ?>
   
-    <td><div class="last-text"><?php if($order->note != '' ){ echo $order->note; } else { ?> Here is some text about this mobile app. Here is some text about this mobile app.<?php } ?></div></td>
+    <td><div class="last-text"><?php $get_order_note = $Stores->get_order_note($order->id); if(!empty($get_order_note) ){ echo $get_order_note['order_note']; } else { ?> Here is some text about this mobile app. Here is some text about this mobile app.<?php } ?></div></td>
    </tr>
   <?php } ?>
  </table>
