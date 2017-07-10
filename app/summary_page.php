@@ -141,6 +141,7 @@ if(isset($_POST['submit_id'])){
      } else { ?>
        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
      <?php } ?>
+     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
      <?php $get_order_note = $Stores->get_order_note($order->id); 
          if(!empty($get_order_note) ){ ?>
             <td><div class="last-text"><?php  echo $get_order_note['order_note']; ?></div></td>
