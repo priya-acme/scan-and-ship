@@ -207,8 +207,8 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 </table>
 </div>
 <div class="col-md-2 col-sm-12">
-<DIV class="hdd">SHIPPING DETAILS</div>
-<div class="disable2"><i class="fa fa-ban" aria-hidden="true"></i></div>
+<div class="hdd">READY FOR PICKUP</div>
+<div class="disable2"><input type="checkbox" value="receiver" name="ready_for_pcikup" ></i></div>
 </div>
 </div>
 </div>
@@ -228,7 +228,7 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
     <td width="17%" class="hed">SKU</td>
     <td width="8%" class="hed">PICKED</td>
     <td width="9%" class="hed">SHIPPED</td>
-    <td width="9%" class="hed">Receiver</td>
+    <td width="9%" class="hed">READY FOR PICKUP</td>
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
