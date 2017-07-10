@@ -353,7 +353,10 @@ function sendvalue(a,b){
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-         document.getElementById('done').innerHTML = this.responseText;
+         //document.getElementById('done').innerHTML = this.responseText;
+         if(this.responseText == 'ok'){
+           window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+order_id;
+             }
 	    }
 	  };
 	  xhttp.open("GET", "../ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
