@@ -359,6 +359,7 @@ function sendvalue(a,b){
 	  };
 	  xhttp.open("GET", "../ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
+	  window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+b;
 }
 </script>
 <?php include 'footer.php'; ?>
