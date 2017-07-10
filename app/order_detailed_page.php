@@ -195,8 +195,8 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
   </tr>
   <tr>
     <td><strong>Address</strong></td>
-    <td><?php echo $orders->order->shipping_address->address1." ".$orders->order->shipping_address->address2."<br><br>".
- 	       $orders->order->shipping_address->city." ".$orders->order->shipping_address->zip."<br><br>".$orders->order->shipping_address->country; ?></td>
+    <td><?php echo $orders->order->shipping_address->address1." ".$orders->order->shipping_address->address2.",".
+ 	       $orders->order->shipping_address->city." ".$orders->order->shipping_address->zip.",".$orders->order->shipping_address->country; ?>.</td>
   </tr>
   <?php if($orders->order->shipping_address->phone != '' ){ ?>
   <tr>
@@ -228,7 +228,7 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
     <td width="17%" class="hed">SKU</td>
     <td width="8%" class="hed">PICKED</td>
     <td width="9%" class="hed">SHIPPED</td>
-    <!-- <td width="9%" class="hed">READY FOR PICKUP</td>-->
+    <td width="9%" class="hed">READY FOR PICKUP</td>
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
@@ -300,7 +300,7 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
       
       // Receiver verification  
       
-        /* if(isset($_POST['submit_barcode'])){ 
+         if(isset($_POST['submit_barcode'])){ 
     	$barcode_sku = $_POST['barcode_sku'];
     	$r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
     	$r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
@@ -316,7 +316,7 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         	<?php } else { ?>
                <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
-        <?php } } */ ?>
+        <?php } }  ?>
 
   </tr>
   <?php } ?>

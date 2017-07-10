@@ -89,6 +89,7 @@ if(isset($_POST['submit_id'])){
     <td width="6%" class="hed">PICKED</td>
     <td width="7%" class="hed">SHIPPED</td>
     <td width="7%" class="hed">READY FOR PICKUP</td>
+    <td width="7%" class="hed">IN-STORE PICKUP</td>
     <td width="31%" class="hed">NOTES</td>
   </tr>
   <?php foreach($orders->orders as $order) { ?>
