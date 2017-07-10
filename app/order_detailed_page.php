@@ -356,7 +356,7 @@ function sendvalue(a,b){
          document.getElementById(b).innerHTML = this.responseText;
 	    }
 	  };
-	  xhttp.open("GET", "scan-and-ship/app/ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
+	  xhttp.open("GET", "../ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
 }
 </script>
