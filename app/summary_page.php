@@ -141,7 +141,11 @@ if(isset($_POST['submit_id'])){
      } else { ?>
        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
      <?php } ?>
+     <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
+     <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else { ?>
      <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
      <?php $get_order_note = $Stores->get_order_note($order->id); 
          if(!empty($get_order_note) ){ ?>
             <td><div class="last-text"><?php  echo $get_order_note['order_note']; ?></div></td>
