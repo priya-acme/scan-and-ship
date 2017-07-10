@@ -145,5 +145,19 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
+	
+	// add order notes
+	
+	function add_order_notes($order_id , $note){
+		$query = "insert into `order_notes` (order_id,order_note) values('$order_id','$note')";
+		$result = mysqli_query($this->connection, $query);
+	}
+	
+	function get_order_notes($order_id){
+		$query = "select * from `order_notes` where order_id = '$order_id'";
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
+	
 }
 

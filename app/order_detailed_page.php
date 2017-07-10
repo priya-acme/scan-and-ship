@@ -47,6 +47,15 @@ if(isset($_POST['submit_barcode'])){
 		
 	}
 }
+if(isset($_POST['save_notes'])){
+	$order_notes = $_POST['order_note'];
+	$order_id=$_REQUEST['id'];
+	if(!empty($order_notes)){
+		$Stores->add_order_note($_REQUEST['id'], $order_notes);
+		header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$order_id");
+	}
+}
+$get_order_note = $Stores->get_order_note($_REQUEST['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -146,10 +155,10 @@ if(isset($_POST['submit_barcode'])){
     <td><strong>Dates</strong></td>
     <td><?php echo $orders->order->updated_at; ?></td>
   </tr>
-  <?php if($orders->order->note != '' ){ ?>
+  <?php if(!empty($get_order_note)) { ?>
   <tr>
     <td><strong>Internal Notes</strong></td>
-   <td><?php echo $orders->order->note;  ?></td>
+   <td><?php echo $get_order_note['order_note'];  ?></td>
   </tr>
   <?php }  else {
   	?>

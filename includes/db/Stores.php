@@ -82,5 +82,14 @@ class Stores extends DB_Connection{
 		return $this->get_steps_verification();
 	}
 	
+	// order note
+	
+	function add_order_note($order_id , $note){
+		return $this->add_order_notes($order_id,$note);
+	}
+	
+	function get_order_note($order_id){
+		return $this->get_order_notes($order_id);
+	}
 }
 ?>
