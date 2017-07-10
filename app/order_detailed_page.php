@@ -209,14 +209,13 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 <div class="col-md-2 col-sm-12">
 <div class="hdd">IN-STORE PICKUP</div>
 <div class="instore">
-<label class="switch">
-  <input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']?>')">
-  <span id="done"></span>
-  <div class="slider round"></div>
-</label>
+<input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']?>')">
+<label>
 In Store Pickup
+</label>
+<span id="done"></span>
 <br><br>
-<center><input class="btn btn-primary btn-sm" type="submit" value="Submit"></center>
+<!-- <center><input class="btn btn-primary btn-sm" type="submit" value="Submit"></center> -->
 </div></div>
 </div>
 </div>
