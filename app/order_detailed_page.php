@@ -175,7 +175,7 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
    </td>
   </tr>
   <tr>
-  <td colspan="2"><input type="submit" name="save_notes" value="Save Notes"></td>
+  <td colspan="2"><input class="btn btn-primary" type="submit" name="save_notes" value="Save Notes"></td>
   </tr>
   <?php 
   }?>
@@ -208,8 +208,15 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 </div>
 <div class="col-md-2 col-sm-12">
 <div class="hdd">IN-STORE PICKUP</div>
-<div class="disable2"><input type="checkbox" value="receiver" name="ready_for_pickup" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']; ?>')">Ready For Pickup</i></div>
-</div>
+<div class="instore">
+<label class="switch">
+  <input type="checkbox">
+  <div class="slider round"></div>
+</label>
+In Store Pickup
+<br><br>
+<center><input class="btn btn-primary btn-sm" type="submit" value="Submit"></center>
+</div></div>
 </div>
 </div>
 </div>
@@ -341,8 +348,16 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 </form>
 <script>
 function sendvalue(a,b){
-	alert(a);
-	alert(b);
+	var chckbx_val = a;
+	var order_id = b;
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         document.getElementById(b).innerHTML = this.responseText;
+	    }
+	  };
+	  xhttp.open("GET", "ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
+	  xhttp.send();
 }
 </script>
 <?php include 'footer.php'; ?>
