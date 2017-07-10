@@ -195,8 +195,8 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
   </tr>
   <tr>
     <td><strong>Address</strong></td>
-    <td><?php echo $orders->order->shipping_address->address1." ".$orders->order->shipping_address->address2.",".
- 	       $orders->order->shipping_address->city." ".$orders->order->shipping_address->zip.",".$orders->order->shipping_address->country; ?>.</td>
+    <td><?php if($orders->order->shipping_address->address1 != '' || $orders->order->shipping_address->address2 != '' ) { echo $orders->order->shipping_address->address1." ".$orders->order->shipping_address->address2.","; }
+    if($orders->order->shipping_address->city!= '' ) { echo $orders->order->shipping_address->city." ".$orders->order->shipping_address->zip.","; } if($orders->order->shipping_address->country!= '' ) { echo $orders->order->shipping_address->country." "."."; } ?></td>
   </tr>
   <?php if($orders->order->shipping_address->phone != '' ){ ?>
   <tr>
@@ -210,7 +210,7 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 <div class="hdd">IN-STORE PICKUP</div>
 <div class="instore">
 <label class="switch">
-  <input type="checkbox">
+  <input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']?>')">
   <div class="slider round"></div>
 </label>
 In Store Pickup
@@ -336,7 +336,7 @@ In Store Pickup
 </div>
 <div class="row">
 <div class="col-md-12 col-sm-12">
-<textarea  class="txtarea" placeholder="Customer Notes"><?php if($orders->order->note != '' ){ echo $orders->order->note; } ?></textarea>
+<textarea  class="txtarea" placeholder="Customer Notes" readonly><?php if($orders->order->note != '' ){ echo $orders->order->note; } ?></textarea>
 
 </div>
 <div class="col-md-12 col-sm-12 marbot30">
