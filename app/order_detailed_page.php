@@ -155,7 +155,7 @@ if(isset($_POST['submit_barcode'])){
   	?>
   <tr>
     <td><strong>Internal Notes</strong></td>
-   <td>Order notes will be here! if notes go longer than specific amount they will be hidden until clicked to go into order page.</td>
+   <td><input type="text" name="order_note" placeholder="Internal Note" /></td>
   </tr>
   <?php 
   }?>
