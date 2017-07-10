@@ -54,7 +54,7 @@ if(isset($_POST['submit_id'])){
             </label>
             <input type="radio" name="select_role" id="radio3" value="Receiver">
             <label for="radio3">
-                RECEIVER
+                READY FOR PICKUP
             </label>
 <?php } ?>
  
@@ -88,7 +88,7 @@ if(isset($_POST['submit_id'])){
     </button></td>
     <td width="6%" class="hed">PICKED</td>
     <td width="7%" class="hed">SHIPPED</td>
-    <td width="7%" class="hed">RECEIVER</td>
+    <td width="7%" class="hed">READY FOR PICKUP</td>
     <td width="31%" class="hed">NOTES</td>
   </tr>
   <?php foreach($orders->orders as $order) { ?>

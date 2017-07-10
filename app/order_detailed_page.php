@@ -102,7 +102,7 @@ if(isset($_POST['submit_barcode'])){
             </label>
             <input type="radio" name="select_role" id="radio3" value="Receiver">
             <label for="radio3">
-                RECEIVER
+                READY FOR PICKUP
             </label>
 <?php } ?>
  
