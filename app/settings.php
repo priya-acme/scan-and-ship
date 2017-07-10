@@ -41,11 +41,11 @@
 <span class="role2">SELECT</span>
 <span class="radio radio-primary">
  <input type="radio" name="select_veri" id="radio1" value="One" <?php if($get_verification['verification_step'] == 'One') { echo "checked"; }?>>
-<label for="radio1">One step verification</label>
+<label for="radio1">Picker Verification</label>
 <input type="radio" name="select_veri" id="radio2" value="Two" <?php if($get_verification['verification_step'] == 'Two') { echo "checked"; }?>>
-<label for="radio2">Two steps verification</label>
+<label for="radio2">Shipper Verification</label>
 <input type="radio" name="select_veri" id="radio3" value="Three" <?php if($get_verification['verification_step'] == 'Three') { echo "checked"; }?>>
-<label for="radio3">Three steps verification</label>
+<label for="radio3">In-store Pickup Verification</label>
 </span>
 </div>
 </div>
