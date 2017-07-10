@@ -5,9 +5,10 @@ $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_SESSION['shop_name'];
 $shop_info = $Stores->is_shop_exists($shop);
+$order_id=$_REQUEST['order_id'];
 if(empty($Stores->gett_instore_pickup($_REQUEST['order_id']))){
 $Stores->addd_instore_pickup($_REQUEST['order_id'],$_REQUEST['chkbx_val']);
-echo "ok";
+header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$order_id");
 }
 ?>
 
