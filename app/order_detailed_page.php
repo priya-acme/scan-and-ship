@@ -44,10 +44,10 @@ if(isset($_POST['submit_barcode'])){
 	        	}
 	        }
 		}
-// 		else {
-// 			echo "<script>alert('Not Matched')<script>";
-// 			break;
-// 		}
+		else {
+			echo "Not Matched";
+			break;
+		}
 		
 	}
 }
