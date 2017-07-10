@@ -218,7 +218,7 @@ In Store Pickup
 <!-- <center><input class="btn btn-primary btn-sm" type="submit" value="Submit"></center> -->
 </div>
 <?php } else { ?>
-<div class="green"><i class="fa fa-check" aria-hidden="true"></i></div>
+<div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div>
 <?php }?>
 </div>
 </div>
