@@ -225,7 +225,11 @@ if(isset($_POST['submit_barcode'])){
     <td><?php echo $variants->variant->sku; ?></td>
     
     
-    <?php } 
+    <?php } else { 
+    	?>
+    	<td>-</td>
+    <?php 
+    } 
     
     // Picker verification 
        
