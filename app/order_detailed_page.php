@@ -208,7 +208,7 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 </div>
 <div class="col-md-2 col-sm-12">
 <div class="hdd">IN-STORE PICKUP</div>
-<div class="disable2"><input type="checkbox" value="receiver" name="ready_for_pickup" >Ready For Pickup</i></div>
+<div class="disable2"><input type="checkbox" value="receiver" name="ready_for_pickup" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']; ?>')">Ready For Pickup</i></div>
 </div>
 </div>
 </div>
@@ -339,4 +339,10 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 </div>
 </div>
 </form>
+<script>
+function sendvalue(a,b){
+	alert(a);
+	alert(b);
+}
+</script>
 <?php include 'footer.php'; ?>
