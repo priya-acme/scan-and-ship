@@ -62,6 +62,7 @@ if(isset($_POST['save_notes'])){
 	}
 }
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
+$get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -208,15 +209,18 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 </div>
 <div class="col-md-2 col-sm-12">
 <div class="hdd">IN-STORE PICKUP</div>
+<?php if(empty($get_instore_pickup)) { ?>
 <div class="instore">
 <input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']?>')">
 <label>
 In Store Pickup
 </label>
-<span id="done"></span>
-<br><br>
 <!-- <center><input class="btn btn-primary btn-sm" type="submit" value="Submit"></center> -->
-</div></div>
+</div>
+<?php } else { ?>
+<div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div>
+<?php }?>
+</div>
 </div>
 </div>
 </div>
