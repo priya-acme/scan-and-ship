@@ -155,9 +155,12 @@ if(isset($_POST['submit_barcode'])){
   	?>
   <tr>
    <td><strong>Internal Notes</strong></td>
-   <td><textarea name="order_note" class="txtarea" placeholder="Internal Note"></textarea>
-   <input type="submit" name="save_notes" value="Save Notes">
+   <td><textarea name="order_note" class="txtarea" placeholder="Order notes will be here! if notes go longer than specific amount they will be hidden until clicked to go into order page."></textarea>
+   
    </td>
+  </tr>
+  <tr>
+  <td colspan="2"><input type="submit" name="save_notes" value="Save Notes"></td>
   </tr>
   <?php 
   }?>
