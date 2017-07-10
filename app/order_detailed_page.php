@@ -211,6 +211,7 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 <div class="instore">
 <label class="switch">
   <input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']?>')">
+  <span id="done"></span>
   <div class="slider round"></div>
 </label>
 In Store Pickup
@@ -353,7 +354,7 @@ function sendvalue(a,b){
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-         document.getElementById(b).innerHTML = this.responseText;
+         document.getElementById('done').innerHTML = this.responseText;
 	    }
 	  };
 	  xhttp.open("GET", "../ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);

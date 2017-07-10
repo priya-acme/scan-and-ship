@@ -159,5 +159,19 @@ class DB_Connection{
 		return mysqli_fetch_assoc($result);
 	}
 	
+	// in store pickup
+	
+	function add_instore_pickup($order_id , $val){
+		$query = "insert into `order_instore_pickup` (order_id,instore_pickup) values('$order_id','$val')";
+		$result = mysqli_query($this->connection, $query);
+	}
+	
+	function get_instore_pickup($order_id){
+		$query = "select * from `order_instore_pickup` where order_id = '$order_id'";
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
+	
+	
 }
 

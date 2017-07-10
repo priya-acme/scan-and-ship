@@ -91,5 +91,16 @@ class Stores extends DB_Connection{
 	function get_order_note($order_id){
 		return $this->get_order_notes($order_id);
 	}
+	
+	// instore pickup
+	
+	
+	function addd_instore_pickup($order_id , $val){
+		return $this->add_instore_pickup($order_id,$val);
+	}
+	
+	function gett_instore_pickup($order_id){
+		return $this->get_instore_pickup($order_id);
+	}
 }
 ?>
