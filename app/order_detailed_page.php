@@ -25,7 +25,7 @@ if(isset($_POST['submit_barcode'])){
 		$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id);
 		if($variants->variant->sku == $barcode_sku || $variants->variant->barcode == $barcode_sku)
 		{
-			break;
+			//break;
 		   if($selected_role == 'Picker ok' || $select_role1 == 'Picker' ){
 			$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 			if(empty($check_order_veri)){
@@ -46,7 +46,7 @@ if(isset($_POST['submit_barcode'])){
 	        }
 		}
 		else {
-			echo "Not Matched";
+			//echo "Not Matched";
 			//break;
 		}
 		
