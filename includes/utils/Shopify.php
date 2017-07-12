@@ -56,7 +56,7 @@ class Shopify {
 		}
 	}
 	function getAuthUrl($shop){
-		$scopes = ["read_products", "read_orders"];
+		$scopes = ["read_products", "read_orders","write_orders"];
 		//print_r($scopes);
 		//echo SHOPIFY_API_KEY;
 		return 'https://' . $shop . '/admin/oauth/authorize?'
