@@ -14,6 +14,7 @@ if(isset($_POST['submit_barcode'])){
 	//echo $barcode_sku;
 	$select_role = $_SESSION['select_role'];
 	$select_role = $_POST['select_role'];
+	$_SESSION['select_role'] = $_POST['select_role'];
 	//echo $select_role;
 	if($select_role == 'Picker' || $select_role == 'Shipper' || $select_role == 'Receiver' ){
 		$selected_role = $select_role." "."ok";
@@ -93,30 +94,30 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
 	?>
-<input type="radio" name="select_role" id="radio1" value="Picker" checked>
+<input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } ?>>
 <label for="radio1">
  PICKER
 </label>
 <?php 
 } if($get_verification['verification_step'] == 'Two') { ?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" checked>
+            <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } ?>>
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper">
+            <input type="radio" name="select_role" id="radio2" value="Shipper" <?php if($_SESSION['select_role'] == 'Shipper') { echo "checked"; } ?>>
             <label for="radio2">
                 SHIPPER
             </label>
 <?php } if($get_verification['verification_step'] == 'Three') {?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" checked>
+            <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } ?>>
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper">
+            <input type="radio" name="select_role" id="radio2" value="Shipper" <?php if($_SESSION['select_role'] == 'Shipper') { echo "checked"; } ?>>
             <label for="radio2">
                 SHIPPER
             </label>
-            <input type="radio" name="select_role" id="radio3" value="Receiver">
+            <input type="radio" name="select_role" id="radio3" value="Receiver" <?php if($_SESSION['select_role'] == 'Receiver') { echo "checked"; } ?>>
             <label for="radio3">
                 READY FOR PICKUP
             </label>
