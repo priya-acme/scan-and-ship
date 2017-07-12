@@ -48,14 +48,15 @@ if(isset($_POST['submit_barcode'])){
 	        }
 	        //break;
 		}
-		if($i== 1){
-			
-		}
-		else {
-			echo "Not Matched";
-			//break;
-		}
 		
+		
+	}
+	if($i == 1){
+		
+	}
+	else {
+		echo "Not Matched";
+		//break;
 	}
 }
 if(isset($_POST['save_notes'])){
