@@ -49,15 +49,15 @@ if(isset($_POST['submit_barcode'])){
 	        }
 	        //break;
 		}
-		if($j == 1){
-			echo $j;
-		}
-		else {
-			echo $j;
-		}
+		
 		
 	}
-	
+	if($j == 1){
+		echo $j;
+	}
+	else {
+		echo $j;
+	}
 }
 if(isset($_POST['save_notes'])){
 	$order_notes = $_POST['order_note'];
