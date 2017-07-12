@@ -136,7 +136,7 @@ class Shopify {
 			
 		$curl_url = "https://$shop/admin/orders/$order_id.json";
 		
-		return $this->curlPutRequest($curl_url, $token, $data);
+		return $this->curlPutRequest($curl_url, $access_token);
 	}
 	
 	// get orders 
