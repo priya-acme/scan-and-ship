@@ -180,7 +180,10 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
   <tr>
     <td><strong>Internal Notes</strong></td>
    <td><textarea name="update_order_note" class="text-area"><?php echo $get_order_note['order_note'];  ?></textarea></td>
-   <td colspan="2"><input class="btn btn-primary" type="submit" name="update_notes" value="Update Notes"></td>
+   
+  </tr>
+  <tr>
+  <td colspan="2"><input class="btn btn-primary" type="submit" name="update_notes" value="Update Notes"></td>
   </tr>
   <?php }  else {
   	?>
