@@ -29,30 +29,30 @@ if(isset($_POST['submit_id'])){
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
 	?>
-<input type="radio" name="select_role" id="radio1" value="Picker" checked>
+<input type="radio" name="select_role" id="radio1" value="Picker" checked onclick="selected_radio(this.value)">
 <label for="radio1">
  PICKER
 </label>
 <?php 
 } if($get_verification['verification_step'] == 'Two') { ?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" checked>
+            <input type="radio" name="select_role" id="radio1" value="Picker" checked onclick="selected_radio(this.value)">
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper">
+            <input type="radio" name="select_role" id="radio2" value="Shipper" onclick="selected_radio(this.value)">
             <label for="radio2">
                 SHIPPER
             </label>
 <?php } if($get_verification['verification_step'] == 'Three') {?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" checked>
+            <input type="radio" name="select_role" id="radio1" value="Picker" checked onclick="selected_radio(this.value)">
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper">
+            <input type="radio" name="select_role" id="radio2" value="Shipper" onclick="selected_radio(this.value)">
             <label for="radio2">
                 SHIPPER
             </label>
-            <input type="radio" name="select_role" id="radio3" value="Receiver">
+            <input type="radio" name="select_role" id="radio3" value="Receiver" onclick="selected_radio(this.value)">
             <label for="radio3">
                 READY FOR PICKUP
             </label>
@@ -175,6 +175,17 @@ function sendvalue(a,b){
 	  xhttp.open("GET", "ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
 	  window.location.href = 'http://67.207.82.1/scan-and-ship/app/summary_page.php';
+}
+function selected_radio(r){
+	var selected_rval = r;
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         //document.getElementById('done').innerHTML = this.responseText;
+       }
+	  };
+	  xhttp.open("GET", "role.php?selected_rval="+selected_rval, true);
+	  xhttp.send();
 }
 </script>
 <?php include 'footer.php' ?>

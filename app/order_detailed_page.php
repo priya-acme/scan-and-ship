@@ -94,13 +94,13 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
 	?>
-<input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } ?>>
+<input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } else { echo "checked"; } ?>>
 <label for="radio1">
  PICKER
 </label>
 <?php 
 } if($get_verification['verification_step'] == 'Two') { ?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } ?>>
+            <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } else { echo "checked"; }?>>
             <label for="radio1">
                 PICKER
             </label>
@@ -109,7 +109,7 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
                 SHIPPER
             </label>
 <?php } if($get_verification['verification_step'] == 'Three') {?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } ?>>
+            <input type="radio" name="select_role" id="radio1" value="Picker" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; }else { echo "checked"; }?>>
             <label for="radio1">
                 PICKER
             </label>

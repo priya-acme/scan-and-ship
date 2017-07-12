@@ -1,4 +1,7 @@
-<?php session_start();
-echo $_REQUEST['role'];
-//header('location:/scan-and-ship/app/order_detailed_page.php/?id=');
-?>
+ <?php 
+ include __DIR__ .'../../includes/utils/Shopify.php';
+ include __DIR__ .'../../includes/db/Stores.php';
+ $Shopify = new Shopify();
+ $Stores = new Stores();
+ $_SESSION['select_role'] = $_REQUEST['selected_rval'];
+ ?>
