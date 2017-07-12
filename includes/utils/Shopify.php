@@ -97,6 +97,48 @@ class Shopify {
 		
 	}
 	
+	
+	// curl put request
+	
+	public function curlPutRequest($url, $access_token= false, $data = false) {
+		$ch = curl_init(); //create a new cURL resource handle
+		curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
+		
+		$http_headers = array("Content-Type:application/json");
+		if ($access_token) {
+			$http_headers = array("Content-Type:application/json", "X-Shopify-Access-Token: $access_token");
+		}
+		
+		curl_setopt($ch, CURLOPT_HEADER, false); // Include header in result? (0 = yes, 1 = no)
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		
+		if ($data) {
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		}
+		
+		$output = curl_exec($ch); // Download the given URL, and return output
+		
+		if ($output === false) {
+			return 'Curl error: ' . curl_error($ch);
+		}
+		
+		curl_close($ch); // Close the cURL resource, and free system resources
+		
+		return json_decode($output);
+	}
+	
+	// update order
+	
+	public function updateOrderInfo($shop, $access_token, $order_id) {
+			
+		$curl_url = "https://$shop/admin/orders/$order_id.json";
+		
+		return $this->curlPutRequest($curl_url, $token, $data);
+	}
+	
 	// get orders 
 	
 	public function get_orders($shop, $access_token)
