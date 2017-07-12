@@ -7,5 +7,5 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],'5814281933');
  //$updateorder = $Shopify->updateOrderInfo($shop, $shop_info['access_token'],'5814281933');
- print_r($orders);
+echo $order->order->email;
  ?>
