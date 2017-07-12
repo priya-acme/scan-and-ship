@@ -132,11 +132,12 @@ class Shopify {
 	
 	// update order
 	
-	public function updateOrderInfo($shop, $access_token, $order_id) {
+	public function updateOrderInfo($shop, $access_token, $order_id , $order) {
 			
 		$curl_url = "https://$shop/admin/orders/$order_id.json";
+		$data = json_encode($order);
 		
-		return $this->curlPutRequest($curl_url, $access_token);
+		return $this->curlPutRequest($curl_url, $access_token,$data);
 	}
 	
 	// get orders 

@@ -5,6 +5,6 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $Stores = new Stores();
  $shop = $_SESSION['shop_name'];
  $shop_info = $Stores->is_shop_exists($shop);
- $updateorder = $Shopify->updateOrderInfo($shop, $shop_info['access_token'],'621951809');
- print_r($updateorder);
+ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
+ $updateorder = $Shopify->updateOrderInfo($shop, $shop_info['access_token'],'5814281933',$orders->order->email = 'avia@gmail.com');
  ?>
