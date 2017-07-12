@@ -53,10 +53,10 @@ if(isset($_POST['submit_barcode'])){
 		
 	}
 	if($j == 1){
-		echo $j;
+		
 	}
 	else {
-		echo $j;
+		$error = "Product Not Matched" ;
 	}
 }
 if(isset($_POST['save_notes'])){
@@ -92,7 +92,7 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
  <div class="role2">BARCODE / PRODUCT CODE  <input type="text" name="barcode_sku" class="txt"> <button type="submit" class="serch" name="submit_barcode">
       <span class="glyphicon glyphicon-search"></span>
     </button></div>
- 
+ <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" color="red"><?php echo $error; ?></div><?php } ?>
 </div>
 <div class="col-sm-12 col-md-7">
 <span class="role2">SELECT ROLE : </span>
