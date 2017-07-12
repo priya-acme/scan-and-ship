@@ -93,30 +93,30 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
 	?>
-<input type="radio" name="select_role" id="radio1" value="Picker" checked readonly>
+<input type="radio" name="select_role" id="radio1" value="Picker" checked onclick="this.checked = false;">
 <label for="radio1">
  PICKER
 </label>
 <?php 
 } if($get_verification['verification_step'] == 'Two') { ?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" checked readonly>
+            <input type="radio" name="select_role" id="radio1" value="Picker" checked onclick="this.checked = false;">
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper" readonly>
+            <input type="radio" name="select_role" id="radio2" value="Shipper" onclick="this.checked = false;">
             <label for="radio2">
                 SHIPPER
             </label>
 <?php } if($get_verification['verification_step'] == 'Three') {?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" checked readonly>
+            <input type="radio" name="select_role" id="radio1" value="Picker" checked onclick="this.checked = false;">
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper" readonly>
+            <input type="radio" name="select_role" id="radio2" value="Shipper" onclick="this.checked = false;">
             <label for="radio2">
                 SHIPPER
             </label>
-            <input type="radio" name="select_role" id="radio3" value="Receiver" readonly>
+            <input type="radio" name="select_role" id="radio3" value="Receiver" onclick="this.checked = false;">
             <label for="radio3">
                 READY FOR PICKUP
             </label>
