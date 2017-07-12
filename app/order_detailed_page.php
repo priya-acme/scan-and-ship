@@ -21,14 +21,14 @@ if(isset($_POST['submit_barcode'])){
 	}
 	$arrayobj = new ArrayObject($orders->order->line_items);
 	$line_item_count = $arrayobj->count();
-	$i=0;
+	$j = 0;
 	for($i=0;$i<$line_item_count;$i++)
 	{
 		$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id);
 		if($variants->variant->sku == $barcode_sku || $variants->variant->barcode == $barcode_sku)
 		{
 			//break;
-			$i = 1;
+			$j = 1;
 		   if($selected_role == 'Picker ok' || $select_role1 == 'Picker' ){
 			$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 			if(empty($check_order_veri)){
@@ -49,16 +49,15 @@ if(isset($_POST['submit_barcode'])){
 	        }
 	        //break;
 		}
-		
+		if($j == 1){
+			echo $j;
+		}
+		else {
+			echo $j;
+		}
 		
 	}
-	if($i == 1){
-		
-	}
-	else {
-		echo "Not Matched";
-		//break;
-	}
+	
 }
 if(isset($_POST['save_notes'])){
 	$order_notes = $_POST['order_note'];
