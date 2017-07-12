@@ -174,7 +174,7 @@ function sendvalue(a,b){
 	  };
 	  xhttp.open("GET", "ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
-	 // window.location.href = 'http://67.207.82.1/scan-and-ship/app/summary_page.php';
+	  window.location.href = 'http://67.207.82.1/scan-and-ship/app/summary_page.php';
 }
 </script>
 <?php include 'footer.php' ?>
