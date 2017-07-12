@@ -97,7 +97,7 @@ if(isset($_POST['submit_id'])){
   //print_r($order);
   ?>
   <tr>
-    <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/role.php/?id=<?php echo $order->id; ?>&&role=<?php echo $_REQUEST['select_role']?>"><?php echo $order->name; ?></a></strong></td>
+    <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
     <td width="12%"><strong><?php echo $order->updated_at; ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     <?php $arrayobj = new ArrayObject($order->line_items);
