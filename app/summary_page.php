@@ -144,7 +144,7 @@ if(isset($_POST['submit_id'])){
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
      <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else { ?>
-     <input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $order->id ?>')">
+     <td><input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $order->id ?>')"></td>
      <?php } ?>
      <?php $get_order_note = $Stores->get_order_note($order->id); 
          if(!empty($get_order_note) ){ ?>
