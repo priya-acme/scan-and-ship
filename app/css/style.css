@@ -75,7 +75,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01a69e', end
 border-radius: 20px;
     height: 22px;
     width: 22px;
-    line-height: 22px;
+    line-height: 22px;text-align: center;
 }
 .green a{ color:#FFF;}
 
