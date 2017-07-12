@@ -323,3 +323,6 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.green-checked{
+	margin: 0px 0 0 40px;
+}
