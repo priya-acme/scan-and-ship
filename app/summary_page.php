@@ -144,7 +144,7 @@ if(isset($_POST['submit_id'])){
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
      <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else { ?>
-     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $order->id ?>')">
      <?php } ?>
      <?php $get_order_note = $Stores->get_order_note($order->id); 
          if(!empty($get_order_note) ){ ?>
@@ -161,4 +161,20 @@ if(isset($_POST['submit_id'])){
 </div>
 </div>
 </form>
+<script>
+function sendvalue(a,b){
+	var chckbx_val = a;
+	var order_id = b;
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         //document.getElementById('done').innerHTML = this.responseText;
+       
+	    }
+	  };
+	  xhttp.open("GET", "../ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
+	  xhttp.send();
+	  window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+b;
+}
+</script>
 <?php include 'footer.php' ?>
