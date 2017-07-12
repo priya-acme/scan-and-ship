@@ -153,6 +153,11 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 	}
 	
+	function update_order_notes($order_id , $note){
+		$query = "update `order_notes` set order_note='$note' where order_id='$order_id'";
+		$result = mysqli_query($this->connection, $query);
+	}
+	
 	function get_order_notes($order_id){
 		$query = "select * from `order_notes` where order_id = '$order_id'";
 		$result = mysqli_query($this->connection, $query);

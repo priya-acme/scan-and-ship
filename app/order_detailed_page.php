@@ -67,6 +67,14 @@ if(isset($_POST['save_notes'])){
 		header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$order_id");
 	}
 }
+if(isset($_POST['update_notes'])){
+	$uorder_notes = $_POST['update_order_note'];
+	$uorder_id=$_REQUEST['id'];
+	if(!empty($uorder_notes)){
+		$Stores->update_order_note($_REQUEST['id'], $uorder_notes);
+		header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$uorder_id");
+	}
+}
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 ?>
@@ -171,7 +179,8 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
   <?php if(!empty($get_order_note)) { ?>
   <tr>
     <td><strong>Internal Notes</strong></td>
-   <td><?php echo $get_order_note['order_note'];  ?></td>
+   <td><textarea name="update_order_note" class="text-area"><?php echo $get_order_note['order_note'];  ?></textarea></td>
+   <td colspan="2"><input class="btn btn-primary" type="submit" name="update_notes" value="Update Notes"></td>
   </tr>
   <?php }  else {
   	?>
