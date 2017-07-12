@@ -56,7 +56,7 @@ if(isset($_POST['submit_barcode'])){
 		
 	}
 	else {
-		$error = "Product Not Matched" ;
+		$error = "Product scanned doesn't match" ;
 	}
 }
 if(isset($_POST['save_notes'])){
