@@ -7,6 +7,8 @@ $shop =  $_SESSION['shop_name'];
 $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
 //echo $_SESSION['select_role'];
+$pget_order_id = $_REQUEST['id']; 
+$pselect_role = $_SESSION['select_role'];
 $get_verification = $Stores->get_step_verification();
 if(isset($_POST['submit_barcode'])){
 	$get_order_id = $_REQUEST['id'];
@@ -296,7 +298,7 @@ In Store Pickup
         	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
         	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-        	<?php } else { $pget_order_id = $_REQUEST['id']; $pselect_role = $_SESSION['select_role']; ?>
+        	<?php } else {  ?>
                <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /> </td>
         <?php } } ?>
       
@@ -313,7 +315,7 @@ In Store Pickup
     	if($s_get_order_veri_sku['verification']== 'Shipper ok' || $s_get_order_veri_barcode['verification']== 'Shipper ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
-        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_shipper_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /></td>
         <?php } ?>
         <?php } else { 
         	$s_get_order_veri_barcode = $Stores->s_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
@@ -321,7 +323,7 @@ In Store Pickup
         if($s_get_order_veri_sku['verification']== 'Shipper ok' || $s_get_order_veri_barcode['verification']== 'Shipper ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         	<?php } else { ?>
-               <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+               <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_shipper_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /></td>
         <?php } } ?>
     
     
@@ -336,7 +338,7 @@ In Store Pickup
     	if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok') { ?>
     	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
-        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+        <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /></td>
         <?php } ?>
         <?php } else { 
         	$r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
@@ -344,7 +346,7 @@ In Store Pickup
         if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         	<?php } else { ?>
-               <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+               <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /></td>
         <?php } }  ?>
 
   </tr>
@@ -404,6 +406,50 @@ function send_picker_value(o,s,ro){
 	  xhttp.open("GET", "../picker_ajax_call.php?sku="+sku+"&order_id="+porder_id+"&role="+prole, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+o; }, 500);
+}
+function send_shipper_value(so,ss,sro){
+	var sorder_id = so;
+	var ssku = ss;
+	if(sro == '' ){ 
+		var srole = 'Shipper ok';
+    }
+	else {
+		var srole = ro;
+		}
+	
+	
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         //document.getElementById('done').innerHTML = this.responseText;
+       
+	    }
+	  };
+	  xhttp.open("GET", "../shipper_ajax_call.php?sku="+ssku+"&order_id="+sorder_id+"&role="+srole, true);
+	  xhttp.send();
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 500);
+}
+function send_receiver_value(ro,rs,rro){
+	var rorder_id = ro;
+	var rsku = rs;
+	if(rro == '' ){ 
+		var rrole = 'Receiver ok';
+    }
+	else {
+		var rrole = rro;
+		}
+	
+	
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         //document.getElementById('done').innerHTML = this.responseText;
+       
+	    }
+	  };
+	  xhttp.open("GET", "../receiver_ajax_call.php?sku="+rsku+"&order_id="+rorder_id+"&role="+rrole, true);
+	  xhttp.send();
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 500);
 }
 function selected_radio(r){
 	var selected_rval = r;
