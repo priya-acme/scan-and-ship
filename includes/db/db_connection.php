@@ -85,7 +85,7 @@ class DB_Connection{
 		$query = "select * from shipper_order_verification where order_id='$order_id' and sku='$sku'";
 		
 		$result = mysqli_query($this->connection, $query);
-		if($result = mysqli_num_rows($result) < 0 ){
+		if(mysqli_num_rows($result) < 0 ){
 	    echo $query;
 		return mysqli_fetch_assoc($result);
 		}
