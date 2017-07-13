@@ -386,7 +386,14 @@ function sendvalue(a,b){
 function send_picker_value(o,s,ro){
 	var porder_id = o;
 	var sku = s;
-	var prole = ro;
+	if(ro == '' ){ 
+		var prole = 'Picker ok';
+    }
+	else {
+		var prole = ro;
+		}
+	
+	
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
@@ -394,7 +401,7 @@ function send_picker_value(o,s,ro){
        
 	    }
 	  };
-	  xhttp.open("GET", "../picker_ajax_call.php?sku="+sku+"&order_id="+porder_id+"&role="+ro, true);
+	  xhttp.open("GET", "../picker_ajax_call.php?sku="+sku+"&order_id="+porder_id+"&role="+prole, true);
 	  xhttp.send();
 	  //setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+o; }, 500);
 }
