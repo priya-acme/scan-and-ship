@@ -403,7 +403,7 @@ function send_picker_value(o,s,ro){
 	  };
 	  xhttp.open("GET", "../picker_ajax_call.php?sku="+sku+"&order_id="+porder_id+"&role="+prole, true);
 	  xhttp.send();
-	  //setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+o; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+o; }, 500);
 }
 </script>
 <?php include 'footer.php'; ?>
