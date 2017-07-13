@@ -33,7 +33,9 @@ class Stores extends DB_Connection{
 	function p_count_order($order_id){
 		return $this->count_picker_order($order_id);
 	}
-	
+	function delete_picker_order($order_id,$sku){
+		return $this->delete_picker_orders($order_id,$sku);
+	}
 	// shipper
 	
 	function s_order_veri($sku, $barcode, $order_id, $verification){

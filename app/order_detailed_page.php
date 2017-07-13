@@ -289,7 +289,7 @@ In Store Pickup
     	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
     	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
     	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok' || $get_order_veri_sku['verification']== 'Picker') { ?>
-    	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<td><div class="green"><a href="" onclick="delete_picker_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     	<?php } else { ?>
         <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /></td>
         <?php } ?>
@@ -297,7 +297,7 @@ In Store Pickup
         	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
         	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
         	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok' || $get_order_veri_sku['verification']== 'Picker') { ?>
-               <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+               <td><div class="green"><a href="" onclick="delete_picker_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
         	<?php } else {  ?>
                <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /> </td>
         <?php } } ?>
@@ -462,6 +462,19 @@ function selected_radio(r,order){
 	  xhttp.open("GET", "../role.php?selected_rval="+selected_rval, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+order; }, 500);
+}
+function delete_picker_order(dorder , dsku){
+	var dorder = dorder;
+	var dsku = dsku;
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         //document.getElementById('done').innerHTML = this.responseText;
+       }
+	  };
+	  xhttp.open("GET", "../delete_ajax.php?dorder="+dorder+"&dsku="+dsku, true);
+	  xhttp.send();
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+dorder; }, 500);
 }
 </script>
 <?php include 'footer.php'; ?>

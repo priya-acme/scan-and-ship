@@ -70,6 +70,10 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
+	function delete_picker_orders($order_id,$sku){
+		$query = "delete from order_verification where order_id='$order_id' and sku='$sku'";
+		$result = mysqli_query($this->connection, $query);
+	}
 	
 	// shipper
 	
