@@ -53,16 +53,18 @@ class DB_Connection{
 	function get_order_verification_sku($sku,$order_id){
 		$query = "select * from order_verification where order_id='$order_id' and sku='$sku'";
 		$result = mysqli_query($this->connection, $query);
-		echo mysqli_num_rows($result);
+		//echo mysqli_num_rows($result);
 		if(mysqli_num_rows($result) < 0 ){
+			echo mysqli_num_rows($result);
 		return mysqli_fetch_assoc($result);
 		}
 	}
 	function get_order_verification_barcode($barcode,$order_id){
 		$query = "select * from order_verification where order_id='$order_id' and barcode='$barcode'";
 		$result = mysqli_query($this->connection, $query);
-		echo mysqli_num_rows($result);
+		
 		if(mysqli_num_rows($result) < 0 ){
+			echo mysqli_num_rows($result);
 		return mysqli_fetch_assoc($result);
 		}
 	}
@@ -91,7 +93,7 @@ class DB_Connection{
 		$query = "select * from shipper_order_verification where order_id='$order_id' and sku='$sku'";
 		
 		$result = mysqli_query($this->connection, $query);
-		echo mysqli_num_rows($result);
+		//echo mysqli_num_rows($result);
 		if(mysqli_num_rows($result) < 0 ){
 			
 		return mysqli_fetch_assoc($result);
