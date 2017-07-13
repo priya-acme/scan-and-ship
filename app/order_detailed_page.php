@@ -109,30 +109,30 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
 	?>
-<input type="radio" name="select_role" id="radio1" value="Picker" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } else { echo "checked"; } ?>>
+<input type="radio" name="select_role" id="radio1" value="Picker" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>')" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } else { echo "checked"; } ?>>
 <label for="radio1">
  PICKER
 </label>
 <?php 
 } if($get_verification['verification_step'] == 'Two') { ?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } else { echo "checked"; }?>>
+            <input type="radio" name="select_role" id="radio1" value="Picker" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>')" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; } else { echo "checked"; }?>>
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper') { echo "checked"; } ?>>
+            <input type="radio" name="select_role" id="radio2" value="Shipper" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>')" <?php if($_SESSION['select_role'] == 'Shipper') { echo "checked"; } ?>>
             <label for="radio2">
                 SHIPPER
             </label>
 <?php } if($get_verification['verification_step'] == 'Three') {?>
-            <input type="radio" name="select_role" id="radio1" value="Picker" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; }else { echo "checked"; }?>>
+            <input type="radio" name="select_role" id="radio1" value="Picker" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>')" <?php if($_SESSION['select_role'] == 'Picker') { echo "checked"; }else { echo "checked"; }?>>
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper') { echo "checked"; } ?>>
+            <input type="radio" name="select_role" id="radio2" value="Shipper" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>')" <?php if($_SESSION['select_role'] == 'Shipper') { echo "checked"; } ?>>
             <label for="radio2">
                 SHIPPER
             </label>
-            <input type="radio" name="select_role" id="radio3" value="Receiver" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Receiver') { echo "checked"; } ?>>
+            <input type="radio" name="select_role" id="radio3" value="Receiver" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>')" <?php if($_SESSION['select_role'] == 'Receiver') { echo "checked"; } ?>>
             <label for="radio3">
                 READY FOR PICKUP
             </label>
@@ -451,7 +451,7 @@ function send_receiver_value(ro,rs,rro){
 	  xhttp.send();
 	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+ro; }, 500);
 }
-function selected_radio(r){
+function selected_radio(r,order){
 	var selected_rval = r;
 	var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
@@ -461,6 +461,7 @@ function selected_radio(r){
 	  };
 	  xhttp.open("GET", "../role.php?selected_rval="+selected_rval, true);
 	  xhttp.send();
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+order; }, 500);
 }
 </script>
 <?php include 'footer.php'; ?>
