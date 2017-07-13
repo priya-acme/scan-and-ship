@@ -103,10 +103,10 @@ if(isset($_POST['submit_id'])){
     <?php $arrayobj = new ArrayObject($order->line_items);
        $line_item_count = $arrayobj->count();
        $pcount = $Stores->p_count_order($order->id);
-       echo $pcount['count(*)'];
+       
        if($line_item_count == $pcount['count(*)']){
        	?>
-       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a> <?php echo $pcount['count(*)'];?></div></td>
      <?php } else if($line_item_count > $pcount['count(*)'] && $pcount['count(*)'] != 0 ) { 
      	?>
      	<td><div class="yellow"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
