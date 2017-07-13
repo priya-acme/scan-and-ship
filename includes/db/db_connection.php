@@ -83,6 +83,7 @@ class DB_Connection{
 	}
 	function s_get_order_verification_sku($sku,$order_id){
 		$query = "select * from shipper_order_verification where order_id='$order_id' and sku='$sku'";
+		echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
