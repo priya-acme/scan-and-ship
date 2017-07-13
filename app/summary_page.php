@@ -106,7 +106,7 @@ if(isset($_POST['submit_id'])){
        
        if($line_item_count == $pcount['count(*)']){
        	?>
-       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a> <?php echo $pcount['count(*)'];?></div></td>
+       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else if($line_item_count > $pcount['count(*)'] && $pcount['count(*)'] != 0 ) { 
      	?>
      	<td><div class="yellow"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>

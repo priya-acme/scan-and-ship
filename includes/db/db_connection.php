@@ -101,6 +101,10 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
+	function delete_shipper_orders($order_id,$sku){
+		$query = "delete from shipper_order_verification where order_id='$order_id' and sku='$sku'";
+		$result = mysqli_query($this->connection, $query);
+	}
 	
 	// receiver
 	
@@ -128,7 +132,10 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
-
+	function delete_receiver_orders($order_id,$sku){
+		$query = "delete from receiver_order_verification where order_id='$order_id' and sku='$sku'";
+		$result = mysqli_query($this->connection, $query);
+	}
 	// step verification
 	
 	function steps_verification($step){

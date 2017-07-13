@@ -53,7 +53,9 @@ class Stores extends DB_Connection{
 	function s_count_order($order_id){
 		return $this->count_shipper_order($order_id);
 	}
-	
+	function delete_shipper_order($order_id,$sku){
+		return $this->delete_shipper_orders($order_id,$sku);
+	}
 	// receiver
 	
 	function r_order_veri($sku, $barcode, $order_id, $verification){
@@ -71,7 +73,9 @@ class Stores extends DB_Connection{
 	function r_count_order($order_id){
 		return $this->count_receiver_order($order_id);
 	}
-	
+	function delete_receiver_order($order_id,$sku){
+		return $this->delete_receiver_orders($order_id,$sku);
+	}
 	// step verification
 	
 	function step_verification($step){
