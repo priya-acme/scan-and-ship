@@ -449,7 +449,7 @@ function send_receiver_value(ro,rs,rro){
 	  };
 	  xhttp.open("GET", "../receiver_ajax_call.php?sku="+rsku+"&order_id="+rorder_id+"&role="+rrole, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+ro; }, 500);
 }
 function selected_radio(r){
 	var selected_rval = r;
