@@ -103,7 +103,7 @@ if(isset($_POST['submit_id'])){
     <?php $arrayobj = new ArrayObject($order->line_items);
        $line_item_count = $arrayobj->count();
        $pcount = $Stores->p_count_order($order->id);
-       echo $pcount;
+       echo $pcount['count(*)'];
        if($line_item_count == $pcount['count(*)']){
        	?>
        <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
