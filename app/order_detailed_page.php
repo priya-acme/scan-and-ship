@@ -383,7 +383,7 @@ function sendvalue(a,b){
 	  };
 	  xhttp.open("GET", "../ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
-	  window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+b;
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+b; }, 500);
 }
 function send_picker_value(o,s,ro){
 	var porder_id = o;
