@@ -296,8 +296,8 @@ In Store Pickup
         	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
         	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok') { ?>
                <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-        	<?php } else { $pget_order_id = $_REQUEST['id']; ?>
-               <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value)" /> </td>
+        	<?php } else { $pget_order_id = $_REQUEST['id']; $pselect_role = $_SESSION['select_role']; ?>
+               <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /> </td>
         <?php } } ?>
       
       
@@ -386,6 +386,7 @@ function sendvalue(a,b){
 function send_picker_value(o,s){
 	var porder_id = o;
 	var sku = s;
+	var prole = s;
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
@@ -393,9 +394,9 @@ function send_picker_value(o,s){
        
 	    }
 	  };
-	  xhttp.open("GET", "../picker_ajax_call.php?sku="+sku+"&order_id="+porder_id, true);
+	  xhttp.open("GET", "../picker_ajax_call.php?sku="+sku+"&order_id="+porder_id+"&role="+prole, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+o; }, 500);
+	  //setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+o; }, 500);
 }
 </script>
 <?php include 'footer.php'; ?>

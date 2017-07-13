@@ -6,9 +6,9 @@ $Stores = new Stores();
 $shop =  $_SESSION['shop_name'];
 $shop_info = $Stores->is_shop_exists($shop);
 $order_id=$_REQUEST['order_id'];
-$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$_SESSION['select_role']);
+$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$_REQUEST['role']);
 if(empty($check_order_veri)){
-	$Stores->order_veri($_REQUEST['sku'],"",$order_id,$_SESSION['select_role']);
+	$Stores->order_veri($_REQUEST['sku'],"",$order_id,$_REQUEST['role']);
 header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$order_id");
 }
 ?>
