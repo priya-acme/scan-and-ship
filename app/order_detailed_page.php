@@ -405,7 +405,7 @@ function send_picker_value(o,s,ro){
 	  };
 	  xhttp.open("GET", "../picker_ajax_call.php?sku="+sku+"&order_id="+porder_id+"&role="+prole, true);
 	  xhttp.send();
-	 // setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+o; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+o; }, 500);
 }
 function send_shipper_value(so,ss,sro){
 	var sorder_id = so;
@@ -414,7 +414,7 @@ function send_shipper_value(so,ss,sro){
 		var srole = 'Shipper ok';
     }
 	else {
-		var srole = ro;
+		var srole = sro;
 		}
 	
 	
@@ -427,7 +427,7 @@ function send_shipper_value(so,ss,sro){
 	  };
 	  xhttp.open("GET", "../shipper_ajax_call.php?sku="+ssku+"&order_id="+sorder_id+"&role="+srole, true);
 	  xhttp.send();
-	  //setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 500);
 }
 function send_receiver_value(ro,rs,rro){
 	var rorder_id = ro;
@@ -449,7 +449,7 @@ function send_receiver_value(ro,rs,rro){
 	  };
 	  xhttp.open("GET", "../receiver_ajax_call.php?sku="+rsku+"&order_id="+rorder_id+"&role="+rrole, true);
 	  xhttp.send();
-	  //setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 500);
 }
 function selected_radio(r){
 	var selected_rval = r;
