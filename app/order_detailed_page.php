@@ -43,8 +43,8 @@ if(isset($_POST['submit_barcode'])){
 				else {
 					//echo $orders->order->line_items[$i]->quantity;
 					if($orders->order->line_items[$i]->quantity == $check_order_veri['quantity']){
-						$k = 1;
-						//header("location:http://67.207.82.1/scan-and-ship/app/order_test.php/?id=$get_order_id");
+						$_SESSION['k'] = 1;
+						header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
 					}
 					else {
 						$Stores->update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
@@ -71,6 +71,9 @@ if(isset($_POST['submit_barcode'])){
 		}
 		
 		
+	}
+	if($_SESSION['k']!= 0){
+		$error_qty = "All item quantities are scanned";
 	}
 	if($j == 1){
 		
@@ -121,7 +124,7 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
       <span class="glyphicon glyphicon-search"></span>
     </button></div>
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
-   <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
+ <div class="error-message" style="color:red"><?php echo $error_qty; ?>
 </div>
 <div class="col-sm-12 col-md-7">
 <span class="role2">SELECT ROLE : </span>
