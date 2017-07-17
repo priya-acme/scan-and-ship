@@ -271,22 +271,7 @@ In Store Pickup
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
     
     <?php 
-    if(isset($_POST['submit_barcode'])){ 
-    	$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
-         if(empty($check_order_veri)){
-    	 ?>
-    	   <td>0</td>
-         <?php 
-         } else {
-         if($check_order_veri['quantity'] == $orders->order->line_items[$i]->quantity){
-    	 ?>
-    	   <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
-         <?php } else if($check_order_veri['quantity'] != $orders->order->line_items[$i]->quantity){ 
-    	 ?>
-    	   <td style="background-color:red"><?php echo $check_order_veri['quantity']; ?></td>
-         <?php } }
-    } 
-    else { ?>
+    ?>
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
          $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
          if(empty($get_order_veri_sku)){
@@ -301,7 +286,7 @@ In Store Pickup
     	?>
     	 <td style="background-color:red"><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } } 
-    } ?>
+     ?>
     <td><?php echo $orders->order->line_items[$i]->price; ?></td>
     <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
     	if($variants->variant->sku != '' ){ 
@@ -334,11 +319,8 @@ In Store Pickup
         <?php } } 
         // else for submit 
         else { 
-        	$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
-        	print_r($variants);
         	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
-        	$get_order_veri_sku = $Stores->get_order_veri_sku('597980010-BLACK-LRG', '5966458253');
-        	print_r($get_order_veri_sku);
+        	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
         	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok' || $get_order_veri_sku['verification']== 'Picker') {
         	
         		if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){ ?>
