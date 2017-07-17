@@ -331,11 +331,7 @@ In Store Pickup
     	<?php } else { ?>
         <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>')" /></td>
         <?php } ?>
-        <?php } else {
-        	?>
-        	<td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>')" /></td>
-        <?php 
-        } } 
+        <?php } } 
         // else for submit 
         else { 
         
