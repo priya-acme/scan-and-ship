@@ -288,6 +288,7 @@ In Store Pickup
     } 
     else { ?>
          <?php $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         print_r($get_order_veri_sku);
          if(empty($get_order_veri_sku)){
     	?>
     	 <td>0</td>
