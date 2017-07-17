@@ -335,6 +335,7 @@ In Store Pickup
         // else for submit 
         else { 
         	$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+        	print_r($variants);
         	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
         	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
         	print_r($get_order_veri_sku);
