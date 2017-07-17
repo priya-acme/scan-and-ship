@@ -432,7 +432,7 @@ function sendvalue(a,b){
 	  };
 	  xhttp.open("GET", "../ajax_call.php?chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+b; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+b; }, 1000);
 }
 function send_picker_value(o,s,ro,qty){
 	var porder_id = o;
@@ -454,7 +454,7 @@ function send_picker_value(o,s,ro,qty){
 	  };
 	  xhttp.open("GET", "../picker_ajax_call.php?sku="+sku+"&order_id="+porder_id+"&role="+prole+"&qty="+qty, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+porder_id; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+porder_id; }, 1000);
 }
 function send_shipper_value(so,ss,sro){
 	var sorder_id = so;
@@ -476,7 +476,7 @@ function send_shipper_value(so,ss,sro){
 	  };
 	  xhttp.open("GET", "../shipper_ajax_call.php?sku="+ssku+"&order_id="+sorder_id+"&role="+srole, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 1000);
 }
 function send_receiver_value(ro,rs,rro){
 	var rorder_id = ro;
@@ -498,7 +498,7 @@ function send_receiver_value(ro,rs,rro){
 	  };
 	  xhttp.open("GET", "../receiver_ajax_call.php?sku="+rsku+"&order_id="+rorder_id+"&role="+rrole, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+ro; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+ro; }, 1000);
 }
 function selected_radio(r,order){
 	var selected_rval = r;
@@ -510,7 +510,7 @@ function selected_radio(r,order){
 	  };
 	  xhttp.open("GET", "../role.php?selected_rval="+selected_rval, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+order; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+order; }, 1000);
 }
 function delete_picker_order(dorder , dsku){
 	var dorder = dorder;
@@ -523,7 +523,7 @@ function delete_picker_order(dorder , dsku){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?dorder="+dorder+"&dsku="+dsku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+dorder; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+dorder; }, 1000);
 }
 function delete_shipper_order(dsorder , dssku){
 	var dsorder = dsorder;
@@ -536,7 +536,7 @@ function delete_shipper_order(dsorder , dssku){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?dsorder="+dsorder+"&dssku="+dssku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+dsorder; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+dsorder; }, 1000);
 }
 function delete_receiver_order(drorder , drsku){
 	var drorder = drorder;
@@ -549,7 +549,7 @@ function delete_receiver_order(drorder , drsku){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?drorder="+drorder+"&drsku="+drsku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+drorder; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+drorder; }, 1000);
 }
 </script>
 <?php include 'footer.php'; ?>
