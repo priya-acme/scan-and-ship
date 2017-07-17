@@ -290,23 +290,7 @@ In Store Pickup
      ?>
   <tr>
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
-    <?php 
-    if(isset($_POST['submit_barcode'])){ 
-    	$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
-         if(empty($check_order_veri)){
-    	 ?>
-    	   <td>0</td>
-         <?php 
-         } else {
-         if($check_order_veri['quantity'] == $orders->order->line_items[$i]->quantity){
-    	 ?>
-    	   <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
-         <?php } else if($check_order_veri['quantity'] != $orders->order->line_items[$i]->quantity){ 
-    	 ?>
-    	   <td style="background-color:red"><?php echo $check_order_veri['quantity']; ?></td>
-         <?php } }
-    } 
-    else { ?>
+  
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
          $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
          if(empty($get_order_veri_sku)){
@@ -321,7 +305,7 @@ In Store Pickup
     	?>
     	 <td style="background-color:red"><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } } 
-    } ?>
+     ?>
     <td><?php echo $orders->order->line_items[$i]->price; ?></td>
     <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
     	if($variants->variant->sku != '' ){ 
