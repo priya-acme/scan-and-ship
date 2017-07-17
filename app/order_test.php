@@ -337,7 +337,7 @@ In Store Pickup
         	$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
         	print_r($variants);
         	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
-        	$get_order_veri_sku = $Stores->get_order_veri_sku('597980010-BLACK-LRG', $_REQUEST['id']);
+        	$get_order_veri_sku = $Stores->get_order_veri_sku('597980010-BLACK-LRG', '5966458253');
         	print_r($get_order_veri_sku);
         	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok' || $get_order_veri_sku['verification']== 'Picker') {
         	
