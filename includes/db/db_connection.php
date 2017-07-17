@@ -85,10 +85,9 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 	}
 	function update_qty($sku,$barcode,$order_id){
-		$query = "update order_verification set quantity = `quantity`+1 where order_id='$order_id' and sku='$sku'";
+		$query = "update order_verification set quantity = `quantity`+1 where order_id='$order_id' and sku='$sku' or barcode ='$barcode'";
+		echo $query;
 		$result = mysqli_query($this->connection, $query);
-		$query1 = "update order_verification set quantity = `quantity`+1 where order_id='$order_id' and barcode='$barcode'";
-		$result1 = mysqli_query($this->connection, $query1);
 	}
 	
 	
