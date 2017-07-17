@@ -336,6 +336,7 @@ In Store Pickup
         else { 
         	$get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
         	$get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+        	print_r($get_order_veri_sku);
         	if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok' || $get_order_veri_sku['verification']== 'Picker') {
         	
         		if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){ ?>
