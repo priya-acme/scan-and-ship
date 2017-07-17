@@ -120,6 +120,7 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
       <span class="glyphicon glyphicon-search"></span>
     </button></div>
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
+   <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
 </div>
 <div class="col-sm-12 col-md-7">
 <span class="role2">SELECT ROLE : </span>
