@@ -287,18 +287,18 @@ In Store Pickup
          <?php } }
     } 
     else { ?>
-         <?php $check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
-           if(empty($check_order_veri)){
+         <?php $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($get_order_veri_sku)){
     	?>
     	 <td>0</td>
         <?php 
         } else {
-        if($check_order_veri['quantity'] == $orders->order->line_items[$i]->quantity){
+        	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
     	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
-        <?php } else if($check_order_veri['quantity'] != $orders->order->line_items[$i]->quantity){ 
+        <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:red"><?php echo $check_order_veri['quantity']; ?></td>
+    	 <td style="background-color:red"><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } } 
     } ?>
     <td><?php echo $orders->order->line_items[$i]->price; ?></td>
