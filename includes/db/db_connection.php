@@ -84,6 +84,13 @@ class DB_Connection{
 		$query = "delete from order_verification where order_id='$order_id' and sku='$sku'";
 		$result = mysqli_query($this->connection, $query);
 	}
+	function update_qty($sku,$barcode,$order_id){
+		$query = "update order_verification set quantity = `quantity`+1 where order_id='$order_id' and sku='$sku'";
+		$result = mysqli_query($this->connection, $query);
+		$query1 = "update order_verification set quantity = `quantity`+1 where order_id='$order_id' and barcode='$barcode'";
+		$result1 = mysqli_query($this->connection, $query1);
+	}
+	
 	
 	// shipper
 	

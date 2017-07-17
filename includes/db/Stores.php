@@ -36,6 +36,9 @@ class Stores extends DB_Connection{
 	function delete_picker_order($order_id,$sku){
 		return $this->delete_picker_orders($order_id,$sku);
 	}
+	function update_qty_order($sku,$barcode,$order_id){
+		return $this->update_qty($sku,$barcode,$order_id);
+	}
 	// shipper
 	
 	function s_order_veri($sku, $barcode, $order_id, $verification){

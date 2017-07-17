@@ -24,6 +24,7 @@ if(isset($_POST['submit_barcode'])){
 	$arrayobj = new ArrayObject($orders->order->line_items);
 	$line_item_count = $arrayobj->count();
 	$j = 0;
+	$k = 0;
 	for($i=0;$i<$line_item_count;$i++)
 	{
 		$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id);
@@ -31,19 +32,29 @@ if(isset($_POST['submit_barcode'])){
 		{
 			//break;
 			$j = 1;
+			
 			if($selected_role == 'Picker ok' || $select_role1 == 'Picker' ){
 				$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 				if(empty($check_order_veri)){
 					$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
 				}
 				else {
-					echo $check_order_veri['quantity'];
+					echo $orders->order->line_items[$i]->quantity;
+					if($orders->order->line_items[$i]->quantity == $check_order_veri['quantity']){
+					$k = 1;
+					}
+					else {
+						$Stores->update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
+					}
 				}
 			}
 			//break;
 		}
 		
 		
+	}
+	if($k != 0){
+		$error_qty = "All item quantities are scanned"; 
 	}
 	if($j == 1){
 		
@@ -94,6 +105,7 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
       <span class="glyphicon glyphicon-search"></span>
     </button></div>
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
+  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
 </div>
 <div class="col-sm-12 col-md-7">
 <span class="role2">SELECT ROLE : </span>
