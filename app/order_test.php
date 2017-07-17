@@ -287,7 +287,7 @@ In Store Pickup
          <?php } }
     } 
     else { ?>
-         <?php $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         <?php $get_order_veri_sku = $Stores->get_order_veri_sku('597980010-BLACK-LRG', '5966458253');
          print_r($get_order_veri_sku);
          if(empty($get_order_veri_sku)){
     	?>
