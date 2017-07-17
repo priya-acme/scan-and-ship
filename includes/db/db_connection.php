@@ -130,7 +130,11 @@ class DB_Connection{
 		$query = "delete from shipper_order_verification where order_id='$order_id' and sku='$sku'";
 		$result = mysqli_query($this->connection, $query);
 	}
-	
+	function update_shipper_qty($sku,$barcode,$order_id){
+		$query = "update shipper_order_verification set quantity = `quantity`+1 where order_id='$order_id' and sku='$sku' or barcode ='$barcode'";
+		//echo $query;
+		$result = mysqli_query($this->connection, $query);
+	}
 	// receiver
 	
 	function r_order_verification($sku,$barcode,$order_id,$verification){
@@ -165,6 +169,11 @@ class DB_Connection{
 	}
 	function delete_receiver_orders($order_id,$sku){
 		$query = "delete from receiver_order_verification where order_id='$order_id' and sku='$sku'";
+		$result = mysqli_query($this->connection, $query);
+	}
+	function update_receiver_qty($sku,$barcode,$order_id){
+		$query = "update receiver_order_verification set quantity = `quantity`+1 where order_id='$order_id' and sku='$sku' or barcode ='$barcode'";
+		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
 	// step verification
