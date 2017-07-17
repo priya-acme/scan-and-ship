@@ -18,8 +18,8 @@ class Stores extends DB_Connection{
 	
 	// picker
 	
-	function order_veri($sku, $barcode, $order_id, $verification){
-		return $this->order_verification($sku, $barcode, $order_id, $verification);
+	function order_veri($sku, $barcode, $order_id, $verification,$qty){
+		return $this->order_verification($sku, $barcode, $order_id, $verification,$qty);
 	}
 	function get_order_veri_sku($sku,$order_id){
 		return $this->get_order_verification_sku($sku,$order_id);

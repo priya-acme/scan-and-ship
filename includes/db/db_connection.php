@@ -46,8 +46,8 @@ class DB_Connection{
 	
 	// picker
 	
-	function order_verification($sku,$barcode,$order_id,$verification){
-		$query = "insert into order_verification(sku,barcode,order_id,verification) values('$sku','$barcode','$order_id','$verification')";
+	function order_verification($sku,$barcode,$order_id,$verification,$qty){
+		$query = "insert into order_verification(sku,barcode,order_id,verification,quantity) values('$sku','$barcode','$order_id','$verification','$qty')";
 		$result = mysqli_query($this->connection, $query);
 	}
 	function get_order_verification_sku($sku,$order_id){

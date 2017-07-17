@@ -34,7 +34,10 @@ if(isset($_POST['submit_barcode'])){
 			if($selected_role == 'Picker ok' || $select_role1 == 'Picker' ){
 				$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 				if(empty($check_order_veri)){
-					$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
+					$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
+				}
+				else {
+					echo $check_order_veri['quantity'];
 				}
 			}
 			//break;
@@ -254,7 +257,7 @@ In Store Pickup
      ?>
   <tr>
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
-    <td><?php echo $orders->order->line_items[$i]->quantity; ?></td>
+    <td>0</td>
     <td><?php echo $orders->order->line_items[$i]->price; ?></td>
     <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
     	if($variants->variant->sku != '' ){ 
@@ -346,50 +349,7 @@ function send_picker_value(o,s,ro){
 	  xhttp.send();
 	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+porder_id; }, 500);
 }
-function send_shipper_value(so,ss,sro){
-	var sorder_id = so;
-	var ssku = ss;
-	if(sro == '' ){ 
-		var srole = 'Shipper ok';
-    }
-	else {
-		var srole = sro;
-		}
-	
-	
-	  var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-         //document.getElementById('done').innerHTML = this.responseText;
-       
-	    }
-	  };
-	  xhttp.open("GET", "../shipper_ajax_call.php?sku="+ssku+"&order_id="+sorder_id+"&role="+srole, true);
-	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+so; }, 500);
-}
-function send_receiver_value(ro,rs,rro){
-	var rorder_id = ro;
-	var rsku = rs;
-	if(rro == '' ){ 
-		var rrole = 'Receiver ok';
-    }
-	else {
-		var rrole = rro;
-		}
-	
-	
-	  var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-         //document.getElementById('done').innerHTML = this.responseText;
-       
-	    }
-	  };
-	  xhttp.open("GET", "../receiver_ajax_call.php?sku="+rsku+"&order_id="+rorder_id+"&role="+rrole, true);
-	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+ro; }, 500);
-}
+
 function selected_radio(r,order){
 	var selected_rval = r;
 	var xhttp = new XMLHttpRequest();
@@ -415,31 +375,6 @@ function delete_picker_order(dorder , dsku){
 	  xhttp.send();
 	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+dorder; }, 500);
 }
-function delete_shipper_order(dsorder , dssku){
-	var dsorder = dsorder;
-	var dssku = dssku;
-	var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-         //document.getElementById('done').innerHTML = this.responseText;
-       }
-	  };
-	  xhttp.open("GET", "../delete_ajax.php?dsorder="+dsorder+"&dssku="+dssku, true);
-	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+dsorder; }, 500);
-}
-function delete_receiver_order(drorder , drsku){
-	var drorder = drorder;
-	var drsku = drsku;
-	var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-         //document.getElementById('done').innerHTML = this.responseText;
-       }
-	  };
-	  xhttp.open("GET", "../delete_ajax.php?drorder="+drorder+"&drsku="+drsku, true);
-	  xhttp.send();
-	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+drorder; }, 500);
-}
+
 </script>
 <?php include 'footer.php'; ?>
