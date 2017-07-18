@@ -219,6 +219,10 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
+	function delete_instore_pickup($order_id){
+		$query = "delete from `order_instore_pickup` where order_id = '$order_id'";
+		$result = mysqli_query($this->connection, $query);
+	}
 	
 	
 }

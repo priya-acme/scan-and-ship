@@ -290,7 +290,7 @@ In Store Pickup
 <!-- <center><input class="btn btn-primary btn-sm" type="submit" value="Submit"></center> -->
 </div>
 <?php } else { ?>
-<div class="green green-checked"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div>
+<div class="green green-checked"><a href="" onclick="delete_instore_picker('<?php echo $_REQUEST['id'];?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div>
 <?php }?>
 </div>
 </div>
@@ -522,6 +522,18 @@ In Store Pickup
 </div>
 </form>
 <script>
+function delete_instore_picker(in_order){
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         //document.getElementById('done').innerHTML = this.responseText;
+       
+	    }
+	  };
+	  xhttp.open("GET", "../delete_instore_pickup.php?order_id="+in_order, true);
+	  xhttp.send();
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+in_order; }, 1000);
+}
 function sendvalue(a,b){
 	var chckbx_val = a;
 	var order_id = b;

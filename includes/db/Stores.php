@@ -118,5 +118,8 @@ class Stores extends DB_Connection{
 	function gett_instore_pickup($order_id){
 		return $this->get_instore_pickup($order_id);
 	}
+	function delete_instore_pickup_order($order_id){
+		return $this->delete_instore_pickup($order_id);
+	}
 }
 ?>
