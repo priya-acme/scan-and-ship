@@ -336,5 +336,5 @@ input:checked + .slider:before {
    .order-details-page .role2, .no-wrap{white-space: nowrap;}
    
   .no-wrap span.radio.radio-primary{margin-top: 8px;}
-  .order-details-page .no-wrap  .role2 {margin-left: :-10px}
+  .order-details-page .no-wrap  .role2 {margin-left: -10px}
    
