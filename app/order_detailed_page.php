@@ -130,7 +130,7 @@ if(isset($_POST['submit_id'])){
 <div class="margtop30">
 <div class="container">
 <div class="row">
-<div class="col-sm-12 col-md-5">
+<div class="col-sm-12 col-md-6">
  <div class="role2">
     BARCODE / PRODUCT CODE  
     <input type="text" name="barcode_sku" class="txt"> 
@@ -146,7 +146,7 @@ if(isset($_POST['submit_id'])){
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
    <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
 </div>
-<div class="col-sm-12 col-md-7">
+<div class="col-sm-12 col-md-6">
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
