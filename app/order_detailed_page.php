@@ -72,7 +72,7 @@ if(isset($_POST['submit_barcode'])){
 		
 		
 	}
-	echo $k;
+	//echo $k;
 	if($k == 1){
 		$error_qty = "All item quantities are scanned";
 	}
