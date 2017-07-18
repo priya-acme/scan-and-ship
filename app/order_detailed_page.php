@@ -152,7 +152,7 @@ if(isset($_POST['submit_id'])){
      </button>
      </div>
 </div>
-<div class="col-sm-12 col-md-4">
+<div class="col-sm-12 col-md-4 no-wrap">
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
