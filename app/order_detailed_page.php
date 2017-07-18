@@ -94,10 +94,9 @@ if(isset($_POST['save_notes'])){
 if(isset($_POST['update_notes'])){
 	$uorder_notes = $_POST['update_order_note'];
 	$uorder_id=$_REQUEST['id'];
-	if(!empty($uorder_notes)){
 		$Stores->update_order_note($_REQUEST['id'], $uorder_notes);
 		header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$uorder_id");
-	}
+
 }
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
