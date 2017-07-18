@@ -100,6 +100,17 @@ if(isset($_POST['update_notes'])){
 }
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
+if(isset($_POST['submit_id'])){
+	$order_id = $_POST['order_id'];
+	$_SESSION['select_role'] = $_POST['select_role'];
+	$shop_info = $Stores->is_shop_exists($shop);
+	$get_order = $Shopify->get_orders($shop,$shop_info['access_token']);
+	foreach($get_order->orders as $order) {
+		if($order_id == $order->name || $order_id == $order->id){
+			header("location:/scan-and-ship/app/order_detailed_page.php/?id=$order->id");
+		}
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -120,9 +131,18 @@ $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 <div class="container">
 <div class="row">
 <div class="col-sm-12 col-md-5">
- <div class="role2">BARCODE / PRODUCT CODE  <input type="text" name="barcode_sku" class="txt"> <button type="submit" class="serch" name="submit_barcode">
+ <div class="role2">
+    BARCODE / PRODUCT CODE  
+    <input type="text" name="barcode_sku" class="txt"> 
+     <button type="submit" class="serch" name="submit_barcode">
       <span class="glyphicon glyphicon-search"></span>
-    </button></div>
+     </button>
+    ORDER LOOKUP 
+    <input type="text" class="txt" name="order_id"> 
+     <button type="submit" class="serch" name="submit_id">
+      <span class="glyphicon glyphicon-search"></span>
+     </button>
+    </div>
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
    <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
 </div>
