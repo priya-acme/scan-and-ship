@@ -188,7 +188,7 @@ if(isset($_POST['submit_id'])){
  
 </span>
 <div class="right-icon">
-<div class="marbot30">
+<div class="order-btn">
 <a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO ORDER LOOKUP</a>
 </div>
 <a href="/scan-and-ship/app/settings.php" class="seting-icon">
