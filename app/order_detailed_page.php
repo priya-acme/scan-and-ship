@@ -476,8 +476,7 @@ In Store Pickup
         	<?php } else { ?>
                <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_shipper_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /></td>
         <?php } } ?>
-    
-     <?php } ?>
+ 
     
      <?php
       
@@ -500,7 +499,7 @@ In Store Pickup
         	<?php } else { ?>
                <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>')" /></td>
         <?php } }  ?>
-        <?php } ?>
+        <?php }  ?>
  <!-- three step verification end -->
   </tr>
   <?php } ?>
