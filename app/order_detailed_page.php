@@ -305,7 +305,8 @@ In Store Pickup
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
   <tr>
     <td width="29%" class="hed" style="text-align:left">PRODUCT TITLE</td>
-    <td width="8%" class="hed">QUANTITY</td>
+    <td width="8%" class="hed">ORDERED QUANTITY</td>
+    <td width="8%" class="hed">SCANNED QUANTITY</td>
     <td width="8%" class="hed">PRICE</td>
     <td width="17%" class="hed">SKU</td>
     <td width="8%" class="hed">PICKED</td>
@@ -319,6 +320,7 @@ In Store Pickup
      ?>
   <tr>
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
+    <td align="left"><?php echo $orders->order->line_items[$i]->quantity; ?></td>
   
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
          $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
