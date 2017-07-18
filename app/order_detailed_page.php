@@ -232,7 +232,7 @@ if(isset($_POST['submit_id'])){
   <?php if(!empty($get_order_note)) { ?>
   <tr>
     <td><strong>Internal Notes</strong></td>
-   <td><textarea name="update_order_note" class="text-area"><?php echo $get_order_note['order_note'];  ?></textarea></td>
+   <td><textarea name="update_order_note" class="text-area" placeholder="Internal order notes"><?php echo $get_order_note['order_note'];  ?></textarea></td>
    
   </tr>
   <tr>
