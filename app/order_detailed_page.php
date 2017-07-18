@@ -130,23 +130,29 @@ if(isset($_POST['submit_id'])){
 <div class="margtop30">
 <div class="container">
 <div class="row">
-<div class="col-sm-12 col-md-6">
+<div class="col-sm-12 col-md-4">
  <div class="role2">
     BARCODE / PRODUCT CODE  
     <input type="text" name="barcode_sku" class="txt"> 
      <button type="submit" class="serch" name="submit_barcode">
       <span class="glyphicon glyphicon-search"></span>
      </button>
-    ORDER LOOKUP 
+  
+    </div>
+    
+ <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
+   <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
+</div>
+<div class="col-sm-12 col-md-4">
+ <div class="role2">
+  ORDER LOOKUP 
     <input type="text" class="txt" name="order_id"> 
      <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
      </button>
-    </div>
- <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
-   <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
+     </div>
 </div>
-<div class="col-sm-12 col-md-6">
+<div class="col-sm-12 col-md-4">
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
