@@ -334,3 +334,6 @@ input:checked + .slider:before {
 .right-icon .seting-icon{vertical-align: middle;
     display: inline-block;}   
    .order-details-page .role2, .no-wrap{white-space: nowrap;}
+   
+  .no-wrap span.radio.radio-primary{margin-top: 8px;}
+   
