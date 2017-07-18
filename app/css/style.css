@@ -326,3 +326,10 @@ input:checked + .slider:before {
 .green-checked{
 	margin: 0px 0 0 40px;
 }
+
+.order-btn{display: inline-block;
+    padding-right: 9px;
+    vertical-align: middle;}
+    
+.right-icon .seting-icon{vertical-align: middle;
+    display: inline-block;}   

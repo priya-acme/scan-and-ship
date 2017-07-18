@@ -1519,11 +1519,5 @@ table .check-icon {
 table span.cross {
 	display: inline-block;
 	text-align: center;
-}
-.order-btn{display: inline-block;
-    padding-right: 9px;
-    vertical-align: middle;}
-    
-.right-icon .seting-icon{vertical-align: middle;
-    display: inline-block;}    
+} 
 
