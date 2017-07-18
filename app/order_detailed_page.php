@@ -347,7 +347,7 @@ In Store Pickup
     	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:red"><?php echo $get_order_veri_sku['quantity']; ?></td>
+    	 <td style="background-color:yellow"><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } } 
      ?>
     <td><?php echo $orders->order->line_items[$i]->price; ?></td>
