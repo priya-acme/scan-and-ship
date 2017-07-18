@@ -283,7 +283,7 @@ function delete_instore_picker(in_order){
 	  };
 	  xhttp.open("GET", "delete_instore_pickup.php?order_id="+in_order, true);
 	  xhttp.send();
-	 // setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/summary_page.php; }, 1000);
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/summary_page.php'; }, 500);
 }
 function sendvalue(a,b){
 	var chckbx_val = a;
