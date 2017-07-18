@@ -140,7 +140,7 @@ if(isset($_POST['submit_id'])){
      
       <!-- in store pickup  -->
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
-     <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else { ?>
      <td><input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $order->id ?>')"></td>
      <?php } ?>
@@ -188,7 +188,7 @@ if(isset($_POST['submit_id'])){
      
       <!-- in store pickup  -->
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
-     <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else { ?>
      <td><input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $order->id ?>')"></td>
      <?php } ?>
@@ -235,7 +235,7 @@ if(isset($_POST['submit_id'])){
      
       <!-- in store pickup  -->
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
-     <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else { ?>
      <td><input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $order->id ?>')"></td>
      <?php } ?>
@@ -273,6 +273,18 @@ if(isset($_POST['submit_id'])){
 </div>
 </form>
 <script>
+function delete_instore_picker(in_order){
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+       //document.getElementById('done').innerHTML = this.responseText;
+     
+	    }
+	  };
+	  xhttp.open("GET", "delete_instore_pickup.php?order_id="+in_order, true);
+	  xhttp.send();
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/summary_page.php; }, 1000);
+}
 function sendvalue(a,b){
 	var chckbx_val = a;
 	var order_id = b;
