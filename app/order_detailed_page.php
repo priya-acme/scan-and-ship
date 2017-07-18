@@ -188,6 +188,9 @@ if(isset($_POST['submit_id'])){
  
 </span>
 <div class="right-icon">
+<div class="marbot30">
+<a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO ORDER LOOKUP</a>
+</div>
 <a href="/scan-and-ship/app/settings.php" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
@@ -239,7 +242,7 @@ if(isset($_POST['submit_id'])){
   	?>
   <tr>
    <td><strong>Internal Notes</strong></td>
-   <td><textarea name="order_note" class="text-area" placeholder="Order notes will be here! if notes go longer than specific amount they will be hidden until clicked to go into order page."></textarea>
+   <td><textarea name="order_note" class="text-area" placeholder="Internal order notes"></textarea>
    
    </td>
   </tr>
@@ -422,9 +425,7 @@ In Store Pickup
 <textarea  class="txtarea" placeholder="Customer Notes" readonly><?php if($orders->order->note != '' ){ echo $orders->order->note; } ?></textarea>
 
 </div>
-<div class="col-md-12 col-sm-12 marbot30">
-<a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO ORDER LOOKUP</a>
-</div>
+
 </div>
 </div>
 </div>
