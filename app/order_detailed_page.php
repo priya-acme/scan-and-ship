@@ -320,7 +320,7 @@ In Store Pickup
      ?>
   <tr>
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
-    <td align="left"><?php echo $orders->order->line_items[$i]->quantity; ?></td>
+    <td><?php echo $orders->order->line_items[$i]->quantity; ?></td>
   
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
          $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
