@@ -333,3 +333,4 @@ input:checked + .slider:before {
     
 .right-icon .seting-icon{vertical-align: middle;
     display: inline-block;}   
+   .order-details-page .role2{white-space: nowrap;}
