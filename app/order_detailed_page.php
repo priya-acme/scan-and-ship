@@ -282,6 +282,7 @@ if(isset($_POST['submit_id'])){
   <?php } ?>
 </table>
 </div>
+<?php if($get_verification['verification_step'] == 'Three') {  	?>
 <div class="col-md-2 col-sm-12">
 <div class="hdd">IN-STORE PICKUP</div>
 <?php if(empty($get_instore_pickup)) { ?>
@@ -296,6 +297,7 @@ In Store Pickup
 <div class="green green-checked"><a href="" onclick="delete_instore_picker('<?php echo $_REQUEST['id'];?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div>
 <?php }?>
 </div>
+<?php } ?>
 </div>
 </div>
 </div>
@@ -326,7 +328,7 @@ In Store Pickup
 	?>
      <td width="8%" class="hed">PICKED</td>
      <td width="9%" class="hed">SHIPPED</td>
-     <td width="9%" class="hed">READY FOR PICKUP</td
+     <td width="9%" class="hed">READY FOR PICKUP</td>
    <?php } ?>
     
   </tr>
