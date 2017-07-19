@@ -328,7 +328,7 @@ In Store Pickup
      <td width="9%" class="hed">SHIPPED</td>
      <td width="9%" class="hed">READY FOR PICKUP</td
    <?php } ?>
-    >
+    
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
