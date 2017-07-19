@@ -81,7 +81,7 @@ if(isset($_POST['submit_id'])){
 <div class="row">
 <div class="col-md-12">
 <div class="tbl">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
   <tr>
     <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
@@ -109,6 +109,8 @@ if(isset($_POST['submit_id'])){
 
     <td width="31%" class="hed">NOTES</td>
   </tr>
+  </table>
+  <table id="table1" width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
   <?php foreach($orders->orders as $order) { ?>
   <?php //echo "<pre>";
   //print_r($order);
@@ -311,7 +313,7 @@ function selected_radio(r){
 	  xhttp.send();
 }
 $(function () {
-    $("#table1").hpaging({ "limit": 5 });
+    $("#table1").hpaging({ "limit": 15 });
 });
 
 $("#btnApply").click(function () {
