@@ -32,7 +32,7 @@ if(isset($_POST['submit_barcode'])){
 		{
 			//break;
 			$j = 1;
-			
+			print_r($check_order_veri);
 			// picker
 			if($selected_role == 'Picker ok' || $select_role1 == 'Picker' ){
 				$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
