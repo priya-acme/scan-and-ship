@@ -81,7 +81,7 @@ if(isset($_POST['submit_id'])){
 <div class="row">
 <div class="col-md-12">
 <div class="tbl">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
   <tr>
     <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
@@ -310,5 +310,13 @@ function selected_radio(r){
 	  xhttp.open("GET", "role.php?selected_rval="+selected_rval, true);
 	  xhttp.send();
 }
+$(function () {
+    $("#table1").hpaging({ "limit": 5 });
+});
+
+$("#btnApply").click(function () {
+    var lmt = $("#pglmt").val();
+    $("#table1").hpaging("newLimit", lmt);
+});
 </script>
 <?php include 'footer.php' ?>
