@@ -70,7 +70,7 @@ class DB_Connection{
 	}
 	function check_order_verification($sku,$order_id,$verification){
 		$query = "select * from order_verification where order_id='$order_id' and sku='$sku' and verification='$verification'";
-		echo $query;
+		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		if(mysqli_num_rows($result) > 0 ){
 		return mysqli_fetch_assoc($result);
