@@ -35,7 +35,7 @@ if(isset($_POST['submit_barcode'])){
 			$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 			print_r($check_order_veri);
 			// picker
-			if($selected_role == 'Picker ok' || $select_role1 == 'Picker' ){
+			if($selected_role == 'Picker ok' || $selected_role== 'Picker' ){
 				$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 				if(empty($check_order_veri)){
 					$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
@@ -58,13 +58,13 @@ if(isset($_POST['submit_barcode'])){
 			
 			// shipper
 			
-	        if($selected_role == 'Shipper ok' || $select_role1 == 'Shipper' ){
+			if($selected_role == 'Shipper ok' || $selected_role== 'Shipper' ){
 	        	$s_check_order_veri = $Stores->s_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 	        	if(empty($s_check_order_veri)){
 	        		$Stores->s_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
 	        	}
 	        }
-	        if($selected_role == 'Receiver ok' || $select_role1 == 'Receiver' ){
+	        if($selected_role == 'Receiver ok' || $selected_role== 'Receiver' ){
 	        	$r_check_order_veri = $Stores->r_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 	        	if(empty($r_check_order_veri)){
 	        		$Stores->r_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role);
