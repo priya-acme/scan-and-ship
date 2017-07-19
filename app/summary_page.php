@@ -82,6 +82,7 @@ if(isset($_POST['submit_id'])){
 <div class="col-md-12">
 <div class="tbl">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
+<thead>
   <tr>
     <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
@@ -109,6 +110,8 @@ if(isset($_POST['submit_id'])){
 
     <td width="31%" class="hed">NOTES</td>
   </tr>
+  </thead>
+  <tbody>
   <?php foreach($orders->orders as $order) { ?>
   <?php //echo "<pre>";
   //print_r($order);
@@ -265,6 +268,7 @@ if(isset($_POST['submit_id'])){
      <?php } ?>
    </tr>
   <?php } ?>
+  </tbody>
  </table>
 </div>
 </div>
