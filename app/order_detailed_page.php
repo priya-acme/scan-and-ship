@@ -42,6 +42,7 @@ if(isset($_POST['submit_barcode'])){
 				}
 				else {
 					//echo $orders->order->line_items[$i]->quantity;
+					echo "equal qty";
 					if($orders->order->line_items[$i]->quantity == $check_order_veri['quantity']){
 						$k = 1;
 						//header("location:http://67.207.82.1/scan-and-ship/app/order_test.php/?id=$get_order_id");
