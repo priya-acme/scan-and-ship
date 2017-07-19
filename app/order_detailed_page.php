@@ -48,6 +48,7 @@ if(isset($_POST['submit_barcode'])){
 						//header("location:http://67.207.82.1/scan-and-ship/app/order_test.php/?id=$get_order_id");
 					}
 					else {
+						echo "not equal";
 						$Stores->update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
 						header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
 					}
