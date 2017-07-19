@@ -90,13 +90,13 @@ if(isset($_POST['submit_id'])){
     <?php if($get_verification['verification_step'] == 'One') {  
 	?>
     <td width="6%" class="hed">PICKED</td>
-    <td width="7%" class="hed">IN-STORE PICKUP</td>
+   
     <?php } ?>
     <?php if($get_verification['verification_step'] == 'Two') {  
 	?>
 	<td width="6%" class="hed">PICKED</td>
 	<td width="7%" class="hed">SHIPPED</td>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	
 	<?php } ?>
 	<?php if($get_verification['verification_step'] == 'Three') {  
 	?>
@@ -141,13 +141,6 @@ if(isset($_POST['submit_id'])){
        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
      <?php } ?>
      
-      <!-- in store pickup  -->
-     <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
-     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-     <?php } else { ?>
-     <td><input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $order->id ?>')"></td>
-     <?php } ?>
-     
     <?php } ?>
     
     <!--  one step verification end -->
@@ -188,13 +181,7 @@ if(isset($_POST['submit_id'])){
      } else { ?>
        <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
      <?php } ?>
-     
-      <!-- in store pickup  -->
-     <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
-     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-     <?php } else { ?>
-     <td><input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $order->id ?>')"></td>
-     <?php } ?>
+  
 	<?php } ?>
 	
 	<!--  two step verification end -->
