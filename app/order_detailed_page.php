@@ -13,7 +13,7 @@ $get_verification = $Stores->get_step_verification();
 if(isset($_POST['submit_barcode'])){
 	$get_order_id = $_REQUEST['id'];
 	$barcode_sku = $_POST['barcode_sku'];
-	echo $barcode_sku;
+	//echo $barcode_sku;
 	$select_role = $_SESSION['select_role'];
 	$select_role = $_POST['select_role'];
 	$_SESSION['select_role'] = $_POST['select_role'];
@@ -21,7 +21,7 @@ if(isset($_POST['submit_barcode'])){
 	if($select_role == 'Picker ok' || $select_role == 'Shipper ok' || $select_role == 'Receiver ok' ){
 		$selected_role = $select_role;
 	}
-	echo $selected_role;
+	//echo $selected_role;
 	$arrayobj = new ArrayObject($orders->order->line_items);
 	$line_item_count = $arrayobj->count();
 	$j = 0;
@@ -33,26 +33,26 @@ if(isset($_POST['submit_barcode'])){
 		{
 			//break;
 			$j = 1;
-			$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
-			print_r($check_order_veri);
+			//$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
+			//print_r($check_order_veri);
 			// picker
 			if($selected_role == 'Picker ok' || $selected_role== 'Picker' ){
 				$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 				if(empty($check_order_veri)){
 					$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
-					//header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
+					header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
 				}
 				else {
 					//echo $orders->order->line_items[$i]->quantity;
-					echo "equal qty";
+					//echo "equal qty";
 					if($orders->order->line_items[$i]->quantity == $check_order_veri['quantity']){
 						$k = 1;
 						//header("location:http://67.207.82.1/scan-and-ship/app/order_test.php/?id=$get_order_id");
 					}
 					else {
-						echo "not equal";
+						//echo "not equal";
 						$Stores->update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
-						//header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
+						header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
 					}
 				}
 			}
