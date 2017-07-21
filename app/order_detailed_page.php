@@ -137,7 +137,7 @@ if(isset($_POST['submit_id'])){
 <div class="col-sm-12 col-md-4">
  <div class="role2">
     BARCODE / PRODUCT CODE  
-    <input type="text" name="barcode_sku" class="txt"> 
+    <input type="text" name="barcode_sku" class="txt" value="<?php if(isset($_POST['submit_barcode'])){ echo $barcode_sku } ?>"> 
      <button type="submit" class="serch" name="submit_barcode">
       <span class="glyphicon glyphicon-search"></span>
      </button>
