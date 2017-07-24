@@ -163,7 +163,8 @@ class Shopify {
 	}
 	
 	public function create_fulfillment_order($shop,$access_token,$order_id){
-		$curl_url = "https://$shop/orders/$order_id/fulfillments.json";
+		echo $curl_url;
+		$curl_url = "https://$shop/admin/orders/$order_id/fulfillments.json";
 		//$data = json_encode($forder);
 		return $this->curlRequest($curl_url, $access_token);
 	}
