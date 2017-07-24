@@ -147,6 +147,18 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <div class="margtop30">
 <div class="container">
 <div class="row">
+<div class="col-sm-12">
+<div class="right-icon">
+<div class="order-btn">
+<a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO ORDER LOOKUP</a>
+</div>
+<a href="/scan-and-ship/app/settings.php" class="seting-icon">
+<i class="fa fa-cog" aria-hidden="true"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="row">
 <div class="col-sm-12 col-md-4">
  <div class="role2">
     BARCODE / PRODUCT CODE  
@@ -171,16 +183,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
      </button>
      </div>
 </div>
-<div class="col-sm-12">
-<div class="right-icon">
-<div class="order-btn">
-<a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO ORDER LOOKUP</a>
-</div>
-<a href="/scan-and-ship/app/settings.php" class="seting-icon">
-<i class="fa fa-cog" aria-hidden="true"></i>
-</a>
-</div>
-</div>
+
 <div class="col-sm-12 col-md-4 no-wrap">
 
 <span class="role2">SELECT ROLE : </span>
