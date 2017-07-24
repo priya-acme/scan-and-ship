@@ -135,6 +135,7 @@ if(isset($_POST['submit_id'])){
         { 
             alert('hi');
             inputElement.form_submit.submit();
+            return false;
         }
     }
 </script>
