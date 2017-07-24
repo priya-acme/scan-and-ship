@@ -159,5 +159,11 @@ class Shopify {
 		$curl_url = "https://$shop/admin/variants/$variant_id.json";
 		return $this->curlRequest($curl_url, $access_token);
 	}
+	
+	public function create_fulfillment_order($shop,$access_token,$order_id){
+		$curl_url = "https://$shop/orders/$order_id/fulfillments.json";
+		return $this->curlRequest($curl_url, $access_token);
+	}
+	
 }
 ?>
