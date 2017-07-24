@@ -107,7 +107,6 @@ $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	$j = 0;
-	$k = 0;
 	//echo $_POST['pressed_button'];
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
@@ -116,7 +115,6 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	foreach($get_order->orders as $order) {
 		if($order_id == $order->name || $order_id == $order->id){
 			$j = 1;
-			$k =1;
 			header("location:/scan-and-ship/app/order_detailed_page.php/?id=$order->id");
 		}
 	}
@@ -126,9 +124,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	else {
 		$error = "Order number doesn't match" ;
 	}
-	if($k == 1){
-		$error_qty = "";
-	}
+	echo "<script>$('.qty-error-message').hide();</script>";
 }
 ?>
 
@@ -162,7 +158,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
     </div>
     
  <?php if(isset($_POST['submit_barcode']) || isset($_POST['submit_id'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
-   <?php if(isset($_POST['submit_barcode']) || isset($_POST['submit_id']) ){ ?> <div class="error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
+   <?php if(isset($_POST['submit_barcode']) || isset($_POST['submit_id']) ){ ?> <div class="qty-error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
 </div>
 <div class="col-sm-12 col-md-4">
  <div class="role2">
