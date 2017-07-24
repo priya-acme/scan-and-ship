@@ -10,6 +10,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
 $pget_order_id = $_REQUEST['id']; 
 $pselect_role = $_SESSION['select_role'];
 $get_verification = $Stores->get_step_verification();
+echo $_POST['pressed_button'];
 if(isset($_POST['submit_barcode'])){
 	$get_order_id = $_REQUEST['id'];
 	$barcode_sku = $_POST['barcode_sku'];
@@ -132,7 +133,7 @@ if(isset($_POST['submit_id'])){
 
 </head>
 <body class="order-details-page">
-<form method="post" name="form_submit">
+<form method="post" name="form_submit" id="form_submit">
 <div class="margtop30">
 <div class="container">
 <div class="row">
@@ -153,7 +154,8 @@ if(isset($_POST['submit_id'])){
  <div class="role2">
   ORDER LOOKUP 
     <input type="text" class="txt" name="order_id" id="order_id"> 
-     <button type="submit" class="serch" name="submit_id" id="submit_id">
+    <input type="hidden" name="pressed_button" id="pressed_button" value="false">
+     <button type="submit" class="serch" name="submit_id" id="submit_id" onclick="document.getElementById('pressed_button').value='true';document.getElementById('form_submit').submit();">
       <span class="glyphicon glyphicon-search"></span>
      </button>
      </div>
