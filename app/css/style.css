@@ -126,7 +126,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edda1d', end
 .right-icon .order{background: transparent;     border-radius: 6px;   border: 1px solid #fff;   padding: 1px 8px;}
 .right-icon .order:hover{ border: 1px solid #fff; color:#fff}
 .right-icon1 {text-align: right;}
-.seting-icon i.fa-cog{color:#fff;}
+.right-icon  .seting-icon i.fa-cog{color:#fff;}
 .order{ 
  background: #ececec;
     color: #fff;
