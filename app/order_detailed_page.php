@@ -133,9 +133,8 @@ if(isset($_POST['submit_id'])){
     function submitOnEnter(inputElement, event) {
         if (event.keyCode == 13)
         { 
-            alert('hi');
-            inputElement.form_submit.submit();
-            return false;
+           $('#submit_id').trigger('click');
+            
         }
     }
 </script>
@@ -162,7 +161,7 @@ if(isset($_POST['submit_id'])){
  <div class="role2">
   ORDER LOOKUP 
     <input type="text" class="txt" name="order_id" onkeypress="submitOnEnter(this, event);"> 
-     <button type="submit" class="serch" name="submit_id">
+     <button type="submit" class="serch" name="submit_id" id="submit_id">
       <span class="glyphicon glyphicon-search"></span>
      </button>
      </div>
