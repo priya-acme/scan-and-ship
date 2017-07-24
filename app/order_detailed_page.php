@@ -319,7 +319,18 @@ In Store Pickup
 <div class="green green-checked"><a href="" onclick="delete_instore_picker('<?php echo $_REQUEST['id'];?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div>
 <?php }?>
 </div>
-<?php } ?>
+<?php }
+?>
+<div class="col-md-2 col-sm-12">
+<div class="hdd">Fulfilled Order</div>
+<div class="instore">
+<input type="checkbox" name="fulfilled_order" value="yes" onclick="fulfilled_order('<?php echo $_REQUEST['id']?>')">
+<label>
+FulFilled Order
+</label>
+</div>
+
+</div>
 </div>
 </div>
 </div>
