@@ -56,7 +56,7 @@ class Shopify {
 		}
 	}
 	function getAuthUrl($shop){
-		$scopes = ["read_products", "read_orders","write_orders"];
+		$scopes = ["read_products", "read_orders","write_orders","write_products"];
 		//print_r($scopes);
 		//echo SHOPIFY_API_KEY;
 		return 'https://' . $shop . '/admin/oauth/authorize?'
@@ -167,6 +167,11 @@ class Shopify {
 		$curl_url = "https://$shop/admin/orders/$order_id/fulfillments.json";
 		$data = json_encode($forder);
 		return $this->curlRequest($curl_url, $access_token,$data);
+	}
+	public function get_collections($shop, $access_token)
+	{
+		$curl_url = "https://$shop/admin/custom_collections.json";
+		return $this->curlRequest($curl_url, $access_token);
 	}
 	
 }
