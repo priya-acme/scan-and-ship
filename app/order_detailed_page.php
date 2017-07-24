@@ -124,7 +124,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	else {
 		$error = "Order number doesn't match" ;
 	}
-	echo "<script>$('.qty-error-message').hide();</script>";
+	//echo "<script>$('.qty-error-message').hide();</script>";
 }
 ?>
 
@@ -541,14 +541,14 @@ In Store Pickup
 </div>
 </form>
 <script>
-$(function(){
- $('#order_id').on('keyup', function(e){
-  if (e.keyCode == 13) {
-	  //alert('hi');
-  $(this).parent('form').trigger('submit');
-  }
- });
-});
+// $(function(){
+//  $('#order_id').on('keyup', function(e){
+//   if (e.keyCode == 13) {
+// 	  //alert('hi');
+//   $(this).parent('form').trigger('submit');
+//   }
+//  });
+// });
 function delete_instore_picker(in_order){
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
