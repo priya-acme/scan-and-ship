@@ -10,8 +10,8 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
 $pget_order_id = $_REQUEST['id']; 
 $pselect_role = $_SESSION['select_role'];
 $get_verification = $Stores->get_step_verification();
-if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button']) == 'false'){
-	echo $_POST['pressed_button'];
+if(isset($_POST['submit_barcode'])){
+	
 	$get_order_id = $_REQUEST['id'];
 	$barcode_sku = $_POST['barcode_sku'];
 	//echo $barcode_sku;
@@ -105,7 +105,8 @@ if(isset($_POST['update_notes'])){
 }
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
-if(isset($_POST['submit_id'])){
+if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
+	echo $_POST['pressed_button'];
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
