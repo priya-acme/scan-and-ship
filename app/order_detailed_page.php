@@ -134,6 +134,7 @@ if(isset($_POST['submit_id'])){
         var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
         if(keyCode == 13)
         {
+            alert('hi');
             //your function call here
             document.form_submit.submit();
         }
