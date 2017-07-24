@@ -68,7 +68,7 @@ class Shopify {
 	private function curlRequest($url, $access_token = NULL, $data = NULL)
 	{
 		// set curl options
-		echo $url;
+		//echo $url;
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		
@@ -162,11 +162,11 @@ class Shopify {
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	
-	public function create_fulfillment_order($shop,$access_token,$order_id){
-		echo $curl_url;
+	public function create_fulfillment_order($shop,$access_token,$order_id,$forder){
+		//echo $curl_url;
 		$curl_url = "https://$shop/admin/orders/$order_id/fulfillments.json";
-		//$data = json_encode($forder);
-		return $this->curlRequest($curl_url, $access_token);
+		$data = json_encode($forder);
+		return $this->curlRequest($curl_url, $access_token,$data);
 	}
 	
 }
