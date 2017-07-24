@@ -322,7 +322,6 @@ In Store Pickup
 <?php }
 ?>
 <div class="col-md-2 col-sm-12">
-<div class="hdd">Fulfilled Order</div>
 <div class="instore">
 <input type="checkbox" name="fulfilled_order" value="yes" onclick="fulfilled_order('<?php echo $_REQUEST['id']?>')">
 <label>
