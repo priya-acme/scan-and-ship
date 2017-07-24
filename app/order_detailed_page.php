@@ -10,8 +10,8 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
 $pget_order_id = $_REQUEST['id']; 
 $pselect_role = $_SESSION['select_role'];
 $get_verification = $Stores->get_step_verification();
-echo $_POST['pressed_button'];
-if(isset($_POST['submit_barcode'])){
+if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button']) == 'false'){
+	echo $_POST['pressed_button'];
 	$get_order_id = $_REQUEST['id'];
 	$barcode_sku = $_POST['barcode_sku'];
 	//echo $barcode_sku;
@@ -534,7 +534,7 @@ In Store Pickup
 $(function(){
  $('#order_id').on('keyup', function(e){
   if (e.keyCode == 13) {
-	  alert('hi');
+	  //alert('hi');
   $(this).parent('form').trigger('submit');
   }
  });
