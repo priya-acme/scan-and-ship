@@ -302,7 +302,7 @@ function selected_radio(r){
 	  xhttp.send();
 }
 $(function () {
-    $("#table1").hpaging({ "limit": 15 });
+    $("#table1").hpaging({ "limit": 50 });
 });
 
 $("#btnApply").click(function () {
