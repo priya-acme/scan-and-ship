@@ -10,7 +10,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
 $pget_order_id = $_REQUEST['id']; 
 $pselect_role = $_SESSION['select_role'];
 $get_verification = $Stores->get_step_verification();
-if(isset($_POST['submit_barcode'])){
+if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false'){
 	
 	$get_order_id = $_REQUEST['id'];
 	$barcode_sku = $_POST['barcode_sku'];
@@ -151,7 +151,8 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
  <div class="role2">
     BARCODE / PRODUCT CODE  
     <input type="text" name="barcode_sku" class="txt" value="<?php if(isset($_POST['submit_barcode'])){ echo $barcode_sku; } ?>"> 
-     <button type="submit" class="serch" name="submit_barcode">
+    <input type="hidden" name="pressed_button" id="pressed_button1" value="false">
+     <button type="submit" class="serch" name="submit_barcode" onclick="document.getElementById('pressed_button1').value='true';document.getElementById('form_submit').submit();">
       <span class="glyphicon glyphicon-search"></span>
      </button>
   
