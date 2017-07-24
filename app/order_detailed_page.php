@@ -129,14 +129,11 @@ if(isset($_POST['submit_id'])){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-  <script>
-    document.onkeydown=function(evt){
-        var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
-        if(keyCode == 13)
-        {
-            alert('hi');
-            //your function call here
-            document.form_submit.submit();
+<script type="text/javascript">
+    function submitOnEnter(inputElement, event) {
+        if (event.keyCode == 13)
+        { 
+            inputElement.form_submit.submit();
         }
     }
 </script>
@@ -162,7 +159,7 @@ if(isset($_POST['submit_id'])){
 <div class="col-sm-12 col-md-4">
  <div class="role2">
   ORDER LOOKUP 
-    <input type="text" class="txt" name="order_id"> 
+    <input type="text" class="txt" name="order_id" onkeypress="submitOnEnter(this, event);"> 
      <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
      </button>
