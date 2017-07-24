@@ -106,7 +106,7 @@ if(isset($_POST['submit_id'])){
 	<td width="7%" class="hed">READY FOR PICKUP</td>
 	<?php } ?>
     
-    <td>ORDER STATUS</td>
+    <td width="7%" class="hed">ORDER STATUS</td>
 
     <td width="31%" class="hed">NOTES</td>
   </tr>
