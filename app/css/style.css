@@ -44,7 +44,7 @@ body{font-family: 'Open Sans', sans-serif;}
     font-size: 12px;
 	font-weight: 700;
 	}
-.right-icon{    text-align: left;
+.right-icon{ margin-bottom: 40px;  display: block;   text-align: left;
     background: #337ab7;
     padding: 2px 12px;}
 .seting-icon{
