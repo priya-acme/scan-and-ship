@@ -118,12 +118,12 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 			header("location:/scan-and-ship/app/order_detailed_page.php/?id=$order->id");
 		}
 	}
-	if($j == 1){
+// 	if($j == 1){
 		
-	}
-	else {
-		$error = "Order number doesn't match" ;
-	}
+// 	}
+// 	else {
+// 		$error = "Order number doesn't match" ;
+// 	}
 	//echo "<script>$('.qty-error-message').hide();</script>";
 }
 ?>
