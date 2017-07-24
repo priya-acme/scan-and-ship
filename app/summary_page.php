@@ -106,7 +106,7 @@ if(isset($_POST['submit_id'])){
 	<td width="7%" class="hed">READY FOR PICKUP</td>
 	<?php } ?>
     
-    
+    <td>ORDER STATUS</td>
 
     <td width="31%" class="hed">NOTES</td>
   </tr>
@@ -246,7 +246,11 @@ if(isset($_POST['submit_id'])){
 	<?php } ?>
     
     <!--  three step verification end -->
-  
+    <?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+    <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    <?php } else { ?>
+    <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+    <?php } ?>
      <?php $get_order_note = $Stores->get_order_note($order->id); 
          if(!empty($get_order_note) ){ ?>
             <td><div class="last-text"><?php  echo $get_order_note['order_note']; ?></div></td>
