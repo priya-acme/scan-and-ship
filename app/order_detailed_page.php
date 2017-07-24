@@ -324,7 +324,7 @@ In Store Pickup
 <div class="col-md-2 col-sm-12" style="margin-top:10px">
 <div class="hdd">FULFILLED ORDER</div>
 <div class="instore">
-<input type="checkbox" name="fulfilled_order" value="yes" onclick="fulfilled_order('<?php echo $_REQUEST['id']?>')">
+<input type="checkbox" name="fulfilled_order" value="yes" onclick="create_fulfilled_order('<?php echo $_REQUEST['id']?>')">
 <label>
 FulFilled Order
 </label>
@@ -560,15 +560,8 @@ FulFilled Order
 </div>
 </form>
 <script>
-// $(function(){
-//  $('#order_id').on('keyup', function(e){
-//   if (e.keyCode == 13) {
-// 	  //alert('hi');
-//   $(this).parent('form').trigger('submit');
-//   }
-//  });
-// });
-function fulfilled_order(forder_id){
+
+function create_fulfilled_order(forder_id){
  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
