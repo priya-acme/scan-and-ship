@@ -129,15 +129,7 @@ if(isset($_POST['submit_id'])){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-<script type="text/javascript">
-    function submitOnEnter(inputElement, event) {
-        if (event.keyCode == 13)
-        { 
-           $('#submit_id').trigger('click');
-            
-        }
-    }
-</script>
+
 </head>
 <body class="order-details-page">
 <form method="post" name="form_submit">
@@ -160,7 +152,7 @@ if(isset($_POST['submit_id'])){
 <div class="col-sm-12 col-md-4">
  <div class="role2">
   ORDER LOOKUP 
-    <input type="text" class="txt" name="order_id" onkeypress="submitOnEnter(this, event);"> 
+    <input type="text" class="txt" name="order_id" id="order_id"> 
      <button type="submit" class="serch" name="submit_id" id="submit_id">
       <span class="glyphicon glyphicon-search"></span>
      </button>
@@ -537,6 +529,14 @@ In Store Pickup
 </div>
 </form>
 <script>
+$(function(){
+ $('#order_id').on('keyup', function(e){
+  if (e.keyCode == 13) {
+	  alert('hi');
+  $(this).parent('form').trigger('submit');
+  }
+ });
+});
 function delete_instore_picker(in_order){
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
