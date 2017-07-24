@@ -568,6 +568,18 @@ FulFilled Order
 //   }
 //  });
 // });
+function fulfilled_order(forder_id){
+ var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         //document.getElementById('done').innerHTML = this.responseText;
+       
+	    }
+	  };
+	  xhttp.open("GET", "../fulfilled_order.php?order_id="+forder_id, true);
+	  xhttp.send();
+	  setTimeout(function(){ window.location.href = 'http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id='+forder_id; }, 1000);
+}
 function delete_instore_picker(in_order){
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
