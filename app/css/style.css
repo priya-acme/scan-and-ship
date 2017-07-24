@@ -123,7 +123,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edda1d', end
     margin-bottom: 50px;
 	}
 .qty{ background:#f5313f; color:#FFF}
-.right-icon .order{background: transparent;     border-radius: 6px;   border: 1px solid;   padding: 1px 8px;}
+.right-icon .order{background: transparent;     border-radius: 6px;   border: 1px solid #fff;   padding: 1px 8px;}
+.right-icon .order:hover{ border: 1px solid #fff; color:#fff}
+.right-icon1 {text-align: right;}
 .seting-icon i.fa-cog{color:#fff;}
 .order{ 
  background: #ececec;

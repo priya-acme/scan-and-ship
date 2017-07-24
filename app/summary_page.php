@@ -66,8 +66,8 @@ if(isset($_POST['submit_id'])){
 <!--  <div class="role"><input type = "radio" value="Shipper" name="select_role" class="select_role">Shipper</div> -->
 <!--  <div class="role"><input type = "radio" value="Picker" name="select_role" class="select_role" checked>Picker</div> -->
 <!-- </div> -->
-<div class="col-sm-12 col-md-6">
-<div class="right-icon">
+<div class="col-sm-12">
+<div class="right-icon1">
 <a href="/scan-and-ship/app/settings.php" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
