@@ -68,6 +68,7 @@ class Shopify {
 	private function curlRequest($url, $access_token = NULL, $data = NULL)
 	{
 		// set curl options
+		echo $url;
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		
