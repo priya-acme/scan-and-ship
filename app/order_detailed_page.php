@@ -116,6 +116,7 @@ if(isset($_POST['submit_id'])){
 	}
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,9 +129,19 @@ if(isset($_POST['submit_id'])){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <script>
+    document.onkeydown=function(evt){
+        var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+        if(keyCode == 13)
+        {
+            //your function call here
+            document.form_submit.submit();
+        }
+    }
+</script>
 </head>
 <body class="order-details-page">
-<form method="post">
+<form method="post" name="form_submit">
 <div class="margtop30">
 <div class="container">
 <div class="row">
