@@ -7,7 +7,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],'5966458253');
  $updateorder = $Shopify->updateOrderInfo($shop, $shop_info['access_token'],'5966458253',array("order" =>array("note_attributes" => array("In store pickup status"=>"Success"))));
- $create_fulfillment = $Shopify->create_fulfillment_order($shop, $shop_info['access_token'],'5966458253',array("fulfillment"=>array("id"=>"1022782930")));
+ $create_fulfillment = $Shopify->create_fulfillment_order($shop, $shop_info['access_token'],'5966458253',array("id"=>"1022782930"));
  echo "<pre>";
  print_r($orders);
  print_r($create_fulfillment);
