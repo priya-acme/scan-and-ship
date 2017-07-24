@@ -171,7 +171,18 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
      </button>
      </div>
 </div>
+<div class="col-sm-12">
+<div class="right-icon">
+<div class="order-btn">
+<a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO ORDER LOOKUP</a>
+</div>
+<a href="/scan-and-ship/app/settings.php" class="seting-icon">
+<i class="fa fa-cog" aria-hidden="true"></i>
+</a>
+</div>
+</div>
 <div class="col-sm-12 col-md-4 no-wrap">
+
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
@@ -206,14 +217,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <?php } ?>
  
 </span>
-<div class="right-icon">
-<div class="order-btn">
-<a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO ORDER LOOKUP</a>
-</div>
-<a href="/scan-and-ship/app/settings.php" class="seting-icon">
-<i class="fa fa-cog" aria-hidden="true"></i>
-</a>
-</div>
+
 </div>
 <!-- <div class="col-sm-12 col-md-7"> -->
 <!-- <div class="role4">SELECT ROLE</div> -->
