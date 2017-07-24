@@ -328,7 +328,7 @@ In Store Pickup
 <label>
 FulFilled Order
 </label>
-<?php $orders->order->fulfillment_status; ?>
+<?php echo $orders->order->fulfillment_status; ?>
 </div>
 
 </div>
