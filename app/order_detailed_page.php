@@ -133,6 +133,7 @@ if(isset($_POST['submit_id'])){
     function submitOnEnter(inputElement, event) {
         if (event.keyCode == 13)
         { 
+            alert('hi');
             inputElement.form_submit.submit();
         }
     }
