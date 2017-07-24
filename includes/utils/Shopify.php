@@ -78,7 +78,7 @@ class Shopify {
 		
 		curl_setopt($ch, CURLOPT_HEADER, false); // Include header in result? (0 = yes, 1 = no)
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
-		curl_setopt($ch,CURLOPT_POST, 1);    
+		//curl_setopt($ch,CURLOPT_POST, 1);    
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		
@@ -161,10 +161,10 @@ class Shopify {
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	
-	public function create_fulfillment_order($shop,$access_token,$order_id , $forder){
+	public function create_fulfillment_order($shop,$access_token,$order_id){
 		$curl_url = "https://$shop/orders/$order_id/fulfillments.json";
-		$data = json_encode($forder);
-		return $this->curlRequest($curl_url, $access_token,$data);
+		//$data = json_encode($forder);
+		return $this->curlRequest($curl_url, $access_token);
 	}
 	
 }
