@@ -44,7 +44,9 @@ body{font-family: 'Open Sans', sans-serif;}
     font-size: 12px;
 	font-weight: 700;
 	}
-.right-icon{ text-align:right;}
+.right-icon{    text-align: left;
+    background: #337ab7;
+    padding: 2px 12px;}
 .seting-icon{
 	text-align: right;
     font-size: 21px;
@@ -121,6 +123,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edda1d', end
     margin-bottom: 50px;
 	}
 .qty{ background:#f5313f; color:#FFF}
+.right-icon .order{background: transparent;     border-radius: 6px;   border: 1px solid;   padding: 1px 8px;}
+.seting-icon i.fa-cog{color:#fff;}
 .order{ 
  background: #ececec;
     color: #fff;
