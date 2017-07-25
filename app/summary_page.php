@@ -120,7 +120,7 @@ $get_verification = $Stores->get_step_verification();
   </thead>
   <tbody>
    
-  <?php for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) {  if($order->fulfillment_status == '' || $order->fulfillment_status == NULL || $order->fulfillment_status == 'unfulfilled') { ?>
+  <?php for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) {   ?>
   <?php //echo "<pre>";
   //print_r($order);
   ?>
@@ -266,7 +266,7 @@ $get_verification = $Stores->get_step_verification();
             <td> - </td>
      <?php } ?>
    </tr>
-  <?php } } } ?>
+  <?php } }  ?>
   </tbody>
  </table>
 </div>
