@@ -5,11 +5,13 @@
  $Stores = new Stores();
  $shop =  $_SESSION['shop_name'];
  $shop_info = $Stores->is_shop_exists($shop);
- $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
  $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
- echo ceil($count_orders->count / 250);
+ $count_val = ceil($count_orders->count / 250);
+ for($count = 1 ; $count<= $count_val; $count++){
+ $orders = $Shopify->get_orders($shop, $shop_info['access_token'],$count);
+ }
  $get_verification = $Stores->get_step_verification();
-if(isset($_POST['submit_id'])){
+ if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
