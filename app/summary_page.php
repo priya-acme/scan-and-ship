@@ -8,6 +8,7 @@
  $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
  $count_val = ceil($count_orders->count / 250);
  for($count = 1 ; $count<= $count_val; $count++){
+ 	echo $count;
  $orders = $Shopify->get_orders($shop, $shop_info['access_token'],$count);
  }
  $get_verification = $Stores->get_step_verification();
