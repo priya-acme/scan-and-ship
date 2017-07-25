@@ -7,7 +7,8 @@ $shop = $_SESSION['shop_name'];
 $shop_info = $Stores->is_shop_exists($shop);
 $get_collections = $Shopify->get_collections($shop, $shop_info['access_token']);
 $modify_col = $Shopify->update_collections($shop, $shop_info['access_token'],array("custom_collections"=>array("collects"=>array("product_id"=>"656607169","position"=>"2","product_id"=>"656722689","position"=>"1"))));
-
+echo "<pre>";
+print_r($modify_col);
 ?>
 <select name="collection">
 <option value="">-select collection-</option>
