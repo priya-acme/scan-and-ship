@@ -7,7 +7,7 @@
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
  $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
- //echo $count_orders['count'];
+ print_r($count_orders);
  $get_verification = $Stores->get_step_verification();
 if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
