@@ -37,6 +37,15 @@
 <div class="margtop30">
 <div class="container">
 <div class="row">
+<div class="col-sm-12">
+<div class="right-icon">
+<div class="order-btn">
+<a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO HOMEPAGE</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
 <div class="col-sm-12 col-md-6">
 <span class="role2">SELECT</span>
 <span class="radio radio-primary">
@@ -54,11 +63,7 @@
 <input type="submit" name="save_changes" value="Save Changes">
 </div>
 </div>
-<div class="row">
-<div class="col-md-12 col-sm-12 marbot30">
-<a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO HOMEPAGE</a>
-</div>
-</div>
+
 </div>
 </div>
 </form>
