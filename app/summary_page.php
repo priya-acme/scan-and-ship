@@ -31,6 +31,15 @@ $get_verification = $Stores->get_step_verification();
 <div class="margtop30">
 <div class="container">
 <div class="row">
+<div class="col-sm-12">
+<div class="right-icon">
+<a href="/scan-and-ship/app/settings.php" class="seting-icon">
+<i class="fa fa-cog" aria-hidden="true"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="row">
 <div class="col-sm-12 col-md-6">
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
@@ -73,13 +82,7 @@ $get_verification = $Stores->get_step_verification();
 <!--  <div class="role"><input type = "radio" value="Shipper" name="select_role" class="select_role">Shipper</div> -->
 <!--  <div class="role"><input type = "radio" value="Picker" name="select_role" class="select_role" checked>Picker</div> -->
 <!-- </div> -->
-<div class="col-sm-12 col-md-6">
-<div class="right-icon1">
-<a href="/scan-and-ship/app/settings.php" class="seting-icon">
-<i class="fa fa-cog" aria-hidden="true"></i>
-</a>
-</div>
-</div>
+
 </div>
 </div>
 </div>
