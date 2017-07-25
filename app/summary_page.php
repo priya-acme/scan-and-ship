@@ -9,7 +9,7 @@
  $count_val = ceil($count_orders->count / 250);
  for($count=1;$count<=$count_val;$count++){
  ${"orders".$count} = $Shopify->get_orders($shop, $shop_info['access_token'],$count);
- echo ${"orders".$count};
+
  }
 $get_verification = $Stores->get_step_verification();
  if(isset($_POST['submit_id'])){
@@ -117,7 +117,7 @@ $get_verification = $Stores->get_step_verification();
   </tr>
   </thead>
   <tbody>
-  <?php foreach($orders->orders as $order) { ?>
+  <?php foreach($orders1->orders as $order) { ?>
   <?php //echo "<pre>";
   //print_r($order);
   ?>
