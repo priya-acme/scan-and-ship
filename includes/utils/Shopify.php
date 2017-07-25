@@ -147,7 +147,7 @@ class Shopify {
 	public function get_orders($shop, $access_token,$count)
 	{
 	 $curl_url = "https://$shop/admin/orders.json?limit=250&page=$count";
-	 echo $curl_url;
+	 //echo $curl_url;
 	   return $this->curlRequest($curl_url, $access_token);
 	}
 	 
