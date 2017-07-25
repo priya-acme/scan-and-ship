@@ -179,15 +179,10 @@ class Shopify {
 		$curl_url = "https://$shop/admin/custom_collections.json";
 		return $this->curlRequest($curl_url, $access_token);
 	}
-	public function create_collections($shop, $access_token,$cdata)
-	{
-		$curl_url = "https://$shop/admin/collects.json";
-		$data = json_encode($cdata);
-		return $this->curlRequest($curl_url, $access_token,$data);
-	}
+	
 	public function update_collections($shop, $access_token,$cdata)
 	{
-		$curl_url = "https://$shop/admin/custom_collections/41320513.json";
+		$curl_url = "https://$shop/admin/collects.json?collection_id=41320513";
 		$data = json_encode($cdata);
 		return $this->curlPutRequest($curl_url, $access_token,$data);
 	}
