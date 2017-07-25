@@ -330,7 +330,7 @@ In Store Pickup
 <div class="instore">
 <input type="checkbox" name="fulfilled_order" value="yes" onclick="create_fulfilled_order('<?php echo $_REQUEST['id']?>')">
 <label>
-FulFilled Order
+FulFill Order
 </label>
 <?php } ?>
 </div>
