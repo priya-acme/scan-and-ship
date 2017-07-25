@@ -142,7 +142,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 </head>
-<body class="order-details-page">
+<body class="order-details-page" OnLoad="document.form_submit.barcode_sku.focus();">
 <form method="post" name="form_submit" id="form_submit">
 <div class="margtop30">
 <div class="container">
