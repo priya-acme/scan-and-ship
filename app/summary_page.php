@@ -117,7 +117,8 @@ $get_verification = $Stores->get_step_verification();
   </tr>
   </thead>
   <tbody>
-  <?php foreach($orders1->orders as $order) { ?>
+   
+  <?php for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) { ?>
   <?php //echo "<pre>";
   //print_r($order);
   ?>
@@ -263,7 +264,7 @@ $get_verification = $Stores->get_step_verification();
             <td> - </td>
      <?php } ?>
    </tr>
-  <?php } ?>
+  <?php } } ?>
   </tbody>
  </table>
 </div>
