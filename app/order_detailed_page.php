@@ -323,10 +323,10 @@ In Store Pickup
 ?>
 <div class="col-md-2 col-sm-12" style="margin-top:10px">
 <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
-<div class="hdd">FULFILLED ORDER</div>
+<div class="hdd">FULFILL ORDER</div>
 <div class="green green-checked"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div>
 <?php } else {  ?>
-<div class="hdd">FULFILLED ORDER</div>
+<div class="hdd">FULFILL ORDER</div>
 <div class="instore">
 <input type="checkbox" name="fulfilled_order" value="yes" onclick="create_fulfilled_order('<?php echo $_REQUEST['id']?>')">
 <label>
