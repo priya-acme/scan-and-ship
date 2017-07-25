@@ -38,7 +38,7 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<div class="right-icon">
+<div class="right-icon" style="padding:6px 12px">
 <div class="order-btn">
 <a class="order" href="/scan-and-ship/app/summary_page.php">BACK TO HOMEPAGE</a>
 </div>
