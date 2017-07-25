@@ -305,13 +305,13 @@ function selected_radio(r){
 	  xhttp.open("GET", "role.php?selected_rval="+selected_rval, true);
 	  xhttp.send();
 }
-// $(function () {
-//     $("#table1").hpaging({ "limit": 50 });
-// });
+$(function () {
+    $("#table1").hpaging({ "limit": 50 });
+});
 
-// $("#btnApply").click(function () {
-//     var lmt = $("#pglmt").val();
-//     $("#table1").hpaging("newLimit", lmt);
-// });
+$("#btnApply").click(function () {
+    var lmt = $("#pglmt").val();
+    $("#table1").hpaging("newLimit", lmt);
+});
 </script>
 <?php include 'footer.php' ?>
