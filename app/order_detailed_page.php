@@ -131,7 +131,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Scan and Ship - <?php echo $_GET['id']?></title>
+  <title>Double Check - <?php echo $_GET['id']?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">

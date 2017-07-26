@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Scan and Ship</title>
+  <title>Double Check</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/scan-and-ship/app/css/bootstrap.min.css" type="text/css">
