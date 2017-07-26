@@ -41,7 +41,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 				$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 				if(empty($check_order_veri)){
 					$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
-					header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
+					//header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
 				}
 				else {
 					//echo $orders->order->line_items[$i]->quantity;
@@ -53,7 +53,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 					else {
 						//echo "not equal";
 						$Stores->update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
-						header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
+						//header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$get_order_id");
 					}
 				}
 			}
