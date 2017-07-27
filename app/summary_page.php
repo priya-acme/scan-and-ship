@@ -72,19 +72,6 @@ $get_verification = $Stores->get_step_verification($shop);
             <label for="radio3">
                 READY FOR PICKUP
             </label>
-<?php } else { ?>
-            <input type="radio" name="select_role" id="radio1" value="Picker ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>')" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; }else { echo "checked"; }?>>
-            <label for="radio1">
-                PICKER
-            </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>')" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
-            <label for="radio2">
-                SHIPPER
-            </label>
-            <input type="radio" name="select_role" id="radio3" value="Receiver ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>')" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
-            <label for="radio3">
-                READY FOR PICKUP
-            </label>
 <?php } ?>
  
 </span>
