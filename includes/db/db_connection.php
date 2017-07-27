@@ -171,20 +171,20 @@ class DB_Connection{
 	
 	// step verification
 	
-	function steps_verification($step){
-		$query = "insert into `settings_table` (verification_step) values('$step')";
+	function steps_verification($step,$shop){
+		$query = "insert into `settings_table` (verification_step,store_name) values('$step','$shop')";
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
 	
-	function update_steps_verification($step){
-		$query = "update `settings_table` set verification_step='$step' WHERE 1";
+	function update_steps_verification($step,$shop){
+		$query = "update `settings_table` set verification_step='$step' WHERE store_name='$shop'";
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
 	
-	function get_steps_verification(){
-		$query = "select * from `settings_table` where id='1'";
+	function get_steps_verification($shop){
+		$query = "select * from `settings_table` where store_name = '$shop'";
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);

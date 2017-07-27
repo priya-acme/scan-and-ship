@@ -6,15 +6,15 @@
  $shop =  $_SESSION['shop_name'];
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
- $get_verification = $Stores->get_step_verification();
+ $get_verification = $Stores->get_step_verification($shop);
  if(isset($_POST['save_changes'])){
- 	$get_verification = $Stores->get_step_verification();
+ 	$get_verification = $Stores->get_step_verification($shop);
  	if(empty($get_verification)){
- 		$Stores->step_verification($_POST['select_veri']);
+ 		$Stores->step_verification($_POST['select_veri'],$shop);
  		header('location:/scan-and-ship/app/settings.php');
  	}
  	else {
- 		$Stores->update_step_verification($_POST['select_veri']);
+ 		$Stores->update_step_verification($_POST['select_veri'],$shop);
  		header('location:/scan-and-ship/app/settings.php');
  	}
  }
