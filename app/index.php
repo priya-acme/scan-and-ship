@@ -5,6 +5,11 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $Stores = new Stores();
  $shop = $_GET['shop'];
  $_SESSION['shop_name'] = $shop;
+ $get_verification = $Stores->get_step_verification($shop);
+ if(empty($get_verification)){
+ 	$Stores->step_verification('Three',$shop);
+ 	header('location:/scan-and-ship/app/settings.php');
+ }
  ?>
 <?php include 'header.php' ?>
 <!-- <div id="content"> -->
