@@ -9,7 +9,7 @@ $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST
 //echo $_SESSION['select_role'];
 $pget_order_id = $_REQUEST['id']; 
 $pselect_role = $_SESSION['select_role'];
-$get_verification = $Stores->get_step_verification();
+$get_verification = $Stores->get_step_verification($shop);
 if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false'){
 	
 	$get_order_id = $_REQUEST['id'];

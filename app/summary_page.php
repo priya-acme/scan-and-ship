@@ -11,7 +11,7 @@
  ${"orders".$count} = $Shopify->get_orders($shop, $shop_info['access_token'],$count);
 
  }
-$get_verification = $Stores->get_step_verification();
+$get_verification = $Stores->get_step_verification($shop);
  if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
