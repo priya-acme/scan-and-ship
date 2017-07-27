@@ -3,6 +3,7 @@
  include __DIR__ .'../../includes/db/Stores.php';
  $Shopify = new Shopify();
  $Stores = new Stores();
+ echo $_SESSION[$shop];
  $shop =   $_SESSION[$shop];
  $shop_info = $Stores->is_shop_exists($shop);
  $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
