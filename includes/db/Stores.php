@@ -84,11 +84,11 @@ class Stores extends DB_Connection{
 	
 	// step verification
 	
-	function step_verification($step,$shop){
-		return $this->steps_verification($step,$shop);
+	function step_verification($step,$fulfill,$shop){
+		return $this->steps_verification($step,$fulfill,$shop);
 	}
-	function update_step_verification($step,$shop){
-		return $this->update_steps_verification($step,$shop);
+	function update_step_verification($step,$fulfill,$shop){
+		return $this->update_steps_verification($step,$fulfill,$shop);
 	}
 	function get_step_verification($shop){
 		return $this->get_steps_verification($shop);
