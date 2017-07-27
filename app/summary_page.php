@@ -292,7 +292,7 @@ function delete_instore_picker(in_order){
 	  xhttp.open("GET", "delete_instore_pickup.php?order_id="+in_order, true);
 	  xhttp.send();
 	  
-	  setTimeout(function(){ window.location.href = 'http://doublecheck.aviasolutions.ca/scan-and-ship/app/summary_page.php'; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://aviaapps.co/scan-and-ship/app/summary_page.php'; }, 500);
 }
 // function sendvalue(a,b){
 // 	var chckbx_val = a;
