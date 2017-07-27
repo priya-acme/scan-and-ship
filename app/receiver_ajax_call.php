@@ -3,7 +3,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
 include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
-$shop =  $_SESSION['shop_name'];
+$shop =   $_SESSION[$shop];
 $shop_info = $Stores->is_shop_exists($shop);
 $order_id=$_REQUEST['order_id'];
 $check_order_veri = $Stores->r_check_order_veri($variants->variant->sku, $_REQUEST['id'],$_REQUEST['role']);

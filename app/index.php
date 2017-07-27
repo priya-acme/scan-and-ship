@@ -5,7 +5,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $Stores = new Stores();
  $shop = $_GET['shop'];
  $_SESSION[$shop] = $shop;
- echo $_SESSION[$shop];
+ //echo $_SESSION[$shop];
  $get_verification = $Stores->get_step_verification($shop);
  if(empty($get_verification)){
  	$Stores->step_verification('Three','On',$shop);
@@ -14,6 +14,6 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  ?>
 <?php include 'header.php' ?>
 <!-- <div id="content"> -->
-<?php //header('location:summary_page.php'); ?>
+<?php header('location:summary_page.php'); ?>
 
 <?php include 'footer.php' ?>
