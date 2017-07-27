@@ -60,7 +60,7 @@
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<span class="role2">Fulfill Order Automatically</span>
+<span class="role2">FULFILL ORDER AUTOMATICALLY</span>
 <span class="radio radio-primary">
  <input type="radio" name="fulfill_order" id="on" value="On" <?php if($get_verification['fulfill_order'] == 'On') { echo "checked"; }?>>
 <label for="on">On</label>

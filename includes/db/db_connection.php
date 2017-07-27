@@ -178,7 +178,7 @@ class DB_Connection{
 	}
 	
 	function update_steps_verification($step,$fulfill,$shop){
-		$query = "update `settings_table` set verification_step='$step' and fulfill_order='$fulfill' WHERE store_name='$shop'";
+		$query = "update `settings_table` set verification_step='$step' , fulfill_order='$fulfill' WHERE store_name='$shop'";
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
