@@ -322,6 +322,7 @@ In Store Pickup
 </div>
 <?php }
 ?>
+<?php if($get_verification['fulfill_order'] == 'On') { ?>
 <div class="col-md-2 col-sm-12" style="margin-top:10px">
 <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
 <div class="hdd">FULFILL ORDER</div>
@@ -335,8 +336,8 @@ FulFill Order
 </label>
 <?php } ?>
 </div>
-
 </div>
+<?php } ?>
 </div>
 </div>
 </div>

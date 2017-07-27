@@ -10,11 +10,11 @@
  if(isset($_POST['save_changes'])){
  	$get_verification = $Stores->get_step_verification($shop);
  	if(empty($get_verification)){
- 		$Stores->step_verification($_POST['select_veri'],$shop);
+ 		$Stores->step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
  		header('location:/scan-and-ship/app/settings.php');
  	}
  	else {
- 		$Stores->update_step_verification($_POST['select_veri'],$shop);
+ 		$Stores->update_step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
  		header('location:/scan-and-ship/app/settings.php');
  	}
  }
@@ -55,6 +55,17 @@
 <label for="radio2">Shipper Verification</label>
 <input type="radio" name="select_veri" id="radio3" value="Three" <?php if($get_verification['verification_step'] == 'Three') { echo "checked"; }?>>
 <label for="radio3">In-store Pickup Verification</label>
+</span>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-md-6">
+<span class="role2">Fulfill Order Automatically</span>
+<span class="radio radio-primary">
+ <input type="radio" name="fulfill_order" id="on" value="On" <?php if($get_verification['fulfill_order'] == 'On') { echo "checked"; }?>>
+<label for="on">On</label>
+<input type="radio" name="fulfill_order" id="off" value="Off" <?php if($get_verification['fulfill_order'] == 'Off') { echo "checked"; }?>>
+<label for="off">Off</label>
 </span>
 </div>
 </div>

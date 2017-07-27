@@ -7,7 +7,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $_SESSION['shop_name'] = $shop;
  $get_verification = $Stores->get_step_verification($shop);
  if(empty($get_verification)){
- 	$Stores->step_verification('Three',$shop);
+ 	$Stores->step_verification('Three','On',$shop);
  	header('location:/scan-and-ship/app/settings.php');
  }
  ?>

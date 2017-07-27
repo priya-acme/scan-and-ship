@@ -171,14 +171,14 @@ class DB_Connection{
 	
 	// step verification
 	
-	function steps_verification($step,$shop){
-		$query = "insert into `settings_table` (verification_step,store_name) values('$step','$shop')";
+	function steps_verification($step,$fulfill,$shop){
+		$query = "insert into `settings_table` (verification_step,fulfill_order,store_name) values('$step','$fulfill','$shop')";
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
 	
-	function update_steps_verification($step,$shop){
-		$query = "update `settings_table` set verification_step='$step' WHERE store_name='$shop'";
+	function update_steps_verification($step,$fulfill,$shop){
+		$query = "update `settings_table` set verification_step='$step' and fulfill_order='$fulfill' WHERE store_name='$shop'";
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
