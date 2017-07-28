@@ -567,7 +567,7 @@ function create_fulfilled_order(forder_id,shop){
 	  };
 	  xhttp.open("GET", "../fulfilled_order.php?shop="+shop+"&order_id="+forder_id, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+forder_id; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 function delete_instore_picker(in_order,shop){
 	  var xhttp = new XMLHttpRequest();
@@ -593,7 +593,7 @@ function sendvalue(a,b,shop){
 	  };
 	  xhttp.open("GET", "../ajax_call.php?shop="+shop+"&chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+b; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 function send_picker_value(o,s,ro,qty,shop){
 	var porder_id = o;
@@ -615,7 +615,7 @@ function send_picker_value(o,s,ro,qty,shop){
 	  };
 	  xhttp.open("GET", "../picker_ajax_call.php?shop="+shop+"&sku="+sku+"&order_id="+porder_id+"&role="+prole+"&qty="+qty, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+porder_id; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 function send_shipper_value(so,ss,sro,shop){
 	var sorder_id = so;
@@ -637,7 +637,7 @@ function send_shipper_value(so,ss,sro,shop){
 	  };
 	  xhttp.open("GET", "../shipper_ajax_call.php?shop="+shop+"&sku="+ssku+"&order_id="+sorder_id+"&role="+srole, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+so; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 function send_receiver_value(ro,rs,rro,shop){
 	var rorder_id = ro;
@@ -659,7 +659,7 @@ function send_receiver_value(ro,rs,rro,shop){
 	  };
 	  xhttp.open("GET", "../receiver_ajax_call.php?shop="+shop+"&sku="+rsku+"&order_id="+rorder_id+"&role="+rrole, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+ro; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 function selected_radio(r,order,shop){
 	var selected_rval = r;
@@ -671,7 +671,7 @@ function selected_radio(r,order,shop){
 	  };
 	  xhttp.open("GET", "../role.php?selected_rval="+selected_rval, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+order; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 function delete_picker_order(dorder , dsku,shop){
 	var dorder = dorder;
@@ -684,7 +684,7 @@ function delete_picker_order(dorder , dsku,shop){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&dorder="+dorder+"&dsku="+dsku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+dorder; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 function delete_shipper_order(dsorder , dssku,shop){
 	var dsorder = dsorder;
@@ -697,7 +697,7 @@ function delete_shipper_order(dsorder , dssku,shop){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&dsorder="+dsorder+"&dssku="+dssku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+dsorder; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 function delete_receiver_order(drorder , drsku,shop){
 	var drorder = drorder;
@@ -710,7 +710,7 @@ function delete_receiver_order(drorder , drsku,shop){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+drorder; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 </script>
 <?php include 'footer.php'; ?>
