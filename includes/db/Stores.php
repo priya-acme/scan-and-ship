@@ -41,8 +41,8 @@ class Stores extends DB_Connection{
 	}
 	// shipper
 	
-	function s_order_veri($sku, $barcode, $order_id, $verification){
-		return $this->s_order_verification($sku, $barcode, $order_id, $verification);
+	function s_order_veri($sku, $barcode, $order_id, $verification,$qty){
+		return $this->s_order_verification($sku, $barcode, $order_id, $verification,$qty);
 	}
 	function s_get_order_veri_sku($sku,$order_id){
 		return $this->s_get_order_verification_sku($sku,$order_id);
@@ -59,7 +59,9 @@ class Stores extends DB_Connection{
 	function delete_shipper_order($order_id,$sku){
 		return $this->delete_shipper_orders($order_id,$sku);
 	}
-	
+	function s_update_qty_order($sku,$barcode,$order_id){
+		return $this->shipper_update_qty($sku,$barcode,$order_id);
+	}
 	// receiver
 	
 	function r_order_veri($sku, $barcode, $order_id, $verification){
