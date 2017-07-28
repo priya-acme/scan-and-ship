@@ -663,7 +663,7 @@ function send_picker_value(o,s,ro,qty,shop){
 	  xhttp.send();
 	  setTimeout(function(){  window.location.reload(); }, 1000);
 }
-function send_shipper_value(so,ss,sro,shop,sqty){
+function send_shipper_value(so,ss,sro,sqty,shop){
 	var sorder_id = so;
 	var ssku = ss;
 	if(sro == '' ){ 
