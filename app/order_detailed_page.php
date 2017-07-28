@@ -683,7 +683,7 @@ function send_shipper_value(so,ss,sro,sqty,shop){
 	  };
 	  xhttp.open("GET", "../shipper_ajax_call.php?shop="+shop+"&sku="+ssku+"&order_id="+sorder_id+"&role="+srole+"&qty="+sqty, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  //setTimeout(function(){ window.location.reload(); }, 1000);
 }
 function send_receiver_value(ro,rs,rro,shop){
 	var rorder_id = ro;
