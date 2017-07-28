@@ -615,7 +615,7 @@ function send_picker_value(o,s,ro,qty,shop){
 	  };
 	  xhttp.open("GET", "../picker_ajax_call.php?shop="+shop+"&sku="+sku+"&order_id="+porder_id+"&role="+prole+"&qty="+qty, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href; }, 1000);
+	  setTimeout(function(){  window.location.reload(); }, 1000);
 }
 function send_shipper_value(so,ss,sro,shop){
 	var sorder_id = so;
