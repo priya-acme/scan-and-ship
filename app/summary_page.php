@@ -20,7 +20,7 @@ $get_verification = $Stores->get_step_verification($shop);
 	${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
 	foreach(${"get_order".$count}->orders as $order) {
 		if($order_id == $order->name || $order_id == $order->id){
-			header("location:/scan-and-ship/app/order_detailed_page.php/?id=$order->id");
+			header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 		}
 	 }
 	}
@@ -33,7 +33,7 @@ $get_verification = $Stores->get_step_verification($shop);
 <div class="row">
 <div class="col-sm-12">
 <div class="right-icon">
-<a href="/scan-and-ship/app/settings.php" class="seting-icon">
+<a href="/scan-and-ship/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
 </div>
@@ -128,7 +128,7 @@ $get_verification = $Stores->get_step_verification($shop);
   //print_r($order);
   ?>
   <tr>
-    <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
+    <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
     <td width="12%"><strong><?php echo $order->updated_at; ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     
@@ -236,7 +236,7 @@ $get_verification = $Stores->get_step_verification($shop);
      
       <!-- in store pickup  -->
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
-     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
      <?php } else { ?>
      <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
      <?php } ?>
@@ -281,7 +281,7 @@ $get_verification = $Stores->get_step_verification($shop);
 </div>
 </form>
 <script>
-function delete_instore_picker(in_order){
+function delete_instore_picker(in_order,shop){
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
@@ -289,10 +289,10 @@ function delete_instore_picker(in_order){
      
 	    }
 	  };
-	  xhttp.open("GET", "delete_instore_pickup.php?order_id="+in_order, true);
+	  xhttp.open("GET", "delete_instore_pickup.php?shop="+shop+"order_id="+in_order, true);
 	  xhttp.send();
 	  
-	  setTimeout(function(){ window.location.href = 'http://aviaapps.co/scan-and-ship/app/summary_page.php'; }, 500);
+	  setTimeout(function(){ window.location.href = 'http://aviaapps.co/scan-and-ship/app/summary_page.php?shop='+shop; }, 500);
 }
 // function sendvalue(a,b){
 // 	var chckbx_val = a;

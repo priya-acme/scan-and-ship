@@ -3,7 +3,7 @@
  include __DIR__ .'../../includes/db/Stores.php';
  $Shopify = new Shopify();
  $Stores = new Stores();
- $shop =  $_SESSION['shop_name'];
+ $shop =  $_REQUEST['shop'];
  $shop_info = $Stores->is_shop_exists($shop);
  $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
  $get_verification = $Stores->get_step_verification($shop);
@@ -11,11 +11,11 @@
  	$get_verification = $Stores->get_step_verification($shop);
  	if(empty($get_verification)){
  		$Stores->step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
- 		header('location:/scan-and-ship/app/settings.php');
+ 		header("location:/scan-and-ship/app/settings.php?shop=$shop");
  	}
  	else {
  		$Stores->update_step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
- 		header('location:/scan-and-ship/app/settings.php');
+ 		header("location:/scan-and-ship/app/settings.php?shop=$shop");
  	}
  }
 ?>
