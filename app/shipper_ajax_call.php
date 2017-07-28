@@ -10,7 +10,7 @@ $check_order_veri = $Stores->s_check_order_veri($variants->variant->sku, $_REQUE
 if($_REQUEST['role']== 'Shipper ok' || $_REQUEST['role']== 'Shipper' ){
 if(empty($check_order_veri)){
 	$Stores->s_order_veri($_REQUEST['sku'],"",$order_id,$_REQUEST['role'],$_REQUEST['qty']);
-header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$order_id");
+//header("location:http://67.207.82.1/scan-and-ship/app/order_detailed_page.php/?id=$order_id");
 }
 }
 ?>
