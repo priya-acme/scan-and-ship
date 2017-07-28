@@ -697,7 +697,7 @@ function delete_shipper_order(dsorder , dssku,shop){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&dsorder="+dsorder+"&dssku="+dssku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"id="+dsorder; }, 1000);
+	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+dsorder; }, 1000);
 }
 function delete_receiver_order(drorder , drsku,shop){
 	var drorder = drorder;
