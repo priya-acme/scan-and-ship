@@ -579,7 +579,7 @@ function delete_instore_picker(in_order,shop){
 	  };
 	  xhttp.open("GET", "../delete_instore_pickup.php?shop="+shop+"&order_id="+in_order, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.href = "http://aviaapps.co/scan-and-ship/app/order_detailed_page.php/?shop="+shop+"&id="+in_order; }, 1000);
+	  setTimeout(function(){ $(window).load(); }, 1000);
 }
 function sendvalue(a,b,shop){
 	var chckbx_val = a;
