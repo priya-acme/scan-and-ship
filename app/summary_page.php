@@ -292,7 +292,7 @@ function delete_instore_picker(in_order,shop){
 	  xhttp.open("GET", "delete_instore_pickup.php?shop="+shop+"&order_id="+in_order, true);
 	  xhttp.send();
 	  
-	  setTimeout(function(){ $(window).load(); }, 500);
+	  setTimeout(function(){ window.location.reload();; }, 500);
 }
 // function sendvalue(a,b){
 // 	var chckbx_val = a;
