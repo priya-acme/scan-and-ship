@@ -289,7 +289,7 @@ function delete_instore_picker(in_order,shop){
      
 	    }
 	  };
-	  xhttp.open("GET", "delete_instore_pickup.php?shop="+shop+"order_id="+in_order, true);
+	  xhttp.open("GET", "delete_instore_pickup.php?shop="+shop+"&order_id="+in_order, true);
 	  xhttp.send();
 	  
 	  setTimeout(function(){ window.location.href = 'http://aviaapps.co/scan-and-ship/app/summary_page.php?shop='+shop; }, 500);
