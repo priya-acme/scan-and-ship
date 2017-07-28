@@ -4,8 +4,8 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $Shopify = new Shopify();
  $Stores = new Stores();
  $shop = $_GET['shop'];
- $_SESSION['shop_name'][] = $shop;
- echo  $_SESSION['shop_name'][];
+ $_SESSION['shop_name'] = $shop;
+ 
  ?>
 <?php include 'header.php' ?>
 <!-- <div id="content"> -->
