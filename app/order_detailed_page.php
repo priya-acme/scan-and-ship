@@ -517,7 +517,7 @@ FulFill Order
          		?>
          		<td><div class="green"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
             <?php 
-         	} else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $get_order_veri_sku['quantity'] != 0){
+         	} else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $r_get_order_veri_sku['quantity'] != 0){
 	        ?>
 	        <td><div class="yellow"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	        <?php } else { ?>
@@ -570,7 +570,7 @@ FulFill Order
          		?>
          		<td><div class="green"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
             <?php 
-         	} else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $get_order_veri_sku['quantity'] != 0){
+         	} else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $r_get_order_veri_sku['quantity'] != 0){
 	        ?>
 	        <td><div class="yellow"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	        <?php } else { ?>
@@ -640,7 +640,7 @@ FulFill Order
          		?>
          		<td><div class="green"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
             <?php 
-         	} else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $get_order_veri_sku['quantity'] != 0){
+         	} else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $r_get_order_veri_sku['quantity'] != 0){
 	        ?>
 	        <td><div class="yellow"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	        <?php } else { ?>
