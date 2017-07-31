@@ -136,13 +136,15 @@ $get_verification = $Stores->get_step_verification($shop);
   <?php //echo "<pre>";
   //print_r($order);
   $now = time();
-  echo $now;
+  
+  $your_date = strtotime($result[0]);
+  //$datediff = $now - $your_date;
 	$input = $order->updated_at; 
 	$result = explode('T',$input);
   ?>
   <tr>
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
-    <td width="12%"><strong><?php  echo $result[0]; ?></strong></td>
+    <td width="12%"><strong><?php  echo $now;  echo $result[0]; echo strtotime($result[0]); ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     
     <!--  one step verification starts -->
