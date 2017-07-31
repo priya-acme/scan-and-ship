@@ -26,18 +26,7 @@ $get_verification = $Stores->get_step_verification($shop);
 	}
 }
 
-$val1 = '2014-03-18 10:34:09.939';
-$val2 = 'now';
-echo $val2;
-// $datetime1 = new DateTime($val1);
-// $datetime2 = new DateTime('now');
-// echo "<pre>";
-// var_dump($datetime1->diff($datetime2));
 
-// if($datetime1 > $datetime2)
-// 	echo "1 is bigger";
-// 	else
-// 		echo "2 is bigger";
 ?>
 <?php include 'header.php' ?>
  <form method="post">
@@ -149,7 +138,7 @@ echo $val2;
   ?>
   <tr>
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
-    <td width="12%"><strong><?php echo $order->updated_at; ?></strong></td>
+    <td width="12%"><strong><?php $input = $order->updated_at; $result = explode('T',$input); echo $result[0]; ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     
     <!--  one step verification starts -->
