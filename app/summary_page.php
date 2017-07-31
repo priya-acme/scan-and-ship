@@ -143,7 +143,7 @@ $get_verification = $Stores->get_step_verification($shop);
   ?>
   <tr>
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
-    <td width="12%"><strong><?php  echo $result[0]; echo (strtotime($start_date)- strtotime($your_date)); ?></strong></td>
+    <td width="12%"><strong><?php  echo $result[0]; echo $start_date; ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     
     <!--  one step verification starts -->
