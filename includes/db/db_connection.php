@@ -165,7 +165,8 @@ class DB_Connection{
 		}
 	}
 	function verified_orders($order_id){
-		$query = "select * from receiver_order_verification where order_id='$order_id'";
+		$query = "select sum(quantity) from receiver_order_verification where order_id='$order_id'";
+		echo $query;
 		$result = mysqli_query($this->connection, $query);
 		if(mysqli_num_rows($result) > 0 ){
 			return mysqli_fetch_assoc($result);
