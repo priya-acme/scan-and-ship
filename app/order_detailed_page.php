@@ -362,11 +362,15 @@ FulFill Order
   <tr>
     <td width="29%" class="hed" style="text-align:left">PRODUCT TITLE</td>
     <td width="8%" class="hed">ORDERED QUANTITY</td>
+    <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+    <td width="8%" class="hed">SCANNED QUANTITY</td>
+    <?php } else { ?>
     <td width="8%" class="hed">SCANNED QUANTITY
     <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
     <tr><td width="8%" class="hed">Picker</td><td width="8%" class="hed">Shipper</td><td width="8%" class="hed">Ready For Pickup</td></tr>
     </table>
     </td>
+    <?php } ?>
     <td width="8%" class="hed">PRICE</td>
     <td width="17%" class="hed">SKU</td>
     <?php if($get_verification['verification_step'] == 'One') {  
@@ -395,6 +399,9 @@ FulFill Order
   <tr>
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
     <td><?php echo $orders->order->line_items[$i]->quantity; ?></td>
+    <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+    <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    <?php } else { ?>
     <td>
          <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
          <tr>
@@ -451,6 +458,7 @@ FulFill Order
         </tr>
         </table>
         </td>
+        <?php } ?>
     <td><?php echo $orders->order->line_items[$i]->price; ?></td>
     <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
     	if($variants->variant->sku != '' ){ 
