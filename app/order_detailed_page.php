@@ -651,7 +651,7 @@ FulFill Order
  <!-- three step verification end -->
   </tr>
   <?php } ?>
-<?php echo "Sum is".$sum; ?>
+
   
 </table>
 
@@ -667,6 +667,7 @@ FulFill Order
 </div>
 </div>
 </div>
+<input type="text" name="total_qty" id="total_qty" value="<?php echo $sum; ?>" class="total_qty">
 </form>
 <script>
 
