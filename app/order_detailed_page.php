@@ -671,6 +671,8 @@ FulFill Order
 </div>
 </div>
 </form>
+<span class="total_quantity"><?php $rcount= $Stores->r_verified_orders($_REQUEST['id']); echo $rcount['sum(quantity)']; ?></span>
+<span class="total_count"><?php echo $sum; ?></span>
 <?php 
 if($get_verification['fulfill_order'] == 'On') {
 	$rcount= $Stores->r_verified_orders($_REQUEST['id']);
@@ -809,6 +811,10 @@ function send_receiver_value(ro,rs,rro,shop,rqty){
 	  };
 	  xhttp.open("GET", "../receiver_ajax_call.php?shop="+shop+"&sku="+rsku+"&order_id="+rorder_id+"&role="+rrole+"&qty="+rqty, true);
 	  xhttp.send();
+	  if($('.total_count').text() == $('.total_quantity').text())
+	  {
+		  setTimeout(function(){ window.location.reload(); }, 5000);
+      }
 	  setTimeout(function(){ window.location.reload(); }, 2000);
 		}
 }
