@@ -150,14 +150,8 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 			header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 		}
 	}
-// 	if($j == 1){
-		
-// 	}
-// 	else {
-// 		$error = "Order number doesn't match" ;
-// 	}
-	//echo "<script>$('.qty-error-message').hide();</script>";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -347,7 +341,7 @@ In Store Pickup
 </div>
 <?php }
 ?>
-<?php if($get_verification['fulfill_order'] == 'On') { ?>
+
 <div class="col-md-2 col-sm-12" style="margin-top:10px">
 <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
 <div class="hdd">FULFILL ORDER</div>
@@ -362,7 +356,7 @@ FulFill Order
 <?php } ?>
 </div>
 </div>
-<?php } ?>
+
 </div>
 </div>
 </div>
@@ -676,8 +670,12 @@ FulFill Order
 </div>
 </div>
 </div>
-<input type="text" name="total_qty" id="total_qty" value="<?php echo $sum; ?>" class="total_qty">
 </form>
+<?php 
+if($get_verification['fulfill_order'] == 'On') {
+	echo $sum;
+}
+?>
 <script>
 
 function create_fulfilled_order(forder_id,shop){
