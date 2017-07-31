@@ -64,8 +64,8 @@ class Stores extends DB_Connection{
 	}
 	// receiver
 	
-	function r_order_veri($sku, $barcode, $order_id, $verification){
-		return $this->r_order_verification($sku, $barcode, $order_id, $verification);
+	function r_order_veri($sku, $barcode, $order_id, $verification,$qty){
+		return $this->r_order_verification($sku, $barcode, $order_id, $verification,$qty);
 	}
 	function r_get_order_veri_sku($sku,$order_id){
 		return $this->r_get_order_verification_sku($sku,$order_id);
@@ -82,6 +82,9 @@ class Stores extends DB_Connection{
 	function delete_receiver_order($order_id,$sku){
 		
 		return $this->delete_receiver_orders($order_id,$sku);
+	}
+	function r_update_qty_order($sku,$barcode,$order_id){
+		return $this->receiver_update_qty($sku,$barcode,$order_id);
 	}
 	
 	// step verification

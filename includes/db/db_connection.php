@@ -139,8 +139,8 @@ class DB_Connection{
 
 	// receiver
 	
-	function r_order_verification($sku,$barcode,$order_id,$verification){
-		$query = "insert into receiver_order_verification(sku,barcode,order_id,verification) values('$sku','$barcode','$order_id','$verification')";
+	function r_order_verification($sku,$barcode,$order_id,$verification,$qty){
+		$query = "insert into receiver_order_verification(sku,barcode,order_id,verification,quantity) values('$sku','$barcode','$order_id','$verification','$qty')";
 		$result = mysqli_query($this->connection, $query);
 	}
 	function r_get_order_verification_sku($sku,$order_id){
@@ -171,6 +171,11 @@ class DB_Connection{
 	}
 	function delete_receiver_orders($order_id,$sku){
 		$query = "delete from receiver_order_verification where order_id='$order_id' and sku='$sku'";
+		$result = mysqli_query($this->connection, $query);
+	}
+	function receiver_update_qty($sku,$barcode,$order_id){
+		$query = "update receiver_order_verification set quantity = `quantity`+1 where order_id='$order_id' and sku='$sku' or barcode ='$barcode'";
+		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
 	
