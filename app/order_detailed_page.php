@@ -362,9 +362,8 @@ FulFill Order
   <tr>
     <td width="29%" class="hed" style="text-align:left">PRODUCT TITLE</td>
     <td width="8%" class="hed">ORDERED QUANTITY</td>
-    <td width="8%">
-    <table class="table table-bordered table-responsive mytable">
-    <tr><td class="hed" colspan="3">SCANNED QUANTITY</td></tr>
+    <td width="8%" class="hed">SCANNED QUANTITY
+    <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
     <tr><td width="8%" class="hed">Picker</td><td width="8%" class="hed">Shipper</td><td width="8%" class="hed">Ready For Pickup</td></tr>
     </table>
     </td>
