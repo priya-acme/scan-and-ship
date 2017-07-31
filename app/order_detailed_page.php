@@ -395,6 +395,7 @@ FulFill Order
   <tr>
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
     <td><?php echo $orders->order->line_items[$i]->quantity; ?></td>
+    <td>
          <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
          <tr>
          <!--  picker qty check -->
@@ -445,6 +446,7 @@ FulFill Order
         <?php } }  ?>
         </tr>
         </table>
+        </td>
     <td><?php echo $orders->order->line_items[$i]->price; ?></td>
     <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
     	if($variants->variant->sku != '' ){ 
