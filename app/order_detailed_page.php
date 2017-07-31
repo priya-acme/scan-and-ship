@@ -583,7 +583,7 @@ FulFill Order
 	  <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	  <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	  <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-	<?php } else ?>
+	<?php } else { ?>
     	  <?php 
         // Picker verification
        $get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
