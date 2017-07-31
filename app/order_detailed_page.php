@@ -362,7 +362,12 @@ FulFill Order
   <tr>
     <td width="29%" class="hed" style="text-align:left">PRODUCT TITLE</td>
     <td width="8%" class="hed">ORDERED QUANTITY</td>
-    <td width="8%" class="hed">SCANNED QUANTITY</td>
+    <td width="8%">
+    <table>
+    <tr><td class="hed" colspan="3">SCANNED QUANTITY</td></tr>
+    <tr><td>Picker</td><td>Shipper</td><td>Ready For Pickup</td></tr>
+    </table>
+    </td>
     <td width="8%" class="hed">PRICE</td>
     <td width="17%" class="hed">SKU</td>
     <?php if($get_verification['verification_step'] == 'One') {  
