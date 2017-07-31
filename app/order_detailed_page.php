@@ -434,18 +434,18 @@ FulFill Order
         
         <!--  ready for pickup qty check starts -->
         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
-         $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
-         if(empty($get_order_veri_sku)){
+        $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($r_get_order_veri_sku)){
     	?>
     	 <td>0</td>
         <?php 
         } else {
-        	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+        	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
     	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
-        <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+        <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
+    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
         </tr>
