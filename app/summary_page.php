@@ -25,6 +25,19 @@ $get_verification = $Stores->get_step_verification($shop);
 	 }
 	}
 }
+
+$val1 = '2014-03-18 10:34:09.939';
+$val2 = 'now';
+echo $val2;
+// $datetime1 = new DateTime($val1);
+// $datetime2 = new DateTime('now');
+// echo "<pre>";
+// var_dump($datetime1->diff($datetime2));
+
+// if($datetime1 > $datetime2)
+// 	echo "1 is bigger";
+// 	else
+// 		echo "2 is bigger";
 ?>
 <?php include 'header.php' ?>
  <form method="post">
