@@ -4,6 +4,7 @@ include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_REQUEST['shop'];
+$sum = 0 ;
 $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
 //echo $_SESSION['select_role'];
@@ -395,6 +396,8 @@ FulFill Order
        $line_item_count = $arrayobj->count();
        for($i=0;$i<$line_item_count;$i++)
        {
+       	$qty =  $orders->order->line_items[$i]->quantity;
+       	$sum += $qty;
      ?>
   <tr>
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
@@ -648,7 +651,7 @@ FulFill Order
  <!-- three step verification end -->
   </tr>
   <?php } ?>
-
+<?php echo "Sum is".$sum; ?>
   
 </table>
 
