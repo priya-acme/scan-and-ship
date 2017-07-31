@@ -706,7 +706,7 @@ function sendvalue(a,b,shop){
 	  setTimeout(function(){ window.location.reload(); }, 1000);
 }
 function send_picker_value(o,s,ro,qty,shop){
-	var select_role = document.getElementsByClass('select_role').value;
+	var select_role = document.getElementByClass('select_role').value;
 	alert(select_role);
 	if(select_role != 'Picker ok'){
      alert('Please select correct role !!');
@@ -735,7 +735,7 @@ function send_picker_value(o,s,ro,qty,shop){
 	}
 }
 function send_shipper_value(so,ss,sro,sqty,shop){
-	var select_role = document.getElementsByClass('select_role').value;
+	var select_role = document.getElementByClass('select_role').value;
 	alert(select_role);
 	if(select_role != 'Shipper ok'){
      alert('Please select correct role !!');
@@ -764,7 +764,7 @@ function send_shipper_value(so,ss,sro,sqty,shop){
 		}
 }
 function send_receiver_value(ro,rs,rro,shop){
-	var select_role = document.getElementsByClass('select_role').value;
+	var select_role = document.getElementByClass('select_role').value;
 	alert(select_role);
 	if(select_role != 'Receiver ok'){
      alert('Please select correct role !!');
