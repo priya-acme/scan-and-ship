@@ -525,7 +525,10 @@ FulFill Order
       
       <?php  if($get_verification['verification_step'] == 'Two') {  
 	  ?>
-
+      <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+      <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	  <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+      <?php }  else { ?>
         
       <?php
       
@@ -569,13 +572,18 @@ FulFill Order
         	<?php } else { ?>
                <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $shop; ?>')" /></td>
         <?php } }  ?>
-    <?php } ?>
+    <?php } } ?>
     <!-- two step verification end -->
     
     <!-- three step verification starts -->
     
      <?php if($get_verification['verification_step'] == 'Three') {  
 	  ?>
+	  <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+	  <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	  <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	  <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	<?php } else ?>
     	  <?php 
         // Picker verification
        $get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
@@ -636,7 +644,7 @@ FulFill Order
         	<?php } else { ?>
                <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $shop; ?>')" /></td>
         <?php } }  ?>
-        <?php }  ?>
+        <?php } }  ?>
  <!-- three step verification end -->
   </tr>
   <?php } ?>
