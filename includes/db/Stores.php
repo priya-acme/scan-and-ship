@@ -86,7 +86,9 @@ class Stores extends DB_Connection{
 	function r_update_qty_order($sku,$barcode,$order_id){
 		return $this->receiver_update_qty($sku,$barcode,$order_id);
 	}
-	
+	function r_verified_orders($order_id){
+		return $this->verified_orders($order_id);
+	}
 	// step verification
 	
 	function step_verification($step,$fulfill,$shop){

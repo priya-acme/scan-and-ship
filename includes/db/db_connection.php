@@ -164,6 +164,13 @@ class DB_Connection{
 		return mysqli_fetch_assoc($result);
 		}
 	}
+	function verified_orders($order_id){
+		$query = "select * from receiver_order_verification where order_id='$order_id'";
+		$result = mysqli_query($this->connection, $query);
+		if(mysqli_num_rows($result) > 0 ){
+			return mysqli_fetch_assoc($result);
+		}
+	}
 	function count_receiver_order($order_id){
 		$query = "select count(*) from receiver_order_verification where order_id='$order_id'";
 		$result = mysqli_query($this->connection, $query);
