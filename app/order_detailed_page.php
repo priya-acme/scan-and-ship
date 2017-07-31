@@ -809,7 +809,7 @@ function send_receiver_value(ro,rs,rro,shop,rqty){
 	  };
 	  xhttp.open("GET", "../receiver_ajax_call.php?shop="+shop+"&sku="+rsku+"&order_id="+rorder_id+"&role="+rrole+"&qty="+rqty, true);
 	  xhttp.send();
-	    setTimeout(function(){ window.location = "http://aviaapps.co/scan-and-ship/app/order_test.php?shop="+shop+"&order_id="+rorder_id; }, 1000);
+	    setTimeout(function(){ window.location = "http://aviaapps.co/scan-and-ship/app/order_test.php/?shop="+shop+"&order_id="+rorder_id; }, 1000);
      	}
 }
 function selected_radio(r,order,shop){
