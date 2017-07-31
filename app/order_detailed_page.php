@@ -207,34 +207,34 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
 	?>
-<input type="radio" name="select_role" id="radio1" value="Picker ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?>>
+<input type="radio" name="select_role" id="radio1" class="select_role" value="Picker ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?>>
 <label for="radio1">
  PICKER
 </label>
- <input type="radio" name="select_role" id="radio3" value="Receiver ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
+ <input type="radio" name="select_role" id="radio3" class="select_role"  value="Receiver ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
             <label for="radio3">
                 READY FOR PICKUP
             </label>
 <?php 
 }  if($get_verification['verification_step'] == 'Two') { ?>
-            <input type="radio" name="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
+            <input type="radio" name="select_role" class="select_role"  id="radio2" value="Shipper ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
             <label for="radio2">
                 SHIPPER
             </label>
-             <input type="radio" name="select_role" id="radio3" value="Receiver ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
+             <input type="radio" name="select_role" class="select_role"  id="radio3" value="Receiver ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
             <label for="radio3">
                 READY FOR PICKUP
             </label>
 <?php } if($get_verification['verification_step'] == 'Three') {?>
-            <input type="radio" name="select_role" id="radio1" value="Picker ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; }else { echo "checked"; }?>>
+            <input type="radio" name="select_role" class="select_role"  id="radio1" value="Picker ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; }else { echo "checked"; }?>>
             <label for="radio1">
                 PICKER
             </label>
-            <input type="radio" name="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
+            <input type="radio" name="select_role" class="select_role"  id="radio2" value="Shipper ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
             <label for="radio2">
                 SHIPPER
             </label>
-            <input type="radio" name="select_role" id="radio3" value="Receiver ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
+            <input type="radio" name="select_role" class="select_role"  id="radio3" value="Receiver ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
             <label for="radio3">
                 READY FOR PICKUP
             </label>
@@ -706,6 +706,11 @@ function sendvalue(a,b,shop){
 	  setTimeout(function(){ window.location.reload(); }, 1000);
 }
 function send_picker_value(o,s,ro,qty,shop){
+	var select_role = document.getElementsByClassName('select_role').val();
+	if(select_role != 'Picker ok'){
+     alert('Please select correct role !!');
+		}
+	else {
 	var porder_id = o;
 	var sku = s;
 	if(ro == '' ){ 
@@ -726,8 +731,13 @@ function send_picker_value(o,s,ro,qty,shop){
 	  xhttp.open("GET", "../picker_ajax_call.php?shop="+shop+"&sku="+sku+"&order_id="+porder_id+"&role="+prole+"&qty="+qty, true);
 	  xhttp.send();
 	  setTimeout(function(){  window.location.reload(); }, 1000);
+	}
 }
 function send_shipper_value(so,ss,sro,sqty,shop){
+	var select_role = document.getElementsByClassName('select_role').val();
+	if(select_role != 'Shipper ok'){
+     alert('Please select correct role !!');
+		} else {
 	var sorder_id = so;
 	var ssku = ss;
 	if(sro == '' ){ 
@@ -747,9 +757,15 @@ function send_shipper_value(so,ss,sro,sqty,shop){
 	  };
 	  xhttp.open("GET", "../shipper_ajax_call.php?shop="+shop+"&sku="+ssku+"&order_id="+sorder_id+"&role="+srole+"&qty="+sqty, true);
 	  xhttp.send();
-	  //setTimeout(function(){ window.location.reload(); }, 1000);
+		
+	  setTimeout(function(){ window.location.reload(); }, 1000);
+		}
 }
 function send_receiver_value(ro,rs,rro,shop){
+	var select_role = document.getElementsByClassName('select_role').val();
+	if(select_role != 'Receiver ok'){
+     alert('Please select correct role !!');
+		} else {
 	var rorder_id = ro;
 	var rsku = rs;
 	if(rro == '' ){ 
@@ -770,6 +786,7 @@ function send_receiver_value(ro,rs,rro,shop){
 	  xhttp.open("GET", "../receiver_ajax_call.php?shop="+shop+"&sku="+rsku+"&order_id="+rorder_id+"&role="+rrole, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 1000);
+		}
 }
 function selected_radio(r,order,shop){
 	var selected_rval = r;
