@@ -676,7 +676,7 @@ if($get_verification['fulfill_order'] == 'On') {
 	$rcount= $Stores->r_verified_orders($_REQUEST['id']);
 	if(!empty($rcount)){
 		echo $sum;
-		echo $rcount['quantity'];
+		print_r($rcount);
 		if($rcount['count(*)'] == $sum ){
 			if($orders->order->fulfillment_status != 'fulfilled' ){
 				echo "hi";
