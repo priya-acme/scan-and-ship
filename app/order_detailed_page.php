@@ -398,7 +398,7 @@ FulFill Order
     <td>
          <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
          <tr>
-         <!--  picker qty check -->
+         <!--  picker qty check starts -->
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
          $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
          if(empty($get_order_veri_sku)){
@@ -413,8 +413,26 @@ FulFill Order
     	?>
     	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
+        <!--  picker qty check ends-->
         
-        <!--  shipper qty check -->
+        <!--  shipper qty check starts -->
+        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+        $s_get_order_veri_sku = $Stores->s_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($s_get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $s_get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  shipper qty check ends -->
+        
+        <!--  ready for pickup qty check starts -->
         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
          $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
          if(empty($get_order_veri_sku)){
@@ -429,21 +447,7 @@ FulFill Order
     	?>
     	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
-        <!--  ready for pickup qty check  -->
-        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
-         $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
-         if(empty($get_order_veri_sku)){
-    	?>
-    	 <td>0</td>
-        <?php 
-        } else {
-        	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
-    	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
-        <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
-    	?>
-    	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
-        <?php } }  ?>
+        <!--  ready for pickup qty check ends -->
         </tr>
         </table>
         </td>
