@@ -673,9 +673,9 @@ FulFill Order
 </form>
 <?php 
 if($get_verification['fulfill_order'] == 'On') {
-	$r_check_order_veri = $Stores->r_check_order_veri($variants->variant->sku, $_REQUEST['id'],'Receiver ok');
-	if(!empty($r_check_order_veri)){
-	echo $r_check_order_veri['quantity'];
+	$rcount= $Stores->r_count_order($_REQUEST['id']);
+	if(!empty($rcount)){
+		echo $rcount['count(*)'];
 	echo $sum;
 	}
 }
