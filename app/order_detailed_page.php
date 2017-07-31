@@ -675,9 +675,8 @@ FulFill Order
 if($get_verification['fulfill_order'] == 'On') {
 	$rcount= $Stores->r_verified_orders($_REQUEST['id']);
 	if(!empty($rcount)){
-		echo $sum;
-		print_r($rcount);
-		if($rcount['count(*)'] == $sum ){
+		
+		if($rcount['sum(quantity)'] == $sum ){
 			if($orders->order->fulfillment_status != 'fulfilled' ){
 				echo "hi";
 			//$create_fulfillment = $Shopify->create_fulfillment_order($shop, $shop_info['access_token'],$_REQUEST['id'],array("fulfillment"=>array("id"=>"","order_id"=>$_REQUEST['id'],"status"=>"success","service"=>"manual")));
