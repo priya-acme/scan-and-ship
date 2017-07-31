@@ -807,7 +807,7 @@ function send_receiver_value(ro,rs,rro,shop,rqty){
 	  };
 	  xhttp.open("GET", "../receiver_ajax_call.php?shop="+shop+"&sku="+rsku+"&order_id="+rorder_id+"&role="+rrole+"&qty="+rqty, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); }, 2000);
 		}
 }
 function selected_radio(r,order,shop){
