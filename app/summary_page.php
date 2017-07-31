@@ -118,8 +118,9 @@ $get_verification = $Stores->get_step_verification($shop);
 	?>
 	<td width="6%" class="hed">PICKED</td>
 	<td width="7%" class="hed">SHIPPED</td>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
 	<td width="7%" class="hed">READY FOR PICKUP</td>
+	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	
 	<?php } ?>
     
     <td width="7%" class="hed">ORDER STATUS</td>
