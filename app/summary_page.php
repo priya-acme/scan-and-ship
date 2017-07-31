@@ -137,10 +137,12 @@ $get_verification = $Stores->get_step_verification($shop);
     $now = date("Y-m-d");
     $input = $order->updated_at; 
 	$result = explode('T',$input);
+	$total_days = round(abs(strtotime($now)-strtotime($result[0]))/86400);
+	if($total_days >= 0 && $total_days <= 10){
  ?>
   <tr>
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
-    <td width="12%"><strong><?php  echo $result[0]; echo " ".round(abs(strtotime($now)-strtotime($result[0]))/86400);?></strong></td>
+    <td width="12%"><strong><?php  echo $result[0]; echo " ".$total_days ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     
     <!--  one step verification starts -->
@@ -310,7 +312,7 @@ $get_verification = $Stores->get_step_verification($shop);
             <td> - </td>
      <?php } ?>
    </tr>
-  <?php } }  ?>
+  <?php } } }  ?>
   </tbody>
  </table>
 </div>
