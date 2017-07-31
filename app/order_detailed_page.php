@@ -671,18 +671,22 @@ FulFill Order
 </div>
 </div>
 </form>
+<?php if($get_verification['fulfill_order'] == 'On') { ?>
+<span class=""><?php $rcount= $Stores->r_count_order($_REQUEST['id']); echo $rcount['count(*)']; ?></span>
+<span class=""><?php echo $sum; ?></span>
+<?php } ?>
 <?php 
-if($get_verification['fulfill_order'] == 'On') {
-	$rcount= $Stores->r_count_order($_REQUEST['id']);
-	if(!empty($rcount)){
-		if($rcount['count(*)'] == $sum ){
-			if($orders->order->fulfillment_status != 'fulfilled' ){
-			$create_fulfillment = $Shopify->create_fulfillment_order($shop, $shop_info['access_token'],$_REQUEST['id'],array("fulfillment"=>array("id"=>"","order_id"=>$_REQUEST['id'],"status"=>"success","service"=>"manual")));
-			header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
-			}
-		}
-	}
-}
+// if($get_verification['fulfill_order'] == 'On') {
+// 	$rcount= $Stores->r_count_order($_REQUEST['id']);
+// 	if(!empty($rcount)){
+// 		if($rcount['count(*)'] == $sum ){
+// 			if($orders->order->fulfillment_status != 'fulfilled' ){
+// 			$create_fulfillment = $Shopify->create_fulfillment_order($shop, $shop_info['access_token'],$_REQUEST['id'],array("fulfillment"=>array("id"=>"","order_id"=>$_REQUEST['id'],"status"=>"success","service"=>"manual")));
+// 			header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+// 			}
+// 		}
+// 	}
+// }
 ?>
 <script>
 
