@@ -4,7 +4,7 @@
  $Shopify = new Shopify();
  $Stores = new Stores();
  $shop =  $_REQUEST['shop'];
- $redirect_url = $Shopify->getAuthUrl($shop);
+ $redirect_url = $Shopify->checkAuthUrl($shop);
  echo $redirect_url;
  //header("Location: $redirect_url");
  $shop_info = $Stores->is_shop_exists($shop);
