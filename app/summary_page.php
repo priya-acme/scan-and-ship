@@ -20,7 +20,7 @@ $get_verification = $Stores->get_step_verification($shop);
 	${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
 	foreach(${"get_order".$count}->orders as $order) {
 		if($order_id == $order->name || $order_id == $order->id){
-			header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
+			header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 		}
 	 }
 	}
@@ -35,7 +35,7 @@ $get_verification = $Stores->get_step_verification($shop);
 <div class="row">
 <div class="col-sm-12">
 <div class="right-icon">
-<a href="/scan-and-ship/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
+<a href="/double-check/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
 </div>
@@ -141,7 +141,7 @@ $get_verification = $Stores->get_step_verification($shop);
 	if($total_days >= 0 && $total_days <= 365){
  ?>
   <tr>
-    <td width="7%" valign="middle"><strong><a class="order_detail" href="/scan-and-ship/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
+    <td width="7%" valign="middle"><strong><a class="order_detail" href="/double-check/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
     <td width="12%"><strong><?php  echo $result[0]; //echo " ".$total_days ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     

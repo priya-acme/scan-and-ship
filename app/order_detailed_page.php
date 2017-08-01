@@ -42,7 +42,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 				$check_order_veri = $Stores->check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 				if(empty($check_order_veri)){
 					$Stores->order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
-					header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+					header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
 				}
 				else {
 					//echo $orders->order->line_items[$i]->quantity;
@@ -54,7 +54,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 					else {
 						//echo "not equal";
 						$Stores->update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
-						header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+						header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
 					}
 				}
 			}
@@ -65,7 +65,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 	        	$s_check_order_veri = $Stores->s_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 	        	if(empty($s_check_order_veri)){
 	        		$Stores->s_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
-	        		header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+	        		header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
 	        	}
 	        	else {
 	        		//echo $orders->order->line_items[$i]->quantity;
@@ -77,7 +77,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 	        		else {
 	        			//echo "not equal";
 	        			$Stores->s_update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
-	        			header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+	        			header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
 	        		}
 	        	}
 	        }
@@ -88,7 +88,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 	        	$r_check_order_veri = $Stores->r_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
 	        	if(empty($r_check_order_veri)){
 	        		$Stores->r_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
-	        		header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+	        		header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
 	        	}
 	        	else {
 	        		//echo $orders->order->line_items[$i]->quantity;
@@ -100,7 +100,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 	        		else {
 	        			//echo "not equal";
 	        			$Stores->r_update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
-	        			header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+	        			header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
 	        		}
 	        	}
 	        }
@@ -125,14 +125,14 @@ if(isset($_POST['save_notes'])){
 	$order_id=$_REQUEST['id'];
 	if(!empty($order_notes)){
 		$Stores->add_order_note($_REQUEST['id'], $order_notes);
-		header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$order_id");
+		header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order_id");
 	}
 }
 if(isset($_POST['update_notes'])){
 	$uorder_notes = $_POST['update_order_note'];
 	$uorder_id=$_REQUEST['id'];
 		$Stores->update_order_note($_REQUEST['id'], $uorder_notes);
-		header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$uorder_id");
+		header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$uorder_id");
 
 }
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
@@ -147,7 +147,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	foreach($get_order->orders as $order) {
 		if($order_id == $order->name || $order_id == $order->id){
 			$j = 1;
-			header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
+			header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 		}
 	}
 }
@@ -176,9 +176,9 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <div class="col-sm-12">
 <div class="right-icon">
 <div class="order-btn">
-<a class="order" href="/scan-and-ship/app/summary_page.php?shop=<?php echo $shop; ?>">BACK TO ORDER LOOKUP</a>
+<a class="order" href="/double-check/app/summary_page.php?shop=<?php echo $shop; ?>">BACK TO ORDER LOOKUP</a>
 </div>
-<a href="/scan-and-ship/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
+<a href="/double-check/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
 </div>
@@ -809,7 +809,7 @@ function send_receiver_value(ro,rs,rro,shop,rqty){
 	  };
 	  xhttp.open("GET", "../receiver_ajax_call.php?shop="+shop+"&sku="+rsku+"&order_id="+rorder_id+"&role="+rrole+"&qty="+rqty, true);
 	  xhttp.send();
-	    setTimeout(function(){ window.location = "http://aviaapps.co/scan-and-ship/app/order_test.php/?shop="+shop+"&order_id="+rorder_id; }, 1000);
+	    setTimeout(function(){ window.location = "http://aviaapps.co/double-check/app/order_test.php/?shop="+shop+"&order_id="+rorder_id; }, 1000);
      	}
 }
 function selected_radio(r,order,shop){

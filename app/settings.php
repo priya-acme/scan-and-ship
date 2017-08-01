@@ -11,11 +11,11 @@
  	$get_verification = $Stores->get_step_verification($shop);
  	if(empty($get_verification)){
  		$Stores->step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
- 		header("location:/scan-and-ship/app/settings.php?shop=$shop");
+ 		header("location:/double-check/app/settings.php?shop=$shop");
  	}
  	else {
  		$Stores->update_step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
- 		header("location:/scan-and-ship/app/settings.php?shop=$shop");
+ 		header("location:/double-check/app/settings.php?shop=$shop");
  	}
  }
 ?>
@@ -40,7 +40,7 @@
 <div class="col-sm-12">
 <div class="right-icon" style="padding:6px 12px">
 <div class="order-btn">
-<a class="order" href="/scan-and-ship/app/summary_page.php?shop=<?php echo $shop ?>">BACK TO HOMEPAGE</a>
+<a class="order" href="/double-check/app/summary_page.php?shop=<?php echo $shop ?>">BACK TO HOMEPAGE</a>
 </div>
 </div>
 </div>
