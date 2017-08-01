@@ -5,7 +5,7 @@
  $Stores = new Stores();
  $shop =  $_REQUEST['shop'];
  $redirect_url = $Shopify->getAuthUrl($shop);
- echo $redirect_url;
+ echo APP_URL;
  //header("Location: $redirect_url");
  $shop_info = $Stores->is_shop_exists($shop);
  $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);

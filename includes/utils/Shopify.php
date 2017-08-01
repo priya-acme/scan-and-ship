@@ -65,7 +65,7 @@ class Shopify {
 				. '&redirect_uri=' . CALLBACK_URL;
 	}
 
-	private function curlRequest($url, $access_token = NULL, $data = NULL)
+   private function curlRequest($url, $access_token = NULL, $data = NULL)
 	{
 		// set curl options
 		//echo $url;
