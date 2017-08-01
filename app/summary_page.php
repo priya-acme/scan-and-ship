@@ -5,7 +5,7 @@
  $Stores = new Stores();
  $shop =  $_REQUEST['shop'];
  $redirect_url = $Shopify->getAuthUrl($shop);
- header("Location: $redirect_url");
+ header("Location: /scan-and-ship/app/order_detailed_page.php/?shop=$shop");
  $shop_info = $Stores->is_shop_exists($shop);
  $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
  $count_val = ceil($count_orders->count / 250);
