@@ -71,7 +71,7 @@ class Shopify {
 		return 'https://' . $shop . '/admin/oauth/authorize?'
 				. 'scope=' . implode("%2C", $scopes)
 				. '&client_id=' . SHOPIFY_API_KEY
-				. '&redirect_uri=' . APP_URL."/?shop=$shop";
+				. '&redirect_uri=' . AUTH_URL;
 	}
 
    private function curlRequest($url, $access_token = NULL, $data = NULL)
