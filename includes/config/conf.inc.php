@@ -8,4 +8,3 @@ define("SHOPIFY_API_KEY", "ed1b619b0d4433048a3fd866d1ae5f7f");
 define("SHOPIFY_API_SECRET", "6257046e1cb451d88a008cf5a6b56fb3");
 define("CALLBACK_URL", "http://67.207.82.1/scan-and-ship/install/");
 define("APP_URL", "http://67.207.82.1/scan-and-ship/app");
-define("AUTH_URL", "http://aviaapps.co/scan-and-ship/app/index.php");
