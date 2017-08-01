@@ -8,3 +8,4 @@ define("SHOPIFY_API_KEY", "ed1b619b0d4433048a3fd866d1ae5f7f");
 define("SHOPIFY_API_SECRET", "6257046e1cb451d88a008cf5a6b56fb3");
 define("CALLBACK_URL", "http://aviaapps.co/double-check/install/");
 define("APP_URL", "http://aviaapps.co/double-check/app");
+?>
