@@ -1,5 +1,5 @@
 <?php session_start();
-require '/var/www/html/scan-and-ship/includes/config/conf.inc.php';
+require '/var/www/html/double-check/includes/config/conf.inc.php';
 class DB_Connection{
     protected $connection;
     
