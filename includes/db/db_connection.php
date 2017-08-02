@@ -38,7 +38,7 @@ class DB_Connection{
 		
 		$columns = [];
 		foreach($data as $column => $value) {
-			$columns[] = "$column = $value";
+			$columns[] = "$column = '$value'";
 		}
 		
 		$query .= implode(", ", $columns) . ")";
