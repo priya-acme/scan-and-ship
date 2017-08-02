@@ -102,7 +102,7 @@ $get_verification = $Stores->get_step_verification($shop);
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-<div class="tbl">
+<div class="tbl summary-table">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
 <thead>
   <tr>
