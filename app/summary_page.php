@@ -466,7 +466,8 @@ $(function () {
                             'position': 'fixed',
                                 'margin-top': base.options.marginTop,
                                 'left': newLeft,
-                                'z-index': 3 // #18: opacity bug
+                                'z-index': 3,
+                                'background' : '#fff' // #18: opacity bug
                         });
                         base.leftOffset = newLeft;
                         base.topOffset = newTopOffset;
