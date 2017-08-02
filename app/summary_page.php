@@ -34,7 +34,7 @@ $get_verification = $Stores->get_step_verification($shop);
 ?>
 <?php include 'header.php' ?>
  <form method="post">
-<div class="margtop30">
+<div class="margtop30 summary-header-fixed">
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
