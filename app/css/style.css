@@ -349,7 +349,7 @@ input:checked + .slider:before {
   .margtop30.summary-header-fixed {
     position: fixed;
     width: 100%;
-    height: 156px;
+    height: 148px;
     top: -30px;
     background: #fff;
     z-index: 9;
