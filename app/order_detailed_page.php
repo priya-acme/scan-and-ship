@@ -416,7 +416,10 @@ FulFill Order
     <td>
          <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
          <tr>
-         <!--  picker qty check starts -->
+         <!-- one step verification starts -->
+         <?php if($get_verification['verification_step'] == 'One') {  
+	     ?>
+	     <!--  picker qty check starts -->
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
          $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
          if(empty($get_order_veri_sku)){
@@ -433,7 +436,31 @@ FulFill Order
         <?php } }  ?>
         <!--  picker qty check ends-->
         
-        <!--  shipper qty check starts -->
+        <!--  ready for pickup qty check starts -->
+        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+        $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($r_get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  ready for pickup qty check ends -->
+        
+	     <?php } ?>
+	     
+	     <!-- one step verification ends -->
+	     
+        <!-- two step verification starts -->
+        <?php if($get_verification['verification_step'] == 'Two') {  
+	     ?>
+	      <!--  shipper qty check starts -->
         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
         $s_get_order_veri_sku = $Stores->s_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
          if(empty($s_get_order_veri_sku)){
@@ -466,6 +493,69 @@ FulFill Order
     	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
+        
+	     <?php } ?>
+	     <!-- two step verification ends -->
+       
+       <!-- three step verification starts -->
+        <?php if($get_verification['verification_step'] == 'Three') {  
+	     ?>
+	      <!--  picker qty check starts -->
+         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+         $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  picker qty check ends-->
+	      <!--  shipper qty check starts -->
+        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+        $s_get_order_veri_sku = $Stores->s_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($s_get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $s_get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  shipper qty check ends -->
+        
+        <!--  ready for pickup qty check starts -->
+        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+        $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($r_get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  ready for pickup qty check ends -->
+        
+	     <?php } ?>
+	     
+	     <!-- three step verification ends  -->
+	     
+	     <?php } ?>
+        
         </tr>
         </table>
         </td>
