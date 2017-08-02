@@ -432,8 +432,8 @@ FulFill Order
     <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
     <?php } else { ?>
     <td>
-         <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
-         <tr class="remove-border">
+         <table class="table table-bordered table-responsive mytable remove-border" style="margin-bottom: 0;border:0">
+         <tr class="">
          <!--  one step verifictaion starts -->
           <?php if($get_verification['verification_step'] == 'One') {  
           ?>
