@@ -343,4 +343,7 @@ input:checked + .slider:before {
    
   .no-wrap span.radio.radio-primary{margin-top: 8px;}
   .order-details-page .no-wrap  .role2 {margin-left: -42px}
+  .remove-border td{
+  border : 0;
+  }
    
