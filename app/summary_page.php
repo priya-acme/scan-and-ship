@@ -45,7 +45,7 @@ $get_verification = $Stores->get_step_verification($shop);
 </div>
 </div>
 </div>
-<div class="row" id="table2">
+<div class="row">
 <div class="col-sm-12 col-md-6">
 <span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
@@ -328,7 +328,7 @@ $get_verification = $Stores->get_step_verification($shop);
 <script>
 $(function () {
     $("#table1").stickyTableHeaders();
-    $("#table2").stickyTableHeaders();
+   
 });
 
 /*! Copyright (c) 2011 by Jonas Mosbech - https://github.com/jmosbech/StickyTableHeaders
@@ -341,7 +341,7 @@ $(function () {
     var name = 'stickyTableHeaders',
         id = 0,
         defaults = {
-            fixedOffset: 0,
+            fixedOffset: 150,
             leftOffset: 0,
             marginTop: 0,
             scrollableArea: window
