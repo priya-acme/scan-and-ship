@@ -170,7 +170,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 </head>
 <body class="order-details-page" OnLoad="document.form_submit.barcode_sku.focus();">
 <form method="post" name="form_submit" id="form_submit">
-<div class="margtop30">
+<div class="margtop30 ordered-header-fixed">
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
