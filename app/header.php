@@ -13,5 +13,7 @@
   <link href="css/paging.css" rel="stylesheet" type="text/css" />
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/jquery.table.hpaging.min.js"></script>
+  <script src="js/jquery.stickytableheaders.js"></script>
+  
 </head>
 <body>
