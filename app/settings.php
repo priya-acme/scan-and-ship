@@ -25,11 +25,11 @@
   <title>Double Check</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/scan-and-ship/app/css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="/scan-and-ship/app/css/style.css" type="text/css">
-  <link rel="stylesheet" href="/scan-and-ship/app/font-awesome/css/font-awesome.css" type="text/css">
+  <link rel="stylesheet" href="/double-check/app/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="/double-check/app/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/double-check/app/font-awesome/css/font-awesome.css" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/scan-and-ship/app/js/bootstrap.min.js"></script>
+  <script src="/double-check/app/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 </head>
 <body>
