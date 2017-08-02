@@ -365,4 +365,10 @@ input:checked + .slider:before {
     position: fixed;
     width: 100%;
     background: #fff;
-    z-index: 9;}
+    z-index: 9;
+    top: -30px !important;
+}
+.ordered-content{
+	
+    margin-top: 153px;
+}
