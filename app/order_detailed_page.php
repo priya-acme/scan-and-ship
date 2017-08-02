@@ -376,7 +376,25 @@ FulFill Order
     <?php } else { ?>
     <td width="8%" class="hed">SCANNED QUANTITY
     <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
-    <tr><td width="8%" class="hed">Picker</td><td width="8%" class="hed">Shipper</td><td width="8%" class="hed">Ready For Pickup</td></tr>
+    <tr>
+    <?php if($get_verification['verification_step'] == 'One') {  
+	?>
+	<td width="8%" class="hed">Picker</td>
+	 <td width="8%" class="hed">Ready For Pickup</td>
+	<?php } ?>
+    <?php if($get_verification['verification_step'] == 'Two') {  
+	?>
+	 <td width="8%" class="hed">Shipper</td>
+	 <td width="8%" class="hed">Ready For Pickup</td>
+	<?php } ?>
+	<?php if($get_verification['verification_step'] == 'Three') {  
+	?>
+	 <td width="8%" class="hed">Picker</td>
+	 <td width="8%" class="hed">Shipper</td>
+	 <td width="8%" class="hed">Ready For Pickup</td>
+	<?php } ?>
+   
+    </tr>
     </table>
     </td>
     <?php } ?>
@@ -416,6 +434,7 @@ FulFill Order
     <td>
          <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
          <tr>
+         <!--  one step verifictaion starts -->
           <?php if($get_verification['verification_step'] == 'One') {  
           ?>
           <!--  picker qty check starts -->
@@ -453,6 +472,9 @@ FulFill Order
         <!--  ready for pickup qty check ends -->
         
           <?php } ?>
+          <!--  one step verifictaion ends -->
+          
+          <!--  two step verifictaion starts -->
           
           <?php if($get_verification['verification_step'] == 'Two') {  
           ?>
@@ -491,6 +513,11 @@ FulFill Order
         <!--  ready for pickup qty check ends -->
         
          <?php } ?>
+         
+         <!--  two step verifictaion ends -->
+         
+         <!--  three step verifictaion starts -->
+         
          <?php if($get_verification['verification_step'] == 'Three') {  
           ?>
             <!--  picker qty check starts -->
@@ -544,6 +571,9 @@ FulFill Order
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
           <?php } ?>
+          
+          <!--  three step verifictaion ends -->
+        
         </tr>
         </table>
         </td>
