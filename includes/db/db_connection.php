@@ -46,8 +46,8 @@ class DB_Connection{
 		if (!empty($criteria)) {
 			$query .= " WHERE $criteria";
 		}
-		 //echo $query;
-			mysqli_query($this->connection, $query);
+		 echo $query;
+			//mysqli_query($this->connection, $query);
 			return mysqli_insert_id($result);
 	}
 	
