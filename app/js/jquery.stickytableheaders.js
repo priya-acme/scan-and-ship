@@ -134,7 +134,8 @@
                                 'margin-top': base.options.marginTop,
                                 'left': newLeft,
                                 'z-index': 3,
-                                'background' : '#fff' // #18: opacity bug
+                                'background' : '#fff',
+                                'border-top': '1px solid rgb(221, 221, 221)' // #18: opacity bug
                         });
                         base.leftOffset = newLeft;
                         base.topOffset = newTopOffset;
