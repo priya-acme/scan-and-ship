@@ -433,7 +433,7 @@ FulFill Order
     <?php } else { ?>
     <td>
          <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
-         <tr>
+         <tr class="remove-border">
          <!--  one step verifictaion starts -->
           <?php if($get_verification['verification_step'] == 'One') {  
           ?>
