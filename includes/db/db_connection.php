@@ -41,13 +41,13 @@ class DB_Connection{
 			$columns[] = "$column = '$value'";
 		}
 		
-		$query .= implode(", ", $columns) . ")";
+		$query .= implode(", ", $columns);
 		
 		if (!empty($criteria)) {
 			$query .= " WHERE $criteria";
 		}
 		 echo $query;
-			mysqli_query($this->connection, $query);
+			//mysqli_query($this->connection, $query);
 			return mysqli_insert_id($result);
 	}
 	
