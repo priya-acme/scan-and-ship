@@ -341,7 +341,7 @@ $(function () {
     var name = 'stickyTableHeaders',
         id = 0,
         defaults = {
-            fixedOffset: 120,
+            fixedOffset: 150,
             leftOffset: 0,
             marginTop: 0,
             scrollableArea: window
