@@ -357,3 +357,7 @@ input:checked + .slider:before {
 .summary-table {
 	margin-top:119px;
 }
+#table1{
+	background : #fff;
+	
+}
