@@ -361,3 +361,8 @@ input:checked + .slider:before {
 	background : #fff;
 	
 }
+.ordered-header-fixed {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    z-index: 9;}

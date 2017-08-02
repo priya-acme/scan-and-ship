@@ -45,7 +45,7 @@ if ($code) {
 		));
 	} else {
 		$Stores->updateData(array(
-				"token" => $access_token,
+				"access_token" => $access_token,
 				"access_key" => SHOPIFY_API_KEY,
 				"created_at" => date("Y-m-d")
 		), "store_url = '$shop'");
