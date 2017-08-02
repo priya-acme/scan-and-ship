@@ -216,7 +216,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One') {  
 	?>
-<input type="radio" name="select_role" id="radio1" class="select_role" value="Picker ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?>>
+<input type="radio" name="select_role" id="radio1" class="select_role" value="Picker ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; }  ?>>
 <label for="radio1">
  PICKER
 </label>
@@ -235,7 +235,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
                 READY FOR PICKUP
             </label>
 <?php } if($get_verification['verification_step'] == 'Three') {?>
-            <input type="radio" name="select_role" class="select_role"  id="radio1" value="Picker ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; }else { echo "checked"; }?>>
+            <input type="radio" name="select_role" class="select_role"  id="radio1" value="Picker ok" onclick="selected_radio(this.value,'<?php echo $pget_order_id ?>','<?php echo $shop; ?>')" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; }?>>
             <label for="radio1">
                 PICKER
             </label>
