@@ -47,11 +47,11 @@ if ($code) {
 		$Stores->updateData(array(
 				"token" => $access_token,
 				"access_key" => SHOPIFY_API_KEY,
-				"modified_at" => date("Y-m-d")
+				"created_at" => date("Y-m-d")
 		), "store_url = '$shop'");
 	}
 	
-	header("Location: " . APP_URL);
+	//header("Location: " . APP_URL);
 }
 ?>
 

@@ -15,7 +15,10 @@ class Stores extends DB_Connection{
 		//print_r($data);
 		return $this->add($this->table_name , $data);
 	}
-	
+	public function updateData($data, $criteria)
+	{
+		return $this->update($this->table_name, $data, $criteria);
+	}
 	// picker
 	
 	function order_veri($sku, $barcode, $order_id, $verification,$qty){
