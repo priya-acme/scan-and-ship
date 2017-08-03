@@ -27,9 +27,11 @@ $get_verification = $Stores->get_step_verification($shop);
 	for($count=1;$count<=$count_val;$count++){
 	${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
 	echo $count_orders->count;
-	echo $count;
-	die;
+	
 	foreach(${"get_order".$count}->orders as $order) {
+		echo ${"get_order".$count};
+		echo $count;
+		die;
 		if($order_id == $order->name || $order_id == $order->id){
 			//header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 		}
