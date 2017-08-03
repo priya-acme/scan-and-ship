@@ -331,10 +331,10 @@ $get_verification = $Stores->get_step_verification($shop);
 </div>
 </form>
 <script>
-$(function () {
-    $("#table1").stickyTableHeaders();
+// $(function () {
+//     $("#table1").stickyTableHeaders();
    
-});
+// });
 function delete_instore_picker(in_order,shop){
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
