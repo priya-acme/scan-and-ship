@@ -355,7 +355,7 @@ input:checked + .slider:before {
     z-index: 9;
 }
 .summary-table {
-	margin-top:119px;
+	margin-top:121px;
 }
 #table1{
 	background : #fff;
