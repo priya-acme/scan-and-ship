@@ -18,7 +18,7 @@
 $get_verification = $Stores->get_step_verification($shop);
  if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
-	echo $_POST['order_id'];
+	
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
 	
@@ -140,7 +140,7 @@ $get_verification = $Stores->get_step_verification($shop);
   </thead>
   <tbody>
    
-  <?php for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) {   ?>
+  <?php echo $_POST['order_id']; for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) {   ?>
   <?php //echo "<pre>";
     $now = date("Y-m-d");
     $input = $order->updated_at; 
