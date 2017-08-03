@@ -17,22 +17,18 @@
  }
 $get_verification = $Stores->get_step_verification($shop);
  if(isset($_POST['submit_id'])){
-	$order_id = $_REQUEST['order_new_id'];
-	//echo $_REQUEST['order_new_id'];
-	//die();
+	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
-	
-	//$get_single_order = $Shopify->get_single_order($shop,$shop_info['access_token'],$order_id);
-	header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=".$order_id);
-// 	for($count=1;$count<=$count_val;$count++){
-// 	${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
-// 	foreach(${"get_order".$count}->orders as $order) {
-// 		if($order_id == $order->name || $order_id == $order->id){
-// 			header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
-// 		}
-// 	 }
-// 	}
+	for($count=1;$count<=$count_val;$count++){
+	${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
+	foreach(${"get_order".$count}->orders as $order) {
+		echo $count;
+		if($order_id == $order->name || $order_id == $order->id){
+			//header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
+		}
+	 }
+	}
 }
 
 
@@ -111,7 +107,7 @@ $get_verification = $Stores->get_step_verification($shop);
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
 <thead>
   <tr>
-    <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_new_id"> <button type="submit" class="serch" name="submit_id">
+    <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
     </button></td>
     <?php if($get_verification['verification_step'] == 'One') {  
