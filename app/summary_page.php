@@ -18,7 +18,7 @@
 $get_verification = $Stores->get_step_verification($shop);
  if(isset($_POST['submit_id'])){
 	$order_id = $_REQUEST['order_new_id'];
-	echo $_REQUEST['order_id'];
+	echo $_REQUEST['order_new_id'];
 	die();
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
