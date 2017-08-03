@@ -363,9 +363,5 @@ $(function () {
     $("#table1").hpaging({ "limit": 50 });
 });
 
-$("#btnApply").click(function () {
-    var lmt = $("#pglmt").val();
-    $("#table1").hpaging("newLimit", lmt);
-});
 </script>
 <?php include 'footer.php' ?>
