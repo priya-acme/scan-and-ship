@@ -37,7 +37,7 @@ $get_verification = $Stores->get_step_verification($shop);
 
 ?>
 <?php include 'header.php' ?>
- <form method="post">
+ <form method="get">
 <div class="margtop30 summary-header-fixed">
 <div class="container">
 <div class="row">
@@ -140,7 +140,7 @@ $get_verification = $Stores->get_step_verification($shop);
   </thead>
   <tbody>
    
-  <?php echo $_POST['order_id']; for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) {   ?>
+  <?php for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) {   ?>
   <?php //echo "<pre>";
     $now = date("Y-m-d");
     $input = $order->updated_at; 
