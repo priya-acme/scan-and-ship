@@ -17,7 +17,7 @@
  }
 $get_verification = $Stores->get_step_verification($shop);
  if(isset($_POST['submit_id'])){
-	$order_id = $_REQUEST['order_id'];
+	$order_id = $_REQUEST['order_new_id'];
 	echo $_REQUEST['order_id'];
 	die();
 	$_SESSION['select_role'] = $_POST['select_role'];
@@ -111,7 +111,7 @@ $get_verification = $Stores->get_step_verification($shop);
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
 <thead>
   <tr>
-    <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
+    <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_new_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
     </button></td>
     <?php if($get_verification['verification_step'] == 'One') {  
