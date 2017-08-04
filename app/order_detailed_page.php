@@ -391,7 +391,7 @@ In Store Pickup
 ?>
 
 <div class="col-md-2 col-sm-12" style="margin-top:10px">
-<?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+<?php if($orders->order->tags == 'Double-Check' ){ ?>
 <div class="hdd">FULFILL ORDER</div>
 <div class="green green-checked"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div>
 <?php } else {  ?>
@@ -419,7 +419,7 @@ FulFill Order
   <tr>
     <td width="29%" class="hed" style="text-align:left">PRODUCT TITLE</td>
     <td width="8%" class="hed">ORDERED QUANTITY</td>
-    <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+    <?php if($orders->order->tags == 'Double-Check'){ ?>
     <td width="8%" class="hed">SCANNED QUANTITY</td>
     <?php } else { ?>
     <td width="8%" class="hed">SCANNED QUANTITY
