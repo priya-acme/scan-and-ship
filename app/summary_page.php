@@ -290,7 +290,7 @@ READY FOR PICKUP
 	
 	<!--  eleven step verification starts -->
 	
-	<?php if($get_verification['verification_step'] == 'Three') {  
+	<?php if($get_verification['verification_step'] == 'Eleven') {  
 	?>
 	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
