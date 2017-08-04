@@ -3,12 +3,12 @@ include __DIR__ .'../../includes/utils/Shopify.php';
 include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
-$shop = $_SESSION['shop_name'];
+$shop = $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
 $get_collections = $Shopify->get_collections($shop, $shop_info['access_token']);
-$modify_col = $Shopify->update_collections($shop, $shop_info['access_token'],array("collects"=>array("product_id"=>"656607169","position"=>"2")));
+//$modify_col = $Shopify->update_collections($shop, $shop_info['access_token'],array("collects"=>array("product_id"=>"656607169","position"=>"2")));
 echo "<pre>";
-print_r($modify_col);
+print_r($get_collections);
 ?>
 <select name="collection">
 <option value="">-select collection-</option>

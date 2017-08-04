@@ -135,6 +135,8 @@ if(isset($_POST['update_notes'])){
 		header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$uorder_id");
 
 }
+$count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
+$count_val = ceil($count_orders->count / 250);
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
@@ -143,11 +145,12 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
-	$get_order = $Shopify->get_orders($shop,$shop_info['access_token']);
-	foreach($get_order->orders as $order) {
-		if($order_id == $order->name || $order_id == $order->id){
-			$j = 1;
-			header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
+	for($count=1;$count<=$count_val;$count++){
+		${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
+		foreach(${"get_order".$count}->orders as $order) {
+			if($order_id == $order->name || $order_id == $order->id){
+				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
+			}
 		}
 	}
 }
