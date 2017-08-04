@@ -1161,7 +1161,7 @@ if($get_verification['fulfill_order'] == 'On') {
 			if($orders->order->fulfillment_status != 'fulfilled' ){
 				echo "hi";
 			//$create_fulfillment = $Shopify->create_fulfillment_order($shop, $shop_info['access_token'],$_REQUEST['id'],array("fulfillment"=>array("id"=>"","order_id"=>$_REQUEST['id'],"status"=>"success","service"=>"manual")));
-			$updateorder = $Shopify->updateOrderInfo($shop, $shop_info['access_token'],$_REQUEST['order_id'],array("order" =>array("note_attributes" => array("Double-Check"=>"Success"))));
+				$updateorder = $Shopify->updateOrderInfo($shop, $shop_info['access_token'],$_REQUEST['id'],array("order" =>array("note_attributes" => array("Double-Check"=>"Success"))));
 			//header("location:/scan-and-ship/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
 			}
 		}
