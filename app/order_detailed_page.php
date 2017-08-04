@@ -791,7 +791,6 @@ FulFill Order
 	?>
 	<?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
 	<td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-	<td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?>
     <?php 
     // Picker verification starts
