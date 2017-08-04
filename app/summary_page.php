@@ -47,7 +47,7 @@ $get_verification = $Stores->get_step_verification($shop);
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<span class="role2">SELECT ROLE : </span>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE : </span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
