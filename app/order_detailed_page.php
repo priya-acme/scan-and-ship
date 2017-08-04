@@ -1209,7 +1209,7 @@ function sendvalue(a,b,shop){
 }
 function send_picker_value(o,s,ro,qty,shop){
 	var select_role = $("input[type='checkbox'].select_role:checked").val();
-	//alert(select_role);
+	alert(select_role);
 	if(select_role != 'Picker ok'){
      alert('Please select correct role !!');
 		}
