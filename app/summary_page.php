@@ -135,12 +135,6 @@ READY FOR PICKUP
  
 </span>
 </div>
-<!-- <div class="col-sm-12 col-md-6"> -->
-<!--  <div class="role2">SELECT ROLE</div> -->
-<!--  <div class="role"><input type = "radio" value="Receiver" name="select_role" class="select_role">Receiver</div> -->
-<!--  <div class="role"><input type = "radio" value="Shipper" name="select_role" class="select_role">Shipper</div> -->
-<!--  <div class="role"><input type = "radio" value="Picker" name="select_role" class="select_role" checked>Picker</div> -->
-<!-- </div> -->
 
 </div>
 </div>
