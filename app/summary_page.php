@@ -230,7 +230,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'One') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?> 
 	
@@ -258,7 +258,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Two') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check' ) { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?> 
 	
@@ -285,7 +285,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Three') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<!-- in store pickup  -->
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
      <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -310,7 +310,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Four') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?> 
 	
@@ -338,7 +338,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Five') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?> 
@@ -385,7 +385,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Six') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<!-- in store pickup  -->
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
@@ -428,7 +428,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Seven') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?> 
@@ -474,7 +474,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Eight') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td> 
 	<!-- in store pickup  -->
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
@@ -516,7 +516,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Nine') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?> 
@@ -561,7 +561,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Ten') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<!-- in store pickup  -->
      <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
@@ -602,7 +602,7 @@ READY FOR PICKUP
 	
 	<?php if($get_verification['verification_step'] == 'Eleven') {  
 	?>
-	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<?php  if($order->tags == 'Double-Check') { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -668,7 +668,7 @@ READY FOR PICKUP
     
     <!--  eleven step verification end -->
     
-    <?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+    <?php  if($order->tags == 'Double-Check') { ?>
     <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     <?php } else { ?>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>

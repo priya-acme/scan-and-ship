@@ -510,7 +510,7 @@ FulFill Order
   <tr>
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
     <td><?php echo $orders->order->line_items[$i]->quantity; ?></td>
-    <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+    <?php if($orders->order->tags == 'Double-Check'){ ?>
     <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
     <?php } else { ?>
     <td>
@@ -789,7 +789,7 @@ FulFill Order
     <!-- one & six step verification starts -->
     <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
-	<?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+	<?php if($orders->order->tags == 'Double-Check'){ ?>
 	<td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?>
     <?php 
@@ -821,7 +821,7 @@ FulFill Order
       
       <?php  if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
 	  ?>
-      <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+      <?php if($orders->order->tags == 'Double-Check'){ ?>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <?php }  else { ?>
         
@@ -858,7 +858,7 @@ FulFill Order
       
       <?php  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
 	  ?>
-      <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+      <?php if($orders->order->tags == 'Double-Check'){ ?>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <?php }  else { ?>
         
@@ -894,7 +894,7 @@ FulFill Order
       
       <?php  if($get_verification['verification_step'] == 'Five') {  
 	  ?>
-      <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+      <?php if($orders->order->tags == 'Double-Check'){ ?>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <?php }  else { ?>
@@ -951,7 +951,7 @@ FulFill Order
       
       <?php  if($get_verification['verification_step'] == 'Seven') {  
 	  ?>
-      <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+      <?php if($orders->order->tags == 'Double-Check'){ ?>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <?php }  else { ?>
@@ -1007,7 +1007,7 @@ FulFill Order
       
       <?php  if($get_verification['verification_step'] == 'Nine') {  
 	  ?>
-      <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+      <?php if($orders->order->tags == 'Double-Check'){ ?>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <?php }  else { ?>
@@ -1067,7 +1067,7 @@ FulFill Order
     
      <?php if($get_verification['verification_step'] == 'Eleven') {  
 	  ?>
-	  <?php if($orders->order->fulfillment_status == 'fulfilled' ){ ?>
+	  <?php if($orders->order->tags == 'Double-Check'){ ?>
 	  <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	  <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	  <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
