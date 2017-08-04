@@ -1208,7 +1208,7 @@ function sendvalue(a,b,shop){
 	  setTimeout(function(){ window.location.reload(); }, 1000);
 }
 function send_picker_value(o,s,ro,qty,shop){
-	var select_role = $("input[type='radio'].select_role:checked").val();
+	var select_role = $("input[type='checkbox'].select_role:checked").val();
 	//alert(select_role);
 	if(select_role != 'Picker ok'){
      alert('Please select correct role !!');
@@ -1237,7 +1237,7 @@ function send_picker_value(o,s,ro,qty,shop){
 	}
 }
 function send_shipper_value(so,ss,sro,sqty,shop){
-	var select_role = $("input[type='radio'].select_role:checked").val();
+	var select_role = $("input[type='checkbox'].select_role:checked").val();
 	//alert(select_role);
 	if(select_role != 'Shipper ok'){
      alert('Please select correct role !!');
@@ -1266,7 +1266,7 @@ function send_shipper_value(so,ss,sro,sqty,shop){
 		}
 }
 function send_receiver_value(ro,rs,rro,shop,rqty){
-	var select_role = $("input[type='radio'].select_role:checked").val();
+	var select_role = $("input[type='checkbox'].select_role:checked").val();
 	//alert(select_role);
 	if(select_role != 'Receiver ok'){
      alert('Please select correct role !!');
