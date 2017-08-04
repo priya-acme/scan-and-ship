@@ -260,7 +260,7 @@ READY FOR PICKUP
 	} ?>
     
     <!--  one step verification end -->
-      <!--  two step verification starts -->
+    <!--  two step verification starts -->
 	
 	<?php if($get_verification['verification_step'] == 'Two') {  
 	?>
@@ -287,6 +287,149 @@ READY FOR PICKUP
 	} ?>
     
     <!--  two step verification end -->
+    <!--  three step verification starts -->
+	
+	<?php if($get_verification['verification_step'] == 'Three') {  
+	?>
+	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<!-- in store pickup  -->
+     <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
+     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else { ?>
+     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+	<?php }  else { ?> 
+	
+	 <!-- in store pickup  -->
+     <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
+     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else { ?>
+     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+     
+    <?php } 
+	} ?>
+    
+    <!--  three step verification end -->
+    
+    <!--  four step verification starts -->
+	
+	<?php if($get_verification['verification_step'] == 'Four') {  
+	?>
+	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	<?php }  else { ?> 
+	
+	<!--  receiver  -->
+     <?php $arrayobj = new ArrayObject($order->line_items);
+       $line_item_count = $arrayobj->count();
+       $rcount = $Stores->r_count_order($order->id);
+       if($line_item_count == $rcount['count(*)']){
+       	?>
+       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else if($line_item_count > $rcount['count(*)'] && $rcount['count(*)'] != 0 ) {
+     	?>
+     	<td><div class="yellow"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php 
+      } else { ?>
+       <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+     
+    <?php } 
+	} ?>
+    
+    <!--  four step verification end -->
+    
+     <!--  five step verification starts -->
+	
+	<?php if($get_verification['verification_step'] == 'Five') {  
+	?>
+	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	<?php }  else { ?> 
+	
+     <!-- picker -->
+    
+     <?php $arrayobj = new ArrayObject($order->line_items);
+       $line_item_count = $arrayobj->count();
+       $pcount = $Stores->p_count_order($order->id);
+       
+       if($line_item_count == $pcount['count(*)']){
+       	?>
+       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else if($line_item_count > $pcount['count(*)'] && $pcount['count(*)'] != 0 ) { 
+     	?>
+     	<td><div class="yellow"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php
+     } else { ?>
+       <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+     
+     <!-- Shipper -->
+    
+     <?php $arrayobj = new ArrayObject($order->line_items);
+       $line_item_count = $arrayobj->count();
+       $scount = $Stores->s_count_order($order->id);
+       if($line_item_count == $scount['count(*)']){
+       	?>
+       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else if($line_item_count > $scount['count(*)'] && $scount['count(*)'] != 0 ) {
+     	?>
+     	<td><div class="yellow"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php 
+     } else { ?>
+       <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+     
+    <?php } 
+	} ?>
+    
+    <!--  five step verification end -->
+    
+    <!--  six step verification starts -->
+	
+	<?php if($get_verification['verification_step'] == 'Six') {  
+	?>
+	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
+	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	<!-- in store pickup  -->
+     <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
+     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else { ?>
+     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+	<?php }  else { ?> 
+	
+     <!-- picker -->
+    
+     <?php $arrayobj = new ArrayObject($order->line_items);
+       $line_item_count = $arrayobj->count();
+       $pcount = $Stores->p_count_order($order->id);
+       
+       if($line_item_count == $pcount['count(*)']){
+       	?>
+       <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else if($line_item_count > $pcount['count(*)'] && $pcount['count(*)'] != 0 ) { 
+     	?>
+     	<td><div class="yellow"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php
+     } else { ?>
+       <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+     
+     <!-- Shipper -->
+    
+    <!-- in store pickup  -->
+     <?php $get_instore_pickup= $Stores->gett_instore_pickup($order->id); if(!empty($get_instore_pickup) ){ ?>
+     <td><div class="green"><a href="" onclick="delete_instore_picker('<?php echo $order->id ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+     <?php } else { ?>
+     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
+     <?php } ?>
+     
+    <?php } 
+	} ?>
+    
+    <!--  six step verification end -->
 	
 	<!--  eleven step verification starts -->
 	
