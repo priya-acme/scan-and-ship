@@ -346,6 +346,7 @@ READY FOR PICKUP
 	?>
 	<?php  if($order->fulfillment_status == 'fulfilled' ) { ?>
 	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	<td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?> 
 	
      <!-- picker -->
