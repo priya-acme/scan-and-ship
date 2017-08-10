@@ -191,13 +191,14 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <div class="row">
 <div class="col-sm-12 col-md-4">
  <div class="role2">
-    BARCODE / PRODUCT CODE  
+    <span class="b1">BARCODE / PRODUCT CODE  </span>
+    <span class="b2">
     <input type="text" name="barcode_sku" class="txt" value=""> 
     <input type="hidden" name="pressed_button" id="pressed_button1" value="false">
      <button type="submit" class="serch" name="submit_barcode" onclick="document.getElementById('pressed_button1').value='true';document.getElementById('form_submit').submit();">
       <span class="glyphicon glyphicon-search"></span>
      </button>
-  
+    </span>
     </div>
     
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
@@ -205,12 +206,14 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 </div>
 <div class="col-sm-12 col-md-4">
  <div class="role2">
-  ORDER LOOKUP 
+  <span class="b1">ORDER LOOKUP </span>
+    <span class="b2">
     <input type="text" class="txt" name="order_id" id="order_id"> 
     <input type="hidden" name="pressed_button" id="pressed_button" value="false">
      <button type="submit" class="serch" name="submit_id" id="submit_id" onclick="document.getElementById('pressed_button').value='true';document.getElementById('form_submit').submit();">
       <span class="glyphicon glyphicon-search"></span>
      </button>
+     </span>
      </div>
 </div>
 

@@ -373,3 +373,14 @@ input:checked + .slider:before {
     margin-top: 153px;
 }
 
+.b1 {
+    display: table-cell;
+    padding-right: 5px;
+    padding-top: 3px;}
+.b2 {
+    display: table-cell;
+
+    vertical-align: top;
+}
+.b2 .txt{height: 27px;
+    margin: 0 5px 5px 0;}

@@ -325,6 +325,7 @@ READY FOR PICKUP
    </tr>
   <?php } } }  ?>
   </tbody>
+  
  </table>
 </div>
 </div>
