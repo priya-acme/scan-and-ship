@@ -177,7 +177,6 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<div class="col-sm-9">
 <div class="right-icon">
 <div class="order-btn">
 <a class="order" href="/double-check/app/summary_page.php?shop=<?php echo $shop; ?>">BACK TO ORDER LOOKUP</a>
@@ -185,13 +184,8 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <a href="/double-check/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
-
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right;color:#fff;float:right">Support</a>
 </div>
-</div>
-<div class="col-sm-3">
-<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right;color:#fff">Support</a>
-</div>
-
 </div>
 </div>
 <div class="row">
