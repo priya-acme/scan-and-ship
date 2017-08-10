@@ -14,6 +14,49 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/jquery.table.hpaging.min.js"></script>
   <script src="js/jquery.stickytableheaders.js"></script>
-  
+  <style>
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+ul.tabs li{
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+ul.tabs li.current{
+	background: #ededed;
+	color: #222;
+}
+
+.tab-content{
+	display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.tab-content.current{
+	display: inherit;
+}
+</style>
+<script>
+$(document).ready(function(){
+
+$('ul.tabs li').click(function(){
+	var tab_id = $(this).attr('data-tab');
+
+	$('ul.tabs li').removeClass('current');
+	$('.tab-content').removeClass('current');
+
+	$(this).addClass('current');
+	$("#"+tab_id).addClass('current');
+})
+
+})
+</script>
 </head>
 <body>
