@@ -384,3 +384,8 @@ input:checked + .slider:before {
 }
 .b2 .txt{height: 27px;
     margin: 0 5px 5px 0;}
+    .support_link {
+    color: #fff;
+    float: right;
+    text-align: right;
+    }

@@ -42,7 +42,7 @@ $get_verification = $Stores->get_step_verification($shop);
 <a href="/double-check/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
-<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right;color:#fff;float:right">Support</a>
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" class="support_link">Support</a>
 </div>
 </div>
 </div>
