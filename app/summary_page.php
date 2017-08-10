@@ -33,8 +33,6 @@ $get_verification = $Stores->get_step_verification($shop);
 
 ?>
 <?php include 'header.php' ?>
-
-
  <form method="post">
 <div class="margtop30 summary-header-fixed">
 <div class="container">
@@ -138,7 +136,10 @@ READY FOR PICKUP
  
 </span>
 </div>
-
+<div class="col-sm-6">
+<a href="/" style="color:#000">Unfulfilled Orders</a>
+<a href="/" style="color:#000">Fulfilled Orders</a>
+</div>
 </div>
 </div>
 </div>
@@ -146,13 +147,8 @@ READY FOR PICKUP
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-
 <div class="tbl summary-table">
-<ul class="tabs">
-<li class="tab-link current" data-tab="table1">Unfulfilled Orders</li>
-<li class="tab-link" data-tab="table2">Fulfilled Orders</li>
-</ul>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1" class="tab-content current">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
 <thead>
   <tr>
     <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
@@ -690,8 +686,6 @@ READY FOR PICKUP
    </tr>
   <?php } } }  ?>
   </tbody>
- </table>
- <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table2" class="tab-content">
  </table>
 </div>
 </div>
