@@ -136,7 +136,7 @@ READY FOR PICKUP
  
 </span>
 </div>
-<div class="col-sm-6">
+<div class="col-sm-6" style="float:right">
 <a href="/" style="color:#000">Unfulfilled Orders</a>
 <a href="/" style="color:#000">Fulfilled Orders</a>
 </div>
