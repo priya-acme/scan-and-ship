@@ -184,6 +184,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <a href="/double-check/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right">Support</a>
 </div>
 </div>
 </div>
