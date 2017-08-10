@@ -47,7 +47,7 @@
 </div>
 </div>
 <div class="row">
-<div class="col-sm-12 col-md-2">
+<div class="col-sm-12 col-md-4">
 <span class="role2">SELECT ROLE</span>
 <span class="radio radio-primary">
  <input type="radio" name="select_veri" id="radio1" value="One" <?php if($get_verification['verification_step'] == 'One') { echo "checked"; }?>>
