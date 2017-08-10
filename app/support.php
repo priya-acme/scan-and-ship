@@ -12,11 +12,11 @@ $shop_info = $Stores->is_shop_exists($shop);
   <title>Double Check - <?php echo $_GET['id']?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="../css/style.css" type="text/css">
-  <link rel="stylesheet" href="../font-awesome/css/font-awesome.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.css" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 </head>
@@ -32,7 +32,7 @@ $shop_info = $Stores->is_shop_exists($shop);
 <a href="/double-check/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
-<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right">Support</a>
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right;color:#fff;float:right">Support</a>
 </div>
 </div>
 </div>
