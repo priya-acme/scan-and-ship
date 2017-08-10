@@ -48,49 +48,9 @@ $get_verification = $Stores->get_step_verification($shop);
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE : </span><?php } ?>
+<span class="role2">SELECT ROLE : </span>
 <span class="radio radio-primary">
-<?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
-	?>
-<input type="radio" name="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?> onclick="selected_radio(this.value)">
-<label for="radio1">
- PICKER
-</label>
-<?php 
-} 
-?>
-<?php if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
-	?>
-<input type="radio" name="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
-<label for="radio2">
-SHIPPER
-</label>
-<?php 
-} 
-?>
-<?php if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
-	?>
-<input type="radio" name="select_role" id="radio3" value="Receiver ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
-<label for="radio3">
-READY FOR PICKUP
-</label>
-<?php 
-} 
-?>
-<?php if($get_verification['verification_step'] == 'Five') {  
-	?>
-<input type="radio" name="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?> onclick="selected_radio(this.value)">
-<label for="radio1">
- PICKER
-</label>
-<input type="radio" name="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
-<label for="radio2">
-SHIPPER
-</label>
-<?php 
-} 
-?>
-<?php if($get_verification['verification_step'] == 'Seven') {  
+<?php if($get_verification['verification_step'] == 'One' ) {  
 	?>
 <input type="radio" name="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?> onclick="selected_radio(this.value)">
 <label for="radio1">
@@ -103,7 +63,7 @@ READY FOR PICKUP
 <?php 
 } 
 ?>
-<?php if($get_verification['verification_step'] == 'Nine') {  
+<?php if($get_verification['verification_step'] == 'Two') {  
 	?>
 <input type="radio" name="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
 <label for="radio2">
@@ -116,9 +76,7 @@ READY FOR PICKUP
 <?php 
 } 
 ?>
-
-            
-<?php if($get_verification['verification_step'] == 'Eleven') {?>
+<?php if($get_verification['verification_step'] == 'Three') {?>
 <input type="radio" name="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?> onclick="selected_radio(this.value)">
 <label for="radio1">
 PICKER
