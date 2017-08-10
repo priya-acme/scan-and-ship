@@ -18,9 +18,19 @@ $shop_info = $Stores->is_shop_exists($shop);
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<style>
 .formFooter{
 display : none ! important;
 }
+</style>
+<script>
+$(document).ready(function(){
+setTimeout(function(){
+	$('.formFooter').hide();
+},500)
+	
+})
+</script>
 </head>
 <body>
 <div class="margtop30 ordered-header-fixed">
