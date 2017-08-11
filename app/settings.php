@@ -1,23 +1,23 @@
 <?php
- include __DIR__ .'../../includes/utils/Shopify.php';
- include __DIR__ .'../../includes/db/Stores.php';
- $Shopify = new Shopify();
- $Stores = new Stores();
- $shop =  $_REQUEST['shop'];
- $shop_info = $Stores->is_shop_exists($shop);
- $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
- $get_verification = $Stores->get_step_verification($shop);
- if(isset($_POST['save_changes'])){
- 	$get_verification = $Stores->get_step_verification($shop);
- 	if(empty($get_verification)){
- 		$Stores->step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
- 		header("location:/double-check/app/settings.php?shop=$shop");
- 	}
- 	else {
- 		$Stores->update_step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
- 		header("location:/double-check/app/settings.php?shop=$shop");
- 	}
- }
+include __DIR__ .'../../includes/utils/Shopify.php';
+include __DIR__ .'../../includes/db/Stores.php';
+$Shopify = new Shopify();
+$Stores = new Stores();
+$shop =  $_REQUEST['shop'];
+$shop_info = $Stores->is_shop_exists($shop);
+$orders = $Shopify->get_orders($shop, $shop_info['access_token']);
+$get_verification = $Stores->get_step_verification($shop);
+if(isset($_POST['save_changes'])){
+	$get_verification = $Stores->get_step_verification($shop);
+	if(empty($get_verification)){
+		$Stores->step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
+		header("location:/double-check/app/settings.php?shop=$shop");
+	}
+	else {
+		$Stores->update_step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
+		header("location:/double-check/app/settings.php?shop=$shop");
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,21 +41,37 @@
 <div class="right-icon" style="padding:6px 12px">
 <div class="order-btn">
 <a class="order" href="/double-check/app/summary_page.php?shop=<?php echo $shop ?>">BACK TO HOMEPAGE</a>
-<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" class="support_link">Support</a>
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right;color:#fff;float:right">Support</a>
 </div>
 </div>
 </div>
 </div>
 <div class="row">
-<div class="col-sm-12 col-md-4">
+<div class="col-sm-12 col-md-2">
 <span class="role2">SELECT ROLE</span>
 <span class="radio radio-primary">
  <input type="radio" name="select_veri" id="radio1" value="One" <?php if($get_verification['verification_step'] == 'One') { echo "checked"; }?>>
-<label for="radio1">Picker Verification</label>
+<label for="radio1">Picker</label>
 <input type="radio" name="select_veri" id="radio2" value="Two" <?php if($get_verification['verification_step'] == 'Two') { echo "checked"; }?>>
-<label for="radio2">Shipper Verification</label>
+<label for="radio2">Shipper</label>
 <input type="radio" name="select_veri" id="radio3" value="Three" <?php if($get_verification['verification_step'] == 'Three') { echo "checked"; }?>>
-<label for="radio3">In-store Pickup Verification</label>
+<label for="radio3">In-store Pickup</label>
+<input type="radio" name="select_veri" id="radio4" value="Four" <?php if($get_verification['verification_step'] == 'Four') { echo "checked"; }?>>
+<label for="radio4">Ready For Pickup</label>
+<input type="radio" name="select_veri" id="radio5" value="Five" <?php if($get_verification['verification_step'] == 'Five') { echo "checked"; }?>>
+<label for="radio5">Picker & Shipper</label>
+<input type="radio" name="select_veri" id="radio6" value="Six" <?php if($get_verification['verification_step'] == 'Six') { echo "checked"; }?>>
+<label for="radio6">Picker & In-store Pickup</label>
+<input type="radio" name="select_veri" id="radio7" value="Seven" <?php if($get_verification['verification_step'] == 'Seven') { echo "checked"; }?>>
+<label for="radio7">Picker & Ready For Pickup</label>
+<input type="radio" name="select_veri" id="radio8" value="Eight" <?php if($get_verification['verification_step'] == 'Eight') { echo "checked"; }?>>
+<label for="radio8">Shipper & In-store Pickup</label>
+<input type="radio" name="select_veri" id="radio9" value="Nine" <?php if($get_verification['verification_step'] == 'Nine') { echo "checked"; }?>>
+<label for="radio9">Shipper & Ready For Pickup</label>
+<input type="radio" name="select_veri" id="radio10" value="Ten" <?php if($get_verification['verification_step'] == 'Ten') { echo "checked"; }?>>
+<label for="radio10">In-store Pickup & Ready For Pickup</label>
+<input type="radio" name="select_veri" id="radio11" value="Eleven" <?php if($get_verification['verification_step'] == 'Eleven') { echo "checked"; }?>>
+<label for="radio11">All</label>
 </span>
 </div>
 </div>
