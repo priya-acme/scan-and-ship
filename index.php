@@ -5,7 +5,7 @@ $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
-
+echo $code;
 
 if ($code) {
 	// we want to exchange the temp token passed by the shopify server during the installation process
@@ -40,7 +40,7 @@ if ($code) {
 		), "store_url = '$shop'");
 	}
 	//echo APP_URL;
-	include "app/index.php";
+	//include "app/index.php";
 }
 
 ?>
