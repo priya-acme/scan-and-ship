@@ -41,8 +41,9 @@ if(isset($_POST['save_changes'])){
 <div class="right-icon" style="padding:6px 12px">
 <div class="order-btn">
 <a class="order" href="/double-check/app/summary_page.php?shop=<?php echo $shop ?>">BACK TO HOMEPAGE</a>
-<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right;color:#fff;float:right">Support</a>
+
 </div>
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right;color:#fff;float:right">Support</a>
 </div>
 </div>
 </div>
