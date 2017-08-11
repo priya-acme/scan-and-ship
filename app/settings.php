@@ -50,28 +50,19 @@ if(isset($_POST['save_changes'])){
 <div class="col-sm-12 col-md-2">
 <span class="role2">SELECT ROLE</span>
 <span class="radio radio-primary">
- <input type="radio" name="select_veri" id="radio1" value="One" <?php if($get_verification['verification_step'] == 'One') { echo "checked"; }?>>
-<label for="radio1">Picker</label>
-<input type="radio" name="select_veri" id="radio2" value="Two" <?php if($get_verification['verification_step'] == 'Two') { echo "checked"; }?>>
-<label for="radio2">Shipper</label>
-<input type="radio" name="select_veri" id="radio3" value="Three" <?php if($get_verification['verification_step'] == 'Three') { echo "checked"; }?>>
-<label for="radio3">In-store Pickup</label>
-<input type="radio" name="select_veri" id="radio4" value="Four" <?php if($get_verification['verification_step'] == 'Four') { echo "checked"; }?>>
-<label for="radio4">Ready For Pickup</label>
-<input type="radio" name="select_veri" id="radio5" value="Five" <?php if($get_verification['verification_step'] == 'Five') { echo "checked"; }?>>
-<label for="radio5">Picker & Shipper</label>
-<input type="radio" name="select_veri" id="radio6" value="Six" <?php if($get_verification['verification_step'] == 'Six') { echo "checked"; }?>>
-<label for="radio6">Picker & In-store Pickup</label>
-<input type="radio" name="select_veri" id="radio7" value="Seven" <?php if($get_verification['verification_step'] == 'Seven') { echo "checked"; }?>>
-<label for="radio7">Picker & Ready For Pickup</label>
-<input type="radio" name="select_veri" id="radio8" value="Eight" <?php if($get_verification['verification_step'] == 'Eight') { echo "checked"; }?>>
-<label for="radio8">Shipper & In-store Pickup</label>
-<input type="radio" name="select_veri" id="radio9" value="Nine" <?php if($get_verification['verification_step'] == 'Nine') { echo "checked"; }?>>
-<label for="radio9">Shipper & Ready For Pickup</label>
-<input type="radio" name="select_veri" id="radio10" value="Ten" <?php if($get_verification['verification_step'] == 'Ten') { echo "checked"; }?>>
-<label for="radio10">In-store Pickup & Ready For Pickup</label>
-<input type="radio" name="select_veri" id="radio11" value="Eleven" <?php if($get_verification['verification_step'] == 'Eleven') { echo "checked"; }?>>
-<label for="radio11">All</label>
+<select name="select_veri">
+<option value="One"<?php if($get_verification['verification_step'] == 'One') { echo "selected"; }?>>Picker</option>
+<option value="Two"<?php if($get_verification['verification_step'] == 'Two') { echo "selected"; }?>>Picker</option>
+<option value="Three"<?php if($get_verification['verification_step'] == 'Three') { echo "selected"; }?>>Picker</option>
+<option value="Four"<?php if($get_verification['verification_step'] == 'Four') { echo "selected"; }?>>Picker</option>
+<option value="Five"<?php if($get_verification['verification_step'] == 'Five') { echo "selected"; }?>>Picker</option>
+<option value="Six"<?php if($get_verification['verification_step'] == 'Six') { echo "selected"; }?>>Picker</option>
+<option value="Seven"<?php if($get_verification['verification_step'] == 'Seven') { echo "selected"; }?>>Picker</option>
+<option value="Eight"<?php if($get_verification['verification_step'] == 'Eight') { echo "selected"; }?>>Picker</option>
+<option value="Nine"<?php if($get_verification['verification_step'] == 'Nine') { echo "selected"; }?>>Picker</option>
+<option value="Ten"<?php if($get_verification['verification_step'] == 'Ten') { echo "selected"; }?>>Picker</option>
+<option value="Eleven"<?php if($get_verification['verification_step'] == 'Eleven') { echo "selected"; }?>>Picker</option>
+</select>
 </span>
 </div>
 </div>

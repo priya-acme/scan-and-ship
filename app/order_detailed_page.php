@@ -1,4 +1,4 @@
-<?php  
+<?php
 include __DIR__ .'../../includes/utils/Shopify.php';
 include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
@@ -8,7 +8,7 @@ $sum = 0 ;
 $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_single_order($shop, $shop_info['access_token'],$_REQUEST['id']);
 //echo $_SESSION['select_role'];
-$pget_order_id = $_REQUEST['id']; 
+$pget_order_id = $_REQUEST['id'];
 $pselect_role = $_SESSION['select_role'];
 $get_verification = $Stores->get_step_verification($shop);
 if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false'){
@@ -62,49 +62,49 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 			// shipper
 			
 			if($selected_role == 'Shipper ok' || $selected_role== 'Shipper' ){
-	        	$s_check_order_veri = $Stores->s_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
-	        	if(empty($s_check_order_veri)){
-	        		$Stores->s_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
-	        		header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
-	        	}
-	        	else {
-	        		//echo $orders->order->line_items[$i]->quantity;
-	        		//echo "equal qty";
-	        		if($orders->order->line_items[$i]->quantity == $s_check_order_veri['quantity']){
-	        			$k = 1;
-	        			//header("location:http://67.207.82.1/scan-and-ship/app/order_test.php/?id=$get_order_id");
-	        		}
-	        		else {
-	        			//echo "not equal";
-	        			$Stores->s_update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
-	        			header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
-	        		}
-	        	}
-	        }
-	        
-	        // ready for pickup
-	        
-	        if($selected_role == 'Receiver ok' || $selected_role== 'Receiver' ){
-	        	$r_check_order_veri = $Stores->r_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
-	        	if(empty($r_check_order_veri)){
-	        		$Stores->r_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
-	        		header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
-	        	}
-	        	else {
-	        		//echo $orders->order->line_items[$i]->quantity;
-	        		//echo "equal qty";
-	        		if($orders->order->line_items[$i]->quantity == $r_check_order_veri['quantity']){
-	        			$k = 1;
-	        			//header("location:http://67.207.82.1/scan-and-ship/app/order_test.php/?id=$get_order_id");
-	        		}
-	        		else {
-	        			//echo "not equal";
-	        			$Stores->r_update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
-	        			header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
-	        		}
-	        	}
-	        }
-	        //break;
+				$s_check_order_veri = $Stores->s_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
+				if(empty($s_check_order_veri)){
+					$Stores->s_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
+					header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+				}
+				else {
+					//echo $orders->order->line_items[$i]->quantity;
+					//echo "equal qty";
+					if($orders->order->line_items[$i]->quantity == $s_check_order_veri['quantity']){
+						$k = 1;
+						//header("location:http://67.207.82.1/scan-and-ship/app/order_test.php/?id=$get_order_id");
+					}
+					else {
+						//echo "not equal";
+						$Stores->s_update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
+						header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+					}
+				}
+			}
+			
+			// ready for pickup
+			
+			if($selected_role == 'Receiver ok' || $selected_role== 'Receiver' ){
+				$r_check_order_veri = $Stores->r_check_order_veri($variants->variant->sku, $_REQUEST['id'],$selected_role);
+				if(empty($r_check_order_veri)){
+					$Stores->r_order_veri($variants->variant->sku,$variants->variant->barcode,$get_order_id,$selected_role,"1");
+					header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+				}
+				else {
+					//echo $orders->order->line_items[$i]->quantity;
+					//echo "equal qty";
+					if($orders->order->line_items[$i]->quantity == $r_check_order_veri['quantity']){
+						$k = 1;
+						//header("location:http://67.207.82.1/scan-and-ship/app/order_test.php/?id=$get_order_id");
+					}
+					else {
+						//echo "not equal";
+						$Stores->r_update_qty_order($variants->variant->sku,$variants->variant->barcode,$get_order_id);
+						header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$get_order_id");
+					}
+				}
+			}
+			//break;
 		}
 		
 		
@@ -131,9 +131,9 @@ if(isset($_POST['save_notes'])){
 if(isset($_POST['update_notes'])){
 	$uorder_notes = $_POST['update_order_note'];
 	$uorder_id=$_REQUEST['id'];
-		$Stores->update_order_note($_REQUEST['id'], $uorder_notes);
-		header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$uorder_id");
-
+	$Stores->update_order_note($_REQUEST['id'], $uorder_notes);
+	header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$uorder_id");
+	
 }
 $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
 $count_val = ceil($count_orders->count / 250);
@@ -184,21 +184,20 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 <a href="/double-check/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
-<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" class="support_link">Support</a>
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right;color:#fff;float:right">Support</a>
 </div>
 </div>
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-4">
  <div class="role2">
-    <span class="b1">BARCODE / PRODUCT CODE  </span>
-    <span class="b2">
+    BARCODE / PRODUCT CODE  
     <input type="text" name="barcode_sku" class="txt" value=""> 
     <input type="hidden" name="pressed_button" id="pressed_button1" value="false">
      <button type="submit" class="serch" name="submit_barcode" onclick="document.getElementById('pressed_button1').value='true';document.getElementById('form_submit').submit();">
       <span class="glyphicon glyphicon-search"></span>
      </button>
-    </span>
+  
     </div>
     
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
@@ -206,23 +205,62 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 </div>
 <div class="col-sm-12 col-md-4">
  <div class="role2">
-  <span class="b1">ORDER LOOKUP </span>
-    <span class="b2">
+  ORDER LOOKUP 
     <input type="text" class="txt" name="order_id" id="order_id"> 
     <input type="hidden" name="pressed_button" id="pressed_button" value="false">
      <button type="submit" class="serch" name="submit_id" id="submit_id" onclick="document.getElementById('pressed_button').value='true';document.getElementById('form_submit').submit();">
       <span class="glyphicon glyphicon-search"></span>
      </button>
-     </span>
      </div>
 </div>
 
 <div class="col-sm-12 col-md-4 no-wrap">
-<span class="role2">SELECT ROLE : </span>
+
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE : </span><?php } ?>
 <span class="radio radio-primary">
-<?php if($get_verification['verification_step'] == 'One') {  
+<?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
 <input type="radio" name="select_role" class="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } ?> onclick="selected_radio(this.value)">
+<label for="radio1">
+ PICKER
+</label>
+<?php 
+} 
+?>
+<?php if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
+	?>
+<input type="radio" name="select_role" class="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
+<label for="radio2">
+SHIPPER
+</label>
+<?php 
+} 
+?>
+<?php if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+	?>
+<input type="radio" name="select_role" class="select_role" id="radio3" value="Receiver ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
+<label for="radio3">
+READY FOR PICKUP
+</label>
+<?php 
+} 
+?>
+<?php if($get_verification['verification_step'] == 'Five') {  
+	?>
+<input type="radio" name="select_role" class="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } ?> onclick="selected_radio(this.value)">
+<label for="radio1">
+ PICKER
+</label>
+<input type="radio" name="select_role" class="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
+<label for="radio2">
+SHIPPER
+</label>
+<?php 
+} 
+?>
+<?php if($get_verification['verification_step'] == 'Seven') {  
+	?>
+<input type="radio" name="select_role" class="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?> onclick="selected_radio(this.value)">
 <label for="radio1">
  PICKER
 </label>
@@ -233,20 +271,20 @@ READY FOR PICKUP
 <?php 
 } 
 ?>
-<?php if($get_verification['verification_step'] == 'Two') {  
+<?php if($get_verification['verification_step'] == 'Nine') {  
 	?>
-<input type="radio" name="select_role" class="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
+<input type="radio" name="select_role" class="select_role"  id="radio2" value="Shipper ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
 <label for="radio2">
 SHIPPER
 </label>
-<input type="radio" name="select_role" class="select_role"  id="radio3" value="Receiver ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
+<input type="radio" name="select_role" class="select_role" id="radio3" value="Receiver ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
 <label for="radio3">
 READY FOR PICKUP
 </label>
 <?php 
 } 
 ?>
-<?php if($get_verification['verification_step'] == 'Three') {?>
+<?php if($get_verification['verification_step'] == 'Eleven') {?>
 <input type="radio" name="select_role" class="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; }  ?> onclick="selected_radio(this.value)">
 <label for="radio1">
 PICKER
@@ -335,7 +373,7 @@ READY FOR PICKUP
   <?php } ?>
 </table>
 </div>
-<?php if($get_verification['verification_step'] == 'Three') {  	?>
+<?php if($get_verification['verification_step'] == 'Three' || $get_verification['verification_step'] == 'Six' || $get_verification['verification_step'] == 'Eight' || $get_verification['verification_step'] == 'Ten' || $get_verification['verification_step'] == 'Eleven' ) {  	?>
 <div class="col-md-2 col-sm-12">
 <div class="hdd">IN-STORE PICKUP</div>
 <?php if(empty($get_instore_pickup)) { ?>
@@ -388,17 +426,34 @@ FulFill Order
     <td width="8%" class="hed">SCANNED QUANTITY
     <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
     <tr>
-    <?php if($get_verification['verification_step'] == 'One') {  
+    <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
 	<td width="8%" class="hed">Picker</td>
-	<td width="8%" class="hed">Ready For Pickup</td>
 	<?php } ?>
-    <?php if($get_verification['verification_step'] == 'Two') {  
+    <?php if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
 	?>
 	 <td width="8%" class="hed">Shipper</td>
+	<?php } ?>
+	<?php if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+	?>
 	 <td width="8%" class="hed">Ready For Pickup</td>
 	<?php } ?>
-    <?php if($get_verification['verification_step'] == 'Three') {  
+	<?php if($get_verification['verification_step'] == 'Five') {  
+	?>
+	  <td width="8%" class="hed">Picker</td>
+	 <td width="8%" class="hed">Shipper</td>
+	<?php } ?>
+	<?php if($get_verification['verification_step'] == 'Seven') {  
+	?>
+	  <td width="8%" class="hed">Picker</td>
+	  <td width="8%" class="hed">Ready For Pickup</td>
+	<?php } ?>
+	<?php if($get_verification['verification_step'] == 'Nine') {  
+	?>
+	  <td width="8%" class="hed">Shipper</td>
+	  <td width="8%" class="hed">Ready For Pickup</td>
+	<?php } ?>
+	<?php if($get_verification['verification_step'] == 'Eleven') {  
 	?>
 	 <td width="8%" class="hed">Picker</td>
 	 <td width="8%" class="hed">Shipper</td>
@@ -411,17 +466,34 @@ FulFill Order
     <?php } ?>
     <td width="8%" class="hed">PRICE</td>
     <td width="17%" class="hed">SKU</td>
-    <?php if($get_verification['verification_step'] == 'One') {  
+    <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
     <td width="8%" class="hed">PICKED</td>
-    <td width="9%" class="hed">READY FOR PICKUP</td>
     <?php } ?>
-    <?php  if($get_verification['verification_step'] == 'Two') {  
+    <?php  if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
+	?>
+     <td width="9%" class="hed">SHIPPED</td>
+    <?php } ?>
+    <?php  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+	?>
+     <td width="9%" class="hed">READY FOR PICKUP</td>
+   <?php } ?>
+   <?php  if($get_verification['verification_step'] == 'Five') {  
+	?>
+     <td width="8%" class="hed">PICKED</td>
+     <td width="9%" class="hed">SHIPPED</td>
+   <?php } ?>
+   <?php  if($get_verification['verification_step'] == 'Seven') {  
+	?>
+     <td width="8%" class="hed">PICKED</td>
+     <td width="9%" class="hed">READY FOR PICKUP</td>
+   <?php } ?>
+   <?php  if($get_verification['verification_step'] == 'Nine') {  
 	?>
      <td width="9%" class="hed">SHIPPED</td>
      <td width="9%" class="hed">READY FOR PICKUP</td>
-    <?php } ?>
-   <?php  if($get_verification['verification_step'] == 'Three') {  
+   <?php } ?>
+   <?php  if($get_verification['verification_step'] == 'Eleven') {  
 	?>
      <td width="8%" class="hed">PICKED</td>
      <td width="9%" class="hed">SHIPPED</td>
@@ -445,8 +517,8 @@ FulFill Order
     <td>
          <table class="table table-bordered table-responsive mytable remove-border" style="margin-bottom: 0;border:0">
          <tr class="">
-         <!--  one step verifictaion starts -->
-          <?php if($get_verification['verification_step'] == 'One') {  
+         <!--  one & six step verifictaion starts -->
+          <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
           ?>
           <!--  picker qty check starts -->
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
@@ -464,29 +536,13 @@ FulFill Order
     	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  picker qty check ends-->
-         <!--  ready for pickup qty check starts -->
-        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
-        $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
-         if(empty($r_get_order_veri_sku)){
-    	?>
-    	 <td>0</td>
-        <?php 
-        } else {
-        	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
-    	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
-        <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
-    	?>
-    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
-        <?php } }  ?>
-        <!--  ready for pickup qty check ends -->
                
           <?php } ?>
-        <!--  one step verifictaion ends -->
+        <!--  one & six step verifictaion ends -->
           
-        <!--  two step verifictaion starts -->
+        <!--  two & eight step verifictaion starts -->
           
-          <?php if($get_verification['verification_step'] == 'Two') {  
+          <?php if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
           ?>
           <!--  shipper qty check starts -->
         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
@@ -504,8 +560,15 @@ FulFill Order
     	 <td style="background-color:#e8f400"><?php echo $s_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  shipper qty check ends -->
-        
-         <!--  ready for pickup qty check starts -->
+        <?php } ?>
+         
+         <!--  two & eight step verifictaion ends -->
+         
+         <!--  four & ten step verifictaion starts -->
+          
+        <?php if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten' ) {  
+        ?>
+        <!--  ready for pickup qty check starts -->
         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
         $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
          if(empty($r_get_order_veri_sku)){
@@ -523,11 +586,135 @@ FulFill Order
         <!--  ready for pickup qty check ends -->
         <?php } ?>
          
-         <!--  two step verifictaion ends -->
-        
-         <!--  three step verifictaion starts -->
+         <!--  four & ten step verifictaion ends -->
          
-         <?php if($get_verification['verification_step'] == 'Three') {  
+         
+        <!--  five step verifictaion starts -->
+          
+        <?php if($get_verification['verification_step'] == 'Five') {  
+        ?>
+         <!--  picker qty check starts -->
+         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+         $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  picker qty check ends-->
+        
+          <!--  shipper qty check starts -->
+        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+        $s_get_order_veri_sku = $Stores->s_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($s_get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $s_get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  shipper qty check ends -->
+        <?php } ?>
+         
+         <!--  five step verifictaion ends -->
+         
+         <!--  seven step verifictaion starts -->
+          
+        <?php if($get_verification['verification_step'] == 'Seven') {  
+        ?>
+         <!--  picker qty check starts -->
+         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+         $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  picker qty check ends-->
+        <!--  ready for pickup qty check starts -->
+        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+        $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($r_get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  ready for pickup qty check ends -->
+        <?php } ?>
+         
+         <!--  seven step verifictaion ends -->
+         
+          <!--  nine step verifictaion starts -->
+          
+        <?php if($get_verification['verification_step'] == 'Nine') {  
+        ?>
+           <!--  shipper qty check starts -->
+        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+        $s_get_order_veri_sku = $Stores->s_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($s_get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $s_get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  shipper qty check ends -->
+        
+        <!--  ready for pickup qty check starts -->
+        <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
+        $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+         if(empty($r_get_order_veri_sku)){
+    	?>
+    	 <td>0</td>
+        <?php 
+        } else {
+        	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+    	?>
+    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+        <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
+    	?>
+    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
+        <?php } }  ?>
+        <!--  ready for pickup qty check ends -->
+        <?php } ?>
+         
+         <!--  nine step verifictaion ends -->
+         
+         
+         <!--  eleven step verifictaion starts -->
+         
+         <?php if($get_verification['verification_step'] == 'Eleven') {  
           ?>
             <!--  picker qty check starts -->
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
@@ -581,7 +768,7 @@ FulFill Order
         <!--  ready for pickup qty check ends -->
           <?php } ?>
           
-          <!--  three step verifictaion ends -->
+          <!--  eleven step verifictaion ends -->
         
         </tr>
         </table>
@@ -600,11 +787,10 @@ FulFill Order
     <?php 
     } 
     ?>
-    <!-- one step verification starts -->
-    <?php if($get_verification['verification_step'] == 'One') {  
+    <!-- one & six step verification starts -->
+    <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
 	<?php if($orders->order->tags == 'Double-Check'){ ?>
-	<td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
 	<?php }  else { ?>
     <?php 
@@ -628,40 +814,15 @@ FulFill Order
         // picker verification ends
         
         ?>
-          <?php
-      
-      // Receiver verification starts
-      
-      $r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
-      $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
-      if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok' || $r_get_order_veri_sku['verification']== 'Receiver') {
-      	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
-      		?>
-         		<td><div class="green"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-            <?php 
-         	} else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $r_get_order_veri_sku['quantity'] != 0){
-	        ?>
-	        <td><div class="yellow"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
-	        <?php } else { ?>
-	        <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $shop; ?>','<?php echo $orders->order->line_items[$i]->quantity?>')" /></td>
-	        <?php } ?>
-            <?php } else { ?>
-               <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $shop; ?>','<?php echo $orders->order->line_items[$i]->quantity?>')" /></td>
-        <?php } 
-        
-        // Receiver verification ends
-        
-        ?>
       <?php } } ?>
       
-      <!-- one step verification end -->
+      <!-- one & six step verification end -->
       
-      <!-- two step verification starts -->
+      <!-- two & eight step verification starts -->
       
-      <?php  if($get_verification['verification_step'] == 'Two') {  
+      <?php  if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
 	  ?>
       <?php if($orders->order->tags == 'Double-Check'){ ?>
-      <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
       <?php }  else { ?>
         
@@ -690,7 +851,19 @@ FulFill Order
         // shipper verification ends
         
         ?>
-          <?php
+        
+     <?php } } ?>
+    <!-- two & eight step verification end -->
+    
+    <!-- four &  ten verification starts -->
+      
+      <?php  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+	  ?>
+      <?php if($orders->order->tags == 'Double-Check'){ ?>
+      <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+      <?php }  else { ?>
+        
+      <?php
       
       // Receiver verification starts
       
@@ -714,14 +887,186 @@ FulFill Order
         // Receiver verification ends
         
         ?>
+    
+      <?php } } ?>
+    <!-- four & ten step verification end -->
+    
+     <!-- five verification starts -->
+      
+      <?php  if($get_verification['verification_step'] == 'Five') {  
+	  ?>
+      <?php if($orders->order->tags == 'Double-Check'){ ?>
+      <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+      <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+      <?php }  else { ?>
         
-     <?php } } ?>
-    <!-- two step verification end -->
+      <?php
+      
+      // Picker verification starts
+      
+      $get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+      $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+      if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok' || $get_order_veri_sku['verification']== 'Picker') {
+       if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){  ?>
+               <td><div class="green"><a href="" onclick="delete_picker_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $get_order_veri_sku['quantity'] != 0){ ?>
+    	       <td><div class="yellow"><a href="" onclick="delete_picker_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+       <?php } else {  
+    	     	?>
+    	 <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>','<?php echo $shop; ?>')" /></td>
+    	<?php }
+    	}  else { ?>
+               <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>','<?php echo $shop; ?>')" /></td>
+        <?php }  
+        
+        // picker verification ends
+        
+        // Shipper verification starts
+        
+        $s_get_order_veri_barcode = $Stores->s_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        $s_get_order_veri_sku = $Stores->s_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+        if($s_get_order_veri_sku['verification']== 'Shipper ok' || $s_get_order_veri_barcode['verification']== 'Shipper ok' || $s_get_order_veri_sku['verification']== 'Shipper') {
+    		if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){ ?>
+    	<td><div class="green"><a href="" onclick="delete_shipper_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $s_get_order_veri_sku['quantity'] != 0) {
+    	?>
+    	<td><div class="yellow"><a href="" onclick="delete_shipper_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<?php  
+    	} else { 
+    		?>
+    		<td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_shipper_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>','<?php echo $shop; ?>')" /></td>
+        <?php 
+    	}
+    	} else { ?>
+        <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_shipper_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>','<?php echo $shop; ?>')" /></td>
+        <?php }
+        
+        // shipper verification ends
+        
+        ?>
+    
+      <?php } } ?>
+    <!-- five step verification end -->
+    
+     <!-- seven verification starts -->
+      
+      <?php  if($get_verification['verification_step'] == 'Seven') {  
+	  ?>
+      <?php if($orders->order->tags == 'Double-Check'){ ?>
+      <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+      <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+      <?php }  else { ?>
+        
+      <?php
+      
+      // Picker verification starts
+      
+      $get_order_veri_barcode = $Stores->get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+      $get_order_veri_sku = $Stores->get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+      if($get_order_veri_sku['verification']== 'Picker ok' || $get_order_veri_barcode['verification']== 'Picker ok' || $get_order_veri_sku['verification']== 'Picker') {
+       if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){  ?>
+               <td><div class="green"><a href="" onclick="delete_picker_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $get_order_veri_sku['quantity'] != 0){ ?>
+    	       <td><div class="yellow"><a href="" onclick="delete_picker_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+       <?php } else {  
+    	     	?>
+    	 <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>','<?php echo $shop; ?>')" /></td>
+    	<?php }
+    	}  else { ?>
+               <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_picker_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>','<?php echo $shop; ?>')" /></td>
+        <?php }  
+        
+        // picker verification ends
+        
+        // Receiver verification starts
+        
+        $r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+        if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok' || $r_get_order_veri_sku['verification']== 'Receiver') {
+        	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+        		?>
+         		<td><div class="green"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+            <?php 
+         	} else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $r_get_order_veri_sku['quantity'] != 0){
+	        ?>
+	        <td><div class="yellow"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	        <?php } else { ?>
+	        <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $shop; ?>','<?php echo $orders->order->line_items[$i]->quantity?>')" /></td>
+	        <?php } ?>
+            <?php } else { ?>
+               <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $shop; ?>','<?php echo $orders->order->line_items[$i]->quantity?>')" /></td>
+        <?php } 
+        
+        // Receiver verification ends
+        
+        ?>
+    
+      <?php } } ?>
+    <!-- seven step verification end -->
+    
+    <!-- nine verification starts -->
+      
+      <?php  if($get_verification['verification_step'] == 'Nine') {  
+	  ?>
+      <?php if($orders->order->tags == 'Double-Check'){ ?>
+      <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+      <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+      <?php }  else { ?>
+        
+      <?php
+      
+      // Shipper verification starts
+      
+      $s_get_order_veri_barcode = $Stores->s_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+      $s_get_order_veri_sku = $Stores->s_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+      if($s_get_order_veri_sku['verification']== 'Shipper ok' || $s_get_order_veri_barcode['verification']== 'Shipper ok' || $s_get_order_veri_sku['verification']== 'Shipper') {
+    		if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){ ?>
+    	<td><div class="green"><a href="" onclick="delete_shipper_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $s_get_order_veri_sku['quantity'] != 0) {
+    	?>
+    	<td><div class="yellow"><a href="" onclick="delete_shipper_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+    	<?php  
+    	} else { 
+    		?>
+    		<td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_shipper_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>','<?php echo $shop; ?>')" /></td>
+        <?php 
+    	}
+    	} else { ?>
+        <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_shipper_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $orders->order->line_items[$i]->quantity?>','<?php echo $shop; ?>')" /></td>
+        <?php }
+        
+        // shipper verification ends
+        
+        // Receiver verification starts
+        
+        $r_get_order_veri_barcode = $Stores->r_get_order_veri_barcode($variants->variant->barcode, $_REQUEST['id']);
+        $r_get_order_veri_sku = $Stores->r_get_order_veri_sku($variants->variant->sku, $_REQUEST['id']);
+        if($r_get_order_veri_sku['verification']== 'Receiver ok' || $r_get_order_veri_barcode['verification']== 'Receiver ok' || $r_get_order_veri_sku['verification']== 'Receiver') {
+        	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
+        		?>
+         		<td><div class="green"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+            <?php 
+         	} else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity && $r_get_order_veri_sku['quantity'] != 0){
+	        ?>
+	        <td><div class="yellow"><a href="" onclick="delete_receiver_order('<?php echo $pget_order_id?>','<?php echo $variants->variant->sku ?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
+	        <?php } else { ?>
+	        <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $shop; ?>','<?php echo $orders->order->line_items[$i]->quantity?>')" /></td>
+	        <?php } ?>
+            <?php } else { ?>
+               <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $shop; ?>','<?php echo $orders->order->line_items[$i]->quantity?>')" /></td>
+        <?php } 
+        
+        // Receiver verification ends
+        
+        ?>
+    
+      <?php } } ?>
+    <!-- nine step verification end -->
     
     
-    <!-- three step verification starts -->
+    <!-- eleven step verification starts -->
     
-     <?php if($get_verification['verification_step'] == 'Three') {  
+     <?php if($get_verification['verification_step'] == 'Eleven') {  
 	  ?>
 	  <?php if($orders->order->tags == 'Double-Check'){ ?>
 	  <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -788,7 +1133,7 @@ FulFill Order
         <?php }  ?>
         
         <?php } }  ?>
-   <!-- three step verification end -->
+   <!-- eleven step verification end -->
   </tr>
   <?php } ?>
 
