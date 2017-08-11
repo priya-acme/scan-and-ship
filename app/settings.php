@@ -51,17 +51,18 @@ if(isset($_POST['save_changes'])){
 <span class="role2">SELECT ROLE</span>
 <span class="radio radio-primary">
 <select name="select_veri">
+<option value="">-select role--</option>
 <option value="One"<?php if($get_verification['verification_step'] == 'One') { echo "selected"; }?>>Picker</option>
-<option value="Two"<?php if($get_verification['verification_step'] == 'Two') { echo "selected"; }?>>Picker</option>
-<option value="Three"<?php if($get_verification['verification_step'] == 'Three') { echo "selected"; }?>>Picker</option>
-<option value="Four"<?php if($get_verification['verification_step'] == 'Four') { echo "selected"; }?>>Picker</option>
-<option value="Five"<?php if($get_verification['verification_step'] == 'Five') { echo "selected"; }?>>Picker</option>
-<option value="Six"<?php if($get_verification['verification_step'] == 'Six') { echo "selected"; }?>>Picker</option>
-<option value="Seven"<?php if($get_verification['verification_step'] == 'Seven') { echo "selected"; }?>>Picker</option>
-<option value="Eight"<?php if($get_verification['verification_step'] == 'Eight') { echo "selected"; }?>>Picker</option>
-<option value="Nine"<?php if($get_verification['verification_step'] == 'Nine') { echo "selected"; }?>>Picker</option>
-<option value="Ten"<?php if($get_verification['verification_step'] == 'Ten') { echo "selected"; }?>>Picker</option>
-<option value="Eleven"<?php if($get_verification['verification_step'] == 'Eleven') { echo "selected"; }?>>Picker</option>
+<option value="Two"<?php if($get_verification['verification_step'] == 'Two') { echo "selected"; }?>>Shipper</option>
+<option value="Three"<?php if($get_verification['verification_step'] == 'Three') { echo "selected"; }?>>In-store Pickup</option>
+<option value="Four"<?php if($get_verification['verification_step'] == 'Four') { echo "selected"; }?>>Ready For Pickup</option>
+<option value="Five"<?php if($get_verification['verification_step'] == 'Five') { echo "selected"; }?>>Picker & Shipper</option>
+<option value="Six"<?php if($get_verification['verification_step'] == 'Six') { echo "selected"; }?>>Picker & In-store Pickup</option>
+<option value="Seven"<?php if($get_verification['verification_step'] == 'Seven') { echo "selected"; }?>>Picker & Ready For Pickup</option>
+<option value="Eight"<?php if($get_verification['verification_step'] == 'Eight') { echo "selected"; }?>>Shipper & In-store Pickup</option>
+<option value="Nine"<?php if($get_verification['verification_step'] == 'Nine') { echo "selected"; }?>>Shipper & Ready For Pickup</option>
+<option value="Ten"<?php if($get_verification['verification_step'] == 'Ten') { echo "selected"; }?>>In-store Pickup & Ready For Pickup</option>
+<option value="Eleven"<?php if($get_verification['verification_step'] == 'Eleven') { echo "selected"; }?>>All</option>
 </select>
 </span>
 </div>
