@@ -259,10 +259,7 @@ SHIPPER
 <label for="radio3">
 READY FOR PICKUP
 </label>
-<input type="radio" name="select_role" class="select_role"  id="radio4" value="instore ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'instore ok') { echo "checked"; } ?>>
-<label for="radio4">
-IN-STORE PICKUP
-</label>           
+            
 <?php } ?>
 </span>
 
@@ -854,12 +851,6 @@ function delete_instore_picker(in_order,shop){
 	  setTimeout(function(){ window.location.reload(); }, 1000);
 }
 function sendvalue(a,b,shop){
-	var select_role = $("input[type='radio'].select_role:checked").val();
-	//alert(select_role);
-	if(select_role != 'instore ok'){
-     alert('Please select correct role !!');
-	}
-	else {
 	var chckbx_val = a;
 	var order_id = b;
 	  var xhttp = new XMLHttpRequest();
@@ -872,7 +863,6 @@ function sendvalue(a,b,shop){
 	  xhttp.open("GET", "../ajax_call.php?shop="+shop+"&chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 1000);
-    }
 }
 function send_picker_value(o,s,ro,qty,shop){
 	var select_role = $("input[type='radio'].select_role:checked").val();
