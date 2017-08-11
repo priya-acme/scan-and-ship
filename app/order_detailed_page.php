@@ -247,15 +247,15 @@ READY FOR PICKUP
 } 
 ?>
 <?php if($get_verification['verification_step'] == 'Three') {?>
-<input type="checkbox" name="select_role" class="select_role" id="radio1" value="Picker ok" onclick="selected_radio(this.value)">
+<input type="checkbox" name="select_role" class="select_role" id="radio1" value="Picker ok">
 <label for="radio1">
 PICKER
 </label>
-<input type="checkbox" name="select_role"  class="select_role" id="radio2" value="Shipper ok" onclick="selected_radio(this.value)">
+<input type="checkbox" name="select_role"  class="select_role" id="radio2" value="Shipper ok">
 <label for="radio2">
 SHIPPER
 </label>
-<input type="checkbox" name="select_role" class="select_role"  id="radio3" value="Receiver ok" onclick="selected_radio(this.value)">
+<input type="checkbox" name="select_role" class="select_role"  id="radio3" value="Receiver ok">
 <label for="radio3">
 READY FOR PICKUP
 </label>
