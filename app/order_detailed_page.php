@@ -259,8 +259,8 @@ SHIPPER
 <label for="radio3">
 READY FOR PICKUP
 </label>
-<input type="radio" name="select_role" class="select_role"  id="radio3" value="instore ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'instore ok') { echo "checked"; } ?>>
-<label for="radio3">
+<input type="radio" name="select_role" class="select_role"  id="radio4" value="instore ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'instore ok') { echo "checked"; } ?>>
+<label for="radio4">
 IN-STORE PICKUP
 </label>           
 <?php } ?>
