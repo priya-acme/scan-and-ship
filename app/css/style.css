@@ -407,7 +407,7 @@ input:checked + .slider:before {
     float: right;
     text-align: right;
     }
-    .no-wrap span.radio.radio-primary{display: block;}
+    .no-wrap span.radio.radio-primary{display: block;margin-top:0}
     }
     .support_link{padding-top: 3px;}
     .no-wrap .role2{float: left;
