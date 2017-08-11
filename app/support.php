@@ -42,7 +42,7 @@ $shop_info = $Stores->is_shop_exists($shop);
 
 </div>
 </div>
-<iframe src="https://services.cognitoforms.com/f/7V6sLEbpNECACUijBJeMyQ?id=1" style="margin:0 auto;position:relative;width:1px;min-width:100%;*width:100%;" frameborder="0" scrolling="yes" seamless="seamless" height="455" width="100%"></iframe>
+<iframe src="https://services.cognitoforms.com/f/7V6sLEbpNECACUijBJeMyQ?id=1" style="margin-left:150px;position:relative;width:1px;min-width:100%;*width:100%;" frameborder="0" scrolling="yes" seamless="seamless" height="455" width="100%"></iframe>
 <script src="https://services.cognitoforms.com/scripts/embed.js"></script>
 
 </body>
