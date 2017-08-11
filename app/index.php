@@ -6,7 +6,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $shop = $_GET['shop'];
  $_SESSION[$shop] = $shop;
  //echo $_SESSION[$shop];
- $code = isset($_GET["code"]) ? $_GET["code"] : false;
+ $code = isset($_GET["hmac"]) ? $_GET["hmac"] : false;
  echo $code;
 if ($code) {
  	// we want to exchange the temp token passed by the shopify server during the installation process
@@ -23,6 +23,7 @@ if ($code) {
  	
  	$access_token = $exchange_token_response->access_token;
  	//echo $access_token;
+ 	
  	// we check if it's a fresh installation
  	$shop_info = $Stores->is_shop_exists($shop);
  	
