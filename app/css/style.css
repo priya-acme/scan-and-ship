@@ -408,3 +408,4 @@ input:checked + .slider:before {
     text-align: right;
     }
     }
+    .support_link{padding-top: 3px;}
