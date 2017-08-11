@@ -19,18 +19,9 @@ $shop_info = $Stores->is_shop_exists($shop);
   <script src="js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 <style>
-.formFooter{
-display : none ! important;
-}
+.cognito .c-forms-form{margin: 0 auto; }
 </style>
-<script>
-$(document).ready(function(){
-setTimeout(function(){
-	$('.formFooter').hide();
-},500)
-	
-})
-</script>
+
 </head>
 <body>
 <div class="margtop30 ordered-header-fixed">
