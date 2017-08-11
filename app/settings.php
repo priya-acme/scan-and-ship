@@ -43,7 +43,7 @@ if(isset($_POST['save_changes'])){
 <a class="order" href="/double-check/app/summary_page.php?shop=<?php echo $shop ?>">BACK TO HOMEPAGE</a>
 
 </div>
-<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" style="text-align:right;color:#fff;float:right">Support</a>
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" class="support_link">Support</a>
 </div>
 </div>
 </div>
