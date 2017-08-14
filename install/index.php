@@ -50,8 +50,8 @@ if ($code) {
 				"created_at" => date("Y-m-d")
 		), "store_url = '$shop'");
 	}
-	//echo APP_URL;
-	header("Location: " . APP_URL."/?shop=$shop");
+	echo APP_URL;
+	//header("Location: " . APP_URL."/?shop=$shop");
 }
 ?>
 
