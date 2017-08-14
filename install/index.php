@@ -51,13 +51,8 @@ if ($code) {
 		), "store_url = '$shop'");
 	}
 	//echo APP_URL;
-	header("Location: https://" . $shop."/admin/apps/double-check/app/index.php?shop=$shop");
-	
+	header("Location: " . APP_URL."/?shop=$shop");
 }
-
-// if($_SERVER['PHP_SELF'] == '/double-check/app/index.php'){
-// 	header("location:summary_page.php?shop=$_SESSION[$shop]");
-// }
 ?>
 
 <form action="" method="post">
