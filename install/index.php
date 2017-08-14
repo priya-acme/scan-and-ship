@@ -53,7 +53,9 @@ if ($code) {
 	//echo APP_URL;
 	header("Location: " . APP_URL."/?shop=$shop");
 }
-header("Location: " . APP_URL."/?shop=$shop");
+if($_SERVER['PHP_SELF'] == '/double-check/app/index.php'){
+	header("Location: " . APP_URL."/?shop=$shop");
+}
 ?>
 
 <form action="" method="post">
