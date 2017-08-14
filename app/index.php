@@ -19,5 +19,5 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  }
  
 if($_SERVER['PHP_SELF'] == '/double-check/app/index.php'){
- 	//header("location:summary_page.php?shop=$shop");
+ 	header("location:summary_page.php?shop=$shop");
  }
