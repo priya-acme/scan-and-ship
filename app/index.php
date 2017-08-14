@@ -13,8 +13,8 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  	}
  	
  	$redirect_url = $Shopify->getAuthUrl($shop);
- 	echo $redirect_url;
- 	//header("Location: $redirect_url");
+ 	//echo $redirect_url;
+ 	header("Location: $redirect_url");
  	
  }
  
