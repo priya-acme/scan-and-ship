@@ -14,8 +14,7 @@ if ($shop && !$code) {
 	}
 	
 	$redirect_url = $Shopify->getAuthUrl($shop);
-	echo $redirect_url;
-	//header("Location: $redirect_url");
+	header("Location: $redirect_url");
 	
 }
 
@@ -52,8 +51,9 @@ if ($code) {
 		), "store_url = '$shop'");
 	}
 	//echo APP_URL;
-//	header("location:summary_page.php?shop=$shop");
+	header("Location: " . APP_URL."/?shop=$shop");
 }
+header("Location: " . APP_URL."/?shop=$shop");
 ?>
 
 <form action="" method="post">

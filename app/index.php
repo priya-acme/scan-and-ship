@@ -4,17 +4,11 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $Shopify = new Shopify();
  $Stores = new Stores();
  $shop = $_GET['shop'];
- $code = isset($_GET["code"]) ? $_GET["code"] : false;
- 
- if ($shop && !$code) {
- 	// validate the shopify url
- 	if (!$Shopify->validateMyShopifyName($shop)) {
- 		echo "Invalid shopify url";
- 	}
- 	
- 	$redirect_url = $Shopify->getAuthUrl($shop);
- 	//echo $redirect_url;
- 	header("Location: $redirect_url");
- 	header("location:/double-check/app/summary_page.php?shop=$shop");
- }
+ $_SESSION[$shop] = $shop;
+ //echo $_SESSION[$shop];
  ?>
+<?php include 'header.php' ?>
+<!-- <div id="content"> -->
+<?php header("location:summary_page.php?shop=$_SESSION[$shop]"); ?>
+
+<?php include 'footer.php' ?>
