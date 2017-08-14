@@ -55,9 +55,9 @@ if ($code) {
 	
 }
 echo $_SERVER['PHP_SELF'];
-if($_SERVER['PHP_SELF'] == '/double-check/app/index.php'){
-	header("location:summary_page.php?shop=$_SESSION[$shop]");
-}
+// if($_SERVER['PHP_SELF'] == '/double-check/app/index.php'){
+// 	header("location:summary_page.php?shop=$_SESSION[$shop]");
+// }
 ?>
 
 <form action="" method="post">
