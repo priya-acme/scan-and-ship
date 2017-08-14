@@ -13,7 +13,8 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  	}
  	
  	$redirect_url = $Shopify->getAuthUrl($shop);
- 	header("Location: $redirect_url");
+ 	echo $redirect_url;
+ 	//header("Location: $redirect_url");
  	
  }
  
@@ -50,8 +51,8 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  		), "store_url = '$shop'");
  	}
  	//echo APP_URL;
- 	header("location:summary_page.php?shop=$shop");
+ 	//header("location:summary_page.php?shop=$shop");
  }
  if($_SERVER['PHP_SELF'] == '/double-check/app/index.php'){
- 	header("location:summary_page.php?shop=$shop");
+ 	//header("location:summary_page.php?shop=$shop");
  }
