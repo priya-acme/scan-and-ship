@@ -52,7 +52,7 @@ if ($code) {
 		), "store_url = '$shop'");
 	}
 	//echo APP_URL;
-	//header("location:summary_page.php?shop=$shop");
+//	header("location:summary_page.php?shop=$shop");
 }
 ?>
 
