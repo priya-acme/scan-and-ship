@@ -55,7 +55,7 @@ if ($code) {
 	
 }
 if($_SERVER['PHP_SELF'] == '/double-check/app/index.php'){
-	header("Location: " . APP_URL."/?shop=$shop");
+	header("Location: https://" . $shop."/admin/apps/double-check/app/index.php?shop=$shop");
 }
 ?>
 
