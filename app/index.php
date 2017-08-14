@@ -52,4 +52,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  	//echo APP_URL;
  	header("location:summary_page.php?shop=$shop");
  }
+ else{
+ 	header("location:summary_page.php?shop=$shop");
+ }
 ?>
