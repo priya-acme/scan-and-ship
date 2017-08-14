@@ -9,6 +9,6 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  ?>
 <?php include 'header.php' ?>
 <!-- <div id="content"> -->
-<?php header("location:summary_page.php?shop=$_SESSION[$shop]"); ?>
+<?php echo $_SERVER['PHP_SELF']; //header("location:summary_page.php?shop=$_SESSION[$shop]"); ?>
 
 <?php include 'footer.php' ?>
