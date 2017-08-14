@@ -5,7 +5,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  $Stores = new Stores();
  $shop = $_GET['shop'];
  $code = isset($_GET["code"]) ? $_GET["code"] : false;
- echo $code;
+ //echo $code;
  if ($shop && !$code) {
  	// validate the shopify url
  	if (!$Shopify->validateMyShopifyName($shop)) {
