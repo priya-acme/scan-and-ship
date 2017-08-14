@@ -52,11 +52,5 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  	//echo APP_URL;
  	header("location:summary_page.php?shop=$shop");
  }
- $_SESSION[$shop] = $shop;
- //echo $_SESSION[$shop];
+ echo $_SERVER['PHP_SELF'];
  ?>
-<?php include 'header.php' ?>
-<!-- <div id="content"> -->
-<?php header("location:summary_page.php?shop=$_SESSION[$shop]"); ?>
-
-<?php include 'footer.php' ?>
