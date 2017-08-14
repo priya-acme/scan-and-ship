@@ -1,3 +1,3 @@
 <?php 
-include "/double-check/app/index.php";
+include "app/index.php";
 ?>
