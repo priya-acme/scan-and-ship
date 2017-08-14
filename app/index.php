@@ -53,6 +53,6 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  	header("location:summary_page.php?shop=$shop");
  }
  else{
- 	header("location:summary_page.php?shop=$shop");
+ 	//header("location:summary_page.php?shop=$shop");
  }
 ?>
