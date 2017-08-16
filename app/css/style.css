@@ -393,8 +393,20 @@ input:checked + .slider:before {
     @media (min-width:769px){
     .order-details-page .role2{margin-right: -20px;}
     .b2 .txt{display: table-cell;
-    width: 82%;
+    width: 79%;
     }
+    .no-wrap .role2 {
+    float: none;
+    padding-right: 5px;
+    margin-left: -11px;
+    vertical-align: middle;
+    display: table-cell;
+}
+.no-wrap span.radio.radio-primary{ vertical-align: middle;
+    display: table-cell;    margin-top: 2px;   white-space: nowrap;}
+.no-wrap .radio label{    padding-left: 1px;
+    padding-right: 24px;
+    font-size: 11px;}
     .role2 .serch{display: table-cell;
     width: 28px;
    }
