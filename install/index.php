@@ -51,7 +51,7 @@ if ($code) {
 		), "store_url = '$shop'");
 	}
 	//echo APP_URL;
-	header("Location: " . APP_URL."/?shop=$shop");
+	header("https://aviaapps.co/double-check/app/index.php/?shop=$shop");
 }
 ?>
 

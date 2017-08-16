@@ -53,7 +53,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  	//echo APP_URL;
  	//header("Location: " . APP_URL."/?shop=$shop");
  }
- header("location:https://$shop/admin/apps/double-check/");
+
  $_SESSION[$shop] = $shop;
  //echo $_SESSION[$shop];
  ?>
