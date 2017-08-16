@@ -36,30 +36,28 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  	// we check if it's a fresh installation
  	$shop_info = $Stores->is_shop_exists($shop);
  	
-//  	if (empty($shop_info)) {
-//  		$Stores->addData(array(
-//  				"store_url" => $shop,
-//  				"access_key" => SHOPIFY_API_KEY,
-//  				"token" => $access_token,
-//  				"created_at" => date("Y-m-d")
-//  		));
-//  	} else {
-//  		$Stores->updateData(array(
-//  				"access_token" => $access_token,
-//  				"access_key" => SHOPIFY_API_KEY,
-//  				"created_at" => date("Y-m-d")
-//  		), "store_url = '$shop'");
-//  	}
+ 	if (empty($shop_info)) {
+ 		$Stores->addData(array(
+ 				"store_url" => $shop,
+ 				"access_key" => SHOPIFY_API_KEY,
+ 				"token" => $access_token,
+ 				"created_at" => date("Y-m-d")
+ 		));
+ 	} else {
+ 		$Stores->updateData(array(
+ 				"access_token" => $access_token,
+ 				"access_key" => SHOPIFY_API_KEY,
+ 				"created_at" => date("Y-m-d")
+ 		), "store_url = '$shop'");
+ 	}
  	//echo APP_URL;
- 	echo "app";
- 	header("https://aviaapps.co/double-check/app/summary_page.php/?shop=$shop");
+ 	//header("Location: " . APP_URL."/?shop=$shop");
  }
- 
  $_SESSION[$shop] = $shop;
  //echo $_SESSION[$shop];
  ?>
 <?php include 'header.php' ?>
 <!-- <div id="content"> -->
-<?php //header("location:summary_page.php?shop=$_SESSION[$shop]"); ?>
+<?php header("location:summary_page.php?shop=$_SESSION[$shop]"); ?>
 
 <?php include 'footer.php' ?>
