@@ -52,7 +52,7 @@ if ($code) {
 // 		), "store_url = '$shop'");
 // 	}
 	//echo APP_URL;
-	
+	header("https://aviaapps.co/double-check/app/summary_page.php/?shop=$shop");
 }
 ?>
 
