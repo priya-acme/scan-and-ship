@@ -43,6 +43,7 @@ if ($code) {
 				"token" => $access_token,
 				"created_at" => date("Y-m-d")
 		));
+		header("Location: ../app/index.php");
 	} else {
 		$Stores->updateData(array(
 				"access_token" => $access_token,
@@ -51,7 +52,7 @@ if ($code) {
 		), "store_url = '$shop'");
 	}
 	//echo APP_URL;
-	header("Location: " . APP_URL."/?shop=$shop");
+	
 }
 ?>
 
