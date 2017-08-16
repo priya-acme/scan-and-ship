@@ -391,6 +391,13 @@ input:checked + .slider:before {
 }
 
     @media (min-width:769px){
+    .order-details-page .role2{margin-right: -20px;}
+    .b2 .txt{display: table-cell;
+    width: 82%;
+    }
+    .role2 .serch{display: table-cell;
+    width: 28px;
+   }
     .b1 {
     display: table-cell;
     padding-right: 5px;
