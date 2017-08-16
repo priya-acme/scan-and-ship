@@ -4,7 +4,6 @@ include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_REQUEST['shop'];
-echo $_SERVER['PHP_SELF'];
 $shop_info = $Stores->is_shop_exists($shop);
 $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
 $count_val = ceil($count_orders->count / 250);
@@ -39,7 +38,8 @@ if(isset($_POST['submit_id'])){
 <a href="/double-check/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
-<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" class="support_link">Support</a>
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" class="support_link">Support <?php 
+echo $_SERVER['PHP_SELF']; ?></a>
 </div>
 </div>
 </div>
