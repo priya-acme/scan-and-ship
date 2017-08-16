@@ -8,6 +8,7 @@ $shop =  $_REQUEST['shop'];
 //  $redirect_url = $Shopify->checkAuthUrl($shop);
 //  //echo $redirect_url;
 //   header("Location: $redirect_url");
+header('location:https://livestock-5.myshopify.com/admin/apps/double-check');
 $shop_info = $Stores->is_shop_exists($shop);
 $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
 $count_val = ceil($count_orders->count / 250);
