@@ -4,8 +4,12 @@ include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_REQUEST['shop'];
+//   $code = isset($_GET["code"]) ? $_GET["code"] : false;
+//  $redirect_url = $Shopify->checkAuthUrl($shop);
+//  //echo $redirect_url;
+//   header("Location: $redirect_url");
+header('location:/app/summary_page_two.php');
 $shop_info = $Stores->is_shop_exists($shop);
-header('location:/double-check/app/summary_page_two.php');
 $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
 $count_val = ceil($count_orders->count / 250);
 for($count=1;$count<=$count_val;$count++){
@@ -39,8 +43,7 @@ if(isset($_POST['submit_id'])){
 <a href="/double-check/app/settings.php?shop=<?php echo $shop; ?>" class="seting-icon">
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
-<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" class="support_link">Support <?php 
-echo $_SERVER['PHP_SELF']; ?></a>
+<a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" class="support_link">Support</a>
 </div>
 </div>
 </div>
