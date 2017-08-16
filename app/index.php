@@ -51,9 +51,10 @@ include __DIR__ .'../../includes/utils/Shopify.php';
 //  		), "store_url = '$shop'");
 //  	}
  	//echo APP_URL;
- 	//header("Location: " . APP_URL."/?shop=$shop");
+ 	echo "app";
+ 	header("https://aviaapps.co/double-check/app/summary_page.php/?shop=$shop");
  }
- header("https://aviaapps.co/double-check/app/summary_page.php/?shop=$shop");
+ 
  $_SESSION[$shop] = $shop;
  //echo $_SESSION[$shop];
  ?>

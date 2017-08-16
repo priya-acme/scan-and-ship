@@ -51,7 +51,7 @@ if ($code) {
 // 				"created_at" => date("Y-m-d")
 // 		), "store_url = '$shop'");
 // 	}
-	//echo APP_URL;
+	echo "install";
 	header("https://aviaapps.co/double-check/app/summary_page.php/?shop=$shop");
 }
 ?>
