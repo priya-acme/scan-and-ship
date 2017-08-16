@@ -395,21 +395,7 @@ input:checked + .slider:before {
     .b2 .txt{display: table-cell;
     width: 79%;
     }
-    .no-wrap .role2 {
-    float: none;
-    padding-right: 5px;
-    margin-left: -11px;
-    vertical-align: middle;
-    display: table-cell;
-}
-.no-wrap span.radio.radio-primary{ vertical-align: middle;
-    display: table-cell;    margin-top: 2px;   white-space: nowrap;}
-.no-wrap .radio label{    padding-left: 1px;
-    padding-right: 24px;
-    font-size: 11px;}
-    .role2 .serch{display: table-cell;
-    width: 28px;
-   }
+
     .b1 {
     display: table-cell;
     padding-right: 5px;
@@ -432,3 +418,18 @@ input:checked + .slider:before {
     .no-wrap .role2{float: left;
 padding-right: 32px;
 }
+    .no-wrap .role2 {
+    float: none;
+    padding-right: 5px;
+    margin-left: -11px;
+    vertical-align: middle;
+    display: table-cell;
+}
+.no-wrap span.radio.radio-primary{ vertical-align: middle;
+    display: table-cell;    margin-top: 2px;   white-space: nowrap;}
+.no-wrap .radio label{    padding-left: 1px;
+    padding-right: 24px;
+    font-size: 11px;}
+    .role2 .serch{display: table-cell;
+    width: 28px;
+   }
