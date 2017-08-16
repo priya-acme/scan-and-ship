@@ -698,6 +698,7 @@ READY FOR PICKUP
 //     $("#table1").stickyTableHeaders();
    
 // });
+alert(window.location.href);
 function delete_instore_picker(in_order,shop){
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
