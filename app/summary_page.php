@@ -40,7 +40,7 @@ if(isset($_POST['submit_id'])){
 <i class="fa fa-cog" aria-hidden="true"></i>
 </a>
 <a href="/double-check/app/support.php?shop=<?php echo $shop; ?>" class="support_link">Support <?php 
-//echo $_SERVER['PHP_SELF']; ?></a>
+echo $_SERVER['PHP_SELF']; ?></a>
 </div>
 </div>
 </div>
