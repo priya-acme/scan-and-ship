@@ -36,21 +36,21 @@ if ($code) {
 	// we check if it's a fresh installation
 	$shop_info = $Stores->is_shop_exists($shop);
 	
-	if (empty($shop_info)) {
-		$Stores->addData(array(
-				"store_url" => $shop,
-				"access_key" => SHOPIFY_API_KEY,
-				"token" => $access_token,
-				"created_at" => date("Y-m-d")
-		));
-		header("Location: ../app/index.php");
-	} else {
-		$Stores->updateData(array(
-				"access_token" => $access_token,
-				"access_key" => SHOPIFY_API_KEY,
-				"created_at" => date("Y-m-d")
-		), "store_url = '$shop'");
-	}
+// 	if (empty($shop_info)) {
+// 		$Stores->addData(array(
+// 				"store_url" => $shop,
+// 				"access_key" => SHOPIFY_API_KEY,
+// 				"token" => $access_token,
+// 				"created_at" => date("Y-m-d")
+// 		));
+		
+// 	} else {
+// 		$Stores->updateData(array(
+// 				"access_token" => $access_token,
+// 				"access_key" => SHOPIFY_API_KEY,
+// 				"created_at" => date("Y-m-d")
+// 		), "store_url = '$shop'");
+// 	}
 	//echo APP_URL;
 	
 }
