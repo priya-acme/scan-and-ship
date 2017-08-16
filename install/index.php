@@ -51,7 +51,7 @@ if ($code) {
 		), "store_url = '$shop'");
 	}
 	//echo APP_URL;
-	header("location:https://$shop/admin/apps/double-check/");
+	header("Location: " . APP_URL."/?shop=$shop");
 }
 ?>
 
