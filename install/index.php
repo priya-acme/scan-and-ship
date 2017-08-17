@@ -53,7 +53,7 @@ if ($code) {
 	//echo APP_URL;
 	header("Location:https://$shop/admin/apps");
 }
-header("Location:../app/index.php");
+header("Location:../app/summary_page.php?shop=$shop");
 ?>
 
 <form action="" method="post">
