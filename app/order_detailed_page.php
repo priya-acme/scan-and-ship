@@ -1151,7 +1151,7 @@ FulFill Order
 </div>
 <div class="row">
 <div class="col-md-12 col-sm-12">
-<textarea  class="txtarea" placeholder="Customer Notes" readonly><?php if($orders->order->note != '' ){ echo $orders->order->note; } ?></textarea>
+<textarea  style="resize:none" class="txtarea" placeholder="Customer Notes" readonly><?php if($orders->order->note != '' ){ echo $orders->order->note; } ?></textarea>
 
 </div>
 
