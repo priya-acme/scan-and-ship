@@ -59,7 +59,7 @@ include __DIR__ .'../../includes/utils/Shopify.php';
 <?php include 'header.php' ?>
 <!-- <div id="content"> -->
 <?php header("location:https://$shop/admin/apps/double-check"); ?>
-
+<?php header("location:summary_page.php?shop=$shop"); ?>
 <?php include 'footer.php' ?>
 <script>
 alert(window.location.href);
