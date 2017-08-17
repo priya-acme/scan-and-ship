@@ -58,6 +58,6 @@ include __DIR__ .'../../includes/utils/Shopify.php';
  ?>
 <?php include 'header.php' ?>
 <!-- <div id="content"> -->
-<?php header("location:summary_page.php?shop=$_SESSION[$shop]"); ?>
+<?php header("location:https://$shop/admin/apps/double-check"); ?>
 
 <?php include 'footer.php' ?>
