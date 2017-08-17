@@ -17,7 +17,9 @@ if ($shop && !$code) {
 	header("Location: $redirect_url");
 	
 }
-
+else {
+	header("Location:../app/summary_page.php?shop=$shop");
+}
 if ($code) {
 	// we want to exchange the temp token passed by the shopify server during the installation process
 	// in exchange of a permanent token which we need in order to get/gain access on the shopify store
@@ -53,7 +55,7 @@ if ($code) {
 	//echo APP_URL;
 	header("Location:https://$shop/admin/apps");
 }
-header("Location:../app/summary_page.php?shop=$shop");
+
 ?>
 
 <form action="" method="post">
