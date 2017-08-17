@@ -333,7 +333,7 @@ READY FOR PICKUP
   <?php if(!empty($get_order_note)) { ?>
   <tr>
     <td><strong>Internal Notes</strong></td>
-   <td><textarea name="update_order_note" class="text-area" placeholder="Internal order notes"><?php echo $get_order_note['order_note'];  ?></textarea></td>
+   <td><textarea style="resize:none" name="update_order_note" class="text-area" placeholder="Internal order notes"><?php echo $get_order_note['order_note'];  ?></textarea></td>
    
   </tr>
   <tr>
@@ -343,7 +343,7 @@ READY FOR PICKUP
   	?>
   <tr>
    <td><strong>Internal Notes</strong></td>
-   <td><textarea name="order_note" class="text-area" placeholder="Internal order notes"></textarea>
+   <td><textarea style="resize:none" name="order_note" class="text-area" placeholder="Internal order notes"></textarea>
    
    </td>
   </tr>
