@@ -1176,7 +1176,9 @@ if($get_verification['fulfill_order'] == 'On') {
 }
 ?>
 <script>
-
+$(document).bind("contextmenu",function(e){
+	  return false;
+	 });
 function create_fulfilled_order(forder_id,shop){
  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {

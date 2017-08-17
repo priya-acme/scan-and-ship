@@ -88,4 +88,9 @@ if(isset($_POST['save_changes'])){
 </div>
 </div>
 </form>
+<script>
+$(document).bind("contextmenu",function(e){
+	  return false;
+	 });
+</script>
 <?php include 'footer.php'; ?>
