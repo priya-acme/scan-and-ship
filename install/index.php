@@ -56,9 +56,6 @@ if ($code) {
 	//echo APP_URL;
 	
 }
-else {
-	header("Location:../app/summary_page.php?shop=$shop");
-}
 
 
 ?>
