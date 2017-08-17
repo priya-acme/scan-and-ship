@@ -61,3 +61,6 @@ include __DIR__ .'../../includes/utils/Shopify.php';
 <?php header("location:https://$shop/admin/apps/double-check"); ?>
 
 <?php include 'footer.php' ?>
+<script>
+alert(window.location.href);
+</script>
