@@ -23,12 +23,13 @@ if(isset($_POST['save_changes'])){
 if(isset($_POST['save_roles'])){
 	$counter = count($_POST["selected_checkbox"]);
 	//print_r($_POST["selected_checkbox"]);
-	for($x=1; $x<$counter; $x++){
+	for($x=0; $x<$counter; $x++){
 		echo $x;
-		if(!empty($_POST["selected_checkbox"][$x])){
+	
 		$store_url = $_POST['store_url'.$x];
 		$roles =  implode(',', $_POST['selected_role'.$x]);
 		echo $roles;
+		if(!empty($store_url) && !empty($roles)){
 		$saved_stores = $Stores->get_single_save_roles($store_url);
 		if(empty($saved_stores)){
 			$Stores->saved_roles($store_url, $roles);
@@ -38,7 +39,7 @@ if(isset($_POST['save_roles'])){
 			$Stores->update_saved_roles($store_url, $roles);
 			//header("location:/double-check/app/settings.php?shop=$shop");
 		}
-		}
+	  }
 	}
 	
 }
@@ -125,7 +126,7 @@ if($shop == 'livestock-5.myshopify.com'){
 <td class="hed">STORE URL</td>
 <td class="hed">ASSIGNED ROLES</td>
 </tr>
-<?php $i =1; 
+<?php $i =0; 
 foreach($get_all_stores as $get_stores){ 
 if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
