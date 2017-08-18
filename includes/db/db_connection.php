@@ -277,9 +277,11 @@ class DB_Connection{
 	}
 	function get_saved_role(){
 		$query = "select * from `assigned_roles`";
-		echo $query;
 		$result = mysqli_query($this->connection, $query);
-		return mysqli_fetch_assoc($result);
+		while($row = mysqli_fetch_assoc($result)){
+			$rows[] = $row;
+		}
+		echo $rows;
 	}
 	function update_saved_role($store_url,$role){
 		$query = "update `assigned_roles` set roles='$role' where store_urls='$store_url'";
