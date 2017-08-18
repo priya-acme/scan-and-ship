@@ -123,8 +123,8 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <td class="hed"><?php  echo $get_stores['store_url'];  ?>
 <input type="hidden" name="store_url<?php echo $i; ?>" value="<?php  echo $get_stores['store_url'];  ?>" /></td>
 <td class="hed">
-<input type="checkbox" name="selected_role[]<?php echo $i; ?>" value="ready for pickup">Ready For Pickup &nbsp;&nbsp;
-<input type="checkbox" name="selected_role[]<?php echo $i; ?>" value="instore pickup">Instore Pickup
+<input type="checkbox" name="selected_role<?php echo $i; ?>[]" value="ready for pickup">Ready For Pickup &nbsp;&nbsp;
+<input type="checkbox" name="selected_role<?php echo $i; ?>[]" value="instore pickup">Instore Pickup
  </td>
 </tr>
 <?php $i++; } } ?>
