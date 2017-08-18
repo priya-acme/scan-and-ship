@@ -19,7 +19,7 @@ if(isset($_POST['save_changes'])){
 	}
 }
 $get_all_stores = $Stores->get_store();
-print_r($get_all_stores);
+//print_r($get_all_stores);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +94,7 @@ if($shop == 'livestock-5.myshopify.com'){
 <td class="hed">STORE URL</td>
 <td class="hed">ASSIGNED ROLES</td>
 </tr>
-<?php foreach($get_stores as $get_all_stores){ ?>
+<?php foreach($get_all_stores as $get_stores){ ?>
 <tr>
 <td><input type="checkbox" name="selected_checkbox" /></td>
 <td class="hed"><?php echo $get_stores['store_url'] ?></td>
