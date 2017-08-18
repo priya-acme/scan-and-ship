@@ -79,7 +79,17 @@ if(isset($_POST['save_changes'])){
 </span>
 </div>
 </div>
-<?php echo $shop; ?>
+<?php
+if($shop == 'livestock-5.myshopify.com'){
+?>
+<div class="row">
+<div class="col-sm-12 col-sm-12 marbot30">
+<span class="role2">ROLE DEFINITION FOR STORES</span>
+</div>
+</div>
+<?php 	
+}
+?>
 <div class="row">
 <div class="col-sm-12 col-sm-12 marbot30">
 <input type="submit" name="save_changes" value="Save Changes">
