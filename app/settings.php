@@ -18,13 +18,14 @@ if(isset($_POST['save_changes'])){
 		header("location:/double-check/app/settings.php?shop=$shop");
 	}
 }
+
+print_r($Stores->get_save_roles($store_url));
 if(isset($_POST['save_roles'])){
 	$counter = count($_POST["selected_checkbox"]);
 	//print_r($_POST["selected_checkbox"]);
 	for($x=0; $x<$counter; $x++){
 		$store_url = $_POST['store_url'.$x];
 		$roles =  implode(',', $_POST['selected_role'.$x]);
-		print_r($Stores->get_save_roles($store_url));
 //         $Stores->saved_roles($store_url, $roles);
 //         header("location:/double-check/app/settings.php?shop=$shop");
 		
