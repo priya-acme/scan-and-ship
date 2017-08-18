@@ -87,6 +87,7 @@ if($shop == 'livestock-5.myshopify.com'){
 <div class="row">
 <div class="col-sm-12 col-sm-12 marbot30">
 <span class="role2">ROLE DEFINITION FOR STORES</span>
+<br>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
 <thead>
 <tr>
