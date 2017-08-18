@@ -20,7 +20,7 @@ if(isset($_POST['save_changes'])){
 }
 if(isset($_POST['save_roles'])){
 	$counter = count($_POST["selected_checkbox"]);
-	echo $counter;
+	echo "<script>alert(".$counter.")</script>";
 	header("location:/double-check/app/settings.php?shop=$shop");
 }
 $get_all_stores = $Stores->get_store();
