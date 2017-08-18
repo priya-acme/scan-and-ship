@@ -134,5 +134,12 @@ class Stores extends DB_Connection{
 	function delete_instore_pickup_order($order_id){
 		return $this->delete_instore_pickup($order_id);
 	}
+	
+	// save role
+	
+	function saved_roles($store_url,$role){
+		return $this->save_roles($store_url,$role);
+	}
+	
 }
 ?>
