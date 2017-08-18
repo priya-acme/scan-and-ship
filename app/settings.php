@@ -19,6 +19,7 @@ if(isset($_POST['save_changes'])){
 	}
 }
 $get_all_stores = $Stores->get_store();
+print_r($get_all_stores);
 ?>
 <!DOCTYPE html>
 <html lang="en">
