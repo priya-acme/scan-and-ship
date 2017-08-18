@@ -18,6 +18,7 @@ if(isset($_POST['save_changes'])){
 		header("location:/double-check/app/settings.php?shop=$shop");
 	}
 }
+$get_all_stores = $Stores->get_store();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,6 +86,22 @@ if($shop == 'livestock-5.myshopify.com'){
 <div class="row">
 <div class="col-sm-12 col-sm-12 marbot30">
 <span class="role2">ROLE DEFINITION FOR STORES</span>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
+<thead>
+<tr>
+<td><input type="checkbox" name="select_all" /></td>
+<td class="hed">STORE URL</td>
+<td class="hed">ASSIGNED ROLES</td>
+</tr>
+<?php foreach($get_stores as $get_all_stores){ ?>
+<tr>
+<td><input type="checkbox" name="selected_checkbox" /></td>
+<td class="hed"><?php echo $get_stores['store_url'] ?></td>
+<td class="hed">ASSIGNED ROLES</td>
+</tr>
+<?php } ?>
+</thead>
+</table>
 </div>
 </div>
 <?php 	

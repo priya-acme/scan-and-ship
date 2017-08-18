@@ -11,6 +11,9 @@ class Stores extends DB_Connection{
 	function is_shop_exists($shop){
 		return $this->select($this->table_name , "*" ,"store_url='$shop'");
 	}
+	function get_store(){
+		return $this->get_all_stores($this->table_name , "*" );
+	}
 	function addData($data){
 		//print_r($data);
 		return $this->add($this->table_name , $data);

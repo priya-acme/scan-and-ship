@@ -63,6 +63,11 @@ class DB_Connection{
 		}
 	}
 	
+	function get_all_stores($table,$columns = "*" ){
+		$query = "SELECT $columns from $table ";
+	        $result = mysqli_query($this->connection, $query);
+			return mysqli_fetch_assoc($result);
+	}
 	// picker
 	
 	function order_verification($sku,$barcode,$order_id,$verification,$qty){
