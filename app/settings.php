@@ -22,7 +22,7 @@ if(isset($_POST['save_roles'])){
 	$counter = count($_POST["selected_checkbox"]);
 	print_r($_POST["selected_checkbox"]);
 	for($x=0; $x<=$counter; $x++){
-		$store_url = $_POST['store_url'][$x];
+		$store_url = $_POST['store_url'.$x];
 		echo $store_url;
 		$roles =  implode(',', $_POST['selected_role']);
 		echo $roles;
