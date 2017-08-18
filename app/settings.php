@@ -91,7 +91,7 @@ if($shop == 'livestock-5.myshopify.com'){
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
 <thead>
 <tr>
-<td><input type="checkbox" name="select_all" /></td>
+<td>SELECT</td>
 <td class="hed">STORE URL</td>
 <td class="hed">ASSIGNED ROLES</td>
 </tr>
