@@ -152,7 +152,7 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 </form>
 <script>
 $(document).bind("contextmenu",function(e){
-	  //return false;
+	  return false;
 	 });
 </script>
 <?php include 'footer.php'; ?>
