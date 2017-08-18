@@ -26,10 +26,15 @@ if(isset($_POST['save_roles'])){
 	for($x=0; $x<$counter; $x++){
 		$store_url = $_POST['store_url'.$x];
 		$roles =  implode(',', $_POST['selected_role'.$x]);
-		$Stores->get_single_save_roles($store_url);
-//         $Stores->saved_roles($store_url, $roles);
-//         header("location:/double-check/app/settings.php?shop=$shop");
-		
+		$saved_stores = $Stores->get_single_save_roles($store_url);
+		if(empty($saved_stores)){
+        $Stores->saved_roles($store_url, $roles);
+        header("location:/double-check/app/settings.php?shop=$shop");
+		}
+		else {
+			$Stores->update_saved_roles($store_url, $roles);
+			header("location:/double-check/app/settings.php?shop=$shop");
+		}
 	}
 	
 }
