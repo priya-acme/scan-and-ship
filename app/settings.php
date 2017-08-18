@@ -19,7 +19,7 @@ if(isset($_POST['save_changes'])){
 	}
 }
 
-print_r($Stores->get_save_roles());
+//print_r($Stores->get_save_roles());
 if(isset($_POST['save_roles'])){
 	$counter = count($_POST["selected_checkbox"]);
 	//print_r($_POST["selected_checkbox"]);
