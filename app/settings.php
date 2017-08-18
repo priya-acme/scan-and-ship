@@ -18,6 +18,10 @@ if(isset($_POST['save_changes'])){
 		header("location:/double-check/app/settings.php?shop=$shop");
 	}
 }
+if(isset($_POST['save_roles'])){
+	$counter = count($_POST["selected_checkbox"]);
+	echo $counter;
+}
 $get_all_stores = $Stores->get_store();
 //print_r($get_all_stores);
 ?>
@@ -81,6 +85,12 @@ $get_all_stores = $Stores->get_store();
 </span>
 </div>
 </div>
+
+<div class="row">
+<div class="col-sm-12 col-sm-12 marbot30">
+<input type="submit" name="save_changes" value="Save Changes">
+</div>
+</div>
 <?php
 if($shop == 'livestock-5.myshopify.com'){
 ?>
@@ -98,7 +108,7 @@ if($shop == 'livestock-5.myshopify.com'){
 <?php foreach($get_all_stores as $get_stores){ 
 if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
-<td><input type="checkbox" name="selected_checkbox" /></td>
+<td><input type="checkbox" name="selected_checkbox[]" /></td>
 <td class="hed"><?php  echo $get_stores['store_url'];  ?></td>
 <td class="hed">
 <input type="checkbox" name="selected_role[]" value="ready for pickup">Ready For Pickup &nbsp;&nbsp;
@@ -110,15 +120,14 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 </table>
 </div>
 </div>
+<div class="row">
+<div class="col-sm-12 col-sm-12">
+<input type="submit" name="save_roles" value="Save Roles">
+</div>
+</div>
 <?php 	
 }
 ?>
-<div class="row">
-<div class="col-sm-12 col-sm-12 marbot30">
-<input type="submit" name="save_changes" value="Save Changes">
-</div>
-</div>
-
 </div>
 </div>
 </form>
