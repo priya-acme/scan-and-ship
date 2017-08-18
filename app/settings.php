@@ -23,11 +23,9 @@ if(isset($_POST['save_roles'])){
 	//print_r($_POST["selected_checkbox"]);
 	for($x=0; $x<$counter; $x++){
 		$store_url = $_POST['store_url'.$x];
-		//echo $store_url;
 		$roles =  implode(',', $_POST['selected_role'.$x]);
-		echo $roles;
-        //$Stores->saved_roles($store_url, $role);
-        //header("location:/double-check/app/settings.php?shop=$shop");
+        $Stores->saved_roles($store_url, $role);
+        header("location:/double-check/app/settings.php?shop=$shop");
 		
 	}
 	
