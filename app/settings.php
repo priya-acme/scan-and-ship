@@ -79,6 +79,7 @@ if(isset($_POST['save_changes'])){
 </span>
 </div>
 </div>
+<?php echo $shop; ?>
 <div class="row">
 <div class="col-sm-12 col-sm-12 marbot30">
 <input type="submit" name="save_changes" value="Save Changes">
