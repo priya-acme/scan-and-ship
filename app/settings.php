@@ -97,7 +97,7 @@ if($shop == 'livestock-5.myshopify.com'){
 <?php foreach($get_all_stores as $get_stores){ ?>
 <tr>
 <td><input type="checkbox" name="selected_checkbox" /></td>
-<td class="hed"><?php if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ echo $get_stores['store_url'] } ?></td>
+<td class="hed"><?php if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ echo $get_stores['store_url']; } ?></td>
 <td class="hed">
 <input type="checkbox" name="selected_role[]" value="ready for pickup">Ready For Pickup
 <input type="checkbox" name="selected_role[]" value="instore pickup">Instore Pickup
