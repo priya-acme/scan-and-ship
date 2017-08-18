@@ -23,11 +23,12 @@ if(isset($_POST['save_changes'])){
 if(isset($_POST['save_roles'])){
 	$counter = count($_POST["selected_checkbox"]);
 	//print_r($_POST["selected_checkbox"]);
-	for($x=0; $x<=$counter; $x++){
+	for($x=0; $x<$counter; $x++){
 		echo $x;
 		if(!empty($_POST["selected_checkbox".$x])){
 		$store_url = $_POST['store_url'.$x];
 		$roles =  implode(',', $_POST['selected_role'.$x]);
+		echo $roles;
 		$saved_stores = $Stores->get_single_save_roles($store_url);
 		if(empty($saved_stores)){
 			$Stores->saved_roles($store_url, $roles);
