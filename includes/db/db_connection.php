@@ -281,7 +281,7 @@ class DB_Connection{
 		while($row = mysqli_fetch_assoc($result)){
 			$rows[] = $row;
 		}
-		echo $rows;
+		print_r($rows);
 	}
 	function update_saved_role($store_url,$role){
 		$query = "update `assigned_roles` set roles='$role' where store_urls='$store_url'";
