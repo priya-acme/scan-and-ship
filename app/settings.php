@@ -112,18 +112,19 @@ if($shop == 'livestock-5.myshopify.com'){
 <td class="hed">STORE URL</td>
 <td class="hed">ASSIGNED ROLES</td>
 </tr>
-<?php foreach($get_all_stores as $get_stores){ 
+<?php $i =0; 
+foreach($get_all_stores as $get_stores){ 
 if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
 <td><input type="checkbox" name="selected_checkbox[]" /></td>
 <td class="hed"><?php  echo $get_stores['store_url'];  ?>
-<input type="hidden" name="store_url" value="<?php  echo $get_stores['store_url'];  ?>" /></td>
+<input type="hidden" name="store_url<?php echo $i; ?>" value="<?php  echo $get_stores['store_url'];  ?>" /></td>
 <td class="hed">
 <input type="checkbox" name="selected_role[]" value="ready for pickup">Ready For Pickup &nbsp;&nbsp;
 <input type="checkbox" name="selected_role[]" value="instore pickup">Instore Pickup
  </td>
 </tr>
-<?php } } ?>
+<?php $i++; } } ?>
 </thead>
 </table>
 </div>
@@ -141,7 +142,7 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 </form>
 <script>
 $(document).bind("contextmenu",function(e){
-	  return false;
+	  //return false;
 	 });
 </script>
 <?php include 'footer.php'; ?>
