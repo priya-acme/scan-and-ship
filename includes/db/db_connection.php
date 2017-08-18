@@ -273,7 +273,8 @@ class DB_Connection{
 	// save roles
 	function save_roles($store_url,$role){
 		$qry="INSERT INTO `assigned_roles` (store_urls,roles) VALUES ('$store_url','$roles')";
-		$result = mysqli_query($this->connection, $qry);
+		echo $qry;
+		//$result = mysqli_query($this->connection, $qry);
 	}
 	
 }
