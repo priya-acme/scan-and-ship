@@ -42,6 +42,7 @@ if(isset($_POST['save_roles'])){
 $get_all_stores = $Stores->get_store();
 $saved_stores = $Stores->get_save_roles();
 //print_r($saved_stores);
+$get_single_store = $Stores->get_single_save_roles($shop);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,16 +79,69 @@ $saved_stores = $Stores->get_save_roles();
 <select name="select_veri">
 <option value="">-select role--</option>
 <option value="One"<?php if($get_verification['verification_step'] == 'One') { echo "selected"; }?>>Picker</option>
+
 <option value="Two"<?php if($get_verification['verification_step'] == 'Two') { echo "selected"; }?>>Shipper</option>
+
+<?php 
+if($shop != 'livestock-5.myshopify.com' ){
+$get_single_role = explode(",",$get_single_store['roles']); 
+if(in_array("instore pickup", $get_single_role)){ 
+?>
 <option value="Three"<?php if($get_verification['verification_step'] == 'Three') { echo "selected"; }?>>In-store Pickup</option>
+<?php } } ?>
+
+<?php 
+if($shop != 'livestock-5.myshopify.com' ){
+$get_single_role = explode(",",$get_single_store['roles']); 
+if(in_array("ready for pickup", $get_single_role)){ 
+?>
 <option value="Four"<?php if($get_verification['verification_step'] == 'Four') { echo "selected"; }?>>Ready For Pickup</option>
+<?php } } ?>
+
 <option value="Five"<?php if($get_verification['verification_step'] == 'Five') { echo "selected"; }?>>Picker & Shipper</option>
+
+<?php 
+if($shop != 'livestock-5.myshopify.com' ){
+$get_single_role = explode(",",$get_single_store['roles']); 
+if(in_array("instore pickup", $get_single_role)){ 
+?>
 <option value="Six"<?php if($get_verification['verification_step'] == 'Six') { echo "selected"; }?>>Picker & In-store Pickup</option>
+<?php } } ?>
+
 <option value="Seven"<?php if($get_verification['verification_step'] == 'Seven') { echo "selected"; }?>>Picker & Ready For Pickup</option>
+
+<?php 
+if($shop != 'livestock-5.myshopify.com' ){
+$get_single_role = explode(",",$get_single_store['roles']); 
+if(in_array("instore pickup", $get_single_role)){ 
+?>
 <option value="Eight"<?php if($get_verification['verification_step'] == 'Eight') { echo "selected"; }?>>Shipper & In-store Pickup</option>
+<?php } } ?>
+
+<?php 
+if($shop != 'livestock-5.myshopify.com' ){
+$get_single_role = explode(",",$get_single_store['roles']); 
+if(in_array("ready for pickup", $get_single_role)){ 
+?>
 <option value="Nine"<?php if($get_verification['verification_step'] == 'Nine') { echo "selected"; }?>>Shipper & Ready For Pickup</option>
+<?php } } ?>
+
+<?php 
+if($shop != 'livestock-5.myshopify.com' ){
+$get_single_role = explode(",",$get_single_store['roles']); 
+if(in_array("instore pickup", $get_single_role) && in_array("ready for pickup", $get_single_role)){ 
+?>
 <option value="Ten"<?php if($get_verification['verification_step'] == 'Ten') { echo "selected"; }?>>In-store Pickup & Ready For Pickup</option>
+<?php } } ?>
+
+<?php
+if($shop != 'livestock-5.myshopify.com' ){
+$get_single_role = explode(",",$get_single_store['roles']); 
+if(in_array("instore pickup", $get_single_role) && in_array("ready for pickup", $get_single_role)){ 
+?>
 <option value="Eleven"<?php if($get_verification['verification_step'] == 'Eleven') { echo "selected"; }?>>All</option>
+<?php } } ?>
+
 </select>
 </span>
 </div>
