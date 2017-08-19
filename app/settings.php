@@ -124,7 +124,7 @@ if($shop == 'livestock-5.myshopify.com'){
 <td class="hed">STORE URL</td>
 <td class="hed">ASSIGNED ROLES</td>
 </tr>
-<?php $i =1; 
+<?php $i = 0; 
 foreach($get_all_stores as $get_stores){ 
 if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
