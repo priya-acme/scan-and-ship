@@ -227,7 +227,7 @@ READY FOR PICKUP
  ?>
   <tr>
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/double-check/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
-    <td width="12%"><strong><?php  echo $result[0]; //echo " ".$total_days ?></strong></td>
+    <td width="12%"><strong><?php  echo $result[0]; echo " ".$total_days ?></strong></td>
     <td width="12%"><strong><?php echo $order->shipping_address->first_name." ".$order->shipping_address->last_name; ?></strong></td>
     
     <!--  one step verification starts -->
