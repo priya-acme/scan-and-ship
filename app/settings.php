@@ -123,7 +123,7 @@ if($shop == 'livestock-5.myshopify.com'){
 </tr>
 <?php $i = 0; 
 foreach($get_all_stores as $get_stores){ 
-foreach($$saved_stores as $saved_store){
+foreach($saved_stores as $saved_store){
 if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
 <td><input type="checkbox" name="selected_checkbox[]" value="<?php echo $i?>" <?php if($saved_store['store_urls'] == $get_stores['store_url'] ){ echo "checked"; }?>/></td>
