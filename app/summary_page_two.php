@@ -219,11 +219,12 @@ READY FOR PICKUP
    
   <?php for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) {   ?>
   <?php //echo "<pre>";
+	echo $count;
     $now = date("Y-m-d");
     $input = $order->updated_at; 
 	$result = explode('T',$input);
 	$total_days = round(abs(strtotime($now)-strtotime($result[0]))/86400);
-	
+	if($order->fulfillment_status == 'fulfilled'){
  ?>
   <tr>
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/double-check/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
@@ -684,7 +685,7 @@ READY FOR PICKUP
             <td> - </td>
      <?php } ?>
    </tr>
-  <?php  } }  ?>
+  <?php } } }  ?>
   </tbody>
  </table>
 </div>
