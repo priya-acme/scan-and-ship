@@ -38,7 +38,8 @@ if(isset($_POST['save_roles'])){
     }
 }
 $get_all_stores = $Stores->get_store();
-print_r($Stores->get_save_roles());
+$saved_stores = $Stores->get_save_roles();
+print_r($saved_stores);
 ?>
 <!DOCTYPE html>
 <html lang="en">
