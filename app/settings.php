@@ -19,7 +19,7 @@ if(isset($_POST['save_changes'])){
 	}
 }
 
-//print_r($Stores->get_save_roles());
+
 if(isset($_POST['save_roles'])){
 	$checkbox = $_POST["selected_checkbox"];
 	if (is_array($checkbox))
@@ -38,7 +38,7 @@ if(isset($_POST['save_roles'])){
     }
 }
 $get_all_stores = $Stores->get_store();
-//print_r($get_all_stores);
+print_r($Stores->get_save_roles());
 ?>
 <!DOCTYPE html>
 <html lang="en">
