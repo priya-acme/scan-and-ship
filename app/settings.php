@@ -127,7 +127,7 @@ foreach($get_all_stores as $get_stores){
 
 if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
-<td><input style="display:none" type="checkbox" name="selected_checkbox[]" value="<?php echo $i?>" checked/></td>
+<td style="display:none"><input type="checkbox" name="selected_checkbox[]" value="<?php echo $i?>" checked/></td>
 <td class="hed"><?php  echo $get_stores['store_url'];  ?>
 <input type="hidden" name="store_url<?php echo $i; ?>" value="<?php  echo $get_stores['store_url'];  ?>" /></td>
 <td class="hed">
