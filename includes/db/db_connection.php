@@ -282,7 +282,7 @@ class DB_Connection{
 		while($row = mysqli_fetch_assoc($result)){
 			$rows[] = $row;
 		}
-		//print_r($rows);
+		return $rows;
 	}
 	function get_single_saved_role($store_url){
 		$query = "select * from `assigned_roles` where store_urls='$store_url'";
