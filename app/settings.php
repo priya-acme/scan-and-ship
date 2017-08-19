@@ -29,9 +29,14 @@ if(isset($_POST['save_roles'])){
 	{
 		foreach ($checkbox as $key => $your_slected_id){
 			$store_url = $_POST['store_url'.$your_slected_id];
-			echo $store_url;
 			$roles =  implode(',', $_POST['selected_role'.$your_slected_id]);
-			echo $roles;
+			$saved_stores = $Stores->get_single_save_roles($store_url);
+			if(empty($saved_stores)){
+			$Stores->saved_roles($store_url, $roles);
+			}
+			else {
+		    $Stores->update_saved_roles($store_url, $roles);
+			}
 	    }
     }
 	
@@ -42,7 +47,7 @@ if(isset($_POST['save_roles'])){
 // 		
 // 		//echo $roles;
 // 		$saved_stores = $Stores->get_single_save_roles($store_url);
-// 		$Stores->saved_roles($store_url, $roles);
+// 		
         //header("location:/double-check/app/settings.php?shop=$shop");
 		
 // 		else {
