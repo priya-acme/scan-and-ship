@@ -119,7 +119,6 @@ if($shop == 'livestock-5.myshopify.com'){
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
 <thead>
 <tr>
-<td>SELECT</td>
 <td class="hed">STORE URL</td>
 <td class="hed">ASSIGNED ROLES</td>
 </tr>
@@ -128,7 +127,7 @@ foreach($get_all_stores as $get_stores){
 
 if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
-<td><input type="checkbox" name="selected_checkbox[]" value="<?php echo $i?>" <?php foreach($saved_stores as $saved_store){  if($saved_store['store_urls'] == $get_stores['store_url'] ){ echo "checked"; ?> readonly ="true" <?php } } ?>/></td>
+<td><input style="display:none" type="checkbox" name="selected_checkbox[]" value="<?php echo $i?>" checked/></td>
 <td class="hed"><?php  echo $get_stores['store_url'];  ?>
 <input type="hidden" name="store_url<?php echo $i; ?>" value="<?php  echo $get_stores['store_url'];  ?>" /></td>
 <td class="hed">
