@@ -23,9 +23,9 @@ if(isset($_POST['save_changes'])){
 if(isset($_POST['save_roles'])){
 	$counter = count($_POST["selected_checkbox"]);
 	//print_r($_POST["selected_checkbox"]);
-	print_r($counter);
-	for($x=0; $x<$counter; $x++){
-		//echo $x;
+	//print_r($counter);
+	for($x=1; $x<$counter; $x++){
+		echo $x;
 	
 // 		$store_url = $_POST['store_url'.$x];
 // 		$roles =  implode(',', $_POST['selected_role'.$x]);
@@ -123,7 +123,7 @@ if($shop == 'livestock-5.myshopify.com'){
 <td class="hed">STORE URL</td>
 <td class="hed">ASSIGNED ROLES</td>
 </tr>
-<?php $i =0; 
+<?php $i =1; 
 foreach($get_all_stores as $get_stores){ 
 if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
@@ -153,7 +153,7 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 </form>
 <script>
 $(document).bind("contextmenu",function(e){
-	  return false;
+	  //return false;
 	 });
 </script>
 <?php include 'footer.php'; ?>
