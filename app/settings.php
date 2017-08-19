@@ -24,7 +24,13 @@ if(isset($_POST['save_roles'])){
 	$counter = count($_POST["selected_checkbox"]);
 	//print_r($_POST["selected_checkbox"]);
 	//print_r($counter);
-	print_r($_POST["selected_checkbox"]);
+	$checkbox = $_POST["selected_checkbox"];
+	if (is_array($checkbox))
+	{
+		foreach ($checkbox as $key => $your_slected_id){
+			echo $your_slected_id;
+	    }
+    }
 	for($x=0; $x<$counter; $x++){
 		//echo $x;
 	
