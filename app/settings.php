@@ -21,9 +21,6 @@ if(isset($_POST['save_changes'])){
 
 //print_r($Stores->get_save_roles());
 if(isset($_POST['save_roles'])){
-	$counter = count($_POST["selected_checkbox"]);
-	//print_r($_POST["selected_checkbox"]);
-	//print_r($counter);
 	$checkbox = $_POST["selected_checkbox"];
 	if (is_array($checkbox))
 	{
@@ -39,22 +36,6 @@ if(isset($_POST['save_roles'])){
 			}
 	    }
     }
-	
-		//echo $x;
-	
-	  
-	 // print_r($store_url);
-// 		
-// 		//echo $roles;
-// 		$saved_stores = $Stores->get_single_save_roles($store_url);
-// 		
-        //header("location:/double-check/app/settings.php?shop=$shop");
-		
-// 		else {
-// 			$Stores->update_saved_roles($store_url, $roles);
-// 			//header("location:/double-check/app/settings.php?shop=$shop");
-// 	  }
-	
 }
 $get_all_stores = $Stores->get_store();
 //print_r($get_all_stores);
