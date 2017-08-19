@@ -24,7 +24,7 @@ if(isset($_POST['save_roles'])){
 	$counter = count($_POST["selected_checkbox"]);
 	//print_r($_POST["selected_checkbox"]);
 	//print_r($counter);
-	for($x=1; $x<$counter; $x++){
+	for($x=0; $x<$counter; $x++){
 		echo $x;
 	
 // 		$store_url = $_POST['store_url'.$x];
