@@ -30,6 +30,8 @@ if(isset($_POST['save_roles'])){
 		foreach ($checkbox as $key => $your_slected_id){
 			$store_url = $_POST['store_url'.$your_slected_id];
 			echo $store_url;
+			$roles =  implode(',', $_POST['selected_role'.$your_slected_id]);
+			echo $roles;
 	    }
     }
 	
@@ -37,7 +39,7 @@ if(isset($_POST['save_roles'])){
 	
 	  
 	 // print_r($store_url);
-// 		$roles =  implode(',', $_POST['selected_role'.$x]);
+// 		
 // 		//echo $roles;
 // 		$saved_stores = $Stores->get_single_save_roles($store_url);
 // 		$Stores->saved_roles($store_url, $roles);
