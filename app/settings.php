@@ -28,13 +28,14 @@ if(isset($_POST['save_roles'])){
 	if (is_array($checkbox))
 	{
 		foreach ($checkbox as $key => $your_slected_id){
-			echo $your_slected_id;
+			$store_url = $_POST['store_url'.$your_slected_id];
+			echo $store_url;
 	    }
     }
-	for($x=0; $x<$counter; $x++){
+	
 		//echo $x;
 	
-	  $store_url = $_POST['store_url'][$x];
+	  
 	 // print_r($store_url);
 // 		$roles =  implode(',', $_POST['selected_role'.$x]);
 // 		//echo $roles;
@@ -46,7 +47,7 @@ if(isset($_POST['save_roles'])){
 // 			$Stores->update_saved_roles($store_url, $roles);
 // 			//header("location:/double-check/app/settings.php?shop=$shop");
 // 	  }
-	}
+	
 }
 $get_all_stores = $Stores->get_store();
 //print_r($get_all_stores);
@@ -137,7 +138,7 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
 <td><input type="checkbox" name="selected_checkbox[]" value="<?php echo $i?>"/></td>
 <td class="hed"><?php  echo $get_stores['store_url'];  ?>
-<input type="hidden" name="store_url[]" value="<?php  echo $get_stores['store_url'];  ?>" /></td>
+<input type="hidden" name="store_url<?php echo $i; ?>" value="<?php  echo $get_stores['store_url'];  ?>" /></td>
 <td class="hed">
 <input type="checkbox" name="selected_role<?php echo $i; ?>[]" value="ready for pickup">Ready For Pickup &nbsp;&nbsp;
 <input type="checkbox" name="selected_role<?php echo $i; ?>[]" value="instore pickup">Instore Pickup
