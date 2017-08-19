@@ -131,18 +131,19 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <input type="hidden" name="store_url<?php echo $i; ?>" value="<?php  echo $get_stores['store_url'];  ?>" /></td>
 <td class="hed">
 <input type="checkbox" name="selected_role<?php echo $i; ?>[]" value="ready for pickup" 
-<?php foreach($saved_stores as $saved_store){ 
+<?php foreach($saved_stores as $saved_store){ if($saved_store['store_urls'] == $get_stores['store_url'] ){
 	$get_roles = $Stores->get_single_save_roles($saved_store['store_urls']);
 	$saved_role = explode(",",$get_roles['roles']);
 	if(in_array("ready for pickup", $saved_role)){ echo "checked"; }
+}
 } 
 ?>>
 	Ready For Pickup &nbsp;&nbsp;
-<input type="checkbox" name="selected_role<?php echo $i; ?>[]" value="instore pickup" <?php foreach($saved_stores as $saved_store){ 
+<input type="checkbox" name="selected_role<?php echo $i; ?>[]" value="instore pickup" <?php foreach($saved_stores as $saved_store){ if($saved_store['store_urls'] == $get_stores['store_url'] ){
 	$get_roles = $Stores->get_single_save_roles($saved_store['store_urls']);
 	$saved_role = explode(",",$get_roles['roles']);
 	if(in_array("instore pickup", $saved_role)){ echo "checked"; }
-} 
+} }
 ?>>Instore Pickup
  </td>
 </tr>
