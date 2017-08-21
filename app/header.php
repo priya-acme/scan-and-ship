@@ -17,8 +17,6 @@
   <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
   <script type="text/javascript">
   (window.onpopstate = function () {
-      ......
-      ......
       urlParams = {};
       while (match = search.exec(query)){
           urlParams[decode(match[1])] = decode(match[2]);
