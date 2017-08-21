@@ -112,9 +112,13 @@ if(in_array("instore pickup", $get_single_role)){
 ?>
 <option value="Six"<?php if($get_verification['verification_step'] == 'Six') { echo "selected"; }?>>Picker & In-store Pickup</option>
 <?php } ?>
+<?php 
 
+$get_single_role = explode(",",$get_single_store['roles']); 
+if(in_array("ready for pickup", $get_single_role)){ 
+?>
 <option value="Seven"<?php if($get_verification['verification_step'] == 'Seven') { echo "selected"; }?>>Picker & Ready For Pickup</option>
-
+<?php } ?>
 <?php 
 $get_single_role = explode(",",$get_single_store['roles']); 
 if(in_array("instore pickup", $get_single_role)){ 
