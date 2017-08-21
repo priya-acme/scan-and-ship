@@ -56,6 +56,7 @@ if(isset($_POST['submit_id'])){
 <label for="radio1">
  PICKER
 </label>
+<?php echo $count_orders;?>
 <?php 
 } 
 ?>
