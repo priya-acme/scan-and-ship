@@ -33,7 +33,7 @@
 	alert(getUrlParameter('shop'));
   ShopifyApp.init({
 	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
-	  shopOrigin:'https://' + getUrlParameter["shop"],
+	  shopOrigin:"https://livestock-5.myshopify.com",
 	  debug: false,
 	  forceRedirect: true
 	});
