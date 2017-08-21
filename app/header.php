@@ -16,9 +16,19 @@
   <script src="js/jquery.stickytableheaders.js"></script>
   <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
   <script type="text/javascript">
+  (window.onpopstate = function () {
+      ......
+      ......
+      urlParams = {};
+      while (match = search.exec(query)){
+          urlParams[decode(match[1])] = decode(match[2]);
+      }
+
+      callInit(urlParams); //use when it is made
+  })();
   ShopifyApp.init({
 	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
-	  shopOrigin: "{{ shop.url }}",
+	  shopOrigin:'https://' + urlParams["shop"],
 	  debug: false,
 	  forceRedirect: true
 	});
