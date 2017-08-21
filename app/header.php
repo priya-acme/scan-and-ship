@@ -30,10 +30,10 @@
 	        }
 	    }
 	};
-	alert(getUrlParameter('shop'));
+	var shop_url = getUrlParameter('shop');
   ShopifyApp.init({
 	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
-	  shopOrigin:"https://livestock-5.myshopify.com",
+	  shopOrigin:"https://"+shop_url,
 	  debug: false,
 	  forceRedirect: true
 	});
