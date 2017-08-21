@@ -153,7 +153,7 @@ class Shopify {
 	}
 	 
 	function count_orders($shop, $access_token){
-		$curl_url = "https://$shop/admin/orders/count.json?status=any";
+		$curl_url = "https://$shop/admin/orders/count.json";
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	
