@@ -176,6 +176,19 @@ if(in_array("instore pickup", $get_single_role) && in_array("ready for pickup", 
 </span>
 </div>
 </div>
+<?php if($shop == 'livestock-5.myshopify.com'){ ?>
+<div class="row">
+<div class="col-sm-12 col-md-12">
+<span class="role2">FULFILL ORDER AUTOMATICALLY</span>
+<span class="radio radio-primary">
+ <input type="radio" name="fulfill_order" id="on" value="On" <?php if($get_verification['fulfill_order'] == 'On') { echo "checked"; }?>>
+<label for="on">On</label>
+<input type="radio" name="fulfill_order" id="off" value="Off" <?php if($get_verification['fulfill_order'] == 'Off') { echo "checked"; } else { echo "checked";} ?>>
+<label for="off">Off</label>
+</span>
+</div>
+</div>
+<?php  } ?>
 <?php 
 $get_single_role = explode(",",$get_single_store['roles']); 
 if(in_array("ready for pickup", $get_single_role)){ 
