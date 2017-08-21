@@ -10,7 +10,6 @@ $shop =  $_REQUEST['shop'];
 //   header("Location: $redirect_url");
 $shop_info = $Stores->is_shop_exists($shop);
 $count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
-echo $count_orders;
 $count_val = ceil($count_orders->count / 250);
 for($count=1;$count<=$count_val;$count++){
 	${"orders".$count} = $Shopify->get_orders($shop, $shop_info['access_token'],$count);
