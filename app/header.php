@@ -14,6 +14,12 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/jquery.table.hpaging.min.js"></script>
   <script src="js/jquery.stickytableheaders.js"></script>
-  
+  <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+  <script>
+  ShopifyApp.ready(function(){
+	  alert("Ready");
+	});
+
+  </script>
 </head>
 <body>
