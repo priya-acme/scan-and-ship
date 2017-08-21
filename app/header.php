@@ -18,7 +18,7 @@
   <script type="text/javascript">
   ShopifyApp.init({
 	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
-	  shopOrigin: "<?php echo $shop;?>",
+	  shopOrigin: "{{ shop.url }}",
 	  debug: false,
 	  forceRedirect: true
 	});
