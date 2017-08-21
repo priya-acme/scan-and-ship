@@ -20,7 +20,7 @@
 	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
 	  shopOrigin: "https://livestock-5.myshopify.com",
 	  debug: false,
-	  forceRedirect: true
+	  forceRedirect: false
 	});
  </script>
 </head>
