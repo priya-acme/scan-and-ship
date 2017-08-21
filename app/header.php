@@ -16,18 +16,24 @@
   <script src="js/jquery.stickytableheaders.js"></script>
   <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
   <script type="text/javascript">
-  (window.onpopstate = function () {
-      urlParams = {};
-      while (match = search.exec(query)){
-          urlParams[decode(match[1])] = decode(match[2]);
-      }
+  var getUrlParameter = function getUrlParameter(sParam) {
+	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+	        sURLVariables = sPageURL.split('&'),
+	        sParameterName,
+	        i;
 
-      callInit(urlParams); //use when it is made
-  })();
-  alert(urlParams["shop"]);
+	    for (i = 0; i < sURLVariables.length; i++) {
+	        sParameterName = sURLVariables[i].split('=');
+
+	        if (sParameterName[0] === sParam) {
+	            return sParameterName[1] === undefined ? true : sParameterName[1];
+	        }
+	    }
+	};
+	alert(getUrlParameter('shop'));
   ShopifyApp.init({
 	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
-	  shopOrigin:'https://' + urlParams["shop"],
+	  shopOrigin:'https://' + getUrlParameter["shop"],
 	  debug: false,
 	  forceRedirect: true
 	});
