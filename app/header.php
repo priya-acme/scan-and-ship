@@ -18,9 +18,9 @@
   <script type="text/javascript">
   ShopifyApp.init({
 	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
-	  shopOrigin: "https://livestock-5.myshopify.com",
+	  shopOrigin: "<?php echo $shop;?>",
 	  debug: false,
-	  forceRedirect: false
+	  forceRedirect: true
 	});
  </script>
 </head>
