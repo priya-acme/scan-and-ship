@@ -672,7 +672,7 @@ READY FOR PICKUP
     
     <!--  eleven step verification end -->
     
-    <?php  if($order->fulfillment_status == 'fulfilled') { ?>
+    <?php  if($order->tags == 'Double-Check') { ?>
     <td><div class="green"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
     <?php } else { ?>
     <td><div class="disable"><i class="fa fa-ban" aria-hidden="true"></i></div></td>
