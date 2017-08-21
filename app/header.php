@@ -15,11 +15,13 @@
   <script src="js/jquery.table.hpaging.min.js"></script>
   <script src="js/jquery.stickytableheaders.js"></script>
   <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
-  <script>
-  ShopifyApp.ready(function(){
-	  alert("Ready");
+  <script type="text/javascript">
+  ShopifyApp.init({
+	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
+	  shopOrigin: "https://livestock-5.myshopify.com",
+	  debug: false,
+	  forceRedirect: true
 	});
-
-  </script>
+ </script>
 </head>
 <body>
