@@ -225,7 +225,7 @@ READY FOR PICKUP
     $input = $order->updated_at; 
 	$result = explode('T',$input);
 	$total_days = round(abs(strtotime($now)-strtotime($result[0]))/86400);
-	if($order->fulfillment_status == 'fulfilled'){
+	if($order->fulfillment_status == 'fulfilled' && $order->financial_status != 'refunded' ){
  ?>
   <tr>
     <td width="7%" valign="middle"><strong><a class="order_detail" href="/double-check/app/order_detailed_page.php/?shop=<?php echo $shop; ?>&&id=<?php echo $order->id; ?>"><?php echo $order->name; ?></a></strong></td>
