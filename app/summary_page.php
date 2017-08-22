@@ -10,7 +10,10 @@ $shop =  $_REQUEST['shop'];
 //   header("Location: $redirect_url");
 
 $shop_info = $Stores->is_shop_exists($shop);
-$count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
+$date = new DateTime("-6 months");
+$date->modify("-" . ($date->format('j')-1) . " days");
+$six_date = $date->format('Y-m-j');
+$count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$six_date);
 $count_val = ceil($count_orders->count / 250);
 for($count=1;$count<=$count_val;$count++){
 	${"orders".$count} = $Shopify->get_orders($shop, $shop_info['access_token'],$count);
@@ -30,8 +33,6 @@ if(isset($_POST['submit_id'])){
 		}
 	}
 }
-$date = new DateTime("-6 months");
-$date->modify("-" . ($date->format('j')-1) . " days");
 
 
 ?>
@@ -51,7 +52,7 @@ $date->modify("-" . ($date->format('j')-1) . " days");
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE : <?php echo $date->format('Y-m-j'); ?> </span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :</span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
