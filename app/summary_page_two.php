@@ -1,4 +1,4 @@
-<?php
+<?php ini_set('max_execution_time', 300);
 include __DIR__ .'../../includes/utils/Shopify.php';
 include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
