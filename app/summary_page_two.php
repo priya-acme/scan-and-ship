@@ -15,6 +15,7 @@ for($count=1;$count<=$count_val;$count++){
 	${"orders".$count} = $Shopify->get_orders($shop, $shop_info['access_token'],$count);
 	print_r(${"orders".$count});
 }
+die;
 $get_verification = $Stores->get_step_verification($shop);
 if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
