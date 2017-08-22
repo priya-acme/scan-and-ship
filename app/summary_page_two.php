@@ -9,7 +9,9 @@ $shop =  $_REQUEST['shop'];
 //  //echo $redirect_url;
 //   header("Location: $redirect_url");
 $shop_info = $Stores->is_shop_exists($shop);
-$count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
+$date = new DateTime("-1 months");
+$date->modify("-" . ($date->format('j')-1) . " days");
+$six_date = $date->format('Y-m-j');
 $count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token']);
 $count_val = ceil($count_total_orders->count / 250);
 for($count=1;$count<=$count_val;$count++){
@@ -48,7 +50,7 @@ if(isset($_POST['submit_id'])){
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :<?php echo print_r($count_total_orders);?> </span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :<?php echo $six_date; ?></span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
