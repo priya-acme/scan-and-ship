@@ -157,7 +157,7 @@ class Shopify {
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	function count_total_orders($shop, $access_token){
-		$curl_url = "https://$shop/admin/orders/count.json?status=any";
+		$curl_url = "https://$shop/admin/orders/count.json?status=any&created_at_min=2017-07-22T16:15:47-04:00";
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	public function get_single_order($shop, $access_token,$order_id)
