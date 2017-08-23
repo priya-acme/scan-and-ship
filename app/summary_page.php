@@ -743,8 +743,6 @@ $(function() {
 		previousButtonClass: "btn btn-danger",
 		nextButtonClass: "btn btn-danger"
 	});
-
-
 });
 </script>
 <?php include 'footer.php' ?>
