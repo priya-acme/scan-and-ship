@@ -154,7 +154,8 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 		}
 	}
 }
-
+$get_single_store = $Stores->get_single_save_roles($shop);
+$get_single_role = explode(",",$get_single_store['roles']); 
 ?>
 
 <!DOCTYPE html>
@@ -265,14 +266,14 @@ SHIPPER
 <?php 
 } 
 ?>
-<?php if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
 	?>
 <input type="radio" name="select_role" class="select_role" id="radio3" value="Receiver ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Receiver ok') { echo "checked"; } ?>>
 <label for="radio3">
 READY FOR PICKUP
 </label>
 <?php 
-} 
+} }
 ?>
 <?php if($get_verification['verification_step'] == 'Five') {  
 	?>
@@ -287,7 +288,7 @@ SHIPPER
 <?php 
 } 
 ?>
-<?php if($get_verification['verification_step'] == 'Seven') {  
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Seven') {  
 	?>
 <input type="radio" name="select_role" class="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?> onclick="selected_radio(this.value)">
 <label for="radio1">
@@ -298,9 +299,9 @@ SHIPPER
 READY FOR PICKUP
 </label>
 <?php 
-} 
+} }
 ?>
-<?php if($get_verification['verification_step'] == 'Nine') {  
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Nine') {  
 	?>
 <input type="radio" name="select_role" class="select_role"  id="radio2" value="Shipper ok" onclick="selected_radio(this.value)" <?php if($_SESSION['select_role'] == 'Shipper ok') { echo "checked"; } ?>>
 <label for="radio2">
@@ -311,9 +312,9 @@ SHIPPER
 READY FOR PICKUP
 </label>
 <?php 
-} 
+} }
 ?>
-<?php if($get_verification['verification_step'] == 'Eleven') {?>
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Eleven') {?>
 <input type="radio" name="select_role" class="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; }  ?> onclick="selected_radio(this.value)">
 <label for="radio1">
 PICKER
@@ -327,7 +328,7 @@ SHIPPER
 READY FOR PICKUP
 </label>
             
-<?php } ?>
+<?php } } ?>
 </span>
 
 </div>
@@ -402,7 +403,7 @@ READY FOR PICKUP
   <?php } ?>
 </table>
 </div>
-<?php if($get_verification['verification_step'] == 'Three' || $get_verification['verification_step'] == 'Six' || $get_verification['verification_step'] == 'Eight' || $get_verification['verification_step'] == 'Ten' || $get_verification['verification_step'] == 'Eleven' ) {  	?>
+<?php if(in_array("instore pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Three' || $get_verification['verification_step'] == 'Six' || $get_verification['verification_step'] == 'Eight' || $get_verification['verification_step'] == 'Ten' || $get_verification['verification_step'] == 'Eleven' ) {  	?>
 <div class="col-md-2 col-sm-12">
 <div class="hdd">IN-STORE PICKUP</div>
 <?php if(empty($get_instore_pickup)) { ?>
@@ -417,7 +418,7 @@ In Store Pickup
 <div class="green green-checked"><a href="" onclick="delete_instore_picker('<?php echo $_REQUEST['id'];?>','<?php echo $shop; ?>')"><i class="fa fa-check" aria-hidden="true"></i></a></div>
 <?php }?>
 </div>
-<?php }
+<?php } }
 ?>
 
 <div class="col-md-2 col-sm-12" style="margin-top:10px">
@@ -463,31 +464,31 @@ FulFill Order
 ?>
  <td width="8%" class="hed">Shipper</td>
 <?php } ?>
-<?php if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
 ?>
  <td width="8%" class="hed">Ready For Pickup</td>
-<?php } ?>
+<?php } }  ?>
 <?php if($get_verification['verification_step'] == 'Five') {  
 ?>
   <td width="8%" class="hed">Picker</td>
  <td width="8%" class="hed">Shipper</td>
 <?php } ?>
-<?php if($get_verification['verification_step'] == 'Seven') {  
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Seven') {  
 ?>
   <td width="8%" class="hed">Picker</td>
   <td width="8%" class="hed">Ready For Pickup</td>
-<?php } ?>
-<?php if($get_verification['verification_step'] == 'Nine') {  
+<?php } } ?>
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Nine') {  
 ?>
   <td width="8%" class="hed">Shipper</td>
   <td width="8%" class="hed">Ready For Pickup</td>
-<?php } ?>
-<?php if($get_verification['verification_step'] == 'Eleven') {  
+<?php } } ?>
+<?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
 ?>
  <td width="8%" class="hed">Picker</td>
  <td width="8%" class="hed">Shipper</td>
  <td width="8%" class="hed">Ready For Pickup</td>
-<?php } ?>
+<?php } } ?>
    
     </tr>
     </table>
@@ -503,31 +504,31 @@ FulFill Order
 ?>
      <td width="9%" class="hed">SHIPPED</td>
     <?php } ?>
-    <?php  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+    <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
 ?>
      <td width="9%" class="hed">READY FOR PICKUP</td>
-   <?php } ?>
+   <?php } } ?>
    <?php  if($get_verification['verification_step'] == 'Five') {  
 ?>
      <td width="8%" class="hed">PICKED</td>
      <td width="9%" class="hed">SHIPPED</td>
    <?php } ?>
-   <?php  if($get_verification['verification_step'] == 'Seven') {  
+   <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven') {  
 ?>
      <td width="8%" class="hed">PICKED</td>
      <td width="9%" class="hed">READY FOR PICKUP</td>
-   <?php } ?>
-   <?php  if($get_verification['verification_step'] == 'Nine') {  
+   <?php } } ?>
+   <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Nine') {  
 ?>
      <td width="9%" class="hed">SHIPPED</td>
      <td width="9%" class="hed">READY FOR PICKUP</td>
-   <?php } ?>
-   <?php  if($get_verification['verification_step'] == 'Eleven') {  
+   <?php } } ?>
+   <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
 ?>
      <td width="8%" class="hed">PICKED</td>
      <td width="9%" class="hed">SHIPPED</td>
      <td width="9%" class="hed">READY FOR PICKUP</td>
-   <?php } ?>
+   <?php } } ?>
     
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
@@ -595,7 +596,7 @@ FulFill Order
          
          <!--  four & ten step verifictaion starts -->
           
-        <?php if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten' ) {  
+        <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten' ) {  
         ?>
         <!--  ready for pickup qty check starts -->
         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
@@ -613,7 +614,7 @@ FulFill Order
     	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
-        <?php } ?>
+        <?php } } ?>
          
          <!--  four & ten step verifictaion ends -->
          
@@ -661,7 +662,7 @@ FulFill Order
          
          <!--  seven step verifictaion starts -->
           
-        <?php if($get_verification['verification_step'] == 'Seven') {  
+        <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven') {  
         ?>
          <!--  picker qty check starts -->
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
@@ -695,13 +696,13 @@ FulFill Order
     	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
-        <?php } ?>
+        <?php } } ?>
          
          <!--  seven step verifictaion ends -->
          
           <!--  nine step verifictaion starts -->
           
-        <?php if($get_verification['verification_step'] == 'Nine') {  
+        <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Nine') {  
         ?>
            <!--  shipper qty check starts -->
         <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
@@ -736,14 +737,14 @@ FulFill Order
     	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
-        <?php } ?>
+        <?php } } ?>
          
          <!--  nine step verifictaion ends -->
          
          
          <!--  eleven step verifictaion starts -->
          
-         <?php if($get_verification['verification_step'] == 'Eleven') {  
+         <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
           ?>
             <!--  picker qty check starts -->
          <?php $variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id); 
@@ -795,7 +796,7 @@ FulFill Order
     	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
-          <?php } ?>
+          <?php } } ?>
           
           <!--  eleven step verifictaion ends -->
         
@@ -886,7 +887,7 @@ FulFill Order
     
     <!-- four &  ten verification starts -->
       
-      <?php  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+      <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
   ?>
       <?php if($orders->order->tags == 'Double-Check'){ ?>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -917,7 +918,7 @@ FulFill Order
         
         ?>
     
-      <?php } } ?>
+      <?php } } } ?>
     <!-- four & ten step verification end -->
     
      <!-- five verification starts -->
@@ -979,7 +980,7 @@ FulFill Order
     
      <!-- seven verification starts -->
       
-      <?php  if($get_verification['verification_step'] == 'Seven') {  
+      <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven') {  
   ?>
       <?php if($orders->order->tags == 'Double-Check'){ ?>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -1030,12 +1031,12 @@ FulFill Order
         
         ?>
     
-      <?php } } ?>
+      <?php } } } ?>
     <!-- seven step verification end -->
     
     <!-- nine verification starts -->
       
-      <?php  if($get_verification['verification_step'] == 'Nine') {  
+      <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Nine') {  
   ?>
       <?php if($orders->order->tags == 'Double-Check'){ ?>
       <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -1089,13 +1090,13 @@ FulFill Order
         
         ?>
     
-      <?php } } ?>
+      <?php } } } ?>
     <!-- nine step verification end -->
     
     
     <!-- eleven step verification starts -->
     
-     <?php if($get_verification['verification_step'] == 'Eleven') {  
+     <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
   ?>
   <?php if($orders->order->tags == 'Double-Check'){ ?>
   <td><div class="green"><a href="javascript:void(0)"><i class="fa fa-check" aria-hidden="true"></i></a></div></td>
@@ -1161,7 +1162,7 @@ FulFill Order
                <td><input type="checkbox" value="<?php echo $variants->variant->sku ?>" onclick="send_receiver_value('<?php echo $pget_order_id ?>',this.value,'<?php echo $pselect_role ?>','<?php echo $shop; ?>','<?php echo $orders->order->line_items[$i]->quantity?>')" /></td>
         <?php }  ?>
         
-        <?php } }  ?>
+        <?php } } } ?>
    <!-- eleven step verification end -->
   </tr>
   <?php } ?>

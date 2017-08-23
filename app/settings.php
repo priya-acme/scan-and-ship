@@ -102,7 +102,7 @@ $get_single_store = $Stores->get_single_save_roles($shop);
 <span class="radio radio-primary">
 <select name="select_veri">
 <option value="">-select role--</option>
-<option value="One"<?php if($get_verification['verification_step'] == 'One') { echo "selected"; }?>>Picker</option>
+<option value="One"<?php if($get_verification['verification_step'] == 'One') { echo "selected"; } ?>>Picker</option>
 
 <option value="Two"<?php if($get_verification['verification_step'] == 'Two') { echo "selected"; }?>>Shipper</option>
 <?php 
