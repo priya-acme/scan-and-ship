@@ -24,7 +24,7 @@
 	});
 	setTimeout(function(){
 		 $('.btn-danger').click(function(e){
-			  e.preventDefault();
+			 alert('hi');
 				  })
 	},500)
  
