@@ -729,7 +729,7 @@ function selected_radio(r){
 	  xhttp.send();
 }
 $(function () {
-    $("#table1").hpaging({ "limit": 50 });
+    $("#table1").hpaging({ "limit": 20 });
 });
 
 $("#btnApply").click(function () {
@@ -737,4 +737,18 @@ $("#btnApply").click(function () {
     $("#table1").hpaging("newLimit", lmt);
 });
 </script>
+
+<script type="text/javascript">
+$(function() {
+    $(selector).pagination({
+        items: 100,
+        itemsOnPage: 10,
+        cssStyle: 'light-theme'
+    });
+});
+</script>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.simplePagination.js"></script>
+<link type="text/css" rel="stylesheet" href="simplePagination.css"/>
 <?php include 'footer.php' ?>
