@@ -728,19 +728,19 @@ function selected_radio(r){
 	  xhttp.open("GET", "role.php?selected_rval="+selected_rval, true);
 	  xhttp.send();
 }
-$(function () {
-    $("#table1").hpaging({ "limit": 20 });
-});
-
-$("#btnApply").click(function () {
-    var lmt = $("#pglmt").val();
-    $("#table1").hpaging("newLimit", lmt);
-});
+//$(function () {
+//    $("#table1").hpaging({ "limit": 50 });
+//});
+//
+//$("#btnApply").click(function () {
+//    var lmt = $("#pglmt").val();
+//    $("#table1").hpaging("newLimit", lmt);
+//});
 </script>
 
 <script type="text/javascript">
 $(function() {
-    $(selector).pagination({
+    $('#table1').pagination({
         items: 100,
         itemsOnPage: 10,
         cssStyle: 'light-theme'
