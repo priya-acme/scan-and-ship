@@ -75,8 +75,8 @@ $shop_info = $Stores->is_shop_exists($shop);
 <div class="row">
 <div class="col-md-12">
 <p>To begin, please click on the GEAR button on the top left-hand corner of the dashboard. You
-will need to decide which Validation Roles you would like active – Picker; Shipper; or both
-Picker &amp; Shipper. You may do so by clicking the drop-down menu under “SELECT ROLE”</p>
+will need to decide which Validation Roles you would like active - Picker; Shipper; or both
+Picker &amp; Shipper. You may do so by clicking the drop-down menu under "SELECT ROLE"</p>
 </div>
 </div>
 <div class="row">
@@ -86,7 +86,7 @@ Picker &amp; Shipper. You may do so by clicking the drop-down menu under “SELECT
 </div>
 <div class="row">
 <div class="col-md-12">
-<p>Moving onto the Dashboard, you will need to begin by selecting your ROLE – Picker or Shipper
+<p>Moving onto the Dashboard, you will need to begin by selecting your ROLE - Picker or Shipper
 On the top left-hand corner, UNDER the gear button, select the role you desire</p>
 </div>
 </div>
@@ -98,7 +98,7 @@ On the top left-hand corner, UNDER the gear button, select the role you desire</
 </div>
 <div class="row">
 <div class="col-md-12">
-<p>Once you’ve selected your role, type or scan the Order #/Order Barcode into the ORDER
+<p>Once you've selected your role, type or scan the Order #/Order Barcode into the ORDER
 LOOKUP space provided</p>
 <p>&nbsp;</p>
 <p class="text1">If you're typing the order #* in manually, click the SEARCH icon (looks like a magnifying glass) or hit "enter" on your keyboard to open the order details page</p>
