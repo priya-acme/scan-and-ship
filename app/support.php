@@ -53,7 +53,7 @@ $shop_info = $Stores->is_shop_exists($shop);
 </script>
 </head>
 <body>
-<div class="margtop30 ordered-header-fixed">
+<div class="margtop30">
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
@@ -81,7 +81,7 @@ Picker &amp; Shipper. You may do so by clicking the drop-down menu under “SELECT
 </div>
 <div class="row">
 <div class="col-md-12">
-<center><img src="/images/2.jpg" class="img-responsive"/></center>
+<center><img src="/double-check/app/images/2.jpg" class="img-responsive"/></center>
 </div>
 </div>
 <div class="row">
@@ -92,7 +92,7 @@ On the top left-hand corner, UNDER the gear button, select the role you desire</
 </div>
 <div class="row">
 <div class="col-md-12">
-<center><img src="/images/1.jpg" class="img-responsive"/></center>
+<center><img src="/double-check/app/images/1.jpg" class="img-responsive"/></center>
 <br/>
 </div>
 </div>
@@ -124,7 +124,7 @@ Validated; and Validated + Ready to Ship</p>
 
 <div class="row">
 <div class="col-md-12">
-<img src="/images/3.jpg" class="img-responsive"/>
+<img src="/double-check/app/images/3.jpg" class="img-responsive"/>
 <br/>
 </div>
 </div>
