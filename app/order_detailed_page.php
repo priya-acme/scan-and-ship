@@ -456,10 +456,10 @@ FulFill Order
     <td width="8%" class="hed">SCANNED QUANTITY
     <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
     <tr>
-    <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
+    <?php if(in_array(" ", $get_single_role)){ if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 ?>
 <td width="8%" class="hed">Picker</td>
-<?php } ?>
+<?php } } ?>
     <?php if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
 ?>
  <td width="8%" class="hed">Shipper</td>
