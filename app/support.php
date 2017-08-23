@@ -47,9 +47,9 @@ $shop_info = $Stores->is_shop_exists($shop);
 .cognito .c-forms-form{margin: 0 auto; }
 </style>
 <script>
-$(document).bind("contextmenu",function(e){
-	  return false;
-});
+// $(document).bind("contextmenu",function(e){
+// 	  return false;
+// });
 </script>
 </head>
 <body>
