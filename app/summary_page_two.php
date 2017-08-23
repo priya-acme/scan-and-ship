@@ -735,14 +735,8 @@ $(function () {
 $("#btnApply").click(function () {
     var lmt = $("#pglmt").val();
     $("#table1").hpaging("newLimit", lmt);
-	 $("#table1").pagination({
-        items: 100,
-        itemsOnPage: 10,
-        cssStyle: 'light-theme'
-    });
+	
 });
 </script>
 
-
-<link type="text/css" rel="stylesheet" href="simplePagination.css"/>
 <?php include 'footer.php' ?>
