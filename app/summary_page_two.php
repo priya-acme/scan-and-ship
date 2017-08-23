@@ -744,14 +744,6 @@ $(function() {
 	});
 
 
-<<<<<<< HEAD
-=======
-$("#btnApply").click(function () {
-    var lmt = $("#pglmt").val();
-    $("#table1").hpaging("newLimit", lmt);
-	
->>>>>>> 503c72ba1bd2114227913a50fde162d1fab7ef55
-});
 </script>
 
 <?php include 'footer.php' ?>
