@@ -22,6 +22,12 @@
 			nextButtonClass: "btn btn-danger"
 		});
 	});
+	setTimeout(function(){
+		 $('.btn-danger').click(function(e){
+			  e.preventDefault();
+				  })
+	},500)
+ 
   var getUrlParameter = function getUrlParameter(sParam) {
 	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 	        sURLVariables = sPageURL.split('&'),
