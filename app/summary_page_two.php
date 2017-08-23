@@ -743,7 +743,6 @@ $("#btnApply").click(function () {
 });
 </script>
 
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="jquery.simplePagination.js"></script>
+
 <link type="text/css" rel="stylesheet" href="simplePagination.css"/>
 <?php include 'footer.php' ?>
