@@ -738,11 +738,6 @@ function selected_radio(r){
 //     var lmt = $("#pglmt").val();
 //     $("#table1").hpaging("newLimit", lmt);
 // });
-$(function() {
-	$("#table1").simplePagination({
-		previousButtonClass: "btn btn-danger",
-		nextButtonClass: "btn btn-danger"
-	});
-});
+
 </script>
 <?php include 'footer.php' ?>

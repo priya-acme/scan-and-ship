@@ -16,6 +16,12 @@
   <script src="js/jquery.stickytableheaders.js"></script>
   <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
   <script type="text/javascript">
+  $(function() {
+		$("#table1").simplePagination({
+			previousButtonClass: "btn btn-danger",
+			nextButtonClass: "btn btn-danger"
+		});
+	});
   var getUrlParameter = function getUrlParameter(sParam) {
 	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 	        sURLVariables = sPageURL.split('&'),
