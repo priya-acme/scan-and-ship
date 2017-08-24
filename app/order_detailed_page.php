@@ -135,7 +135,11 @@ if(isset($_POST['update_notes'])){
 	header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$uorder_id");
 	
 }
-$count_orders = $Shopify->count_orders($shop, $shop_info['access_token']);
+$shop_info = $Stores->is_shop_exists($shop);
+$date = new DateTime("-6 months");
+$date->modify("-" . ($date->format('j')-1) . " days");
+$six_date = $date->format('Y-m-j');
+$count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$six_date);
 $count_val = ceil($count_orders->count / 250);
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
