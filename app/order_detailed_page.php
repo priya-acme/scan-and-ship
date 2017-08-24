@@ -114,7 +114,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 		$error_qty = "All item quantities are scanned";
 	}
 	if($j == 0){
-		$error = "Product scanned doesn't match" ;}
+		$error = "Product scanned doesn't match" ;
     }
     if($j == 1 )
     {
