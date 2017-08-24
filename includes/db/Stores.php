@@ -149,6 +149,12 @@ class Stores extends DB_Connection{
 	function get_single_save_roles($store_url){
 		return $this->get_single_saved_role($store_url);
 	}
+	function update_select_role($store_url,$role){
+		return $this->update_selected_role($store_url,$role);
+	}
+	function save_select_role($store_url,$role){
+		return $this->save_selected_role($store_url,$role);
+	}
 	
 }
 ?>
