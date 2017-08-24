@@ -117,7 +117,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 		$error == '';
 	}
 	else {
-		$error = "Order / Product scanned doesn't match" ;
+		$error = "Not Found" ;
 	}
 }
 if(isset($_POST['save_notes'])){
