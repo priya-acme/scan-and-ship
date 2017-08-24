@@ -141,6 +141,11 @@ $date->modify("-" . ($date->format('j')-1) . " days");
 $six_date = $date->format('Y-m-j');
 $count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$six_date);
 $count_val = ceil($count_orders->count / 250);
+$ndate = new DateTime("-1 months");
+$ndate->modify("-" . ($ndate->format('j')-1) . " days");
+$two_date = $ndate->format('Y-m-j');
+$count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token'],$two_date);
+$ncount_val = ceil($count_total_orders->count / 250);
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
 if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
@@ -152,6 +157,14 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	for($count=1;$count<=$count_val;$count++){
 		${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
 		foreach(${"get_order".$count}->orders as $order) {
+			if($order_id == $order->name || $order_id == $order->id){
+				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
+			}
+		}
+	}
+	for($ncount=1;$ncount<=$ncount_val;$ncount++){
+		${"get_order".$ncount} = $Shopify->get_orders($shop,$shop_info['access_token'],$ncount);
+		foreach(${"get_order".$ncount}->orders as $order) {
 			if($order_id == $order->name || $order_id == $order->id){
 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 			}
