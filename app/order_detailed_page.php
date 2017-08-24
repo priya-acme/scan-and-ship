@@ -113,13 +113,13 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 	if($k == 1){
 		$error_qty = "All item quantities are scanned";
 	}
-	if($j == 0){
+	if($j == 1){
+		$error == '';
+	}
+	else {
 		$error = "Product scanned doesn't match" ;
-    }
-    if($j == 1 )
-    {
-    	$error = '';
-    }
+	}
+}
 if(isset($_POST['save_notes'])){
 	$order_notes = $_POST['order_note'];
 	$order_id=$_REQUEST['id'];
