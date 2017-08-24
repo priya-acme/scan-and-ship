@@ -252,7 +252,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
     
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
    <?php if(isset($_POST['submit_barcode'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
-   <?php if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){ ?> <div class="qty-error-message" style="color:red"><?php echo $order_msg; ?></div><?php } ?>
+   <?php if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){ if($j != 1){ $error = ''; }?> <div class="qty-error-message" style="color:red"><?php echo $order_msg; ?></div><?php } ?>
 </div>
 <div class="col-sm-12 col-md-4">
  <div class="role2">
