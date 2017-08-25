@@ -271,7 +271,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 
 <div class="col-sm-12 col-md-4 no-wrap">
 
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :<span id="done"></span> </span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :</span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
@@ -1405,7 +1405,7 @@ function selected_radio(rad,shop){
 	var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-         document.getElementById('done').innerHTML = this.responseText;
+         //document.getElementById('done').innerHTML = this.responseText;
        }
 	  };
 	  xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
