@@ -271,7 +271,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 
 <div class="col-sm-12 col-md-4 no-wrap">
 
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE : </span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :<span id="done"></span> </span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
@@ -1360,18 +1360,7 @@ function send_receiver_value(ro,rs,rro,shop,rqty){
 	    setTimeout(function(){ window.location = "http://aviaapps.co/double-check/app/order_test.php/?shop="+shop+"&order_id="+rorder_id; }, 1000);
      	}
 }
-function selected_radio(r,shop){
-	var selected_rval = r;
-	var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-         //document.getElementById('done').innerHTML = this.responseText;
-       }
-	  };
-	  xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
-	  xhttp.send();
-	  //setTimeout(function(){ window.location.reload(); }, 1000);
-}
+
 function delete_picker_order(dorder , dsku,shop){
 	var dorder = dorder;
 	var dsku = dsku;
@@ -1410,6 +1399,18 @@ function delete_receiver_order(drorder , drsku,shop){
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 1000);
+}
+function selected_radio(rad,shop){
+	var selected_rval = rad;
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         document.getElementById('done').innerHTML = this.responseText;
+       }
+	  };
+	  xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
+	  xhttp.send();
+	  //setTimeout(function(){ window.location.reload(); }, 1000);
 }
 </script>
 <?php include 'footer.php'; ?>
