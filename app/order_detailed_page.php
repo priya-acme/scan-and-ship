@@ -117,7 +117,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 		$error == '';
 	}
 	else {
-		$error = "Product Barcode/SKU Not Found" ;
+		$error = "" ;
 	}
 }
 if(isset($_POST['save_notes'])){
@@ -176,7 +176,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	}
 }
 if($z == 1){
-	$order_msg = "Order Not Found";
+	$order_msg = "Not Found";
 }
 $get_single_store = $Stores->get_single_save_roles($shop);
 $get_single_role = explode(",",$get_single_store['roles']); 
