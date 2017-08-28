@@ -221,6 +221,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 </head>
 <body class="order-details-page" OnLoad="document.form_submit.barcode_sku.focus();">
 <form method="post" name="form_submit" id="form_submit">
+<span id="done"></span>
 <div class="margtop30 ordered-header-fixed">
 <div class="container">
 <div class="row">
@@ -271,7 +272,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 
 <div class="col-sm-12 col-md-4 no-wrap">
 
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :<span id="done"></span></span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :</span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
@@ -318,7 +319,7 @@ SHIPPER
 ?>
 <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven') {  
 	?>
-<input type="radio" name="select_role" id="radio1" value="Picker ok" <?php if($_SESSION['select_role'] == 'Picker ok') { echo "checked"; } ?> onclick="selected_radio(this.value,'<?php echo $shop; ?>')">
+<input type="radio" name="select_role" id="radio1" value="Picker ok" <?php if($get_single_store['select_role'] == 'Picker ok') { echo "checked"; } ?> onclick="selected_radio(this.value,'<?php echo $shop; ?>')">
 <label for="radio1">
  PICKER
 </label>
