@@ -176,7 +176,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	}
 }
 if($z == 1){
-	$order_msg = "";
+	$order_msg = "Not Found";
 }
 $get_single_store = $Stores->get_single_save_roles($shop);
 $get_single_role = explode(",",$get_single_store['roles']); 
