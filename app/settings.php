@@ -178,7 +178,7 @@ if(in_array("ready for pickup", $get_single_role)){
 <span class="radio radio-primary">
  <input type="radio" name="fulfill_order" id="on" value="On" <?php if($get_verification['fulfill_order'] == 'On') { echo "checked"; }?>>
 <label for="on">On</label>
-<input type="radio" name="fulfill_order" id="off" value="Off" <?php if($get_verification['fulfill_order'] == 'Off') { echo "checked"; } else { echo "checked";} ?>>
+<input type="radio" name="fulfill_order" id="off" value="Off" <?php if($get_verification['fulfill_order'] == 'Off') { echo "checked"; } ?>>
 <label for="off">Off</label>
 </span>
 </div>
