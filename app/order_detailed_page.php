@@ -1411,7 +1411,7 @@ function selected_radio(rad,shop){
 	  };
 	  xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
 </script>
 <?php include 'footer.php'; ?>
