@@ -1,4 +1,14 @@
-<?php
+<?php 
+// define the path and name of cached file
+$cachefile = '/double-check/app/cached-files/'.date('M-d-Y').'.php';
+// define how long we want to keep the file in seconds. I set mine to 5 hours.
+$cachetime = 18000;
+// Check if the cached file is still fresh. If it is, serve it up and exit.
+if (file_exists($cachefile) && time() - $cachetime < filemtime($cachefile)) {
+	include($cachefile);
+	exit;
+}
+ob_start();
 include __DIR__ .'../../includes/utils/Shopify.php';
 include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
@@ -702,6 +712,7 @@ READY FOR PICKUP
 </div>
 </div>
 </form>
+
 <script>
 // $(function () {
 //     $("#table1").stickyTableHeaders();
@@ -747,3 +758,11 @@ function selected_radio(r,shop){
 
 </script>
 <?php include 'footer.php' ?>
+<?php
+	// We're done! Save the cached content to a file
+	$fp = fopen($cachefile, 'w');
+	fwrite($fp, ob_get_contents());
+	fclose($fp);
+	// finally send browser output
+	ob_end_flush();
+?>
