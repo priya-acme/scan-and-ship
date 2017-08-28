@@ -1405,7 +1405,7 @@ function selected_radio(rad,shop){
 	var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
-         //document.getElementById('done').innerHTML = this.responseText;
+         document.getElementById('done').innerHTML = this.responseText;
        }
 	  };
 	  xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
