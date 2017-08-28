@@ -271,7 +271,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 
 <div class="col-sm-12 col-md-4 no-wrap">
 
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :</span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :<span id="done"></span></span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
