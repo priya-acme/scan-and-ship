@@ -99,7 +99,7 @@ SHIPPER
 ?>
 <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven') {  
 	?>
-<input type="radio" name="select_role" id="radio1" value="Picker ok" <?php if($get_single_store['select_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?> onclick="selected_radio(this.value,'<?php echo $shop; ?>')">
+<input type="radio" name="select_role" id="radio1" value="Picker ok" <?php if($get_single_store['selected_role'] == 'Picker ok') { echo "checked"; } else { echo "checked"; } ?> onclick="selected_radio(this.value,'<?php echo $shop; ?>')">
 <label for="radio1">
  PICKER
 </label>
