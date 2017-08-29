@@ -181,58 +181,7 @@ if($z == 1){
 $get_single_store = $Stores->get_single_save_roles($shop);
 $get_single_role = explode(",",$get_single_store['roles']); 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Double Check - <?php echo $_GET['id']?></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/double-check/app/css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="/double-check/app/css/style.css" type="text/css">
-  <link rel="stylesheet" href="/double-check/app/font-awesome/css/font-awesome.css" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/double-check/app/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-  <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
-  <script type="text/javascript">
- 
-  var getUrlParameter = function getUrlParameter(sParam) {
-	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-	        sURLVariables = sPageURL.split('&'),
-	        sParameterName,
-	        i;
-
-	    for (i = 0; i < sURLVariables.length; i++) {
-	        sParameterName = sURLVariables[i].split('=');
-
-	        if (sParameterName[0] === sParam) {
-	            return sParameterName[1] === undefined ? true : sParameterName[1];
-	        }
-	    }
-	};
-	var shop_url = getUrlParameter('shop');
-  ShopifyApp.init({
-	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
-	  shopOrigin:"https://"+shop_url,
-	  debug: false,
-	  forceRedirect: true
-	});
-  function selected_radio(rad,shop){
-		//var selected_rval = rad;
-		var xhttp = new XMLHttpRequest();
-		 
-		  xhttp.onreadystatechange = function() {
-		    if (this.readyState == 4 && this.status == 200) {
-	         document.getElementById('done').innerHTML = this.responseText;
-	       }
-		  };
-		  xhttp.open("POST", "role.php?selected_rval="+rad+"&shop="+shop, true);
-		  xhttp.send();
-		 setTimeout(function(){ window.location.reload(); }, 1000);
-	}
- </script>
-</head>
+<?php include 'header.php' ?>
 <body class="order-details-page" OnLoad="document.form_submit.barcode_sku.focus();">
 <form method="post" name="form_submit" id="form_submit">
 <span id="done" style="display:none"></span>
@@ -1248,7 +1197,19 @@ if($get_verification['fulfill_order'] == 'On') {
 }
 ?>
 <script>
-
+function selected_radio(rad,shop){
+	//var selected_rval = rad;
+	var xhttp = new XMLHttpRequest();
+	 
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         document.getElementById('done').innerHTML = this.responseText;
+       }
+	  };
+	  xhttp.open("POST", "role.php?selected_rval="+rad+"&shop="+shop, true);
+	  xhttp.send();
+	 setTimeout(function(){ window.location.reload(); }, 1000);
+}
 function create_fulfilled_order(forder_id,shop){
  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
