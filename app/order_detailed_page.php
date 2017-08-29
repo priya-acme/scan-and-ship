@@ -1234,9 +1234,18 @@ if($get_verification['fulfill_order'] == 'On') {
 }
 ?>
 <script>
-// $(document).bind("contextmenu",function(e){
-// 	  return false;
-// 	 });
+function selected_radio(rad,shop){
+	var selected_rval = rad;
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         document.getElementById('done').innerHTML = this.responseText;
+       }
+	  };
+	  xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
+	  xhttp.send();
+	  setTimeout(function(){ window.location.reload(); }, 1000);
+}
 function create_fulfilled_order(forder_id,shop){
  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
@@ -1401,17 +1410,6 @@ function delete_receiver_order(drorder , drsku,shop){
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 1000);
 }
-function selected_radio(rad,shop){
-	var selected_rval = rad;
-	var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-         document.getElementById('done').innerHTML = this.responseText;
-       }
-	  };
-	  xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
-	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 2000);
-}
+
 </script>
 <?php include 'footer.php'; ?>
