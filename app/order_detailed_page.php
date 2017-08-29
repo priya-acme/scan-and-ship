@@ -1237,16 +1237,16 @@ if($get_verification['fulfill_order'] == 'On') {
 function selected_radio(rad,shop){
 	var selected_rval = rad;
 	var xhttp = new XMLHttpRequest();
+	 xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
+	  xhttp.send();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
          document.getElementById('done').innerHTML = this.responseText;
        }
 	  };
-	  xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
-	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	 setTimeout(function(){ window.location.reload(); }, 1000);
 }
-function create_fulfilled_order(forder_id,shop){
+/*function create_fulfilled_order(forder_id,shop){
  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
@@ -1409,7 +1409,7 @@ function delete_receiver_order(drorder , drsku,shop){
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 2000);
-}
+} */
 
 </script>
 <?php include 'footer.php'; ?>
