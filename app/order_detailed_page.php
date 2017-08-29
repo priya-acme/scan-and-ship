@@ -196,18 +196,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
   <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
   <script type="text/javascript">
-  function selected_radio(rad,shop){
-		var selected_rval = rad;
-		var xhttp = new XMLHttpRequest();
-		 xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
-		  xhttp.send();
-		  xhttp.onreadystatechange = function() {
-		    if (this.readyState == 4 && this.status == 200) {
-	         document.getElementById('done').innerHTML = this.responseText;
-	       }
-		  };
-		 setTimeout(function(){ window.location.reload(); }, 1000);
-	}
+ 
   var getUrlParameter = function getUrlParameter(sParam) {
 	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 	        sURLVariables = sPageURL.split('&'),
@@ -229,6 +218,18 @@ $get_single_role = explode(",",$get_single_store['roles']);
 	  debug: false,
 	  forceRedirect: true
 	});
+  function selected_radio(rad,shop){
+		var selected_rval = rad;
+		var xhttp = new XMLHttpRequest();
+		 xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
+		  xhttp.send();
+		  xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+	         document.getElementById('done').innerHTML = this.responseText;
+	       }
+		  };
+		 setTimeout(function(){ window.location.reload(); }, 1000);
+	}
  </script>
 </head>
 <body class="order-details-page" OnLoad="document.form_submit.barcode_sku.focus();">
