@@ -219,15 +219,16 @@ $get_single_role = explode(",",$get_single_store['roles']);
 	  forceRedirect: true
 	});
   function selected_radio(rad,shop){
-		var selected_rval = rad;
+		//var selected_rval = rad;
 		var xhttp = new XMLHttpRequest();
-		 xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
-		  xhttp.send();
+		 
 		  xhttp.onreadystatechange = function() {
 		    if (this.readyState == 4 && this.status == 200) {
 	         document.getElementById('done').innerHTML = this.responseText;
 	       }
 		  };
+		  xhttp.open("POST", "role.php?selected_rval="+rad+"&shop="+shop, true);
+		  xhttp.send();
 		 setTimeout(function(){ window.location.reload(); }, 1000);
 	}
  </script>
