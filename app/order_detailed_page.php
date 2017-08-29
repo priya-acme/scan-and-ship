@@ -1237,18 +1237,18 @@ if($get_verification['fulfill_order'] == 'On') {
 ?>
 <script>
 function selected_radio(rad,shop){
-	alert('hi');
-	//var selected_rval = rad;
-// 	var xhttp = new XMLHttpRequest();
+	//alert('hi');
+	var selected_rval = rad;
+	var xhttp = new XMLHttpRequest();
 	 
-// 	  xhttp.onreadystatechange = function() {
-// 	    if (this.readyState == 4 && this.status == 200) {
-//          document.getElementById('done').innerHTML = this.responseText;
-//        }
-// 	  };
-// 	  xhttp.open("POST", "role.php?selected_rval="+rad+"&shop="+shop, true);
-// 	  xhttp.send();
-// 	 setTimeout(function(){ window.location.reload(); }, 1000);
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         document.getElementById('done').innerHTML = this.responseText;
+       }
+	  };
+	  xhttp.open("GET", "../role.php?selected_rval="+rad+"&shop="+shop, true);
+	  xhttp.send();
+	 setTimeout(function(){ window.location.reload(); }, 1000);
 }
 function create_fulfilled_order(forder_id,shop){
  var xhttp = new XMLHttpRequest();
