@@ -221,7 +221,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 </head>
 <body class="order-details-page" OnLoad="document.form_submit.barcode_sku.focus();">
 <form method="post" name="form_submit" id="form_submit">
-<span id="done"></span>
+<span id="done" style="display:none"></span>
 <div class="margtop30 ordered-header-fixed">
 <div class="container">
 <div class="row">
@@ -1244,7 +1244,7 @@ function selected_radio(rad,shop){
 	  };
 	  xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
 	  xhttp.send();
-	  //setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); }, 1000);
 }
 function create_fulfilled_order(forder_id,shop){
  var xhttp = new XMLHttpRequest();
