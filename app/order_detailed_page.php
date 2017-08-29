@@ -1256,7 +1256,7 @@ function create_fulfilled_order(forder_id,shop){
 	  };
 	  xhttp.open("GET", "../fulfilled_order.php?shop="+shop+"&order_id="+forder_id, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
 function delete_instore_picker(in_order,shop){
 	  var xhttp = new XMLHttpRequest();
@@ -1268,7 +1268,7 @@ function delete_instore_picker(in_order,shop){
 	  };
 	  xhttp.open("GET", "../delete_instore_pickup.php?shop="+shop+"&order_id="+in_order, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
 function sendvalue(a,b,shop){
 	var chckbx_val = a;
@@ -1282,7 +1282,7 @@ function sendvalue(a,b,shop){
 	  };
 	  xhttp.open("GET", "../ajax_call.php?shop="+shop+"&chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
 function send_picker_value(o,s,ro,qty,shop){
 	var select_role = $("input[type='radio'].select_role:checked").val();
@@ -1310,7 +1310,7 @@ function send_picker_value(o,s,ro,qty,shop){
 	  };
 	  xhttp.open("GET", "../picker_ajax_call.php?shop="+shop+"&sku="+sku+"&order_id="+porder_id+"&role="+prole+"&qty="+qty, true);
 	  xhttp.send();
-	  setTimeout(function(){  window.location.reload(); }, 1000);
+	  setTimeout(function(){  window.location.reload(); }, 2000);
 	}
 }
 function send_shipper_value(so,ss,sro,sqty,shop){
@@ -1339,7 +1339,7 @@ function send_shipper_value(so,ss,sro,sqty,shop){
 	  xhttp.open("GET", "../shipper_ajax_call.php?shop="+shop+"&sku="+ssku+"&order_id="+sorder_id+"&role="+srole+"&qty="+sqty, true);
 	  xhttp.send();
 		
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); }, 2000);
 		}
 }
 function send_receiver_value(ro,rs,rro,shop,rqty){
@@ -1367,7 +1367,7 @@ function send_receiver_value(ro,rs,rro,shop,rqty){
 	  };
 	  xhttp.open("GET", "../receiver_ajax_call.php?shop="+shop+"&sku="+rsku+"&order_id="+rorder_id+"&role="+rrole+"&qty="+rqty, true);
 	  xhttp.send();
-	    setTimeout(function(){ window.location = "http://aviaapps.co/double-check/app/order_test.php/?shop="+shop+"&order_id="+rorder_id; }, 1000);
+	    setTimeout(function(){ window.location = "http://aviaapps.co/double-check/app/order_test.php/?shop="+shop+"&order_id="+rorder_id; }, 2000);
      	}
 }
 
@@ -1382,7 +1382,7 @@ function delete_picker_order(dorder , dsku,shop){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&dorder="+dorder+"&dsku="+dsku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); },2000);
 }
 function delete_shipper_order(dsorder , dssku,shop){
 	var dsorder = dsorder;
@@ -1395,7 +1395,7 @@ function delete_shipper_order(dsorder , dssku,shop){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&dsorder="+dsorder+"&dssku="+dssku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
 function delete_receiver_order(drorder , drsku,shop){
 	var drorder = drorder;
@@ -1408,7 +1408,7 @@ function delete_receiver_order(drorder , drsku,shop){
 	  };
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
 	  xhttp.send();
-	  setTimeout(function(){ window.location.reload(); }, 1000);
+	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
 
 </script>
