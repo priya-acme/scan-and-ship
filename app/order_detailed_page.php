@@ -196,6 +196,18 @@ $get_single_role = explode(",",$get_single_store['roles']);
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
   <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
   <script type="text/javascript">
+  function selected_radio(rad,shop){
+		var selected_rval = rad;
+		var xhttp = new XMLHttpRequest();
+		 xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
+		  xhttp.send();
+		  xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+	         document.getElementById('done').innerHTML = this.responseText;
+	       }
+		  };
+		 setTimeout(function(){ window.location.reload(); }, 1000);
+	}
   var getUrlParameter = function getUrlParameter(sParam) {
 	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 	        sURLVariables = sPageURL.split('&'),
@@ -1234,19 +1246,8 @@ if($get_verification['fulfill_order'] == 'On') {
 }
 ?>
 <script>
-function selected_radio(rad,shop){
-	var selected_rval = rad;
-	var xhttp = new XMLHttpRequest();
-	 xhttp.open("GET", "role.php?selected_rval="+selected_rval+"&shop="+shop, true);
-	  xhttp.send();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-         document.getElementById('done').innerHTML = this.responseText;
-       }
-	  };
-	 setTimeout(function(){ window.location.reload(); }, 1000);
-}
-/*function create_fulfilled_order(forder_id,shop){
+
+function create_fulfilled_order(forder_id,shop){
  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
@@ -1409,7 +1410,7 @@ function delete_receiver_order(drorder , drsku,shop){
 	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 2000);
-} */
+} 
 
 </script>
 <?php include 'footer.php'; ?>
