@@ -223,9 +223,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edda1d', end
 .radio-primary input[type="radio"] + label::after {
     background-color: #428bca; }
 .radio-primary input[type="radio"]:checked + label::before {
-    border-color: #428bca; }
+    border-color:#5c6ac4; }
 .radio-primary input[type="radio"]:checked + label::after {
-    background-color: #428bca; }
+    background-color: #5c6ac4; }
 .radio-primary input[type="checkbox"] + label::after {
     background-color: #428bca; }
 .radio-primary input[type="checkbox"]:checked + label::before {
