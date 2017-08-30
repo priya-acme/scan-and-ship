@@ -445,8 +445,8 @@ READY FOR PICKUP
 <div class="col-md-2 col-sm-12">
 <div class="hdd">IN-STORE PICKUP</div>
 <?php if(empty($get_instore_pickup)) { ?>
-<div class="instore">
-<input type="checkbox" class="radio" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']?>','<?php echo $shop; ?>')">
+<div class="instore radio">
+<input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']?>','<?php echo $shop; ?>')">
 <label>
 In Store Pickup
 </label>
@@ -465,8 +465,8 @@ In Store Pickup
 <div class="green green-checked"><a href=""><i class="fa fa-check" aria-hidden="true"></i></a></div>
 <?php } else {  ?>
 <div class="hdd">FULFILL ORDER</div>
-<div class="instore">
-<input type="checkbox" class="radio" name="fulfilled_order" value="yes" onclick="create_fulfilled_order('<?php echo $_REQUEST['id']?>','<?php echo $shop; ?>')">
+<div class="instore radio">
+<input type="checkbox" name="fulfilled_order" value="yes" onclick="create_fulfilled_order('<?php echo $_REQUEST['id']?>','<?php echo $shop; ?>')">
 <label>
 FulFill Order
 </label>
