@@ -377,7 +377,7 @@ READY FOR PICKUP
 <div class="row">
 <div class="col-md-5 col-sm-12">
 <div class="hdd">ORDER DETAILS</div>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-responsive mytable">
   <tr>
     <td width="29%"><strong>Order No.</strong></td>
     <td width="71%"><?php echo $orders->order->name; ?></td>
@@ -417,7 +417,7 @@ READY FOR PICKUP
 </div>
 <div class="col-md-5 col-sm-12">
 <DIV class="hdd">SHIPPING DETAILS</div>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-responsive mytable">
   <tr>
     <td width="29%"><strong>Name</strong></td>
     <td width="71%"><?php echo $orders->order->shipping_address->first_name." ".$orders->order->shipping_address->last_name; ?></td>
@@ -482,7 +482,7 @@ FulFill Order
 <div class="row">
 <div class="col-md-12 col-sm-12">
 <DIV class="hdd">PRODUCT DETAILS</div>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-responsive mytable">
   <tr>
     <td width="29%" class="hed" style="text-align:left">PRODUCT TITLE</td>
     <td width="8%" class="hed">ORDERED QUANTITY</td>
@@ -490,7 +490,7 @@ FulFill Order
     <td width="8%" class="hed">SCANNED QUANTITY</td>
     <?php } else { ?>
     <td width="8%" class="hed">SCANNED QUANTITY
-    <table class="table table-bordered table-responsive mytable" style="margin-bottom: 0">
+    <table class="table table-responsive mytable" style="margin-bottom: 0">
     <tr>
     <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 ?>
@@ -581,7 +581,7 @@ FulFill Order
     <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
     <?php } else { ?>
     <td>
-         <table class="table table-bordered table-responsive mytable remove-border" style="margin-bottom: 0;border:0">
+         <table class="table table-responsive mytable remove-border" style="margin-bottom: 0;border:0">
          <tr class="">
          <!--  one & six step verifictaion starts -->
           <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
