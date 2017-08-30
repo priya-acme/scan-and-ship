@@ -449,3 +449,4 @@ font-size: 13px;}
 .save_notes {
 	text-align : center;
 }
+.btn-primary[name="update_notes"]{background-color:#5c6ac4; color:#fff;}

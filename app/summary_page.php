@@ -27,7 +27,7 @@ if(isset($_POST['submit_id'])){
 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 			}
 			else {
-				$z = 1;
+				echo "<script type='text/javascript'> window.location.reload() </script>";
 			}
 		}
 	}
@@ -725,7 +725,7 @@ function delete_instore_picker(in_order,shop){
 	  xhttp.open("GET", "delete_instore_pickup.php?shop="+shop+"&order_id="+in_order, true);
 	  xhttp.send();
 	  
-	  setTimeout(function(){ window.location.reload();; }, 500);
+	  setTimeout(function(){ window.location.reload(); }, 500);
 }
 
 function selected_radio(r,shop){

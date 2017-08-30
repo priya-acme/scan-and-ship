@@ -29,7 +29,7 @@ if(isset($_POST['submit_id'])){
 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 			}
 			else {
-				$z = 1;
+				echo "<script type='text/javascript'> window.location.reload() </script>";
 			}
 		}
 	}

@@ -397,7 +397,8 @@ READY FOR PICKUP
    
   </tr>
   <tr>
-  <td colspan="2"><input class="btn btn-primary" type="submit" name="update_notes" value="Update Notes"></td>
+  <td></td>
+  <td class="save_notes"><input class="btn btn-primary" type="submit" name="update_notes" value="Update Notes"></td>
   </tr>
   <?php }  else {
   	?>
@@ -445,7 +446,7 @@ READY FOR PICKUP
 <div class="hdd">IN-STORE PICKUP</div>
 <?php if(empty($get_instore_pickup)) { ?>
 <div class="instore">
-<input type="checkbox" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']?>','<?php echo $shop; ?>')">
+<input type="checkbox" class="radio" name="in_store_pickup" value="yes" onclick="sendvalue(this.value,'<?php echo $_REQUEST['id']?>','<?php echo $shop; ?>')">
 <label>
 In Store Pickup
 </label>
@@ -465,7 +466,7 @@ In Store Pickup
 <?php } else {  ?>
 <div class="hdd">FULFILL ORDER</div>
 <div class="instore">
-<input type="checkbox" name="fulfilled_order" value="yes" onclick="create_fulfilled_order('<?php echo $_REQUEST['id']?>','<?php echo $shop; ?>')">
+<input type="checkbox" class="radio" name="fulfilled_order" value="yes" onclick="create_fulfilled_order('<?php echo $_REQUEST['id']?>','<?php echo $shop; ?>')">
 <label>
 FulFill Order
 </label>
