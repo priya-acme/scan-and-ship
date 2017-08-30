@@ -19,6 +19,7 @@ for($count=1;$count<=$count_val;$count++){
 }
 $get_verification = $Stores->get_step_verification($shop);
 if(isset($_POST['submit_id'])){
+	$z = 0;
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
@@ -28,8 +29,14 @@ if(isset($_POST['submit_id'])){
 			if($order_id == $order->name || $order_id == $order->id){
 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 			}
+			else {
+				$z = 1;
+			}
 		}
 	}
+}
+if($z == 1){
+	$order_msg = "Not Found";
 }
 $get_single_store = $Stores->get_single_save_roles($shop);
 $get_single_role = explode(",",$get_single_store['roles']); 
@@ -161,7 +168,9 @@ READY FOR PICKUP
   <tr>
     <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
-    </button></td>
+    </button>
+    <?php if(isset($_POST['submit_id'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $order_msg; ?></div><?php } ?>
+    </td>
     <?php if($get_verification['verification_step'] == 'One') {  
 	?>
     <td width="6%" class="hed">PICKED</td>
