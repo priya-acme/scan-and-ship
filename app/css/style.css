@@ -437,3 +437,7 @@ padding-right: 32px;
    .radio-primary input[type="radio"]:checked + label{
     color: #5c6ac4;
 }
+.ordered-content .mytable tr td:first-child{background-color:#5c6ac4; color:#fff; text-align:left;}
+.ordered-content .mytable {
+    text-align: left;
+}
