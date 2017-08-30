@@ -4,13 +4,14 @@ include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_REQUEST['shop'];
+//   $code = isset($_GET["code"]) ? $_GET["code"] : false;
+//  $redirect_url = $Shopify->checkAuthUrl($shop);
+//  //echo $redirect_url;
+//   header("Location: $redirect_url");
 $shop_info = $Stores->is_shop_exists($shop);
 $date = new DateTime("-1 months");
 $date->modify("-" . ($date->format('j')-1) . " days");
 $six_date = $date->format('Y-m-j');
-$sdate = new DateTime("-6 months");
-$sdate->modify("-" . ($sdate->format('j')-1) . " days");
-$ssix_date = $sdate->format('Y-m-j');
 $count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token'],$six_date);
 $count_val = ceil($count_total_orders->count / 250);
 for($count=1;$count<=$count_val;$count++){
@@ -18,24 +19,17 @@ for($count=1;$count<=$count_val;$count++){
 }
 $get_verification = $Stores->get_step_verification($shop);
 if(isset($_POST['submit_id'])){
-	$z = 0;
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
 	for($count=1;$count<=$count_val;$count++){
-		${"get_order".$count} = $Shopify->get_fulfilled_orders($shop,$shop_info['access_token'],$count,$ssix_date);
+		${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
 		foreach(${"get_order".$count}->orders as $order) {
 			if($order_id == $order->name || $order_id == $order->id){
 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 			}
-			else {
-				$z = 1;
-			}
 		}
 	}
-}
-if($z == 1){
-	$order_msg = "Not Found";
 }
 $get_single_store = $Stores->get_single_save_roles($shop);
 $get_single_role = explode(",",$get_single_store['roles']); 
@@ -167,9 +161,7 @@ READY FOR PICKUP
   <tr>
     <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
-    </button>
-    <?php if(isset($_POST['submit_id'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $order_msg; ?></div><?php } ?>
-    </td>
+    </button></td>
     <?php if($get_verification['verification_step'] == 'One') {  
 	?>
     <td width="6%" class="hed">PICKED</td>
