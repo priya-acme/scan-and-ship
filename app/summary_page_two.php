@@ -4,10 +4,6 @@ include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_REQUEST['shop'];
-//   $code = isset($_GET["code"]) ? $_GET["code"] : false;
-//  $redirect_url = $Shopify->checkAuthUrl($shop);
-//  //echo $redirect_url;
-//   header("Location: $redirect_url");
 $shop_info = $Stores->is_shop_exists($shop);
 $date = new DateTime("-1 months");
 $date->modify("-" . ($date->format('j')-1) . " days");
@@ -24,7 +20,7 @@ if(isset($_POST['submit_id'])){
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
 	for($count=1;$count<=$count_val;$count++){
-		${"get_order".$count} = $Shopify->get_fulfilled_orders($shop,$shop_info['access_token'],$count);
+		${"get_order".$count} = $Shopify->get_fulfilled_orders($shop,$shop_info['access_token'],$count,$six_date);
 		foreach(${"get_order".$count}->orders as $order) {
 			if($order_id == $order->name || $order_id == $order->id){
 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
