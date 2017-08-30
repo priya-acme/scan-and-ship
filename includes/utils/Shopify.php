@@ -154,7 +154,7 @@ class Shopify {
 	
 	public function get_fulfilled_orders($shop, $access_token,$count,$date)
 	{
-		$curl_url = "https://$shop/admin/orders.json?limit=250&page=$count&status=any&fulfillment_status=fulfilled";
+		$curl_url = "https://$shop/admin/orders.json?limit=250&page=$count&status=any&fulfillment_status=shipped";
 		//echo $curl_url;
 		return $this->curlRequest($curl_url, $access_token);
 	}
