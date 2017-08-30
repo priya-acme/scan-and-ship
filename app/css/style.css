@@ -450,3 +450,14 @@ font-size: 13px;}
 	text-align : center;
 }
 .btn-primary[name="update_notes"]{background-color:#5c6ac4; color:#fff;}
+.instore {
+    border-top: 2px solid #5c6ac4;
+    padding: 13px 5px;
+    text-align: center;
+    background: #f4f6f8;
+    width: 100%;
+}
+.instore.radio label{font-size: 0;
+padding: 0;
+vertical-align: top;
+width: 23px;}
