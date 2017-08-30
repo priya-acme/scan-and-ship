@@ -8,6 +8,9 @@ $shop_info = $Stores->is_shop_exists($shop);
 $date = new DateTime("-1 months");
 $date->modify("-" . ($date->format('j')-1) . " days");
 $six_date = $date->format('Y-m-j');
+$sdate = new DateTime("-6 months");
+$sdate->modify("-" . ($sdate->format('j')-1) . " days");
+$ssix_date = $sdate->format('Y-m-j');
 $count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token'],$six_date);
 $count_val = ceil($count_total_orders->count / 250);
 for($count=1;$count<=$count_val;$count++){
@@ -20,7 +23,7 @@ if(isset($_POST['submit_id'])){
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
 	for($count=1;$count<=$count_val;$count++){
-		${"get_order".$count} = $Shopify->get_fulfilled_orders($shop,$shop_info['access_token'],$count,$six_date);
+		${"get_order".$count} = $Shopify->get_fulfilled_orders($shop,$shop_info['access_token'],$count,$ssix_date);
 // 		foreach(${"get_order".$count}->orders as $order) {
 // 			if($order_id == $order->name || $order_id == $order->id){
 // 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
