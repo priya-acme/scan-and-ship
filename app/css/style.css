@@ -460,7 +460,7 @@ border:0;    border-top: 2px solid #5c6ac4;
 .instore.radio label{font-size: 0;
 padding: 0;
 vertical-align: top;
-width: 23px;}
+width: auto;}
 .radio input[type="radio"]:checked + label::before {
     border-color: #5c6ac4;
 }
