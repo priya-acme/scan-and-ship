@@ -467,3 +467,9 @@ width: auto;}
 .radio input[type="radio"]:checked + label::after {
     background-color: #5c6ac4;
 }
+.radio input[type="checkbox"]:checked + label::before {
+    border-color: #5c6ac4;
+}
+.radio input[type="checkbox"]:checked + label::after {
+    background-color: #5c6ac4;
+}
