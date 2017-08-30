@@ -150,6 +150,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edda1d', end
     padding-right: 33px;
 	font-size:13px;
 	font-weight:600;
+	color:#e6e6e6;
 	 }
 .radio label::before {
     content: "";
@@ -159,7 +160,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edda1d', end
     height: 17px;
     left: 0;
     margin-left: -20px;
-    border: 1px solid #cccccc;
+    border: 1px solid #e6e6e6;
     border-radius: 50%;
     background-color: #fff;
     -webkit-transition: border 0.15s ease-in-out;
@@ -433,3 +434,6 @@ padding-right: 32px;
     .role2 .serch{display: table-cell;
     width: 28px;
    }
+   .radio-primary input[type="radio"]:checked + label{
+    color: #5c6ac4;
+}
