@@ -409,7 +409,7 @@ READY FOR PICKUP
   </tr>
   <tr>
   <td></td>
-  <td><input class="btn btn-primary save_notes" type="submit" name="save_notes" value="Save Notes"></td>
+  <td class="save_notes"><input class="btn btn-primary" type="submit" name="save_notes" value="Save Notes"></td>
   </tr>
   <?php 
   }?>
