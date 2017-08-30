@@ -441,4 +441,4 @@ padding-right: 32px;
 .ordered-content .mytable {
     text-align: left;
 }
-.ordered-content .mytable tr td{background-color:#f4f6f8; color:#657382}
+.ordered-content .mytable tr td{background-color:#f4f6f8; color:#657382;border:0;}
