@@ -445,3 +445,4 @@ padding-right: 32px;
 .ordered-content .mytable tr td:first-child strong{ font-weight: normal;
 text-transform: uppercase;
 font-size: 13px;}
+.btn-primary[name="save_notes"]{background-color:#5c6ac4; color:#fff;}
