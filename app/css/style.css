@@ -442,3 +442,6 @@ padding-right: 32px;
     text-align: left;
 }
 .ordered-content .mytable tr td{background-color:#f4f6f8; color:#657382;border:0;}
+.ordered-content .mytable tr td:first-child strong{ font-weight: normal;
+text-transform: uppercase;
+font-size: 13px;}

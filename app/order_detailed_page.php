@@ -408,7 +408,8 @@ READY FOR PICKUP
    </td>
   </tr>
   <tr>
-  <td colspan="2"><input class="btn btn-primary" type="submit" name="save_notes" value="Save Notes"></td>
+  <td></td>
+  <td><input class="btn btn-primary" type="submit" name="save_notes" value="Save Notes"></td>
   </tr>
   <?php 
   }?>
