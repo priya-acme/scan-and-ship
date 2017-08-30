@@ -21,14 +21,14 @@ if(isset($_POST['submit_id'])){
 	$shop_info = $Stores->is_shop_exists($shop);
 	for($count=1;$count<=$count_val;$count++){
 		${"get_order".$count} = $Shopify->get_fulfilled_orders($shop,$shop_info['access_token'],$count,$six_date);
-		foreach(${"get_order".$count}->orders as $order) {
-			if($order_id == $order->name || $order_id == $order->id){
-				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
-			}
-			else {
-				$z = 1;
-			}
-		}
+// 		foreach(${"get_order".$count}->orders as $order) {
+// 			if($order_id == $order->name || $order_id == $order->id){
+// 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
+// 			}
+// 			else {
+// 				$z = 1;
+// 			}
+// 		}
 	}
 }
 if($z == 1){
