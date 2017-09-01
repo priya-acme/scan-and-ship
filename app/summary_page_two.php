@@ -145,8 +145,9 @@ READY FOR PICKUP
 </span>
 </div>
 <div class="col-sm-6" style="float:right;text-align: right">
-<a href="/double-check/app/summary_page.php?shop=<?php echo $shop; ?>" style="color:#000">Unfulfilled Orders</a> | 
-<a href="/double-check/app/summary_page_two.php?shop=<?php echo $shop; ?>" style="color:#000">Fulfilled Orders</a>
+<span class="role2">SELECT TYPE :</span>
+<a href="/double-check/app/summary_page.php?shop=<?php echo $shop; ?>">Unfulfilled Orders</a>
+<a href="/double-check/app/summary_page_two.php?shop=<?php echo $shop; ?>" class="unfl-ords">Fulfilled Orders</a>
 </div>
 </div>
 </div>
@@ -159,12 +160,12 @@ READY FOR PICKUP
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
 <thead>
   <tr>
-    <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
+    <td colspan="3" class="hed" width="25%">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
     </button></td>
     <?php if($get_verification['verification_step'] == 'One') {  
 	?>
-    <td width="6%" class="hed">PICKED</td>
+    <td width="7%" class="hed">PICKED</td>
    
     <?php } ?>
     <?php if($get_verification['verification_step'] == 'Two') {  
@@ -173,54 +174,54 @@ READY FOR PICKUP
 	<?php } ?>
 	<?php if(in_array("instore pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Three' ) {  
 	?>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	<td width="11%" class="hed">IN-STORE PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Four' ) {  
 	?>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
 	<?php } } ?>
 	<?php if($get_verification['verification_step'] == 'Five' ) {  
 	?>
-	<td width="6%" class="hed">PICKED</td>
+	<td width="7%" class="hed">PICKED</td>
 	<td width="7%" class="hed">SHIPPED</td>
 	<?php } ?>
 	<?php if(in_array("instore pickup", $get_single_role)){if($get_verification['verification_step'] == 'Six' ) {  
 	?>
-	<td width="6%" class="hed">PICKED</td>
+	<td width="7%" class="hed">PICKED</td>
 	<td width="7%" class="hed">IN-STORE PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven' ) {  
 	?>
-	<td width="6%" class="hed">PICKED</td>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
+	<td width="7%" class="hed">PICKED</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("instore pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eight' ) {  
 	?>
 	<td width="7%" class="hed">SHIPPED</td>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	<td width="11%" class="hed">IN-STORE PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Nine' ) {  
 	?>
 	<td width="7%" class="hed">SHIPPED</td>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role) && in_array("instore pickup", $get_single_role) ){if($get_verification['verification_step'] == 'Ten' ) {  
 	?>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
+	<td width="11%" class="hed">IN-STORE PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role) && in_array("instore pickup", $get_single_role) ){ if($get_verification['verification_step'] == 'Eleven' ) {  
 	?>
 	<td width="6%" class="hed">PICKED</td>
 	<td width="7%" class="hed">SHIPPED</td>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
+	<td width="11%" class="hed">IN-STORE PICKUP</td>
 	
 	<?php } } ?>
     
-    <td width="7%" class="hed">ORDER STATUS</td>
+    <td width="10%" class="hed">ORDER STATUS</td>
    
-    <td width="31%" class="hed">NOTES</td>
+    <td width="27%" class="hed notes-bg">NOTES</td>
   </tr>
   </thead>
   <tbody>
