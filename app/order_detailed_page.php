@@ -487,7 +487,7 @@ FulFill Order
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-responsive mytable main-design">
   <tr class="heading_tr">
     <td width="25%" class="hed" style="text-align:left">PRODUCT TITLE</td>
-    <td width="8%" class="hed">ORDERED QUANTITY</td>
+    <td width="8%" class="hed">QUANTITY</td>
     <?php if($orders->order->tags == 'Double-Check'){ ?>
     <td width="8%" class="hed">SCANNED QUANTITY</td>
     <?php } else { ?>
@@ -506,7 +506,7 @@ FulFill Order
     <?php } ?>
     <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
 ?>
-     <td width="9%" class="hed">READY</td>
+     <td width="9%" class="hed">READY FOR PICKUP</td>
    <?php } } ?>
    <?php  if($get_verification['verification_step'] == 'Five') {  
 ?>
@@ -516,18 +516,18 @@ FulFill Order
    <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven') {  
 ?>
      <td width="8%" class="hed">PICKED</td>
-     <td width="15%" class="hed">READY</td>
+     <td width="15%" class="hed">READY FOR PICKUP</td>
    <?php } } ?>
    <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Nine') {  
 ?>
      <td width="9%" class="hed">SHIPPED</td>
-     <td width="15%" class="hed">READY</td>
+     <td width="15%" class="hed">READY FOR PICKUP</td>
    <?php } } ?>
    <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
 ?>
      <td width="8%" class="hed">PICKED</td>
      <td width="9%" class="hed">SHIPPED</td>
-     <td width="15%" class="hed">READY</td>
+     <td width="15%" class="hed">READY FOR PICKUP</td>
    <?php } } ?>
     
   </tr>
