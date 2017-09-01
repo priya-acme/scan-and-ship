@@ -591,7 +591,7 @@ FulFill Order
     <td align="left"><?php echo $orders->order->line_items[$i]->name; ?></td>
     <td><?php echo $orders->order->line_items[$i]->quantity; ?></td>
     <?php if($orders->order->tags == 'Double-Check'){ ?>
-    <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
     <?php } else { ?>
     <td class="scaaned_table">
          <table class="table table-responsive mytable remove-border" style="margin-bottom: 0;border:0">
