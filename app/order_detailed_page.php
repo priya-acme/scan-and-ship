@@ -273,9 +273,9 @@ $get_single_role = explode(",",$get_single_store['roles']);
 </div>
 
 <div class="col-sm-12 col-md-4 no-wrap">
-
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :</span><?php } ?>
-<span class="radio radio-primary">
+<div class="role2">
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="b1">SELECT ROLE :</span><?php } ?>
+<span class="radio radio-primary b2">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
 <input type="radio" name="select_role" id="radio1" value="Picker ok" <?php if($get_single_store['selected_role'] == 'Picker ok') { echo "checked"; }  ?> onclick="selected_radio(this.value,'<?php echo $shop; ?>')">
@@ -366,7 +366,7 @@ READY FOR PICKUP
 <?php } } ?>
  
 </span>
-
+</div>
 </div>
 </div>
 </div>
@@ -484,56 +484,18 @@ FulFill Order
 <div class="row">
 <div class="col-md-12 col-sm-12">
 <DIV class="hdd">PRODUCT DETAILS</div>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-responsive mytable">
-  <tr>
-    <td width="29%" class="hed" style="text-align:left">PRODUCT TITLE</td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-responsive mytable main-design">
+  <tr class="heading_tr">
+    <td width="25%" class="hed" style="text-align:left">PRODUCT TITLE</td>
     <td width="8%" class="hed">ORDERED QUANTITY</td>
     <?php if($orders->order->tags == 'Double-Check'){ ?>
     <td width="8%" class="hed">SCANNED QUANTITY</td>
     <?php } else { ?>
     <td width="8%" class="hed">SCANNED QUANTITY
-    <table class="table table-responsive mytable" style="margin-bottom: 0">
-    <tr>
-    <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
-?>
-<td width="8%" class="hed">Picker</td>
-<?php } ?>
-    <?php if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
-?>
- <td width="8%" class="hed">Shipper</td>
-<?php } ?>
-<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
-?>
- <td width="8%" class="hed">Ready For Pickup</td>
-<?php } }  ?>
-<?php if($get_verification['verification_step'] == 'Five') {  
-?>
-  <td width="8%" class="hed">Picker</td>
- <td width="8%" class="hed">Shipper</td>
-<?php } ?>
-<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Seven') {  
-?>
-  <td width="8%" class="hed">Picker</td>
-  <td width="8%" class="hed">Ready For Pickup</td>
-<?php } } ?>
-<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Nine') {  
-?>
-  <td width="8%" class="hed">Shipper</td>
-  <td width="8%" class="hed">Ready For Pickup</td>
-<?php } } ?>
-<?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
-?>
- <td width="8%" class="hed">Picker</td>
- <td width="8%" class="hed">Shipper</td>
- <td width="8%" class="hed">Ready For Pickup</td>
-<?php } } ?>
-   
-    </tr>
-    </table>
     </td>
     <?php } ?>
-    <td width="8%" class="hed">PRICE</td>
-    <td width="17%" class="hed">SKU</td>
+    <td width="14%" class="hed">PRICE</td>
+    <td width="15%" class="hed">SKU</td>
     <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 ?>
     <td width="8%" class="hed">PICKED</td>
@@ -544,7 +506,7 @@ FulFill Order
     <?php } ?>
     <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
 ?>
-     <td width="9%" class="hed">READY FOR PICKUP</td>
+     <td width="9%" class="hed">READY</td>
    <?php } } ?>
    <?php  if($get_verification['verification_step'] == 'Five') {  
 ?>
@@ -554,20 +516,69 @@ FulFill Order
    <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven') {  
 ?>
      <td width="8%" class="hed">PICKED</td>
-     <td width="9%" class="hed">READY FOR PICKUP</td>
+     <td width="15%" class="hed">READY</td>
    <?php } } ?>
    <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Nine') {  
 ?>
      <td width="9%" class="hed">SHIPPED</td>
-     <td width="9%" class="hed">READY FOR PICKUP</td>
+     <td width="15%" class="hed">READY</td>
    <?php } } ?>
    <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
 ?>
      <td width="8%" class="hed">PICKED</td>
      <td width="9%" class="hed">SHIPPED</td>
-     <td width="9%" class="hed">READY FOR PICKUP</td>
+     <td width="15%" class="hed">READY</td>
    <?php } } ?>
     
+  </tr>
+  <tr>
+  <td></td>
+  <td></td>
+  <td class="scanned_table">
+ <table class="table table-responsive mytable scanned_qty_table" style="margin-bottom: 0">
+    <tr>
+    <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
+?>
+<td width="8%" class="hed step_hed">Picker</td>
+<?php } ?>
+    <?php if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
+?>
+ <td width="8%" class="hed step_hed">Shipper</td>
+<?php } ?>
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+?>
+ <td width="8%" class="hed step_hed">Ready</td>
+<?php } }  ?>
+<?php if($get_verification['verification_step'] == 'Five') {  
+?>
+  <td width="8%" class="hed step_hed">Picker</td>
+ <td width="8%" class="hed step_hed">Shipper</td>
+<?php } ?>
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Seven') {  
+?>
+  <td width="8%" class="hed step_hed">Picker</td>
+  <td width="8%" class="hed step_hed">Ready</td>
+<?php } } ?>
+<?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Nine') {  
+?>
+  <td width="8%" class="hed step_hed">Shipper</td>
+  <td width="8%" class="hed step_hed">Ready</td>
+<?php } } ?>
+<?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
+?>
+ <td width="8%" class="hed step_hed">Picker</td>
+ <td width="8%" class="hed step_hed">Shipper</td>
+ <td width="8%" class="hed step_hed">Ready</td>
+<?php } } ?>
+   
+    </tr>
+    </table>
+	</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
@@ -582,7 +593,7 @@ FulFill Order
     <?php if($orders->order->tags == 'Double-Check'){ ?>
     <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
     <?php } else { ?>
-    <td>
+    <td class="scaaned_table">
          <table class="table table-responsive mytable remove-border" style="margin-bottom: 0;border:0">
          <tr class="">
          <!--  one & six step verifictaion starts -->
@@ -598,10 +609,10 @@ FulFill Order
         } else {
         	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  picker qty check ends-->
                
@@ -622,10 +633,10 @@ FulFill Order
         } else {
         	if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $s_get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $s_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  shipper qty check ends -->
         <?php } ?>
@@ -646,10 +657,10 @@ FulFill Order
         } else {
         	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
         <?php } } ?>
@@ -671,10 +682,10 @@ FulFill Order
         } else {
         	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  picker qty check ends-->
         
@@ -688,10 +699,10 @@ FulFill Order
         } else {
         	if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $s_get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $s_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  shipper qty check ends -->
         <?php } ?>
@@ -712,10 +723,10 @@ FulFill Order
         } else {
         	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  picker qty check ends-->
         <!--  ready for pickup qty check starts -->
@@ -728,10 +739,10 @@ FulFill Order
         } else {
         	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
         <?php } } ?>
@@ -752,10 +763,10 @@ FulFill Order
         } else {
         	if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $s_get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $s_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  shipper qty check ends -->
         
@@ -769,10 +780,10 @@ FulFill Order
         } else {
         	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
         <?php } } ?>
@@ -794,10 +805,10 @@ FulFill Order
         } else {
         	if($get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  picker qty check ends-->
         
@@ -811,10 +822,10 @@ FulFill Order
         } else {
         	if($s_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($s_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $s_get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $s_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  shipper qty check ends -->
         
@@ -828,10 +839,10 @@ FulFill Order
         } else {
         	if($r_get_order_veri_sku['quantity'] == $orders->order->line_items[$i]->quantity){
     	?>
-    	 <td style="background-color:green"><?php echo $orders->order->line_items[$i]->quantity ?></td>
+    	 <td><?php echo $orders->order->line_items[$i]->quantity ?></td>
         <?php } else if($r_get_order_veri_sku['quantity'] != $orders->order->line_items[$i]->quantity){ 
     	?>
-    	 <td style="background-color:#e8f400"><?php echo $r_get_order_veri_sku['quantity']; ?></td>
+    	 <td><?php echo $r_get_order_veri_sku['quantity']; ?></td>
         <?php } }  ?>
         <!--  ready for pickup qty check ends -->
           <?php } } ?>
