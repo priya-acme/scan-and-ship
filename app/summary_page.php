@@ -54,7 +54,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2">SELECT ROLE :</span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2 summary-role">SELECT ROLE :</span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
@@ -147,9 +147,10 @@ READY FOR PICKUP
  
 </span>
 </div>
-<div class="col-sm-6" style="float:right;text-align: right">
-<a href="/double-check/app/summary_page.php?shop=<?php echo $shop; ?>" style="color:#000">Unfulfilled Orders</a> | 
-<a href="/double-check/app/summary_page_two.php?shop=<?php echo $shop; ?>" style="color:#000">Fulfilled Orders</a>
+<div class="col-sm-6 order_filters" style="float:right;text-align: right">
+<span class="role2">SELECT TYPE :</span>
+<a href="/double-check/app/summary_page.php?shop=<?php echo $shop; ?>"class="unfl-ords">Unfulfilled Orders</a>
+<a href="/double-check/app/summary_page_two.php?shop=<?php echo $shop; ?>">Fulfilled Orders</a>
 </div>
 </div>
 </div>
@@ -162,14 +163,14 @@ READY FOR PICKUP
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
 <thead>
   <tr>
-    <td colspan="3" class="hed">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
+    <td colspan="3" class="hed" width="25%">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
     </button>
      <?php if(isset($_POST['submit_id'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $order_msg; ?></div><?php } ?>
     </td>
     <?php if($get_verification['verification_step'] == 'One') {  
 	?>
-    <td width="6%" class="hed">PICKED</td>
+    <td width="7%" class="hed">PICKED</td>
    
     <?php } ?>
     <?php if($get_verification['verification_step'] == 'Two') {  
@@ -178,54 +179,54 @@ READY FOR PICKUP
 	<?php } ?>
 	<?php if(in_array("instore pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Three' ) {  
 	?>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	<td width="11%" class="hed">IN-STORE PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Four' ) {  
 	?>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
 	<?php } } ?>
 	<?php if($get_verification['verification_step'] == 'Five' ) {  
 	?>
-	<td width="6%" class="hed">PICKED</td>
+	<td width="7%" class="hed">PICKED</td>
 	<td width="7%" class="hed">SHIPPED</td>
 	<?php } ?>
 	<?php if(in_array("instore pickup", $get_single_role)){if($get_verification['verification_step'] == 'Six' ) {  
 	?>
-	<td width="6%" class="hed">PICKED</td>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	<td width="7%" class="hed">PICKED</td>
+	<td width="11%" class="hed">IN-STORE PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven' ) {  
 	?>
-	<td width="6%" class="hed">PICKED</td>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
+	<td width="7%" class="hed">PICKED</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("instore pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eight' ) {  
 	?>
 	<td width="7%" class="hed">SHIPPED</td>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	<td width="11%" class="hed">IN-STORE PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Nine' ) {  
 	?>
 	<td width="7%" class="hed">SHIPPED</td>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role) && in_array("instore pickup", $get_single_role) ){if($get_verification['verification_step'] == 'Ten' ) {  
 	?>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
+	<td width="11%" class="hed">IN-STORE PICKUP</td>
 	<?php } } ?>
 	<?php if(in_array("ready for pickup", $get_single_role) && in_array("instore pickup", $get_single_role) ){ if($get_verification['verification_step'] == 'Eleven' ) {  
 	?>
 	<td width="6%" class="hed">PICKED</td>
 	<td width="7%" class="hed">SHIPPED</td>
-	<td width="7%" class="hed">READY FOR PICKUP</td>
-	<td width="7%" class="hed">IN-STORE PICKUP</td>
+	<td width="12%" class="hed">READY FOR PICKUP</td>
+	<td width="11%" class="hed">IN-STORE PICKUP</td>
 	
 	<?php } } ?>
     
-    <td width="7%" class="hed">ORDER STATUS</td>
+    <td width="10%" class="hed">ORDER STATUS</td>
    
-    <td width="31%" class="hed">NOTES</td>
+    <td width="27%" class="hed notes-bg">NOTES</td>
   </tr>
   </thead>
   <tbody>
@@ -740,14 +741,24 @@ function selected_radio(r,shop){
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 1000);
 }
-// $(function () {
-//     $("#table1").hpaging({ "limit": 50 });
-// });
-
-// $("#btnApply").click(function () {
-//     var lmt = $("#pglmt").val();
-//     $("#table1").hpaging("newLimit", lmt);
-// });
-
+$(".order_filters a").each(function(){		
+	  var getUrlParameter = function getUrlParameter(sParam) {		
+	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),		
+	        sURLVariables = sPageURL.split('&'),		
+	        sParameterName,		
+	        i;		
+	    for (i = 0; i < sURLVariables.length; i++) {		
+	        sParameterName = sURLVariables[i].split('=');		
+	        if (sParameterName[0] === sParam) {		
+	            return sParameterName[1] === undefined ? true : sParameterName[1];		
+	        }		
+	    }		
+	};		
+	var shop_url = getUrlParameter('shop');		
+	var pathname = window.location.pathname;		
+	var appended_path = pathname+"?shop="+shop_url;		
+      if($(this).attr("href")==appended_path)		
+          $(this).addClass("active");		
+  })
 </script>
 <?php include 'footer.php' ?>
