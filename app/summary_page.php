@@ -163,7 +163,7 @@ READY FOR PICKUP
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
 <thead>
   <tr>
-    <td colspan="3" class="hed" width="35%">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
+    <td colspan="3" class="hed" width="40%">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
     </button>
      <?php if(isset($_POST['submit_id'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $order_msg; ?></div><?php } ?>
@@ -219,8 +219,8 @@ READY FOR PICKUP
 	?>
 	<td width="6%" class="hed">PICKED</td>
 	<td width="7%" class="hed">SHIPPED</td>
-	<td width="12%" class="hed">READY FOR PICKUP</td>
-	<td width="11%" class="hed">IN-STORE PICKUP</td>
+	<td width="10%" class="hed">READY FOR PICKUP</td>
+	<td width="10%" class="hed">IN-STORE PICKUP</td>
 	
 	<?php } } ?>
     
