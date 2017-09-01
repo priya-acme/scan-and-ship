@@ -736,14 +736,25 @@ function selected_radio(r,shop){
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 1000);
 }
-// $(function () {
-//     $("#table1").hpaging({ "limit": 50 });
-// });
-
-// $("#btnApply").click(function () {
-//     var lmt = $("#pglmt").val();
-//     $("#table1").hpaging("newLimit", lmt);
-// });
+$(".order_filters a").each(function(){		
+	  var getUrlParameter = function getUrlParameter(sParam) {		
+	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),		
+	        sURLVariables = sPageURL.split('&'),		
+	        sParameterName,		
+	        i;		
+	    for (i = 0; i < sURLVariables.length; i++) {		
+	        sParameterName = sURLVariables[i].split('=');		
+	        if (sParameterName[0] === sParam) {		
+	            return sParameterName[1] === undefined ? true : sParameterName[1];		
+	        }		
+	    }		
+	};		
+	var shop_url = getUrlParameter('shop');		
+	var pathname = window.location.pathname;		
+	var appended_path = pathname+"?shop="+shop_url;		
+    if($(this).attr("href")==appended_path)		
+        $(this).addClass("active");		
+})
 
 </script>
 
