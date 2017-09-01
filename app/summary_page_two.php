@@ -160,7 +160,7 @@ READY FOR PICKUP
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
 <thead>
   <tr>
-    <td colspan="3" class="hed" width="25%">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
+    <td colspan="3" class="hed" width="35%">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
       <span class="glyphicon glyphicon-search"></span>
     </button></td>
     <?php if($get_verification['verification_step'] == 'One') {  
@@ -221,7 +221,7 @@ READY FOR PICKUP
     
     <td width="10%" class="hed">ORDER STATUS</td>
    
-    <td width="27%" class="hed notes-bg">NOTES</td>
+    <td width="15%" class="hed notes-bg">NOTES</td>
   </tr>
   </thead>
   <tbody>
