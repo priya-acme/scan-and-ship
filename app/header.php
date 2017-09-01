@@ -46,4 +46,8 @@
 	});
  </script>
 </head>
+<?php
+// flush the buffer
+flush();
+?>
 <body>
