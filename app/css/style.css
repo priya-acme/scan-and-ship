@@ -570,3 +570,6 @@ font-size: 13px;}
 color: #657382;
 font-size: 13px;}
 .summary-table .mytable td strong a{font-weight:bold}
+.green .fa-check::before { color: #60BE3A;
+vertical-align: middle;
+display: inline-block;}
