@@ -25,13 +25,14 @@ if(isset($_POST['submit_id'])){
 		ob_start();
 		${"get_order".$count} = $Shopify->get_unfulfilled_orders($shop,$shop_info['access_token'],$count,$six_date);
 		foreach(${"get_order".$count}->orders as $order) {
-			
+			ob_start();
 			if($order_id == $order->name || $order_id == $order->id){
 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
 			}
 			else {
 				$z = 1;
 			}
+			ob_end_flush();
 		 }
 		ob_end_flush();
 	}
