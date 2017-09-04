@@ -441,10 +441,11 @@ padding-right: 32px;
     padding-right: 24px;
     font-size: 11px;}
     .role2 .serch{display: table-cell;
-    width: 28px;
-	    height: 28px;
-    margin: 0 0px 5px 0;
-    line-height: 28px;
+width: 28px;
+height: 28px;
+margin: 0;
+line-height: inherit;
+vertical-align: middle;
    }
    .radio-primary input[type="radio"]:checked + label{
     color: #5c6ac4;
