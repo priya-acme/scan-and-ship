@@ -581,3 +581,13 @@ display: inline-block;}
     display: block;
     line-height: inherit;
 }
+.btn-danger.focus, .btn-danger:focus {
+    color: #fff;
+    background-color: #5c6ac4;
+    border-color: #5c6ac4;
+}
+.btn-danger:hover {
+    color: #fff;
+    background-color: #5c6ac4;
+    border-color: #5c6ac4;
+}
