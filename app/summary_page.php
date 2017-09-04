@@ -148,7 +148,7 @@ READY FOR PICKUP
 </span>
 </div>
 <div class="col-sm-6 order_filters" style="float:right;text-align: right">
-<span class="role2">SELECT TYPE :</span>
+<span class="role2">ORDER TYPE :</span>
 <a href="/double-check/app/summary_page.php?shop=<?php echo $shop; ?>"class="unfl-ords">Unfulfilled Orders</a>
 <a href="/double-check/app/summary_page_two.php?shop=<?php echo $shop; ?>">Fulfilled Orders</a>
 </div>
