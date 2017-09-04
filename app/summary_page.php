@@ -231,7 +231,7 @@ READY FOR PICKUP
   </thead>
   <tbody>
    
-  <?php for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) {   ?>
+  <?php for($count=1;$count<=$count_val;$count++){ foreach(${"orders".$count}->orders as $order) { ob_start();?>
   <?php //echo "<pre>";
     $now = date("Y-m-d");
     $input = $order->updated_at; 
@@ -698,7 +698,10 @@ READY FOR PICKUP
             <td> - </td>
      <?php } ?>
    </tr>
-  <?php } } }  ?>
+  <?php }  
+  echo ob_get_contents();
+  ob_end_flush();
+	} }  ?>
   </tbody>
  </table>
 </div>
