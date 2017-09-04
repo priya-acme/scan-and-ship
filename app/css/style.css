@@ -613,6 +613,7 @@ table.scanned_qty_table td .sroles {
 }
 .table.table-responsive.mytable.scanned_qty_table {
     background: transparent;
+    border-radius:0;
 }
 .scanned_table .scanned_qty_table td.step_hed{padding-right:5px;}
 .scanned_table .scanned_qty_table td.step_hed:last-child{padding-right:0px;}
