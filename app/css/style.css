@@ -571,12 +571,12 @@ font-size: 13px;}
 .green .fa-check::before { color: #60BE3A;
 vertical-align: middle;
 display: inline-block;}
+
 .mytable td .green a {
     vertical-align: middle;
-    display: inline-block;
+    display: block;
     line-height: inherit;
-} 
-
+}
 .btn-danger.focus, .btn-danger:focus {
     color: #fff;
     background-color: #5c6ac4;
@@ -587,3 +587,4 @@ display: inline-block;}
     background-color: #5c6ac4;
     border-color: #5c6ac4;
 }
+.green { display: inline-block;}
