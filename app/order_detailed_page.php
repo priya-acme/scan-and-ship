@@ -540,7 +540,7 @@ FulFill Order
   <td></td>
   <td class="scanned_table">
  <table class="table table-responsive mytable scanned_qty_table" style="margin-bottom: 0">
-    <tr><span class="sroles">
+    <span class="sroles"><tr>
     <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 ?>
 
@@ -582,8 +582,8 @@ FulFill Order
  <td width="8%" class="hed step_hed">Ready</td>
 
 <?php } } ?>
-</span>
- </tr>
+
+ </tr></span>
     </table>
 	</td>
 	<td></td>
