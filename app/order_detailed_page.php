@@ -588,9 +588,39 @@ FulFill Order
 	</td>
 	<td></td>
 	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
+	 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
+?>
+    <td></td>
+    <?php } ?>
+    <?php  if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
+?>
+     <td></td>
+    <?php } ?>
+    <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
+?>
+     <td></td>
+   <?php } } ?>
+   <?php  if($get_verification['verification_step'] == 'Five') {  
+?>
+     <td></td>
+     <td></td>
+   <?php } ?>
+   <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Seven') {  
+?>
+     <td></td>
+     <td></td>
+   <?php } } ?>
+   <?php  if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Nine') {  
+?>
+     <td></td>
+     <td></td>
+   <?php } } ?>
+   <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
+?>
+     <td></td>
+     <td></td>
+     <td></td>
+   <?php } } ?>
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
