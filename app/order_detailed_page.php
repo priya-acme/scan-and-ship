@@ -540,50 +540,50 @@ FulFill Order
   <td></td>
   <td class="scanned_table">
  <table class="table table-responsive mytable scanned_qty_table" style="margin-bottom: 0">
-    <span class="sroles"><tr>
+   <tr>
     <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 ?>
 
-<td width="8%" class="hed step_hed">Picker</td>
+<td width="8%" class="hed step_hed"> <span class="sroles">Picker</span></td>
 
 <?php } ?>
     <?php if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
 ?>
- <td width="8%" class="hed step_hed">Shipper</td>
+ <td width="8%" class="hed step_hed"> <span class="sroles">Shipper</span></td>
 
 <?php } ?>
 <?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
 ?>
- <td width="8%" class="hed step_hed">Ready</td>
+ <td width="8%" class="hed step_hed"> <span class="sroles">Ready</span></td>
 
 <?php } }  ?>
 <?php if($get_verification['verification_step'] == 'Five') {  
 ?>
-  <td width="8%" class="hed step_hed">Picker</td>
- <td width="8%" class="hed step_hed">Shipper</td>
+  <td width="8%" class="hed step_hed"> <span class="sroles">Picker</span></td>
+ <td width="8%" class="hed step_hed"> <span class="sroles">Shipper</span></td>
 
 <?php } ?>
 <?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Seven') {  
 ?>
-  <td width="8%" class="hed step_hed">Picker</td>
-  <td width="8%" class="hed step_hed">Ready</td>
+  <td width="8%" class="hed step_hed"> <span class="sroles">Picker</span></td>
+  <td width="8%" class="hed step_hed"> <span class="sroles">Ready</span></td>
 
 <?php } } ?>
 <?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Nine') {  
 ?>
-  <td width="8%" class="hed step_hed">Shipper</td>
-  <td width="8%" class="hed step_hed">Ready</td>
+  <td width="8%" class="hed step_hed"> <span class="sroles">Shipper</span></td>
+  <td width="8%" class="hed step_hed"> <span class="sroles">Ready</span></td>
 
 <?php } } ?>
 <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
 ?>
- <td width="8%" class="hed step_hed">Picker</td>
- <td width="8%" class="hed step_hed">Shipper</td>
- <td width="8%" class="hed step_hed">Ready</td>
+ <td width="8%" class="hed step_hed"> <span class="sroles">Picker</span></td>
+ <td width="8%" class="hed step_hed"> <span class="sroles">Shipper</span></td>
+ <td width="8%" class="hed step_hed"> <span class="sroles">Ready</span></td>
 
 <?php } } ?>
 
- </tr></span>
+ </tr>
     </table>
 	</td>
 	<td></td>
