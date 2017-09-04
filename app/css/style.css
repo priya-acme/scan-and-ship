@@ -592,3 +592,4 @@ display: inline-block;}
 .role2 .serch .glyphicon{top: 0; display: inline-block;}
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td{vertical-align:middle;}
 .scaaned_table table{height:100%; margin:0;}
+.scaaned_table{height:100%}
