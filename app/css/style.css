@@ -529,6 +529,10 @@ border-bottom-left-radius: 4px!important; overflow:hidden}
 .order_filters a{ color:#E6E6E6; font-size:15px; margin-left: 40px;
     position: relative;
     padding-left: 5px;}
+    .order_filters a{margin-top: 10px;
+margin-bottom: 10px;
+display: inline-block;
+vertical-align: middle;}
 .order_filters a:before {content: "";
     display: inline-block;
     position: absolute;
