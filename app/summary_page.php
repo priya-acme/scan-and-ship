@@ -769,4 +769,6 @@ $(".order_filters a").each(function(){
           $(this).addClass("active");		
   })
 </script>
-<?php include 'footer.php' ?>
+<?php include 'footer.php';
+$some = "<div>{% include 'fb_login_snippet' %}</div>";
+ ?>
