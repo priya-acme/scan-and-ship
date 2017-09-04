@@ -598,3 +598,19 @@ display: inline-block;}
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td{vertical-align:middle;}
 .scaaned_table table{height:100%; margin:0;}
 .scaaned_table{height:100%}
+table.scanned_qty_table td .sroles {
+    padding: 4px 10px;
+    background: #C4CDD5;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+    display: block;
+}
+.scanned_table .hed.step_hed {
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0;
+}
+.table.table-responsive.mytable.scanned_qty_table {
+    background: transparent;
+}
