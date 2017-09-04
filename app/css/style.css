@@ -563,3 +563,6 @@ vertical-align: middle;}
     margin-top: 150px;
 }
 .summary-table .mytable .serch{background: #b7bcff;}
+.summary-table .mytable td strong{font-weight: normal;
+color: #657382;
+font-size: 13px;}

@@ -160,7 +160,7 @@ READY FOR PICKUP
 <div class="row">
 <div class="col-md-12">
 <div class="tbl summary-table">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable" id="table1">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-responsive mytable" id="table1">
 <thead>
   <tr>
     <td colspan="3" class="hed" width="40%">ORDER LOOKUP <input type="text" class="txt" name="order_id"> <button type="submit" class="serch" name="submit_id">
