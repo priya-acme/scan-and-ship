@@ -569,3 +569,4 @@ font-size: 13px;}
 .summary-table .mytable td a{
 color: #657382;
 font-size: 13px;}
+.summary-table .mytable td strong a{font-weight:bold}
