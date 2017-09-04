@@ -540,56 +540,50 @@ FulFill Order
   <td></td>
   <td class="scanned_table">
  <table class="table table-responsive mytable scanned_qty_table" style="margin-bottom: 0">
-    <tr>
+    <tr><span class="sroles">
     <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 ?>
-<span class="sroles">
+
 <td width="8%" class="hed step_hed">Picker</td>
-</span>
+
 <?php } ?>
     <?php if($get_verification['verification_step'] == 'Two' || $get_verification['verification_step'] == 'Eight') {  
 ?>
-<span class="sroles">
  <td width="8%" class="hed step_hed">Shipper</td>
- </span>
+
 <?php } ?>
 <?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Four' || $get_verification['verification_step'] == 'Ten') {  
 ?>
-<span class="sroles">
  <td width="8%" class="hed step_hed">Ready</td>
- </span>
+
 <?php } }  ?>
 <?php if($get_verification['verification_step'] == 'Five') {  
 ?>
-<span class="sroles">
   <td width="8%" class="hed step_hed">Picker</td>
  <td width="8%" class="hed step_hed">Shipper</td>
- </span>
+
 <?php } ?>
 <?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Seven') {  
 ?>
-<span class="sroles">
   <td width="8%" class="hed step_hed">Picker</td>
   <td width="8%" class="hed step_hed">Ready</td>
-  </span>
+
 <?php } } ?>
 <?php if(in_array("ready for pickup", $get_single_role)){  if($get_verification['verification_step'] == 'Nine') {  
 ?>
-<span class="sroles">
   <td width="8%" class="hed step_hed">Shipper</td>
   <td width="8%" class="hed step_hed">Ready</td>
-  </span>
+
 <?php } } ?>
 <?php if(in_array("ready for pickup", $get_single_role)){ if($get_verification['verification_step'] == 'Eleven') {  
 ?>
-<span class="sroles">
  <td width="8%" class="hed step_hed">Picker</td>
  <td width="8%" class="hed step_hed">Shipper</td>
  <td width="8%" class="hed step_hed">Ready</td>
- </span>
+
 <?php } } ?>
-   
-    </tr>
+</span>
+ </tr>
     </table>
 	</td>
 	<td></td>
