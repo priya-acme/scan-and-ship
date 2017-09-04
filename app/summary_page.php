@@ -699,7 +699,7 @@ READY FOR PICKUP
      <?php } ?>
    </tr>
   <?php }  
-  echo ob_get_contents();
+  //echo ob_get_contents();
   ob_end_flush();
 	} }  ?>
   </tbody>
