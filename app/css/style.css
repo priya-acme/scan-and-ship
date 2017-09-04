@@ -88,7 +88,7 @@ border-radius: 20px;
 box-shadow: 0px 0px 0px 5px rgba(188,229,175,1); border:solid 2px #60BE3A;
 }
 .green a{ color:#60BE3A; font-size:13px}
-.green a i {margin-top: 2px;}
+.green a i {margin-top: 0;}
 
 
 .yellow{background: #e8f400;
@@ -576,3 +576,8 @@ display: inline-block;}
     display: inline-block;
     line-height: inherit;
 } 
+.mytable td .green a {
+    vertical-align: middle;
+    display: block;
+    line-height: inherit;
+}
