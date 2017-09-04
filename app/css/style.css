@@ -576,11 +576,7 @@ display: inline-block;}
     display: inline-block;
     line-height: inherit;
 } 
-.mytable td .green a {
-    vertical-align: middle;
-    display: block;
-    line-height: inherit;
-}
+
 .btn-danger.focus, .btn-danger:focus {
     color: #fff;
     background-color: #5c6ac4;
