@@ -516,7 +516,7 @@ border-bottom-left-radius: 4px!important; overflow:hidden}
     overflow: hidden;} 
 	
 .tbl.summary-table table 	thead {background:#686EC8}
-.tbl.summary-table table 	thead td.hed {color:#fff}
+.tbl.summary-table table 	thead td.hed {color:#fff;font-size 12px; }
 
 .notes-bg {background:#232262}
 
@@ -642,3 +642,4 @@ display: block;}
 .yellow a {    line-height: 15px;
 }
 .mytable tr td.hed{font-size:12px}
+.radio input[type="checkbox"] { position:relative; z-index:1;}
