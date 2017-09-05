@@ -1129,7 +1129,7 @@ function sendvalue(a,b,shop){
 }
 function send_picker_value(o,s,ro,qty,shop){
 	var select_role = $("input[type='radio']:checked").val();
-	alert(select_role);
+	//alert(select_role);
 	if(select_role != 'Picker ok'){
      alert('Please select correct role !!');
 		}
@@ -1151,7 +1151,7 @@ function send_picker_value(o,s,ro,qty,shop){
        
 	    }
 	  };
-	  xhttp.open("GET", "../picker_ajax_call.php?shop="+shop+"&sku="+sku+"&order_id="+porder_id+"&role="+prole+"&qty="+qty, true);
+	  xhttp.open("GET", "picker_ajax_call.php?shop="+shop+"&sku="+sku+"&order_id="+porder_id+"&role="+prole+"&qty="+qty, true);
 	  xhttp.send();
 	  setTimeout(function(){  window.location.reload(); }, 2000);
 	}
@@ -1179,7 +1179,7 @@ function send_shipper_value(so,ss,sro,sqty,shop){
        
 	    }
 	  };
-	  xhttp.open("GET", "../shipper_ajax_call.php?shop="+shop+"&sku="+ssku+"&order_id="+sorder_id+"&role="+srole+"&qty="+sqty, true);
+	  xhttp.open("GET", "shipper_ajax_call.php?shop="+shop+"&sku="+ssku+"&order_id="+sorder_id+"&role="+srole+"&qty="+sqty, true);
 	  xhttp.send();
 		
 	  setTimeout(function(){ window.location.reload(); }, 2000);
@@ -1208,7 +1208,7 @@ function send_receiver_value(ro,rs,rro,shop,rqty){
        
 	    }
 	  };
-	  xhttp.open("GET", "../receiver_ajax_call.php?shop="+shop+"&sku="+rsku+"&order_id="+rorder_id+"&role="+rrole+"&qty="+rqty, true);
+	  xhttp.open("GET", "receiver_ajax_call.php?shop="+shop+"&sku="+rsku+"&order_id="+rorder_id+"&role="+rrole+"&qty="+rqty, true);
 	  xhttp.send();
 	    setTimeout(function(){ window.location = "http://aviaapps.co/double-check/app/order_test.php/?shop="+shop+"&order_id="+rorder_id; }, 2000);
      	}
