@@ -1,25 +1,4 @@
- var getUrlParameter = function getUrlParameter(sParam) {
-	    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-	        sURLVariables = sPageURL.split('&'),
-	        sParameterName,
-	        i;
-
-	    for (i = 0; i < sURLVariables.length; i++) {
-	        sParameterName = sURLVariables[i].split('=');
-
-	        if (sParameterName[0] === sParam) {
-	            return sParameterName[1] === undefined ? true : sParameterName[1];
-	        }
-	    }
-	};
-	var shop_url = getUrlParameter('shop');
-  ShopifyApp.init({
-	  apiKey: "ed1b619b0d4433048a3fd866d1ae5f7f",
-	  shopOrigin:"https://"+shop_url,
-	  debug: false,
-	  forceRedirect: true
-	});
-  function selected_radio(rad,shop){
+ function selected_radio(rad,shop){
 		//alert('hi');
 		var selected_rval = rad;
 		var xhttp = new XMLHttpRequest();
