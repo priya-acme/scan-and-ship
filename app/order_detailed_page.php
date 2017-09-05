@@ -1128,6 +1128,7 @@ function sendvalue(a,b,shop){
 	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
 function send_picker_value(o,s,ro,qty,shop){
+	alert('hi');
 	var select_role = $("input[type='radio'].select_role:checked").val();
 	alert(select_role);
 	if(select_role != 'Picker ok'){
