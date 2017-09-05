@@ -633,3 +633,8 @@ table.scanned_qty_table td .sroles {
 .yellow .fa-check::before {    content: "\f00c";    color: #e8f400;    vertical-align: middle;    display: inline-block;
 }
 .mytable tr td.hed{font-size:12px}
+.green a, .yellow a{line-height: 15px;}
+@media screen and (-webkit-min-device-pixel-ratio:0) { .green a, .yellow a{line-height: 13px;}
+} .yellow a, .green a, {    vertical-align: middle;    display: block;   }
+.green a{vertical-align: middle;
+display: block;}
