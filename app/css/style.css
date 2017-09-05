@@ -617,3 +617,8 @@ table.scanned_qty_table td .sroles {
 }
 .scanned_table .scanned_qty_table td.step_hed{padding-right:5px;}
 .scanned_table .scanned_qty_table td.step_hed:last-child{padding-right:0px;}
+   .mytable td .green a{line-height: 15px;} 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+   .mytable td .green a{line-height: 13px;}
+}
