@@ -632,3 +632,4 @@ table.scanned_qty_table td .sroles {
 .yellow{display: inline-block;}
 .yellow .fa-check::before {    content: "\f00c";    color: #e8f400;    vertical-align: middle;    display: inline-block;
 }
+.mytable tr td.hed{font-size:12px}
