@@ -223,7 +223,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edda1d', end
     margin-top: 0; }
 	
 	.checkbox, .radio {
-    position: relative;
+    /*position: relative;*/
+    z-index : 1;
      display: inline-block; 
     margin-top: 10px;
     margin-bottom: 10px;
