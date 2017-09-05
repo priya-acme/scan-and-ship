@@ -625,9 +625,9 @@ table.scanned_qty_table td .sroles {
 .order-details-page .main-design  tr:nth-child(2) td{border-color: #F4F6F8;}
 .mytable tr td{font-size:13px;color: #657382;}
 .mytable .heading_tr td{color: #fff;font-size: 12px;}
+
 .mytable td .yellow a{line-height: 15px;}
-@media screen and (-webkit-min-device-pixel-ratio:0) {    
-.mytable td .yellow a{line-height: 13px;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {    .mytable td .yellow a{line-height: 13px;}
 .mytable td .yellow a {    vertical-align: middle;    display: block;   }
 .yellow{display: inline-block;}
 .yellow .fa-check::before {    content: "\f00c";    color: #e8f400;    vertical-align: middle;    display: inline-block;
