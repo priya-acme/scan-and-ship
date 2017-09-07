@@ -32,7 +32,9 @@
     </div>
     
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
-   <?php if(isset($_POST['submit_barcode'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
+   <?php if(isset($_POST['submit_barcode'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $error_qty; 	$time_end = microtime(true);
+	$foreach_time = $time_end - $time_start;
+	echo "Foreach took: " . number_format($foreach_time * 1000, 3) . "ms\n"; ?></div><?php } ?>
    <?php if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){ ?> <div class="qty-error-message" style="color:red"><?php echo $order_msg; ?></div><?php } ?>
 </div>
 <div class="col-sm-12 col-md-4">

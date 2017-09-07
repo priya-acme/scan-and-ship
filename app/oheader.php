@@ -109,9 +109,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 		}
 		ob_end_flush();
 	}
-	$time_end = microtime(true);
-	$foreach_time = $time_end - $time_start;
-	echo "Foreach took: " . number_format($foreach_time * 1000, 3) . "ms\n";
+
 	//echo $k;
 	if($k == 1){
 		$error_qty = "All item quantities are scanned";
