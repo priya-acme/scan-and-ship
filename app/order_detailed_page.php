@@ -399,7 +399,7 @@ FulFill Order
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
        echo $line_item_count;
-       echo count($line_item_count);
+       echo count($arrayobj);
        for($i=0;$i<$line_item_count;$i++)
        {
        	ob_start();
