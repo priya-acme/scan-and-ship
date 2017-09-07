@@ -147,7 +147,7 @@ class Shopify {
 	
 	public function get_orders($shop, $access_token,$count,$date)
 	{
-	 $curl_url = "https://$shop/admin/orders.json?limit=250&page=$count&status=any&created_at_min=".$date."T16:15:47-04:00";
+	 $curl_url = "https://$shop/admin/orders.json?limit=250&page=$count&status=open&created_at_min=".$date."T16:15:47-04:00";
 	 //echo $curl_url;
 	   return $this->curlRequest($curl_url, $access_token);
 	}
@@ -168,13 +168,13 @@ class Shopify {
 	 
 	public function get_unfulfilled_orders($shop, $access_token,$count,$date)
 	{
-		$curl_url = "https://$shop/admin/orders.json?limit=250&page=$count&status=any&fulfillment_status=unshipped&created_at_min=".$date."T16:15:47-04:00";
+		$curl_url = "https://$shop/admin/orders.json?limit=250&page=$count&status=open&fulfillment_status=unshipped&created_at_min=".$date."T16:15:47-04:00";
 		//echo $curl_url;
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	
 	function count_orders($shop, $access_token,$date){
-		$curl_url = "https://$shop/admin/orders/count.json?status=any&created_at_min=".$date."T16:15:47-04:00&fulfillment_status=unshipped";
+		$curl_url = "https://$shop/admin/orders/count.json?status=open&created_at_min=".$date."T16:15:47-04:00&fulfillment_status=unshipped";
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	function count_total_orders($shop, $access_token,$date){
