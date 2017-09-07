@@ -24,7 +24,7 @@ if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
-	for($count=1;$count<=$count_val;$count++){
+	for($count=1, $loopMax = $count_val; $count <= $loopMax; $count++){
 		ob_start();
 		${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
 		foreach(${"get_order".$count}->orders as $order) {
@@ -232,7 +232,7 @@ READY FOR PICKUP
   </thead>
   <tbody>
    
-  <?php for($count=1;$count<=$count_val;$count++){ ob_start(); foreach(${"orders".$count}->orders as $order) { ob_start(); ?>
+  <?php for ($count=1, $loopMax1 = $count_val; $count<= $loopMax1; $count++) { ob_start(); foreach(${"orders".$count}->orders as $order) { ob_start(); ?>
   <?php //echo "<pre>";
     $now = date("Y-m-d");
     $input = $order->updated_at; 

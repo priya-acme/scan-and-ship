@@ -1,26 +1,4 @@
 <?php
-//settings
-$cache_ext  = '.php'; //file extension
-$cache_time     = 3600;  //Cache file expires afere these seconds (1 hour = 3600 sec)
-$cache_folder   = 'cached-files/'; //folder to store Cache files
-$ignore_pages   = array('', '');
-
-$dynamic_url    = 'http://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . $_SERVER['QUERY_STRING']; // requested dynamic page (full url)
-$cache_file     = $cache_folder.md5($dynamic_url).$cache_ext; // construct a cache file
-$ignore = (in_array($dynamic_url,$ignore_pages))?true:false; //check if url is in ignore list
-
-if (!$ignore && file_exists($cache_file) && time() - $cache_time < filemtime($cache_file)) { //check Cache exist and it's not expired.
-    ob_start('ob_gzhandler'); //Turn on output buffering, "ob_gzhandler" for the compressed page with gzip.
-    readfile($cache_file); //read Cache file
-    echo '<!-- cached page - '.date('l jS \of F Y h:i:s A', filemtime($cache_file)).', Page : '.$dynamic_url.' -->';
-    ob_end_flush(); //Flush and turn off output buffering
-    exit(); //no need to proceed further, exit the flow.
-}
-//Turn on output buffering with gzip compression.
-ob_start('ob_gzhandler'); 
-######## Your Website Content Starts Below #########
-?>
-<?php
 include __DIR__ .'../../includes/utils/Shopify.php';
 include __DIR__ .'../../includes/db/Stores.php';
 $Shopify = new Shopify();
@@ -43,7 +21,7 @@ if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
-	for($count=1;$count<=$count_val;$count++){
+	for($count=1, $loopMax = $count_val; $count <= $loopMax; $count++){
 		ob_start();
 		${"get_order".$count} = $Shopify->get_unfulfilled_orders($shop,$shop_info['access_token'],$count,$six_date);
 		foreach(${"get_order".$count}->orders as $order) {
@@ -258,7 +236,7 @@ READY FOR PICKUP
   </thead>
   <tbody>
    
-  <?php for($count=1;$count<=$count_val;$count++){ ob_start(); foreach(${"orders".$count}->orders as $order) { ob_start(); ?>
+  <?php for ($count=1, $loopMax1 = $count_val; $count<= $loopMax1; $count++) {  ob_start(); foreach(${"orders".$count}->orders as $order) { ob_start(); ?>
   <?php //echo "<pre>";
     $now = date("Y-m-d");
     $input = $order->updated_at; 
@@ -792,17 +770,3 @@ $(".order_filters a").each(function(){
   })
 </script>
 <?php include 'footer.php' ?>
-<?php
-######## Your Website Content Ends here #########
-
-if (!is_dir($cache_folder)) { //create a new folder if we need to
-    mkdir($cache_folder);
-}
-if(!$ignore){
-    $fp = fopen($cache_file, 'w');  //open file for writing
-    fwrite($fp, ob_get_contents()); //write contents of the output buffer in Cache file
-    fclose($fp); //Close file pointer
-}
-ob_end_flush(); //Flush and turn off output buffering
-
-?>
