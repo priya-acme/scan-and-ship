@@ -5,7 +5,7 @@ $cache_time     = 3600;  //Cache file expires afere these seconds (1 hour = 3600
 $cache_folder   = 'cached-files/'; //folder to store Cache files
 $ignore_pages   = array('', '');
 
-$dynamic_url    = 'http://'.$_SERVER['HTTP_HOST']; // requested dynamic page (full url)
+$dynamic_url    = 'http://'.$_SERVER['PHP_SELF']; // requested dynamic page (full url)
 $cache_file     = $cache_folder.md5($dynamic_url).$cache_ext; // construct a cache file
 $ignore = (in_array($dynamic_url,$ignore_pages))?true:false; //check if url is in ignore list
 
