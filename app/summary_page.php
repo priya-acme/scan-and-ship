@@ -5,17 +5,15 @@ $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
-$odate = new DateTime("-30 days");
-$odate->modify("-" . ($odate->format('j')-1) . " days");
-$thirty_days = $odate->format('Y-m-j');
-$date = new DateTime("-6 months");
-$date->modify("-" . ($date->format('j')-1) . " days");
-$six_date = $date->format('Y-m-j');
-$count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$six_date);
+$thirty_date = date('Y-m-d', strtotime("+30 days"));
+// $date = new DateTime("-6 months");
+// $date->modify("-" . ($date->format('j')-1) . " days");
+// $six_date = $date->format('Y-m-j');
+$count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$thirty_date);
 $count_val = ceil($count_orders->count / 250);
 for($count=1;$count<=$count_val;$count++){
 	ob_start();
-	${"orders".$count} = $Shopify->get_orders($shop, $shop_info['access_token'],$count);
+	${"orders".$count} = $Shopify->get_orders($shop, $shop_info['access_token'],$count,$thirty_date);
 	ob_end_flush();
 }
 $get_verification = $Stores->get_step_verification($shop);
@@ -26,7 +24,7 @@ if(isset($_POST['submit_id'])){
 	$shop_info = $Stores->is_shop_exists($shop);
 	for($count=1, $loopMax = $count_val; $count <= $loopMax; $count++){
 		ob_start();
-		${"get_order".$count} = $Shopify->get_unfulfilled_orders($shop,$shop_info['access_token'],$count,$six_date);
+		${"get_order".$count} = $Shopify->get_unfulfilled_orders($shop,$shop_info['access_token'],$count,$thirty_date);
 		foreach(${"get_order".$count}->orders as $order) {
 			ob_start();
 			if($order_id == $order->name || $order_id == $order->id){
@@ -62,7 +60,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2 summary-role">SELECT ROLE :<?php echo date('Y-m-d', strtotime("+30 days")); ?></span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2 summary-role">SELECT ROLE :</span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>

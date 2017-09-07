@@ -9,14 +9,15 @@ $shop =  $_REQUEST['shop'];
 //  //echo $redirect_url;
 //   header("Location: $redirect_url");
 $shop_info = $Stores->is_shop_exists($shop);
-$date = new DateTime("-1 months");
-$date->modify("-" . ($date->format('j')-1) . " days");
-$six_date = $date->format('Y-m-j');
-$count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token'],$six_date);
+$fourty_five = date('Y-m-d', strtotime("+45 days"));
+// $date = new DateTime("-1 months");
+// $date->modify("-" . ($date->format('j')-1) . " days");
+// $six_date = $date->format('Y-m-j');
+$count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token'],$fourty_five);
 $count_val = ceil($count_total_orders->count / 250);
 for($count=1;$count<=$count_val;$count++){
 	ob_start();
-	${"orders".$count} = $Shopify->fget_orders($shop, $shop_info['access_token'],$count);
+	${"orders".$count} = $Shopify->fget_orders($shop, $shop_info['access_token'],$count,$fourty_five);
 	ob_end_flush();
 }
 $get_verification = $Stores->get_step_verification($shop);
@@ -26,7 +27,7 @@ if(isset($_POST['submit_id'])){
 	$shop_info = $Stores->is_shop_exists($shop);
 	for($count=1, $loopMax = $count_val; $count <= $loopMax; $count++){
 		ob_start();
-		${"get_order".$count} = $Shopify->fget_orders($shop,$shop_info['access_token'],$count);
+		${"get_order".$count} = $Shopify->fget_orders($shop,$shop_info['access_token'],$count,$fourty_five);
 		foreach(${"get_order".$count}->orders as $order) {
 			ob_start();
 			if($order_id == $order->name || $order_id == $order->id){
