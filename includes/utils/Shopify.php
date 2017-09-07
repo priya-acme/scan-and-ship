@@ -151,6 +151,12 @@ class Shopify {
 	 //echo $curl_url;
 	   return $this->curlRequest($curl_url, $access_token);
 	}
+	public function fget_orders($shop, $access_token,$count)
+	{
+		$curl_url = "https://$shop/admin/orders.json?limit=250&page=$count&status=any";
+		//echo $curl_url;
+		return $this->curlRequest($curl_url, $access_token);
+	}
 	
 	public function get_fulfilled_orders($shop, $access_token,$count,$date)
 	{
@@ -171,7 +177,7 @@ class Shopify {
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	function count_total_orders($shop, $access_token,$date){
-		$curl_url = "https://$shop/admin/orders/count.json?status=open&created_at_min=".$date."T16:15:47-04:00&fulfillment_status=shipped";
+		$curl_url = "https://$shop/admin/orders/count.json?status=any&created_at_min=".$date."T16:15:47-04:00&fulfillment_status=shipped";
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	public function get_single_order($shop, $access_token,$order_id)
