@@ -147,7 +147,7 @@ class Shopify {
 	
 	public function get_orders($shop, $access_token,$count)
 	{
-	 $curl_url = "https://$shop/admin/orders.json?limit=250&page=$count&status=open&created_at_min=2017-09-05T16:15:47-04:00";
+	 $curl_url = "https://$shop/admin/orders.json?limit=250&page=$count&status=any&created_at_min=2017-09-05T16:15:47-04:00";
 	 //echo $curl_url;
 	   return $this->curlRequest($curl_url, $access_token);
 	}

@@ -5,6 +5,9 @@ $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
+$odate = new DateTime("-1 month");
+$odate->modify("-" . ($odate->format('j')-1) . " days");
+$thirty_days = $odate->format('Y-m-j');
 $date = new DateTime("-6 months");
 $date->modify("-" . ($date->format('j')-1) . " days");
 $six_date = $date->format('Y-m-j');
@@ -59,7 +62,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2 summary-role">SELECT ROLE :</span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2 summary-role">SELECT ROLE :<?php echo $thirty_days?></span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
