@@ -5,7 +5,7 @@ $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
-$odate = new DateTime("-1 month");
+$odate = new DateTime("-30 days");
 $odate->modify("-" . ($odate->format('j')-1) . " days");
 $thirty_days = $odate->format('Y-m-j');
 $date = new DateTime("-6 months");
