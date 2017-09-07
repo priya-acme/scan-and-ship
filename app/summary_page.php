@@ -21,7 +21,8 @@ if(isset($_POST['submit_id'])){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
-	for($count=1;$count<=$count_val;$count++){
+	
+	for($count = 1, $iMax = $count_val; $count <= $iMax; $count++){
 		ob_start();
 		${"get_order".$count} = $Shopify->get_unfulfilled_orders($shop,$shop_info['access_token'],$count,$six_date);
 		foreach(${"get_order".$count}->orders as $order) {
