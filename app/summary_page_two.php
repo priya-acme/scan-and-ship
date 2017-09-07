@@ -9,7 +9,7 @@ $shop =  $_REQUEST['shop'];
 //  //echo $redirect_url;
 //   header("Location: $redirect_url");
 $shop_info = $Stores->is_shop_exists($shop);
-$fourty_five = date('Y-m-d', strtotime("+45 days"));
+$fourty_five = date('Y-m-d', strtotime("-45 days"));
 // $date = new DateTime("-1 months");
 // $date->modify("-" . ($date->format('j')-1) . " days");
 // $six_date = $date->format('Y-m-j');
