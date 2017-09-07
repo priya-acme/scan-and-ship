@@ -2,7 +2,7 @@
 //settings
 $cache_ext  = '.html'; //file extension
 $cache_time     = 3600;  //Cache file expires afere these seconds (1 hour = 3600 sec)
-$cache_folder   = 'cache/'; //folder to store Cache files
+$cache_folder   = '/double-check/app/cached-files/'; //folder to store Cache files
 $ignore_pages   = array('', '');
 
 $dynamic_url    = 'http://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . $_SERVER['QUERY_STRING']; // requested dynamic page (full url)
@@ -16,7 +16,9 @@ if (!$ignore && file_exists($cache_file) && time() - $cache_time < filemtime($ca
     ob_end_flush(); //Flush and turn off output buffering
     exit(); //no need to proceed further, exit the flow.
 }
+//Turn on output buffering with gzip compression.
 ob_start('ob_gzhandler'); 
+######## Your Website Content Starts Below #########
 ?>
 <?php
 include __DIR__ .'../../includes/utils/Shopify.php';
