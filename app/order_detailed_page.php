@@ -32,9 +32,7 @@
     </div>
     
  <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
-   <?php if(isset($_POST['submit_barcode'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $error_qty; 	$time_end = microtime(true);
-	$foreach_time = $time_end - $time_start;
-	echo "Foreach took: " . number_format($foreach_time * 1000, 3) . "ms\n"; ?></div><?php } ?>
+   <?php if(isset($_POST['submit_barcode'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
    <?php if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){ ?> <div class="qty-error-message" style="color:red"><?php echo $order_msg; ?></div><?php } ?>
 </div>
 <div class="col-sm-12 col-md-4">
@@ -400,6 +398,8 @@ FulFill Order
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
+       echo $line_item_count;
+       echo count($line_item_count);
        for($i=0;$i<$line_item_count;$i++)
        {
        	ob_start();
