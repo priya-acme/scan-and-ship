@@ -38,9 +38,7 @@ if(isset($_POST['submit_id'])){
 		ob_end_flush();
 	}
 }
-$time_end = microtime(true);
-$foreach_time = $time_end - $time_start;
-echo "Foreach took: " . number_format($foreach_time * 1000, 3) . "ms\n";
+
 if($z == 1){
 	$order_msg = "Not Found";
 }
