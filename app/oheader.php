@@ -28,7 +28,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 	$line_item_count = $arrayobj->count();
 	$j = 0;
 	$k = 0;
-	for($i=0;$i<$line_item_count;$i++)
+	for($i= 0, $iMaxx = count($arrayobj); $i<$iMaxx; $i++)
 	{
 		ob_start();
 		$variants = $Shopify->get_variants($shop, $shop_info['access_token'],$orders->order->line_items[$i]->variant_id);
@@ -155,7 +155,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	$order_id = $_POST['order_id'];
 	$_SESSION['select_role'] = $_POST['select_role'];
 	$shop_info = $Stores->is_shop_exists($shop);
-	for($count=1;$count<=$count_val;$count++){
+	for($count= 1, $iiiMax = $count_val; $count<= $iiiMax; $count++){
 		ob_start();
 		${"get_order".$count} = $Shopify->get_orders($shop,$shop_info['access_token'],$count);
 		foreach(${"get_order".$count}->orders as $order) {
@@ -169,7 +169,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 		}
 		ob_end_flush();
 	}
-	for($ncount=1;$ncount<=$ncount_val;$ncount++){
+	for($ncount = 1, $iiMax = $ncount_val; $ncount <= $iiMax; $ncount++){
 		ob_start();
 		${"get_order".$ncount} = $Shopify->get_orders($shop,$shop_info['access_token'],$ncount);
 		foreach(${"get_order".$ncount}->orders as $order) {

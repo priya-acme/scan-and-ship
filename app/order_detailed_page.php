@@ -398,9 +398,8 @@ FulFill Order
   </tr>
    <?php  $arrayobj = new ArrayObject($orders->order->line_items);
        $line_item_count = $arrayobj->count();
-       echo $line_item_count;
-       echo count($arrayobj);
-       for($i=0;$i<$line_item_count;$i++)
+       
+       for($i = 0, $iMax = count($arrayobj); $i < $iMax; $i++)
        {
        	ob_start();
        	$qty =  $orders->order->line_items[$i]->quantity;
