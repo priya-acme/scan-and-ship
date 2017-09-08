@@ -167,6 +167,9 @@ class Stores extends DB_Connection{
 	function update_day($store_url,$fdays,$undays){
 		return $this->update_days($store_url,$fdays,$undays);
 	}
+	function get_stores_data(){
+		return $this->get_all_data();
+	}
 	
 }
 ?>

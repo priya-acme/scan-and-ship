@@ -47,6 +47,7 @@ if(isset($_POST['save_roles'])){
     }
 }
 $get_all_stores = $Stores->get_store();
+$get_all_data = $Stores->get_stores_data();
 $saved_stores = $Stores->get_save_roles();
 //print_r($saved_stores);
 $get_single_store = $Stores->get_single_save_roles($shop);
@@ -282,7 +283,31 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <input type="submit" name="save_roles" value="Save Roles">
 </div>
 </div>
-<?php 	
+<div class="row">
+<div class="col-sm-12 col-sm-12">
+<span class="role2">NUMBER OF DAYS</span>
+<br>
+<table>
+<tr>
+<td class="hed">Store Name</td>
+<td class="hed">No of days(Fulfilled Orders)</td>
+<td class="hed">NO of days(Unfulfilled Orders)</td>
+</tr>
+<?php 	foreach($get_all_data as $get_data){
+	if($get_data['store'] != 'livestock-5.myshopify.com'){
+?>
+<tr>
+<td><?php echo $get_data['store']; ?></td>
+<td><?php echo $get_data['ful_days']; ?></td>
+<td><?php echo $get_data['unful_days']; ?></td>
+</tr>
+<?php 
+	} }
+?>
+</table>
+</div>
+</div>
+<?php 
 }
 ?>
 </div>

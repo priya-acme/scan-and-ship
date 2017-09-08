@@ -322,7 +322,14 @@ class DB_Connection{
 		$qry="INSERT INTO `days_allotement` (store,ful_day,unful_day) VALUES ('$store_url','$fdays',$undays)";
 		$result = mysqli_query($this->connection, $qry);
 	}
-	
+	function get_all_data(){
+		$query = "select * from `days_allotement`";
+		$result = mysqli_query($this->connection, $query);
+		while($row = mysqli_fetch_assoc($result)){
+			$rows[] = $row;
+		}
+		return $rows;
+	}
 
 }
 
