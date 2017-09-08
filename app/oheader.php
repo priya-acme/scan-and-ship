@@ -136,11 +136,22 @@ if(isset($_POST['update_notes'])){
 	
 }
 $shop_info = $Stores->is_shop_exists($shop);
-$thirty_date = date('Y-m-d', strtotime("-30 days"));
+$get_days = $Stores->get_days($shop);
+if(empty($get_days)){
+	$thirty_date = date('Y-m-d', strtotime("-30 days"));
+}else{
+	$get_day = $get_days['unful_day'];
+	$thirty_date = date('Y-m-d', strtotime("-".$get_day." days"));
+}
 $count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$thirty_date);
 $count_val = ceil($count_orders->count / 250);
-$fourty_five = date('Y-m-d', strtotime("-45 days"));
-$count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token'],$fourty_five);
+if(empty($get_days)){
+	$fourty_five = date('Y-m-d', strtotime("-45 days"));
+}else{
+	$get_day = $get_days['ful_day'];
+	$fourty_five= date('Y-m-d', strtotime("-".$get_day." days"));
+}
+$count_total_orders = $Shopify->fcount_total_orders($shop, $shop_info['access_token'],$fourty_five);
 $ncount_val = ceil($count_total_orders->count / 250);
 $get_order_note = $Stores->get_order_note($_REQUEST['id']);
 $get_instore_pickup = $Stores->gett_instore_pickup($_REQUEST['id']);
@@ -166,7 +177,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	}
 	for($ncount=1;$ncount<=$ncount_val;$ncount++){
 		ob_start();
-		${"get_order".$ncount} = $Shopify->fget_orders($shop,$shop_info['access_token'],$ncount,$fourty_five);
+		${"get_order".$ncount} = $Shopify->ofget_orders($shop,$shop_info['access_token'],$ncount,$fourty_five);
 		foreach(${"get_order".$ncount}->orders as $order) {
 			ob_start();
 			if($order_id == $order->name || $order_id == $order->id){
