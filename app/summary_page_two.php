@@ -69,8 +69,9 @@ $get_single_role = explode(",",$get_single_store['roles']);
 	echo "empty";
 	$fourty_five = date('Y-m-d', strtotime("-45 days"));
 }else{
-	echo "data";
+	
 	$get_day = $get_days['ful_day'];
+	echo $get_day;
 	$fourty_five= date('Y-m-d', strtotime("-".$get_day." days"));
 }
 ?></span><?php } ?>
