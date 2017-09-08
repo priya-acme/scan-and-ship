@@ -299,8 +299,8 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 ?>
 <tr>
 <td><?php echo $get_data['store']; ?></td>
-<td><?php echo $get_data['ful_days']; ?></td>
-<td><?php echo $get_data['unful_days']; ?></td>
+<td><?php echo $get_data['ful_day']; ?></td>
+<td><?php echo $get_data['unful_day']; ?></td>
 </tr>
 <?php 
 	} }
