@@ -8,15 +8,22 @@ $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
 $get_verification = $Stores->get_step_verification($shop);
 if(isset($_POST['save_changes'])){
+	$ful_days = $_POST['select_ful_days'];
+	$unful_days = $_POST['select_unful_days'];
+	$get_days = $Stores->get_days($shop);
+	if(empty($get_days)){
+		$Stores->save_days($shop,$ful_days,$unful_days);
+	}else{
+		$Stores->update_day($shop,$ful_days,$unful_days);
+	}
 	$get_verification = $Stores->get_step_verification($shop);
 	if(empty($get_verification)){
 		$Stores->step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
-		header("location:/double-check/app/settings.php?shop=$shop");
 	}
 	else {
 		$Stores->update_step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
-		header("location:/double-check/app/settings.php?shop=$shop");
 	}
+	header("location:/double-check/app/settings.php?shop=$shop");
 }
 
 
@@ -43,6 +50,7 @@ $get_all_stores = $Stores->get_store();
 $saved_stores = $Stores->get_save_roles();
 //print_r($saved_stores);
 $get_single_store = $Stores->get_single_save_roles($shop);
+$fetch_days = $Stores->get_days($shop);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -190,10 +198,10 @@ if(in_array("ready for pickup", $get_single_role)){
 <span class="role2">SELECT DAYS FOR FULFILLED ORDERS</span>
 <span class="radio radio-primary">
 <select name="select_ful_days">
-<option value="45">45 Days</option>
-<option value="15">15 Days</option>
-<option value="30">30 Days</option>
-<option value="60">60 Days</option>
+<option value="45"<?php if($fetch_days['ful_day'] == '45' ) echo "selected"; ?>>45 Days</option>
+<option value="15"<?php if($fetch_days['ful_day'] == '15' ) echo "selected"; ?>>15 Days</option>
+<option value="30"<?php if($fetch_days['ful_day'] == '30' ) echo "selected"; ?>>30 Days</option>
+<option value="60"<?php if($fetch_days['ful_day'] == '60' ) echo "selected"; ?>>60 Days</option>
 </select>
 </span>
 </div>
@@ -201,10 +209,10 @@ if(in_array("ready for pickup", $get_single_role)){
 <span class="role2">SELECT DAYS FOR UNFULFILLED ORDERS</span>
 <span class="radio radio-primary">
 <select name="select_unful_days">
-<option value="30">30 Days</option>
-<option value="15">15 Days</option>
-<option value="45">45 Days</option>
-<option value="60">60 Days</option>
+<option value="30"<?php if($fetch_days['unful_day'] == '30' ) echo "selected"; ?>>30 Days</option>
+<option value="15"<?php if($fetch_days['unful_day'] == '15' ) echo "selected"; ?>>15 Days</option>
+<option value="45"<?php if($fetch_days['unful_day'] == '45' ) echo "selected"; ?>>45 Days</option>
+<option value="60"<?php if($fetch_days['unful_day'] == '60' ) echo "selected"; ?>>60 Days</option>
 </select>
 </span>
 </div>

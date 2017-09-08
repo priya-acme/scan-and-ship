@@ -313,7 +313,7 @@ class DB_Connection{
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
-	function select_days($store_url,$fdays,$undays){
+	function select_days($store_url){
 		$query = "select * from `days_allotement` where store='$store_url'";
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);

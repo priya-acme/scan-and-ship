@@ -158,8 +158,8 @@ class Stores extends DB_Connection{
 	
 	// days allotment 
 	
-	function get_days($store_url,$fdays,$undays){
-		return $this->select_days($store_url,$fdays,$undays);
+	function get_days($store_url){
+		return $this->select_days($store_url);
 	}
 	function save_days($store_url,$fdays,$undays){
 		return $this->insert_days($store_url,$fdays,$undays);
