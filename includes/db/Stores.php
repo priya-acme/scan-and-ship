@@ -161,11 +161,11 @@ class Stores extends DB_Connection{
 	function get_days($store_url){
 		return $this->select_days($store_url);
 	}
-	function save_days($store_url,$fdays,$undays){
-		return $this->insert_days($store_url,$fdays,$undays);
+	function save_days($store_url,$fdays,$undays,$ful_order,$unful_order){
+		return $this->insert_days($store_url,$fdays,$undays,$ful_order,$unful_order);
 	}
-	function update_day($store_url,$fdays,$undays){
-		return $this->update_days($store_url,$fdays,$undays);
+	function update_day($store_url,$fdays,$undays,$ful_order,$unful_order){
+		return $this->update_days($store_url,$fdays,$undays,$ful_order,$unful_order);
 	}
 	function get_stores_data(){
 		return $this->get_all_data();

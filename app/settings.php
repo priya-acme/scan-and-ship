@@ -10,11 +10,13 @@ $get_verification = $Stores->get_step_verification($shop);
 if(isset($_POST['save_changes'])){
 	$ful_days = $_POST['select_ful_days'];
 	$unful_days = $_POST['select_unful_days'];
+	$ful_order= $Shopify->count_total_orders($shop, $shop_info['access_token'],$ful_days);
+	$unful_order= $Shopify->count_orders($shop, $shop_info['access_token'],$unful_days);
 	$get_days = $Stores->get_days($shop);
 	if(empty($get_days)){
-		$Stores->save_days($shop,$ful_days,$unful_days);
+		$Stores->save_days($shop,$ful_days,$unful_days,$ful_order,$unful_order);
 	}else{
-		$Stores->update_day($shop,$ful_days,$unful_days);
+		$Stores->update_day($shop,$ful_days,$unful_days,$ful_order,$unful_order);
 	}
 	$get_verification = $Stores->get_step_verification($shop);
 	if(empty($get_verification)){
@@ -293,7 +295,9 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
 <td class="hed">Store Name</td>
 <td class="hed">No of days(Fulfilled Orders)</td>
+<td class="hed">No of Fulfilled Orders</td>
 <td class="hed">NO of days(Unfulfilled Orders)</td>
+<td class="hed">No of Unfulfilled Orders</td>
 </tr>
 <?php 	foreach($get_all_data as $get_data){
 	if($get_data['store'] != 'livestock-5.myshopify.com'){
@@ -301,7 +305,9 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <tr>
 <td><?php echo $get_data['store']; ?></td>
 <td><?php echo $get_data['ful_day']; ?></td>
+<td><?php echo $get_data['ful_order']; ?></td>
 <td><?php echo $get_data['unful_day']; ?></td>
+<td><?php echo $get_data['unful_order']; ?></td>
 </tr>
 <?php 
 	} }

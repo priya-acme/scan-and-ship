@@ -308,8 +308,8 @@ class DB_Connection{
 	
 	// days allotment 
  
-	function update_days($store_url,$fdays,$undays){
-		$query = "update `days_allotement` set ful_day='$fdays',unful_day='$undays' where store='$store_url'";
+	function update_days($store_url,$fdays,$undays,$ful_order,$unful_order){
+		$query = "update `days_allotement` set ful_day='$fdays',unful_day='$undays',ful_order='$ful_order',unful_order='$unful_order' where store='$store_url'";
 		//echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
@@ -318,8 +318,8 @@ class DB_Connection{
 		$result = mysqli_query($this->connection, $query);
 		return mysqli_fetch_assoc($result);
 	}
-	function insert_days($store_url,$fdays,$undays){
-		$qry="INSERT INTO `days_allotement` (store,ful_day,unful_day) VALUES ('$store_url','$fdays',$undays)";
+	function insert_days($store_url,$fdays,$undays,$ful_order,$unful_order){
+		$qry="INSERT INTO `days_allotement` (store,ful_day,unful_day,ful_order,unful_order) VALUES ('$store_url','$fdays','$undays','$ful_order','$unful_order')";
 		$result = mysqli_query($this->connection, $qry);
 	}
 	function get_all_data(){
