@@ -186,6 +186,33 @@ if(in_array("ready for pickup", $get_single_role)){
 <?php } ?>
 
 <div class="row">
+<div class="col-sm-6 col-md-6">
+<span class="role2">SELECT DAYS FOR FULFILLED ORDERS</span>
+<span class="radio radio-primary">
+<select name="select_ful_days">
+<option value="45">45 Days</option>
+<option value="15">15 Days</option>
+<option value="30">30 Days</option>
+<option value="60">60 Days</option>
+</span>
+</div>
+<div class="col-sm-6 col-md-6">
+<span class="role2">SELECT DAYS FOR UNFULFILLED ORDERS</span>
+<span class="radio radio-primary">
+<select name="select_unful_days">
+<option value="30">30 Days</option>
+<option value="15">15 Days</option>
+<option value="45">45 Days</option>
+<option value="60">60 Days</option>
+</span>
+</div>
+<div class="col-sm-12 col-md-12">
+<span class="role2"><strong><u>NOTE :<u></u></strong>"Lowering the number of active days will speed up load times. It is not recommend to go over 15days for Open Orders"</span>
+</div>
+</div>
+
+
+<div class="row">
 <div class="col-sm-12 col-sm-12 marbot30">
 <input type="submit" name="save_changes" value="Save Changes">
 </div>

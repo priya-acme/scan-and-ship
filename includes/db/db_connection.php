@@ -305,5 +305,24 @@ class DB_Connection{
 		echo $qry;
 		$result = mysqli_query($this->connection, $qry);
 	}
+	
+	// days allotment 
+ 
+	function update_days($store_url,$fdays,$undays){
+		$query = "update `days_allotement` set ful_day='$fdays',unful_day='$undays' where store='$store_url'";
+		//echo $query;
+		$result = mysqli_query($this->connection, $query);
+	}
+	function select_days($store_url,$fdays,$undays){
+		$query = "select * from `days_allotement` where store='$store_url'";
+		$result = mysqli_query($this->connection, $query);
+		return mysqli_fetch_assoc($result);
+	}
+	function insert_days($store_url,$fdays,$undays){
+		$qry="INSERT INTO `days_allotement` (store,ful_day,unful_day) VALUES ('$store_url','$fdays',$undays)";
+		$result = mysqli_query($this->connection, $qry);
+	}
+	
+
 }
 

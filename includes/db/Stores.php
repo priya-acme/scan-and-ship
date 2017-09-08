@@ -156,5 +156,17 @@ class Stores extends DB_Connection{
 		return $this->save_selected_role($store_url,$role);
 	}
 	
+	// days allotment 
+	
+	function get_days($store_url,$fdays,$undays){
+		return $this->select_days($store_url,$fdays,$undays);
+	}
+	function save_days($store_url,$fdays,$undays){
+		return $this->insert_days($store_url,$fdays,$undays);
+	}
+	function update_day($store_url,$fdays,$undays){
+		return $this->update_days($store_url,$fdays,$undays);
+	}
+	
 }
 ?>
