@@ -10,9 +10,11 @@ $get_verification = $Stores->get_step_verification($shop);
 if(isset($_POST['save_changes'])){
 	$ful_days = $_POST['select_ful_days'];
 	$unful_days = $_POST['select_unful_days'];
-	$count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token'],$ful_days);
+	$ful_date = date('Y-m-d', strtotime("-".$ful_days." days"));
+	$count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token'],$ful_date);
 	$ful_order= $count_total_orders->count;
-	$count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$unful_days);
+	$unful_date = date('Y-m-d', strtotime("-".$unful_days." days"));
+	$count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$unful_date);
 	$unful_order= $count_orders->count;
 	$get_days = $Stores->get_days($shop);
 	if(empty($get_days)){
