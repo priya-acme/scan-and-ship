@@ -7,10 +7,11 @@ $shop =  $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
 $get_verification = $Stores->get_step_verification($shop);
+$ful_order= $Shopify->count_total_orders($shop, $shop_info['access_token'],45);
 if(isset($_POST['save_changes'])){
 	$ful_days = $_POST['select_ful_days'];
 	$unful_days = $_POST['select_unful_days'];
-	$ful_order= $Shopify->count_total_orders($shop, $shop_info['access_token'],$ful_days);
+	
 	
 	echo $ful_order;
 // 	$get_days = $Stores->get_days($shop);
