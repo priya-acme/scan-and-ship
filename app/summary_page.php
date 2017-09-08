@@ -5,8 +5,13 @@ $Shopify = new Shopify();
 $Stores = new Stores();
 $shop =  $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
-
+$get_days = $Stores->get_days($shop);
+if(empty($get_days)){
 $thirty_date = date('Y-m-d', strtotime("-30 days"));
+}else{
+	$get_day = $get_days['unful_day'];
+	$thirty_date = date('Y-m-d', strtotime("-".$get_day." days"));
+}
 // $date = new DateTime("-6 months");
 // $date->modify("-" . ($date->format('j')-1) . " days");
 // $six_date = $date->format('Y-m-j');
