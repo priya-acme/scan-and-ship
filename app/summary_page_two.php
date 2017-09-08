@@ -65,16 +65,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2 summary-role">SELECT ROLE :<?php if(empty($get_days)){
-	echo "empty";
-	$fourty_five = date('Y-m-d', strtotime("-45 days"));
-}else{
-	
-	$get_day = $get_days['ful_day'];
-	echo $get_day;
-	$fourty_five= date('Y-m-d', strtotime("-".$get_day." days"));
-}
-?></span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2 summary-role">SELECT ROLE :<?php echo $fourty_five; ?></span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
