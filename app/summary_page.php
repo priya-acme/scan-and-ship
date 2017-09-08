@@ -7,7 +7,7 @@ $shop =  $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
 $get_days = $Stores->get_days($shop);
 if(empty($get_days)){
-$thirty_date = date('Y-m-d', strtotime("-30 days"));
+$thirty_date = date('Y-m-d', strtotime("-10 days"));
 }else{
 	$get_day = $get_days['unful_day'];
 	$thirty_date = date('Y-m-d', strtotime("-".$get_day." days"));
