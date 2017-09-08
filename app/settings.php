@@ -29,7 +29,7 @@ if(isset($_POST['save_changes'])){
 	else {
 		$Stores->update_step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
 	}
-	//header("location:/double-check/app/settings.php?shop=$shop");
+	header("location:/double-check/app/settings.php?shop=$shop");
 }
 
 

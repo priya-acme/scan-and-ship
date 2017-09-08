@@ -182,12 +182,12 @@ class Shopify {
 	
 	function count_orders($shop, $access_token,$date){
 		$curl_url = "https://$shop/admin/orders/count.json?status=open&created_at_min=".$date."T16:15:47-04:00&fulfillment_status=unshipped";
-		echo $curl_url;
+		//echo $curl_url;
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	function count_total_orders($shop, $access_token,$date){
 		$curl_url = "https://$shop/admin/orders/count.json?status=any&created_at_min=".$date."T16:15:47-04:00&fulfillment_status=shipped";
-		echo $curl_url;
+		//echo $curl_url;
 		return $this->curlRequest($curl_url, $access_token);
 	}
 	function fcount_total_orders($shop, $access_token,$date){
