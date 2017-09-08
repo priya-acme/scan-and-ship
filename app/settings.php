@@ -194,6 +194,7 @@ if(in_array("ready for pickup", $get_single_role)){
 <option value="15">15 Days</option>
 <option value="30">30 Days</option>
 <option value="60">60 Days</option>
+</select>
 </span>
 </div>
 <div class="col-sm-6 col-md-6">
@@ -204,10 +205,11 @@ if(in_array("ready for pickup", $get_single_role)){
 <option value="15">15 Days</option>
 <option value="45">45 Days</option>
 <option value="60">60 Days</option>
+</select>
 </span>
 </div>
 <div class="col-sm-12 col-md-12">
-<span class="role2"><strong><u>NOTE :<u></u></strong>"Lowering the number of active days will speed up load times. It is not recommend to go over 15days for Open Orders"</span>
+<span class="role2"><strong><u>NOTE :</u></strong>"Lowering the number of active days will speed up load times. It is not recommend to go over 15days for Open Orders"</span>
 </div>
 </div>
 
