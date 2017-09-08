@@ -240,7 +240,7 @@ if(in_array("ready for pickup", $get_single_role)){
 </div>
 </div>
 <?php
-if($shop == 'livestock-5.myshopify.com'){
+if($shop == 'avia-apps.myshopify.com'){
 ?>
 <div class="row">
 <div class="col-sm-12 col-sm-12 marbot30">
@@ -255,7 +255,7 @@ if($shop == 'livestock-5.myshopify.com'){
 <?php $i = 0; 
 foreach($get_all_stores as $get_stores){ 
 
-if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
+if($get_stores['store_url'] != 'avia-apps.myshopify.com'){ ?>
 <tr>
 <td style="display:none"><input type="checkbox" name="selected_checkbox[]" value="<?php echo $i?>" checked/></td>
 <td class="hed"><?php  echo $get_stores['store_url'];  ?>
@@ -304,7 +304,7 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <td class="hed">No of Unfulfilled Orders</td>
 </tr>
 <?php 	foreach($get_all_data as $get_data){
-	if($get_data['store'] != 'livestock-5.myshopify.com'){
+	if($get_data['store'] != 'avia-apps.myshopify.com'){
 ?>
 <tr>
 <td><?php echo $get_data['store']; ?></td>
