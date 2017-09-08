@@ -11,8 +11,7 @@ if(isset($_POST['save_changes'])){
 	$ful_days = $_POST['select_ful_days'];
 	$unful_days = $_POST['select_unful_days'];
 	$ful_order= $Shopify->count_total_orders($shop, $shop_info['access_token'],$ful_days);
-	$unful_order= $Shopify->count_orders($shop, $shop_info['access_token'],$unful_days);
-	echo $unful_order;
+	
 	echo $ful_order;
 // 	$get_days = $Stores->get_days($shop);
 // 	if(empty($get_days)){
