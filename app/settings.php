@@ -283,11 +283,12 @@ if($get_stores['store_url'] != 'livestock-5.myshopify.com'){ ?>
 <input type="submit" name="save_roles" value="Save Roles">
 </div>
 </div>
+<br>
 <div class="row">
 <div class="col-sm-12 col-sm-12">
 <span class="role2">NUMBER OF DAYS</span>
 <br>
-<table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-responsive mytable">
 <tr>
 <td class="hed">Store Name</td>
 <td class="hed">No of days(Fulfilled Orders)</td>
