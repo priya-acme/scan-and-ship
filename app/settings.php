@@ -7,27 +7,27 @@ $shop =  $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
 $orders = $Shopify->get_orders($shop, $shop_info['access_token']);
 $get_verification = $Stores->get_step_verification($shop);
-$ful_order= $Shopify->count_total_orders($shop, $shop_info['access_token'],45);
 if(isset($_POST['save_changes'])){
 	$ful_days = $_POST['select_ful_days'];
 	$unful_days = $_POST['select_unful_days'];
-	
-	
-	echo $ful_order;
-// 	$get_days = $Stores->get_days($shop);
-// 	if(empty($get_days)){
-// 		$Stores->save_days($shop,$ful_days,$unful_days,$ful_order,$unful_order);
-// 	}else{
-// 		$Stores->update_day($shop,$ful_days,$unful_days,$ful_order,$unful_order);
-// 	}
-// 	$get_verification = $Stores->get_step_verification($shop);
-// 	if(empty($get_verification)){
-// 		$Stores->step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
-// 	}
-// 	else {
-// 		$Stores->update_step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
-// 	}
-// 	header("location:/double-check/app/settings.php?shop=$shop");
+	$count_total_orders = $Shopify->count_total_orders($shop, $shop_info['access_token'],$ful_days);
+	$ful_order= $count_total_orders->count;
+	$count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$unful_days);
+	$unful_order= $count_orders->count;
+	$get_days = $Stores->get_days($shop);
+	if(empty($get_days)){
+		$Stores->save_days($shop,$ful_days,$unful_days,$ful_order,$unful_order);
+	}else{
+		$Stores->update_day($shop,$ful_days,$unful_days,$ful_order,$unful_order);
+	}
+	$get_verification = $Stores->get_step_verification($shop);
+	if(empty($get_verification)){
+		$Stores->step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
+	}
+	else {
+		$Stores->update_step_verification($_POST['select_veri'],$_POST['fulfill_order'],$shop);
+	}
+	header("location:/double-check/app/settings.php?shop=$shop");
 }
 
 
