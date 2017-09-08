@@ -105,7 +105,7 @@ $fetch_days = $Stores->get_days($shop);
 </div>
 </div>
 <div class="row">
-<div class="col-sm-12 col-md-2">
+<div class="col-sm-6 col-md-6">
 <span class="role2">SELECT ROLE</span>
 <span class="radio radio-primary">
 <select name="select_veri">
@@ -210,6 +210,11 @@ if(in_array("ready for pickup", $get_single_role)){
 <span class="radio radio-primary">
 <select name="select_unful_days">
 <option value="30"<?php if($fetch_days['unful_day'] == '30' ) echo "selected"; ?>>30 Days</option>
+<option value="3"<?php if($fetch_days['unful_day'] == '3' ) echo "selected"; ?>>3 Days</option>
+<option value="5"<?php if($fetch_days['unful_day'] == '5' ) echo "selected"; ?>>5 Days</option>
+<option value="7"<?php if($fetch_days['unful_day'] == '7' ) echo "selected"; ?>>7 Days</option>
+<option value="10"<?php if($fetch_days['unful_day'] == '10' ) echo "selected"; ?>>10 Days</option>
+<option value="12"<?php if($fetch_days['unful_day'] == '12' ) echo "selected"; ?>>12 Days</option>
 <option value="15"<?php if($fetch_days['unful_day'] == '15' ) echo "selected"; ?>>15 Days</option>
 <option value="45"<?php if($fetch_days['unful_day'] == '45' ) echo "selected"; ?>>45 Days</option>
 <option value="60"<?php if($fetch_days['unful_day'] == '60' ) echo "selected"; ?>>60 Days</option>
