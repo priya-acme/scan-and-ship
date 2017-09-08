@@ -209,12 +209,10 @@ if(in_array("ready for pickup", $get_single_role)){
 </span>
 </div>
 <div class="col-sm-12 col-md-12">
-<span class="role2"><strong><u>NOTE</u>:</strong>&nbsp;&nbsp;"Lowering the number of active days will speed up load times. It is not recommend to go over 15days for Open Orders"</span>
+<span class="role2"><strong><u>NOTE</u>:</strong>&nbsp;&nbsp;"Lowering the number of active days will speed up load times. It is not recommend to go over 15days for Open Orders."</span>
 </div>
 </div>
-<div class="row">
-</div>
-
+<br>
 <div class="row">
 <div class="col-sm-12 col-sm-12 marbot30">
 <input type="submit" name="save_changes" value="Save Changes">
