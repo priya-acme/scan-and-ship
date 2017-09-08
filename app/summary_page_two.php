@@ -9,6 +9,7 @@ $shop =  $_REQUEST['shop'];
 //  //echo $redirect_url;
 //   header("Location: $redirect_url");
 $shop_info = $Stores->is_shop_exists($shop);
+$get_days = $Stores->get_days($shop);
 if(empty($get_days)){
 	$fourty_five = date('Y-m-d', strtotime("-45 days"));
 }else{
