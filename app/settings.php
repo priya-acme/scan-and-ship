@@ -199,8 +199,8 @@ if(in_array("ready for pickup", $get_single_role)){
 <span class="role2">SELECT DAYS FOR FULFILLED ORDERS</span>
 <span class="radio radio-primary">
 <select name="select_ful_days">
-<option value="10"<?php if($fetch_days['ful_day'] == '15' ) echo "selected"; ?>>15 Days</option>
-<option value="15"<?php if($fetch_days['ful_day'] == '10' ) echo "selected"; ?>>10 Days</option>
+<option value="15"<?php if($fetch_days['ful_day'] == '15' ) echo "selected"; ?>>15 Days</option>
+<option value="10"<?php if($fetch_days['ful_day'] == '10' ) echo "selected"; ?>>10 Days</option>
 <option value="30"<?php if($fetch_days['ful_day'] == '30' ) echo "selected"; ?>>30 Days</option>
 <option value="45"<?php if($fetch_days['ful_day'] == '45' ) echo "selected"; ?>>45 Days</option>
 <option value="60"<?php if($fetch_days['ful_day'] == '60' ) echo "selected"; ?>>60 Days</option>
