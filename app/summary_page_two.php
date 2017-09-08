@@ -12,7 +12,7 @@ $shop_info = $Stores->is_shop_exists($shop);
 if(empty($get_days)){
 	$fourty_five = date('Y-m-d', strtotime("-45 days"));
 }else{
-	$get_day = $get_days['unful_day'];
+	$get_day = $get_days['ful_day'];
 	$fourty_five= date('Y-m-d', strtotime("-".$get_day." days"));
 }
 $fourty_five = date('Y-m-d', strtotime("-45 days"));
