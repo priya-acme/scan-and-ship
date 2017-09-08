@@ -11,7 +11,7 @@ $shop =  $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
 $get_days = $Stores->get_days($shop);
 if(empty($get_days)){
-	$fourty_five = date('Y-m-d', strtotime("-10 days"));
+	$fourty_five = date('Y-m-d', strtotime("-15 days"));
 }else{
 	$get_day = $get_days['ful_day'];
 	$fourty_five= date('Y-m-d', strtotime("-".$get_day." days"));

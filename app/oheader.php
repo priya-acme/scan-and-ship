@@ -146,7 +146,7 @@ if(empty($get_days)){
 $count_orders = $Shopify->count_orders($shop, $shop_info['access_token'],$thirty_date);
 $count_val = ceil($count_orders->count / 250);
 if(empty($get_days)){
-	$fourty_five = date('Y-m-d', strtotime("-10 days"));
+	$fourty_five = date('Y-m-d', strtotime("-15 days"));
 }else{
 	$get_day = $get_days['ful_day'];
 	$fourty_five= date('Y-m-d', strtotime("-".$get_day." days"));
