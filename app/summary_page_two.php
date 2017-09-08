@@ -16,7 +16,6 @@ if(empty($get_days)){
 	$get_day = $get_days['ful_day'];
 	$fourty_five= date('Y-m-d', strtotime("-".$get_day." days"));
 }
-$fourty_five = date('Y-m-d', strtotime("-45 days"));
 // $date = new DateTime("-1 months");
 // $date->modify("-" . ($date->format('j')-1) . " days");
 // $six_date = $date->format('Y-m-j');
@@ -65,7 +64,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
 </div>
 <div class="row">
 <div class="col-sm-12 col-md-6">
-<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2 summary-role">SELECT ROLE :<?php echo $fourty_five; ?></span><?php } ?>
+<?php if($get_verification['verification_step'] != 'Three') {  ?> <span class="role2 summary-role">SELECT ROLE :</span><?php } ?>
 <span class="radio radio-primary">
 <?php if($get_verification['verification_step'] == 'One' || $get_verification['verification_step'] == 'Six') {  
 	?>
