@@ -164,8 +164,6 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 		foreach(${"get_order".$count}->orders as $order) {
 			if($order_id == $order->name || $order_id == $order->id){
 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
-			} else {
-				$z = 1;
 			}
 		}
 	}
@@ -174,15 +172,11 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 		foreach(${"get_order".$ncount}->orders as $order) {
 			if($order_id == $order->name || $order_id == $order->id){
 				header("location:/double-check/app/order_detailed_page.php/?shop=$shop&&id=$order->id");
-			} else{
-				$z = 1;
-			}
+			} 
 		}
 	}
 }
-if($z == 1){
-	$order_msg = "Not Found";
-}
+
 $get_single_store = $Stores->get_single_save_roles($shop);
 $get_single_role = explode(",",$get_single_store['roles']);
 ?>
