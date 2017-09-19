@@ -1458,7 +1458,7 @@ function delete_picker_order(dorder , dsku,shop){
          //document.getElementById('done').innerHTML = this.responseText;
        }
 	  };
-	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&dorder="+dorder+"&dsku="+dsku, true);
+	  xhttp.open("GET", "delete_ajax.php?shop="+shop+"&dorder="+dorder+"&dsku="+dsku, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); },2000);
 }
