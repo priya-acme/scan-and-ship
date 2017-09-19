@@ -115,7 +115,7 @@ if(isset($_POST['submit_barcode']) || isset($_POST['pressed_button1']) == 'false
 		$error == '';
 	}
 	else {
-		$error = "" ;
+		$error = "Not Found" ;
 	}
 }
 if(isset($_POST['save_notes'])){
@@ -181,7 +181,7 @@ if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){
 	}
 }
 if($z == 1){
-	$order_msg = "Not Found";
+	$order_msg = "";
 }
 $get_single_store = $Stores->get_single_save_roles($shop);
 $get_single_role = explode(",",$get_single_store['roles']);
@@ -256,9 +256,8 @@ $get_single_role = explode(",",$get_single_store['roles']);
   
     </div>
     
- <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $barcode_sku; echo $error; ?></div><?php } ?>
+ <?php if(isset($_POST['submit_barcode'])){ ?> <div class="error-message" style="color:red"><?php echo $error; ?></div><?php } ?>
    <?php if(isset($_POST['submit_barcode'])){ ?> <div class="qty-error-message" style="color:red"><?php echo $error_qty; ?></div><?php } ?>
-   <?php if(isset($_POST['submit_id']) || isset($_POST['pressed_button']) == 'false'){ ?> <div class="qty-error-message" style="color:red"><?php echo $barcode_sku; echo $order_msg; ?></div><?php } ?>
 </div>
 <div class="col-sm-12 col-md-4">
  <div class="role2">
