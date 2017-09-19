@@ -1320,7 +1320,7 @@ function selected_radio(rad,shop){
          document.getElementById('done').innerHTML = this.responseText;
        }
 	  };
-	  xhttp.open("GET", "../role.php?selected_rval="+rad+"&shop="+shop, true);
+	  xhttp.open("GET", "role.php?selected_rval="+rad+"&shop="+shop, true);
 	  xhttp.send();
 	 setTimeout(function(){ window.location.reload(); }, 1000);
 }
@@ -1332,7 +1332,7 @@ function create_fulfilled_order(forder_id,shop){
        
 	    }
 	  };
-	  xhttp.open("GET", "../fulfilled_order.php?shop="+shop+"&order_id="+forder_id, true);
+	  xhttp.open("GET", "fulfilled_order.php?shop="+shop+"&order_id="+forder_id, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
@@ -1344,7 +1344,7 @@ function delete_instore_picker(in_order,shop){
        
 	    }
 	  };
-	  xhttp.open("GET", "../delete_instore_pickup.php?shop="+shop+"&order_id="+in_order, true);
+	  xhttp.open("GET", "delete_instore_pickup.php?shop="+shop+"&order_id="+in_order, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
@@ -1358,7 +1358,7 @@ function sendvalue(a,b,shop){
        
 	    }
 	  };
-	  xhttp.open("GET", "../ajax_call.php?shop="+shop+"&chkbx_val="+chckbx_val+"&order_id="+order_id, true);
+	  xhttp.open("GET", "ajax_call.php?shop="+shop+"&chkbx_val="+chckbx_val+"&order_id="+order_id, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
@@ -1471,7 +1471,7 @@ function delete_shipper_order(dsorder , dssku,shop){
          //document.getElementById('done').innerHTML = this.responseText;
        }
 	  };
-	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&dsorder="+dsorder+"&dssku="+dssku, true);
+	  xhttp.open("GET", "delete_ajax.php?shop="+shop+"&dsorder="+dsorder+"&dssku="+dssku, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 2000);
 }
@@ -1484,7 +1484,7 @@ function delete_receiver_order(drorder , drsku,shop){
          //document.getElementById('done').innerHTML = this.responseText;
        }
 	  };
-	  xhttp.open("GET", "../delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
+	  xhttp.open("GET", "delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
 	  xhttp.send();
 	  setTimeout(function(){ window.location.reload(); }, 2000);
 } 
