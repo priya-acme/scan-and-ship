@@ -206,6 +206,7 @@ class DB_Connection{
 	}
 	function delete_receiver_orders($order_id,$sku){
 		$query = "delete from receiver_order_verification where order_id='$order_id' and sku='$sku'";
+		echo $query;
 		$result = mysqli_query($this->connection, $query);
 	}
 	function receiver_update_qty($sku,$barcode,$order_id){
