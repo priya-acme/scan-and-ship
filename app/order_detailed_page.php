@@ -249,7 +249,7 @@ $get_single_role = explode(",",$get_single_store['roles']);
     <span class="b2">
     <input type="text" name="barcode_sku" class="txt" value=""> 
     <input type="hidden" name="pressed_button" id="pressed_button1" value="false">
-     <button type="submit" class="serch" name="submit_barcode" onclick="document.getElementById('pressed_button1').value='true';document.getElementById('form_submit').submit();">
+     <button type="submit" class="serch" name="submit_barcode" >
       <span class="glyphicon glyphicon-search"></span>
      </button>
      </span>
