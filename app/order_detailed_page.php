@@ -1479,15 +1479,15 @@ function delete_receiver_order(drorder , drsku,shop){
 	alert(drorder);
 	var drorder = drorder;
 	var drsku = drsku;
-// 	var xhttp = new XMLHttpRequest();
-// 	  xhttp.onreadystatechange = function() {
-// 	    if (this.readyState == 4 && this.status == 200) {
-//          //document.getElementById('done').innerHTML = this.responseText;
-//        }
-// 	  };
-	 // xhttp.open("GET", "delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
-	  //xhttp.send();
-	  //setTimeout(function(){ window.location.reload(); }, 2000);
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+         //document.getElementById('done').innerHTML = this.responseText;
+       }
+	  };
+	 xhttp.open("GET", "delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
+	  xhttp.send();
+	 // setTimeout(function(){ window.location.reload(); }, 2000);
 } 
 </script>
 <?php include 'footer.php'; ?>
