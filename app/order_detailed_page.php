@@ -1487,7 +1487,7 @@ function delete_receiver_order(drorder , drsku,shop){
 	  };
 	 xhttp.open("GET", "/double-check/app/delete_ajax.php?shop="+shop+"&drorder="+drorder+"&drsku="+drsku, true);
 	  xhttp.send();
-	 // setTimeout(function(){ window.location.reload(); }, 2000);
+	 setTimeout(function(){ window.location.reload(); }, 2000);
 } 
 </script>
 <?php include 'footer.php'; ?>
